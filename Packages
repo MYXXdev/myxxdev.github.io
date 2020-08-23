@@ -24,9 +24,9 @@ Pre-Depends: dpkg
 Depends: mobilesubstrate
 Filename: ./debs/net.myxxdev.issupervisedbegone_1.0_iphoneos-arm.deb
 Size: 1336
-MD5sum: 458ed035abb033859885199532bacd9a
-SHA1: 471f7cdea218784cd4cce7d495a5af13b1681eaf
-SHA256: 74feec9276597624aba047211e5dcaf82187ccbe6f3b1f2d59cfac8f77bc253b
+MD5sum: 97ce8adc45b444569be6275833a7a3f9
+SHA1: 9f45842774a277f3b3d70905764c573473a8671a
+SHA256: 604d7e1b8051605977d15a6ab624ab58d9ad48d850a38e7a600487cb71217756
 Section: Networking
 Description: A one click solution to remove the “is Supervised” message in Settings after installing MYbloXX for iOS.
 Author: MYXXdev
@@ -41,10 +41,10 @@ Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.082320_iphoneos-arm.deb
-Size: 1100016
-MD5sum: 59276125aa26ab06245465aea76e954f
-SHA1: bfe8ef311c4f462895d63c0cf4c9887554f89205
-SHA256: eb4705db13fb3f5110749ec1f62be58b2962d326086901121a1dc4527ecc6d36
+Size: 1100028
+MD5sum: 8e0ac36fbba109e4632c52dc83046bf3
+SHA1: 988a4bad070bf5e9ea3e5378a7685e32c3291855
+SHA256: 0fec0f91bdd92ea85ef5d01993d2f8eaf8c907ebabb4eef0e5b10f28a6cc0be9
 Section: Networking
 Description: MYbloXX for iOS (Beta)
 Author: MYXXdev
