@@ -41,12 +41,12 @@ Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate, com.ps.letmeblock
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.082320_iphoneos-arm.deb
-Size: 1100024
-MD5sum: 235cd044ca39e1b4a8501443a900beec
-SHA1: 5075c0b4844bc62095c543404984c96bd089c340
-SHA256: 68c2386d08f445883b50277675a375ea984aebcefe0fcf90ee22dc45c4879108
+Size: 1100184
+MD5sum: 5c3ce520c7a3c3855d7c452ddf1ae5ad
+SHA1: 7307e511a28c1691c0053a30d09c9bb32ff9a69e
+SHA256: d723d269590a255cb28c3f36d462607f208b7ba175a7383cf51784528dbbff4b
 Section: Networking
-Description: MYbloXX for iOS (Beta)
+Description: MYbloXX for iOS
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXX.html
 Name: MYbloXX for iOS
@@ -59,12 +59,12 @@ Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082320_iphoneos-arm.deb
-Size: 1100156
-MD5sum: fb0775346c1623f0cbb0343db424ccfb
-SHA1: 7c73bb52f9cabeb43ec4d6d873c0962f05c71b38
-SHA256: f8085de0d10b530f28db042b540bc3a00401fe7a36a30e60b11914fb78e74abd
+Size: 1100184
+MD5sum: 299f0ee80f983b3a463af34bd0e2b60e
+SHA1: 964a66d173b5a73a12e53ff04fd93c002530c0c9
+SHA256: f98a96cd06ad1856fbf0b03e6606871d319aa105fbfcf6fe045f44b7c6054ac6
 Section: Networking
-Description: MYbloXX for iOS (Beta)
+Description: MYbloXX for iOS (Odyssey)
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXX-Odyssey.html
 Name: MYbloXX for iOS (Odyssey)
