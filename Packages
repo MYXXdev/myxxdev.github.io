@@ -59,10 +59,10 @@ Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082320_iphoneos-arm.deb
-Size: 1100160
-MD5sum: 6d0533d4c8446435e521521ecec97ca0
-SHA1: cec973b78f39b1613535124a20bb98ec157452dd
-SHA256: 4a20a9dc200bf5c47af857f6bffb1615cf26159cbebbe461051b25e6942a5f7c
+Size: 1100184
+MD5sum: 4149d5fbbfc8a5cf0d1ccb22ce65fcf6
+SHA1: b5885621ded5f674aa5f2178fd90949957821990
+SHA256: 99af01f1dc1a33385f545a40a319cab332006cef110ac968ae40540d80f29563
 Section: Networking
 Description: MYbloXX for iOS (Odyssey)
 Author: MYXXdev
