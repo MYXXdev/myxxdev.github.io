@@ -1,0 +1,8 @@
+Origin: MYXXdev's Repository
+Label: MYXXdev's Repository
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: "The official MYXXdev Repository"
