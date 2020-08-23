@@ -1,0 +1,53 @@
+Package: com.ps.letmeblock
+Version: 0.0.7.2
+Architecture: iphoneos-arm
+Maintainer: PoomSmart
+Installed-Size: 200
+Depends: mobilesubstrate, firmware (>= 9.0)
+Filename: ./debs/com.ps.letmeblock_0.0.7.2_iphoneos-arm.deb
+Size: 6152
+MD5sum: 1f35f16e5460e7e563949f300b9a9768
+SHA1: 0e182a0913a53a0bfbf7fbf1105560eb1ac3c622
+SHA256: 581f6d80704f97d3865374f9e1a595aa2b1e261efc74fc38ba803ca2f8cf9bd3
+Section: Tweaks
+Description: Make mDNSResponder care more about /etc/hosts
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/letmeblock.html
+Name: LetMeBlock
+Sileodepiction: https://poomsmart.github.io/repo/sileodepictions/letmeblock.json
+
+Package: net.myxxdev.issupervisedbegone
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Pre-Depends: dpkg
+Depends: mobilesubstrate
+Filename: ./debs/net.myxxdev.issupervisedbegone_1.0_iphoneos-arm.deb
+Size: 1440
+MD5sum: aad17871cc1bb5fb9ea5088e47fcfbf7
+SHA1: 3705ea9368f548be43d2e0d088bbc3fa5695b209
+SHA256: 559ee22d788b91acff300550f635622dff7eef8b37ec9ce97c29b5d60e54b71d
+Section: Networking
+Description: A one click solution to remove the “is Supervised” message in Settings after installing MYbloXX for iOS.
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
+Name: isSupervisedBeGone
+
+Package: net.myxxdev.mybloxx
+Version: 1.082320
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Pre-Depends: dpkg, sudo
+Depends: mobilesubstrate
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx_1.082320_iphoneos-arm.deb
+Size: 1100040
+MD5sum: 78425afea0a48d186275a9c06139a6e7
+SHA1: 8e102d74bbab3c6f3671b67b98e5fb25c7ed8389
+SHA256: 302877ac401bf5b83127e5b77894d1304f832610c36a1c474af071d0dc934994
+Section: Networking
+Description: MYbloXX for iOS (Beta)
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depic/MYbloXX.html
+Name: MYbloXX for iOS (Beta)
+
