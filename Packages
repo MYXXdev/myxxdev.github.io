@@ -38,16 +38,34 @@ Version: 1.082320
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg, sudo
-Depends: mobilesubstrate
+Depends: mobilesubstrate, com.ps.letmeblock
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.082320_iphoneos-arm.deb
-Size: 1099996
-MD5sum: 1a50e8707c38d15aae87d3a6c0f7ccea
-SHA1: 30ef5b5a611fed2c054251579f7b8b386ffbbb22
-SHA256: 66efee645e4e98ef5635cb54f3861082893f200c6f30e91b40ade7392722a527
+Size: 1100004
+MD5sum: 51a95cdbf96d1d141d04e3eaa52a3708
+SHA1: 0c4bacf572ff7d5228eb3a81adab4359e65febea
+SHA256: d8be7b2d9405e2330594828fc63eaf1f74d43fd6f42daa04c9c564a8d007f9ec
 Section: Networking
 Description: MYbloXX for iOS (Beta)
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/d-MYbloXX.html
-Name: MYbloXX for iOS (Beta)
+Name: MYbloXX for iOS
+
+Package: net.myxxdev.mybloxx-odyssey
+Version: 1.082320
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Pre-Depends: dpkg, sudo
+Depends: mobilesubstrate
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082320_iphoneos-arm.deb
+Size: 1100004
+MD5sum: b3e6f499a7dcb84ded8ce5065b88795f
+SHA1: 9c3d3850f6c6a49aaaf9b7b60b64d33318c907bb
+SHA256: a83ce32b13235f97efa042cc37618a8275b746a23c3aa90a5839e97161a1a76d
+Section: Networking
+Description: MYbloXX for iOS (Beta)
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/d-MYbloXX.html
+Name: MYbloXX for iOS (Odyssey)
 
