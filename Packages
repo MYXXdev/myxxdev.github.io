@@ -33,39 +33,21 @@ Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
 Name: isSupervisedBeGone
 
-Package: net.myxxdev.mybloxx
-Version: 1.082420-1
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Pre-Depends: com.ps.letmeblock, dpkg, sudo
-Depends: mobilesubstrate
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx_1.082420-1_iphoneos-arm.deb
-Size: 1100176
-MD5sum: 7a106363863d34eeb16ad183af7cdc96
-SHA1: 6af71c2f7acdf65984ddbf8cdb7312435219c78c
-SHA256: 847aacc05293916fdaef1b9b0bc0fe623e967536ee359bc97732b810e01b6613
-Section: Networking
-Description: MYbloXX for iOS
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXX.html
-Name: MYbloXX for iOS
-
 Package: net.myxxdev.mybloxx-odyssey
-Version: 1.082420
+Version: 1.082320
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082420_iphoneos-arm.deb
+Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082320_iphoneos-arm.deb
 Size: 1100004
-MD5sum: 53f820e59f45cdb027e93f32156762ca
-SHA1: 732efdb3d97ef9375cad562602bee1be1c879b74
-SHA256: 6c8959559c94be0944467c87a0850077dba8ab452d61db1fc2b37d06a737421a
+MD5sum: b3e6f499a7dcb84ded8ce5065b88795f
+SHA1: 9c3d3850f6c6a49aaaf9b7b60b64d33318c907bb
+SHA256: a83ce32b13235f97efa042cc37618a8275b746a23c3aa90a5839e97161a1a76d
 Section: Networking
-Description: MYbloXX for iOS (Odyssey)
+Description: MYbloXX for iOS (Beta)
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXX-Odyssey.html
+Depiction: https://myxxdev.github.io/d-MYbloXX.html
 Name: MYbloXX for iOS (Odyssey)
 
