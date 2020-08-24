@@ -40,10 +40,10 @@ Maintainer: MYXXdev
 Pre-Depends: com.ps.letmeblock, dpkg, mobilesubstrate, sudo
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.082420_iphoneos-arm.deb
-Size: 1100180
-MD5sum: 11de5f0f281d69befb25430961cef010
-SHA1: 12e3f44a6e13bfb6480ce38360ddf75b62228ff3
-SHA256: d5e0a573bdd1c21a339e223c4b593326ad945857d8ec750acbe6ae4d0b61c9d2
+Size: 1100164
+MD5sum: 85d1a914b8331c001552cb865a156dbf
+SHA1: a38887572c2f6ca71cd87c1c4644b4ceb8faa5c1
+SHA256: 947b4dcada14963a223a0b8c1b35f870e3e11710ac7f6c6307ad389009b11dc5
 Section: Networking
 Description: MYbloXX for iOS
 Author: MYXXdev
@@ -57,10 +57,10 @@ Maintainer: MYXXdev
 Pre-Depends: dpkg, mobilesubstrate, sudo
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082420_iphoneos-arm.deb
-Size: 1100188
-MD5sum: f86ce2687e04aa48bd1ebdaccf1adf41
-SHA1: b243cfb8de24cf14e22c5dc18044ad02e90c628e
-SHA256: 3460331ce176985668c3dd309d88401cacb71f201d27b7c5487e0424d20fdf40
+Size: 1100168
+MD5sum: d7e25ff7c6460340e831521d538f8e89
+SHA1: a478392add254b29be78b9d0c5848ea09c4e7b27
+SHA256: 7cc687de1c120cdf6cba5d15e1f6904158767585d6d24ea52f74da44309d93af
 Section: Networking
 Description: MYbloXX for iOS (Odyssey)
 Author: MYXXdev
