@@ -34,17 +34,17 @@ Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
 Name: isSupervisedBeGone
 
 Package: net.myxxdev.mybloxx
-Version: 1.082320
+Version: 1.082420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate, com.ps.letmeblock
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx_1.082320_iphoneos-arm.deb
-Size: 1100148
-MD5sum: 5f8512711d8ecbd6d4be4db5a4416cfa
-SHA1: 9a6e3b98c074fe68823a23fec6b05866902560be
-SHA256: c12819b37f2e7eae3acbb5e50f951bfcd09bdff0ad4034ed980bf2e6e8f6ae29
+Filename: ./debs/net.myxxdev.mybloxx_1.082420_iphoneos-arm.deb
+Size: 1100108
+MD5sum: bb9e2264259e3c15e57f98903e84b477
+SHA1: ccb40a5cc6abf9698663002493a0663f66130875
+SHA256: 05275ae0ab0a7779181547a687d08dfbbea4ce86e9d02293c81c09234499b9a4
 Section: Networking
 Description: MYbloXX for iOS
 Author: MYXXdev
@@ -52,20 +52,20 @@ Depiction: https://myxxdev.github.io/depic/MYbloXX.html
 Name: MYbloXX for iOS
 
 Package: net.myxxdev.mybloxx-odyssey
-Version: 1.082320
+Version: 1.082420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg, sudo
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082320_iphoneos-arm.deb
-Size: 1100128
-MD5sum: e5fef676d62aa7f30928f55f0c2d1f5c
-SHA1: 2efde94e6a6b9bb42bb3c7b9f966a473525b4ab5
-SHA256: 07f336a528f59dc7644c3b9e3740e15890eaae6eb1ac0c5f65947a2f8be3d8a9
+Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082420_iphoneos-arm.deb
+Size: 1100112
+MD5sum: ead55112c842a99e01ae33a433ef74a1
+SHA1: 0942c01c1b8ceb28afc79e681b67302ac2da8ad8
+SHA256: 94d353bf66c32bf7b18c7070bfa18bec98c1a6e3e68e21bef9704fe762309bc8
 Section: Networking
 Description: MYbloXX for iOS (Odyssey)
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXX-Odyssey.html
-Name: MYbloXX for iOS (Odyssey)
+Name: MYbloXX for iOS
 
