@@ -37,13 +37,14 @@ Package: net.myxxdev.mybloxx
 Version: 1.082420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Pre-Depends: com.ps.letmeblock, dpkg, mobilesubstrate, sudo
+Pre-Depends: com.ps.letmeblock, dpkg, sudo
+Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.082420_iphoneos-arm.deb
-Size: 1100164
-MD5sum: 85d1a914b8331c001552cb865a156dbf
-SHA1: a38887572c2f6ca71cd87c1c4644b4ceb8faa5c1
-SHA256: 947b4dcada14963a223a0b8c1b35f870e3e11710ac7f6c6307ad389009b11dc5
+Size: 1100012
+MD5sum: 1f5bff9f2ff2dd4e2f096e8743db8e3e
+SHA1: 5edb9946a74f334d69cbdfd8e6412a5f62e8ad0b
+SHA256: 82b77853b542e62b5fb3dd61fa9da4076cf24ae5d6f32cdb9a689c028c0b9d20
 Section: Networking
 Description: MYbloXX for iOS
 Author: MYXXdev
@@ -54,13 +55,14 @@ Package: net.myxxdev.mybloxx-odyssey
 Version: 1.082420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Pre-Depends: dpkg, mobilesubstrate, sudo
+Pre-Depends: dpkg, sudo
+Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082420_iphoneos-arm.deb
-Size: 1100168
-MD5sum: d7e25ff7c6460340e831521d538f8e89
-SHA1: a478392add254b29be78b9d0c5848ea09c4e7b27
-SHA256: 7cc687de1c120cdf6cba5d15e1f6904158767585d6d24ea52f74da44309d93af
+Size: 1100004
+MD5sum: 53f820e59f45cdb027e93f32156762ca
+SHA1: 732efdb3d97ef9375cad562602bee1be1c879b74
+SHA256: 6c8959559c94be0944467c87a0850077dba8ab452d61db1fc2b37d06a737421a
 Section: Networking
 Description: MYbloXX for iOS (Odyssey)
 Author: MYXXdev
