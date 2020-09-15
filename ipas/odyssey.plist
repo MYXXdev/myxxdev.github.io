@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd …">
 <plist version="1.0">
 <dict>
 <key>items</key>
@@ -12,7 +11,7 @@
 <key>url</key>
 <string>https://myxxdev.github.io/ipas/odyssey.ipa</string>
 </dict>
-<dict>
+</array>
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
@@ -22,9 +21,9 @@
 <key>kind</key>
 <string>software</string>
 <key>title</key>
-<string>unc0ver</string>
+<string>Odyssey</string>
 </dict>
 </dict>
 </array>
 </dict>
-</plist> 
+</plist>
