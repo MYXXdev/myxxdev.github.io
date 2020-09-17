@@ -94,12 +94,11 @@ Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate, com.ps.letmeblock, net.myxxdev.mybloxxupdater, net.myxxdev.xxrestarter
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.nathanaccidentally.mdnsflush, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Replaces: net.myxxdev.mybloxx, net.myxxdev.mybloxx12, net.myxxdev.mybloxx-odyssey
 Filename: ./debs/net.myxxdev.mybloxxcore_1.091720_iphoneos-arm.deb
-Size: 8064360
-MD5sum: 3d98993f77c38ada1f4916bf75450209
-SHA1: 7913c29397f7458e70b7a69369fe6a69efa9582b
-SHA256: 13ada9b3fcf9982fd243368bf12447a0fc7b1d48c4089cd873d78aae11579695
+Size: 8064292
+MD5sum: 0cc30f8b6ee06fb0a5594c29db6f045e
+SHA1: d12393d7c4b21af87188aefcb3fd5923f2af1a29
+SHA256: 6cc5bc6e1e97edbed51d4ef52e90d3440c1883b95313f7ec5be994f32d716646
 Section: Networking
 Description: MYbloXX (Core Package)
 Author: MYXXdev
