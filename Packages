@@ -56,12 +56,12 @@ Version: 1.091720
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
-Depends: mobilesubstrate, net.myxxdev.mybloxx
+Depends: mobilesubstrate, net.myxxdev.mybloxxcore
 Filename: ./debs/net.myxxdev.mybloxxupdater_1.091720_iphoneos-arm.deb
-Size: 1020
-MD5sum: 7dd8639cb14ebd9ecef1e3e724333068
-SHA1: 21db11450368b98ae75ceb94d62dc50ad9f983cc
-SHA256: 27dcee31eaf912653a1036ba3bbfa81db70ec5dd6650b5471799c709250bf624
+Size: 1024
+MD5sum: d51f98ca596058014da1137031a3657a
+SHA1: ae46131e0a201c03c21a3aa4f1e47e4a77f68a90
+SHA256: 27b09f6ed9e22151efe4b59d7df2da7904774bbe508fd8573b8df30352bcc666
 Section: Networking
 Description: Updater for MYbloXX. This package will contain updated entries for MYbloXX allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX. This tiny package will be the one updated on a weekly basis. Core will only receive updates if there is a major feature added, fixed and/or replaced.
 Author: MYXXdev
