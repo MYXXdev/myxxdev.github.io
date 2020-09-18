@@ -39,12 +39,13 @@ Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate, com.ps.letmeblock, net.myxxdev.mybloxxupdater, net.myxxdev.xxrestarter
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.nathanaccidentally.mdnsflush, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper, net.myxxdev.mybloxx, net.myxxdev.mybloxx12, net.myxxdev.mybloxx-odyssey
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.nathanaccidentally.mdnsflush, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Replaces: net.myxxdev.mybloxx, net.myxxdev.mybloxx12, net.myxxdev.mybloxx-odyssey
 Filename: ./debs/net.myxxdev.mybloxxcore_1.091720_iphoneos-arm.deb
-Size: 8064292
-MD5sum: 94176fbdcaa85f62fabc4673e1e23a83
-SHA1: 4c288a898abed5034077f26ac33daa952faab79e
-SHA256: ca59932e2f2b46cb3bd20d8230b5e0dfe7a31174d6f12f4fbea4227ec72ac2cd
+Size: 8043972
+MD5sum: 1f77f0451a14daf9b30913520eb93a3e
+SHA1: 0bff77a6bcbb3b8092e29a0ebb1eb5065fe6fb93
+SHA256: af038fa49f161c897ca7bb7e942c21826fbae1a324510032a9db5d25616d44e6
 Section: Networking
 Description: MYbloXX (Core Package)
 Author: MYXXdev
