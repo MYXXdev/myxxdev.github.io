@@ -33,56 +33,57 @@ Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
 Name: isSupervisedBeGone
 
-Package: net.myxxdev.mybloxxcore
-Version: 1.091720
+Package: net.myxxdev.mybloxx
+Version: 1.082520
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
-Depends: mobilesubstrate, com.ps.letmeblock, net.myxxdev.mybloxxupdater, net.myxxdev.xxrestarter
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.nathanaccidentally.mdnsflush, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper, net.myxxdev.mybloxx, net.myxxdev.mybloxx12, net.myxxdev.mybloxx-odyssey
-Replaces: net.myxxdev.mybloxx, net.myxxdev.mybloxx12, net.myxxdev.mybloxx-odyssey
-Filename: ./debs/net.myxxdev.mybloxxcore_1.091720_iphoneos-arm.deb
-Size: 8043928
-MD5sum: ed2535e035d193684fd89026ca3b3983
-SHA1: 99bc8270eba532c831877e1881a59909e670b989
-SHA256: c28effeeba4ffbe17fc54607ab2d50e16b502224f6c35b11b2db57cefd27d90f
+Depends: mobilesubstrate, com.ps.letmeblock
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx_1.082520_iphoneos-arm.deb
+Size: 124348
+MD5sum: 1a2c526a669ed7a0170728f735744551
+SHA1: 61c1d6d90b2c3a3fb8cb4fbeda7b23df4d495a19
+SHA256: cabbffccd145ec671ac1973df4eaa195d458497859ecbab73079cec2956867f5
 Section: Networking
-Description: MYbloXX (Core Package)
+Description: MYbloXX (iOS 13+)
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXX.html
-Name: MYbloXX (Core Package)
+Name: MYbloXX (iOS 13+)
 
-Package: net.myxxdev.mybloxxupdater
-Version: 1.091720
+Package: net.myxxdev.mybloxx-odyssey
+Version: 1.082520
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
-Filename: ./debs/net.myxxdev.mybloxxupdater_1.091720_iphoneos-arm.deb
-Size: 1008
-MD5sum: 1e73f2a2f24e55fe1feb41edb2b4d5a5
-SHA1: d271a4c619def3ad6244d985b7547acd45c0f8d6
-SHA256: 7aafc9798799bccd587fed4469ce12e23dc24b25665f0a714a1ae46bf0578c96
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx-odyssey_1.082520_iphoneos-arm.deb
+Size: 124404
+MD5sum: af2e90f5f492d6e62746b49ecb3db73d
+SHA1: 3a24e4d8e63b4634e756495eb41c4f87a7a85762
+SHA256: cc9a397e9ef6ce906bc5e805fd3b120361d3a636b881b518059a7c69bf5e5e5b
 Section: Networking
-Description: Updater for MYbloXX. This package will contain updated entries for MYbloXX allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX. This tiny package will be the one updated on a weekly basis. Core will only receive updates if there is a major feature added, fixed and/or replaced.
+Description: MYbloXX (iOS 13+) (Odyssey)
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXXUpdater.html
-Name: MYbloXX Updater
+Depiction: https://myxxdev.github.io/depic/MYbloXX-Odyssey.html
+Name: MYbloXX (iOS 13+) (Odyssey)
 
-Package: net.myxxdev.xxrestarter
-Version: 1.0
+Package: net.myxxdev.mybloxx12
+Version: 1.082520
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
-Depends: mobilesubstrate
-Filename: ./debs/net.myxxdev.xxrestarter_1.0_iphoneos-arm.deb
-Size: 1208
-MD5sum: 79b9d06ad59bd8477d8f9da11de7f31a
-SHA1: 74fe1a42cdc7c23989003de80be243f4ee1211a5
-SHA256: 1108ce2eb51196c73716ec803537e75d05b2106bf56fe13b14214e9c1a51fb3c
+Depends: mobilesubstrate, com.ps.letmeblock
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx12_1.082520_iphoneos-arm.deb
+Size: 1099216
+MD5sum: d732dd83959b06248189b729c05d6ff9
+SHA1: 80245b9286167899b9f3ef97df11d1892714cc1c
+SHA256: a358c9d24643336840de5a21a7820eb8944346b3f7672c002ff3aa7ed0aac98e
 Section: Networking
-Description: XXrestarter for MYbloXX installation. This package simply allows MYbloXX to ldrestart after installation without breaking dpkg/auto-removing MYbloXX. It was made to be forcefully removed by Cydia.
+Description: MYbloXX (iOS 12 and below)
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/XXRestarter.html
-Name: XXrestarter
+Depiction: https://myxxdev.github.io/depic/MYbloXX.html
+Name: MYbloXX (iOS 12 and below)
 
