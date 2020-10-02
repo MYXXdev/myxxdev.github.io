@@ -1,21 +1,3 @@
-Package: com.ps.letmeblock
-Version: 0.0.7.5
-Architecture: iphoneos-arm
-Maintainer: PoomSmart
-Installed-Size: 200
-Depends: mobilesubstrate, firmware (>= 9.0)
-Filename: ./debs/com.ps.letmeblock_0.0.7.5_iphoneos-arm.deb
-Size: 5068
-MD5sum: 529fde6b36c7de2c777faf94b21f898d
-SHA1: 8f8d192410d312947681063c7092c2624d62ffa9
-SHA256: 94e0df2ebfb2ec0332bb3e23ba362c23d76fedbc67c1f158497c1fb42c62b69d
-Section: Tweaks
-Description: Make mDNSResponder care more about /etc/hosts
-Author: PoomSmart
-Depiction: https://poomsmart.github.io/repo/depictions/letmeblock.html
-Name: LetMeBlock
-Sileodepiction: https://poomsmart.github.io/repo/sileodepictions/letmeblock.json
-
 Package: net.myxxdev.issupervisedbegone
 Version: 1.0
 Architecture: iphoneos-arm
