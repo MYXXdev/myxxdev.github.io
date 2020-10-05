@@ -1,35 +1,35 @@
 Package: net.myxxdev.issupervisedbegone
-Version: 1.0
+Version: 1.100420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
-Filename: ./debs/net.myxxdev.issupervisedbegone_1.0_iphoneos-arm.deb
-Size: 1316
-MD5sum: 53d0033f9cc641ef79a00a4678f02e59
-SHA1: e57fe8860d71653bfb728c7147ddd4d0cce16acc
-SHA256: edbf11baed843af45ee8d5e2de0947c6b51957f6deab171499fee281669c2c66
+Filename: ./debs/net.myxxdev.issupervisedbegone_1.100420_iphoneos-arm.deb
+Size: 1340
+MD5sum: c4e2d44bdd329c3da27a8ef7334197fe
+SHA1: 44347a05bcc84d8b931bc3336f5c2a637f185afd
+SHA256: d13ab67835061bd208ae5a88924c1fc9b7d2c6b29786e99006663273e96ccaeb
 Section: Networking
-Description: A one click solution to remove the “is Supervised” message in Settings after installing MYbloXX for iOS.
+Description: A one click solution to remove the " is Supervised" message in Settings after installing MYbloXX for iOS.
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
 Name: isSupervisedBeGone
 Sileodepiction: https://myxxdev.github.io/depic/isSupervisedBeGoneSileo.html
 
 Package: net.myxxdev.mybloxx
-Version: 1.100320
+Version: 1.100420
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx_1.100320_iphoneos-arm.deb
-Size: 1348696
-MD5sum: 2b8a12e284b69cdf8e9ff9c34ee6282b
-SHA1: 2e476e2b4b778cfbfcbdae14b5941871e53279b9
-SHA256: 00691b9cae7b6c3f92d89e2a188124d0caeb8df48e595271c9b667211817b664
+Filename: ./debs/net.myxxdev.mybloxx_1.100420_iphoneos-arm.deb
+Size: 1348622
+MD5sum: 2ca34e37978814bbb54369e4f9daf079
+SHA1: 3d6b1ed1dd6a0777c357d2433a5303f7be3dea2e
+SHA256: de3eac660686c117776ff988afcb0e21d40845d0feed359e8b45919460d330ec
 Section: Networking
-Description: The first crowd-sourced auto-updating “xBlocker” for iOS, where safety and security is top priority!
+Description: The first crowd-sourced auto-updating " xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS.html
 Name: MYbloXX for iOS
