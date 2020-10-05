@@ -5,10 +5,10 @@ Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
 Filename: ./debs/net.myxxdev.issupervisedbegone_1.100420_iphoneos-arm.deb
-Size: 1340
-MD5sum: c4e2d44bdd329c3da27a8ef7334197fe
-SHA1: 44347a05bcc84d8b931bc3336f5c2a637f185afd
-SHA256: d13ab67835061bd208ae5a88924c1fc9b7d2c6b29786e99006663273e96ccaeb
+Size: 1208
+MD5sum: 2b863cb70154e958728b1a662763fe26
+SHA1: 6d6ff6ae3100a1a7535f1fcf4bb7abf99364988a
+SHA256: ccbc78e0f15504bd4191c05dd14610d0fece7e6757d163e920682b9d75aa9710
 Section: Networking
 Description: A one click solution to remove the " is Supervised" message in Settings after installing MYbloXX for iOS.
 Author: MYXXdev
