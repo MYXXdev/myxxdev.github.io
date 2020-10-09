@@ -59,9 +59,9 @@ Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.101020_iphoneos-arm.deb
 Size: 1348800
-MD5sum: 79fc4432ebee00c8f3c0677a8ae48fa8
-SHA1: 350da204982a126f8424eb65329fc5d945850ec4
-SHA256: 01e76d97addf6585913ec7feb600dc43c3aaf779d7fba712f6a50b3ee7b57262
+MD5sum: b974da07c9809477c66898e2c6fe4fd8
+SHA1: 689bbd2398fefe318ad271401371d4c9ddda343f
+SHA256: fd33b20efe7feea6b65630c66e17c1153b5594fe74061c63b5309b5c3b10561f
 Section: Networking
 Description: The first crowd-sourced auto-updating " xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
@@ -76,10 +76,10 @@ Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
 Filename: ./debs/net.myxxdev.mybloxxupdater_1.101020_iphoneos-arm.deb
-Size: 33348
-MD5sum: 5c3d83f5b1eb42f9b01c1763c2490fd7
-SHA1: 5c4871096ebcf7d7730de7c91b6665344d3a829a
-SHA256: 61eaa98bc390af60237d481ecd8a1908838d223d12fc70f69bf03828f6b163d8
+Size: 33340
+MD5sum: da769d8748731da20f5dbf07461805df
+SHA1: e7e60d6cbc8b924261f91a6d1624231e98124a88
+SHA256: 01857a83f0775a2cc44f4b9ff8a51778ebf29e1be3c54fb464f119114ab373b1
 Section: Networking
 Description: Updater for MYbloXX for iOS. This package will contain updated entries for MYbloXX for iOS allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX for iOS. This tiny package will be the pdated on a weekly basis. The main MYbloXX for iOS package will only receive updates if there is a major feature added, fixed and/or replaced.
 Author: MYXXdev
