@@ -1,3 +1,37 @@
+Package: com.git-anish.mDNSrestart
+Version: 1.4
+Architecture: iphoneos-arm
+Maintainer: Anish S <anish@hey.com>
+Pre-Depends: dpkg (>= 1.15), com.ps.letmeblock
+Filename: ./debs/com.git-anish.mDNSrestart_1.4_iphoneos-arm.deb
+Size: 1616
+MD5sum: 173d50e9c51c1e9f5349d122810b0aed
+SHA1: 6107ccea399392f8f0060847d5f98bfa98540708
+SHA256: d153519f49970e0761aaf2f861ce528ae61ec50677741e65d05b501ccf539324
+Section: System
+Description: mDNSrestart relaunches mDNS related services on boot
+Author: Anish S <anish@hey.com>
+Depiction: https://repo.anishs.xyz/depictions/?p=com.git-anish.mDNSrestart
+Name: mDNSrestart
+
+Package: com.ps.letmeblock
+Version: 0.0.7.5
+Architecture: iphoneos-arm
+Maintainer: PoomSmart
+Installed-Size: 200
+Depends: mobilesubstrate, firmware (>= 9.0)
+Filename: ./debs/com.ps.letmeblock_0.0.7.5_iphoneos-arm.deb
+Size: 5068
+MD5sum: 529fde6b36c7de2c777faf94b21f898d
+SHA1: 8f8d192410d312947681063c7092c2624d62ffa9
+SHA256: 94e0df2ebfb2ec0332bb3e23ba362c23d76fedbc67c1f158497c1fb42c62b69d
+Section: Tweaks
+Description: Make mDNSResponder care more about /etc/hosts
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/letmeblock.html
+Name: LetMeBlock
+Sileodepiction: https://poomsmart.github.io/repo/sileodepictions/letmeblock.json
+
 Package: net.myxxdev.issupervisedbegone
 Version: 1.100420
 Architecture: iphoneos-arm
@@ -17,21 +51,38 @@ Name: isSupervisedBeGone
 Sileodepiction: https://myxxdev.github.io/depic/isSupervisedBeGoneSileo.html
 
 Package: net.myxxdev.mybloxx
-Version: 1.100420
+Version: 1.100920
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Pre-Depends: dpkg
+Pre-Depends: dpkg, com.git-anish.mdnsrestart, com.ps.letmeblock, net.myxxdev.mybloxxupdater
 Depends: mobilesubstrate
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx_1.100420_iphoneos-arm.deb
-Size: 1348622
-MD5sum: 2ca34e37978814bbb54369e4f9daf079
-SHA1: 3d6b1ed1dd6a0777c357d2433a5303f7be3dea2e
-SHA256: de3eac660686c117776ff988afcb0e21d40845d0feed359e8b45919460d330ec
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
+Filename: ./debs/net.myxxdev.mybloxx_1.100920_iphoneos-arm.deb
+Size: 1350668
+MD5sum: 1b630b726614932a3ab37a65c664f9bd
+SHA1: 1ec14e059216de9b30fb7cea5ab3dcfcf626b258
+SHA256: b1497972de136e0835acd7196a7ba9c53ff31535bf32d490e83ef8942ce1f43c
 Section: Networking
 Description: The first crowd-sourced auto-updating " xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS.html
 Name: MYbloXX for iOS
 Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOSSileo.html
+
+Package: net.myxxdev.mybloxxupdater
+Version: 1.100920
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Pre-Depends: dpkg
+Depends: mobilesubstrate
+Filename: ./debs/net.myxxdev.mybloxxupdater_1.100920_iphoneos-arm.deb
+Size: 33490
+MD5sum: 7be3feeef1f738d29eb646f229901a93
+SHA1: 32479de6aee42cbb649c46ee3d71e18f1360e09b
+SHA256: 1adff51db4751690836c7e1bf69fb51bb80be73b0f9c9d3e8e6a68f2797f0a74
+Section: Networking
+Description: Updater for MYbloXX for iOS. This package will contain updated entries for MYbloXX for iOS allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX for iOS. This tiny package will be the pdated on a weekly basis. The main MYbloXX for iOS package will only receive updates if there is a major feature added, fixed and/or replaced.
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depic/MYbloXXUpdater.html
+Name: MYbloXX Updater
 
