@@ -58,10 +58,10 @@ Pre-Depends: dpkg, com.git-anish.mdnsrestart, com.ps.letmeblock, net.myxxdev.myb
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.100920_iphoneos-arm.deb
-Size: 1350668
-MD5sum: 1b630b726614932a3ab37a65c664f9bd
-SHA1: 1ec14e059216de9b30fb7cea5ab3dcfcf626b258
-SHA256: b1497972de136e0835acd7196a7ba9c53ff31535bf32d490e83ef8942ce1f43c
+Size: 1348796
+MD5sum: 25c4cbc1783aa747cf9f766f7ba50cab
+SHA1: 429626d45f23a063ead3e3014dd53ec882f83eb1
+SHA256: 70ba73d6a820660383b5664e0708b64315ff499a310b035b854fd34fe5bbe46c
 Section: Networking
 Description: The first crowd-sourced auto-updating " xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
@@ -76,10 +76,10 @@ Maintainer: MYXXdev
 Pre-Depends: dpkg
 Depends: mobilesubstrate
 Filename: ./debs/net.myxxdev.mybloxxupdater_1.100920_iphoneos-arm.deb
-Size: 33490
-MD5sum: 7be3feeef1f738d29eb646f229901a93
-SHA1: 32479de6aee42cbb649c46ee3d71e18f1360e09b
-SHA256: 1adff51db4751690836c7e1bf69fb51bb80be73b0f9c9d3e8e6a68f2797f0a74
+Size: 33256
+MD5sum: c725ba499e650dfbb438af10c3a0f9fb
+SHA1: 2da60cd87e5604888bb9b2b1bc8829dbf6b38da7
+SHA256: 2246e3f8e672cd7f35af6d5db417ec3dfb7cb943d7b35a7cbb9a40afbda691be
 Section: Networking
 Description: Updater for MYbloXX for iOS. This package will contain updated entries for MYbloXX for iOS allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX for iOS. This tiny package will be the pdated on a weekly basis. The main MYbloXX for iOS package will only receive updates if there is a major feature added, fixed and/or replaced.
 Author: MYXXdev
