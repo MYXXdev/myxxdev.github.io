@@ -58,10 +58,10 @@ Pre-Depends: dpkg, com.git-anish.mdnsrestart, com.ps.letmeblock, net.myxxdev.myb
 Depends: mobilesubstrate
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
 Filename: ./debs/net.myxxdev.mybloxx_1.101020_iphoneos-arm.deb
-Size: 1348800
-MD5sum: b974da07c9809477c66898e2c6fe4fd8
-SHA1: 689bbd2398fefe318ad271401371d4c9ddda343f
-SHA256: fd33b20efe7feea6b65630c66e17c1153b5594fe74061c63b5309b5c3b10561f
+Size: 1348892
+MD5sum: c07f8133f2bbd8dfeed89cd60fc80bf9
+SHA1: e3c7458ca411046c68abd3eff3396dc885b07cee
+SHA256: 0ba8bcd14da316ef9905a4768d011803cfdcd71dc0ae1d5b3a9f09c82c96708f
 Section: Networking
 Description: The first crowd-sourced auto-updating " xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
