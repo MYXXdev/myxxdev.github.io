@@ -35,36 +35,36 @@ Name: isSupervisedBeGone
 Sileodepiction: https://myxxdev.github.io/depic/isSupervisedBeGoneSileo.html
 
 Package: net.myxxdev.mybloxx
-Version: 1.101120-1
+Version: 1.101120-2
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg, com.ps.letmeblock, net.myxxdev.mybloxxupdater
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.imikeyb.tutuboxhelper
-Filename: ./debs/net.myxxdev.mybloxx_1.101120-1_iphoneos-arm.deb
-Size: 1348720
-MD5sum: d5a0ea45dd2b2ea7aa032aa36e2b2fad
-SHA1: 6ec0384e6cd90011e3f360d17c3de789ded2749f
-SHA256: 3ae7d06dd192f701bd294c75be68afe698122ffc5ebd1a34b7d1933b54de5f6a
+Filename: ./debs/net.myxxdev.mybloxx_1.101120-2_iphoneos-arm.deb
+Size: 1348714
+MD5sum: 7a369ddcd9339597eb25cd1ef9c39b37
+SHA1: a2933cd07c567404dd978001687f3ae9465e5807
+SHA256: 09c411641773f3095487b93055b7c77a5a14791c8a263f72a27d554af663874c
 Section: Networking
 Description: The first crowd-sourced auto-updating "xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS.html
-Name: TEST. DO NOT INSTALL. MYbloXX for iOS
+Name: MYbloXX for iOS
 Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOSSileo.html
 
 Package: net.myxxdev.mybloxxupdater
-Version: 1.101120-1
+Version: 1.101120-2
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
-Filename: ./debs/net.myxxdev.mybloxxupdater_1.101120-1_iphoneos-arm.deb
-Size: 33694
-MD5sum: bc178aadfff798ab788ec8359421f601
-SHA1: 49ede81daad0d823509a8b1b1e50f3fd453f4d1a
-SHA256: efcccb7e4de90236099bafa1ab19e211d5c09224c860604954997af5ce51794a
+Filename: ./debs/net.myxxdev.mybloxxupdater_1.101120-2_iphoneos-arm.deb
+Size: 33660
+MD5sum: 3be35615fb710fb1f43233fdca1cfb1a
+SHA1: 23bd1ab1c6259d9202d1c404931f239ed01c8c50
+SHA256: ffbf2e276a325894d63d296c0dec44772116b7bb8da85cad27ac4e4895842bea
 Section: Networking
 Description: Updater for MYbloXX for iOS. This package will contain updated entries for MYbloXX for iOS allowing you to have custom entries in your hosts file that won't be overwritten when there is an update to MYbloXX for iOS. This tiny package will be the pdated on a weekly basis. The main MYbloXX for iOS package will only receive updates if there is a major feature added, fixed and/or replaced.
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXXUpdater.html
-Name: TEST. DO NOT INSTALL. MYbloXX Updater
+Name: MYbloXX Updater
 
