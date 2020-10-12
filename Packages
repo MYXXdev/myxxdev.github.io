@@ -34,21 +34,3 @@ Depiction: https://myxxdev.github.io/depic/isSupervisedBeGone.html
 Name: isSupervisedBeGone
 Sileodepiction: https://myxxdev.github.io/depic/isSupervisedBeGoneSileo.html
 
-Package: net.myxxdev.mybloxx
-Version: 1.101120-2
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Pre-Depends: dpkg
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_1.101120-2_iphoneos-arm.deb
-Size: 1349242
-MD5sum: 0a8e87b4e62ef1de89381afaafa5e9b7
-SHA1: 21910afbf86b0b8436e135c6d51fae829f32c725
-SHA256: 1bc0cd6f2961d3ecb924fed5f3b892752aa483e67d35eea05e76eea0ea047fd2
-Section: Networking
-Description: The first crowd-sourced auto-updating "xBlocker" for iOS, where safety and security is top priority!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS.html
-Name: TEST. DO NOT INSTALL - MYbloXX for iOS
-Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOSSileo.html
-
