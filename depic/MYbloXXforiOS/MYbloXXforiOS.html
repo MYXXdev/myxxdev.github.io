@@ -29,9 +29,9 @@ body {
                                         <br><br><center><center><img src="https://myxxdev.github.io/images/r-MYbloXX.png"></center><br>
                                             <p style="font-size:14px"><center>A crowdsourced <b>AUTO-UPDATING</b> "xBlocker" for iOS!<br>• ADS | REVOKES | TRACKERS | MINERS & MORE •</center></p>
           <hr>                              
-                                            <p style="font-size:14px"><center><B>YOUR DEVICE WILL REBOOT <br><U>AUTOMATICALLY</U> AFTER INSTALL...</B><br><i>(you WILL boot back into JAILBROKEN mode)</i><br><p><b><hr><p></p>PLEASE OPEN THE MYBLOXX APP<br><u>AFTER REBOOT</u> TO CONTINUE!</b>
+                                            <p style="font-size:14px"><center><B>YOUR DEVICE WILL REBOOT <br><U>AUTOMATICALLY</U> AFTER INSTALL...</B><br><i>(you WILL boot back into JAILBROKEN mode)</i><br><p><b><hr><p></p>PLEASE GO TO SETTINGS APP<br></b><i>(Settings - MYbloXX for iOS)</i></b><b><br><u>AFTER REBOOT</u> TO CONTINUE<br>PROFILE INSTALLATION PROCESS!</b>
                                                 </p><hr>
-                                                <p><i><b>"MUST BE SUPERVISED"</i></b> ERROR?<br><u><b>LDRESTART/REBOOT</b></u> OR <u><b>RE-INSTALL</b></u><br>THIS PACKAGE AND TRY AGAIN!</b><p></p>
+                                                <p><i><b>"<u>MUST BE SUPERVISED</u>"</i></b> ERROR?<br>OPEN <b>SETTINGS - MYBLOXX FOR IOS:</b><br>TAP <b>LDRESTART</b></u> AND TRY AGAIN!</b><p></p>
                                                 <hr>
                                                 <p><a href="https://t.me/MYXXdevSupport">Official Telegram Support Group</a><br><i>See below for FAQ!</i><p><hr>
                                                 <p></center></center>After many months of closed beta testing, MYbloXX for iOS is now officially available to the general public!<br><br>I don't see it happening but if I get bamboozled with reports for the first few days as new users join the family, I kindly ask for your patience in advance. I will respond to your report as soon as I possibly can. Thanks!<br><br><b><i>What makes MYbloXX for iOS better than the alternatives?</b></i>
@@ -156,7 +156,7 @@ This is a restriction set in place by Apple on a system level due to the nature 
 <p><b><center><u>FAQ:</u></center></b><br><b>Why does my device say "This iDevice is supervised and managed"?</u></b><br><br>At no point is your device actually TRULY supervised. The message in Settings can cause alarm (and so it should under legitimate circumstances) but MYbloXX for iOS doesn’t actually supervise (or “manage”) your device.<br><br>MYbloXX for iOS uses a hidden stock Apple feature (usually only available to devices that are supervised under Mobile Device Management (MDM)) in order to block ads, revokes, miners etc. Under normal circumstances, this would require a person to manually supervise their device with Apple Configurator 2. This not only requires a Mac but also requires restoring your device.<br><br>The beauty of being jailbroken, we can SPOOF this setting, fooling iOS into BELIEVING it’s in a “supervised” state. Obtaining “spoofed supervised” status was simple: Changing one key string (“isSupervised”) in CloudConfigurationDetails.plist from “false” to “true”.<br><br>You can try this for yourself <a href="filza:///var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/CloudConfigurationDetails.plist">HERE</a> (Opens Filza).<br><br>You’ll see that the “warning” message is now in Settings.<br><br>Again, at no point is your device TRULY supervised... This would require YOU physically restoring your device in your possession. MYbloXX simply tricks iOS into thinking it is to allow the installation (this is also why MYbloXX for iOS is available for stock users as they have the option to legitimately supervise their device to use it).
                         <br><br><br><br>
     
-                        <b>Can I remove the supervised message in Settings?</u></b><br><br>YES! <b><u>AFTER</b></u> you've installed the MYbloXX for iOS profile, please install <b>isSupervisedBeGone</b> from the MYXXdev Repository to remove the message.<br><br>You can immediately uninstall the isSupervisedBeGone package after install - This will not make the warning message re-appear.<br><br><b>NOTE:</b> THIS REVERTS SUPERVISION SPOOFING ENTIRELY. If, for whatever reason, you remove the MYbloXX for iOS profile, you will need to reinstall the <b>MYbloXX for iOS</b> package to re-spoof and reinstall the profile.<br><br><i>I recommend keeping a spoofed status so you can remove/re-install the MYbloXX for iOS profile with ease but this package is available for those that wish to remove it.</i>
+                        <b>Can I remove the supervised message in Settings?</u></b><br><br>YES! <b><u>AFTER</b></u> you've installed the MYbloXX for iOS profile, you can use the <b>Disable Spoofing (Remove Message)</b> button in MYbloXX for iOS Settings to remove this message.<br><br><b>NOTE:</b> THIS REVERTS SUPERVISION SPOOFING ENTIRELY. If for whatever reason you remove the MYbloXX for iOS profile, you will need to use the <b>Enable Supervision Spoofing</b> option prior to reinstalling the profile.
 <br><br><br><br>
                         <b>Does this block ads systemwide or just Safari?</u></b><br><br><b>SYSTEMWIDE!</b> MYbloXX for iOS blocks ads, revokes, trackers, miners and more in all browsers, games, tweaks and apps that use external/dedicated ad servers!
                 <br><br><br><br>
@@ -167,8 +167,6 @@ This is a restriction set in place by Apple on a system level due to the nature 
         <b>How do I get the updates?</u></b><br><br>No enduser interaction is required! Your device will automatically call out and receive the latest PAC rules from the MYXXdev GitHub repository. This will only occur when you use something that requires an active internet connection so there's no fear of overnight/standby battery drain. Sit back, relax and enjoy up to the minute protection!
 <br><br><br><br>
         <b>Will I have to update anything in Cydia?</u></b><br><br>This package will rarely receive updates... Only if features are added/changed that require a full package update. Everything else is handled by the PAC automatically.
-<br><br><br><br>
-        <b>Why does the MYbloXX app crash on launch/stay on a black screen?</u></b><br><br>If the MYbloXX app sits at a black screen after launch, it's likely you have OpenURLPrompt (or similar) installed that's blocking the MYbloXX app from redirecting to/opening Safari. This is required in order to install a profile (an Apple set restriction). If the app crashes to the SpringBoard immediately upon launch, you may be using an older version of iOS that isn't officially supported (but does work). The app is basically a shortcut to <a href="https://myxxfm.com/MYbloXX">THIS PAGE.</a> You can use this link to continue installation and file reports.
 <br><br><br><br>
 <b>Does this block YouTube ads?</u></b><br><br><b>NO!</b> Some apps/services self-host their ads... YouTube being one of those services. This requires patching out the ads in the app directly with a separate tweak. Why? The ads are hosted on the same servers as the content itself - Blocking the ad-server would block the service entirely... Very smart on their behalf but annoying for us!<br><br><u><i>Services that use this ad-hosting technique:</u><br>
 <br>- Facebook/Messenger
@@ -197,11 +195,38 @@ This is a restriction set in place by Apple on a system level due to the nature 
 <br><br><br><br>
 <b>What is MYXX FM?</u></b><br><br>MYXX FM is another of my projects that I own/operate... I included MYXX FM branding simply for exposure and for those that enjoy music that wish to support another of my hobbies... Again, commercial/ad free so non-monetized but it's something I enjoy doing.
 <br><p></p><hr>
-<p><b><center>Version:</center></b><center>1.101220</center></p>
+<p><b><center>Version:</center></b><center>1.121820</center></p>
 <hr>
 <p><b><center>Support Development:</center></b><center>PayPal - <a href="https://paypal.me/MYXXfm">MYXXdev@MYXXfm.com</a></center></p><hr>
 <p><b><center>Bugs:</center></b><center>iOS 14: 99% functional - Pending TabBlocker update.
-<p></p><hr></center></p><p><b><center>Package Changelog:</center></b><center>Initial Release</center></p>
+    <p></p><hr></center></p><p><b><center>Package Changelog:</center></b><center><br><u><b>1.121820</b></u>
+    <br>
+        <br>
+        Ad/Issue reporting has been moved to the Settings bundle.
+        <br>
+        <br>
+        Enable/Disable options added.
+        <br>
+        <br>
+        isSupervisedBeGone has been replaced with on-the-fly buttons within the Settings bundle. You can spoof/remove "supervision" / "the message" with ease.
+        <br>
+        <br>
+        ldrestart button has been added to the Settings bundle for quick access.
+        <br>
+        <br>
+        MYbloXX Legacy profile added (for iOS 12 and BELOW only).
+        <br>
+        <br>
+        Overall visual overhall.
+        <br>
+        <br>
+        TabBlocker settings have been moved into their own category within the Settings bundle.
+        <br>
+        <br>
+        <br>
+        <u><b>1.101220</b></u>
+        <br>
+        Initial Release</center></p>
 
 <hr>
 <p></p><center>MYbloXX for iOS | <a href="https://t.me/MYXXdev">MYXXdev</a><br><br><i>Powered by <a href="https://myxxfm.com">MYXX FM</a><br>#1 for Spanglish Hits!</center></i></p>
