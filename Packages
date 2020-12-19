@@ -3,13 +3,13 @@ Version: 1.121820
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Pre-Depends: dpkg
-Depends: mobilesubstrate, ws.hbang.common
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
 Filename: ./debs/net.myxxdev.mybloxx_1.121820_iphoneos-arm.deb
-Size: 122560
-MD5sum: 5ddc18c795af569c0568df86f6cbd6f5
-SHA1: 72b5fc16a38545737bdbb4e76637126e6808f3c7
-SHA256: 4c81297516b5f16b3e9974859d3e981c6976e13a3df57e72cbb9b3c8af933fd5
+Size: 122568
+MD5sum: 170f44ea899f5aaf06b9f67134d75e77
+SHA1: bee092c7d32182f246c7f0bf963bf6ac66762f80
+SHA256: e58c0935bdd1a633e2df4448486f58a5ae738b7b805338e72242a03c584be8e5
 Section: Networking
 Description: The first crowd-sourced auto-updating "xBlocker" for iOS, where safety and security is top priority!
 Author: MYXXdev
