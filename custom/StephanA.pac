@@ -1,4 +1,4 @@
-// Last Updated: 01/11/21 - 21:55 CST
+// Last Updated: 01/12/21 - 00:32 CST
 //
 // ┏━┓┏━┳┓╋╋┏┳┓╋┏┓╋╋╋┏━┓┏━┳━┓┏━┓
 // ┃┃┗┛┃┃┗┓┏┛┃┃╋┃┃╋╋╋┗┓┗┛┏┻┓┗┛┏┛
@@ -6,7 +6,7 @@
 // ┃┃┃┃┃┃┗┓┏┛┃┏┓┃┃┃┏┓┃┏┛┗┓╋┏┛┗┓
 // ┃┃┃┃┃┃╋┃┃╋┃┗┛┃┗┫┗┛┣┛┏┓┗┳┛┏┓┗┓
 // ┗┛┗┛┗┛╋┗┛╋┗━━┻━┻━━┻━┛┗━┻━┛┗━┛
-// (Legacy) for iOS by MYXXdev
+// for iOS by MYXXdev
 //
 // Support Development: 
 // PayPal - https://paypal.me/MYXXfm
