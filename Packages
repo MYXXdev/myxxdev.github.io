@@ -1,3 +1,23 @@
+Package: com.sinfool.youtopia
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: sinfool
+Installed-Size: 152
+Depends: mobilesubstrate
+Filename: ./debs/com.sinfool.youtopia_0.0.2_iphoneos-arm.deb
+Size: 5700
+MD5sum: 797781f4514e5e4fe7ac5a5d82a5dc02
+SHA1: 41910c137d73e2d0f119c57efe7e278eebddefa5
+SHA256: 27cb81ef765e17da03d3429c769f27b122414f8d3bd801f72518471ee33ac735
+Section: Tweaks
+Description: YouTopia by sinfool | The perfect YouTube experience!
+ - No Home Feed Ads
+ - No Video Ads
+ - Enable Background Playback
+ Officially hosted by MYXXdev
+Author: sinfool
+Name: YouTopia
+
 Package: net.myxxdev.mybloxx
 Version: 1.121820
 Architecture: iphoneos-arm
