@@ -19,7 +19,7 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.013021
+Version: 2.013121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 1108
@@ -27,11 +27,11 @@ Pre-Depends: dpkg
 Depends: mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
 Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.013021_iphoneos-arm.deb
-Size: 147878
-MD5sum: 31c3a1007d2823235559b0f0a4171af4
-SHA1: 7cd6f4c71e1f858f14d4571fc215abd6781d6b0f
-SHA256: e1fb3681342f534ab78ffb99ccfafa9f9ebb57da5825a95107318bfde22fd88f
+Filename: ./debs/net.myxxdev.mybloxx_2.013121_iphoneos-arm.deb
+Size: 146798
+MD5sum: f37c69a2fc6f3f0d2618e37f6565a925
+SHA1: f7941532735cf626d9a7c50e913483ce6a16ed91
+SHA256: e7ac6827bec83a2370f2e71bfafb8838736678474ca9b8ac3d9e763ea667f910
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
