@@ -28,10 +28,10 @@ Depends: mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
 Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
 Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
-Size: 150568
-MD5sum: 23ca963a95ccf83b942cd3c435e291cc
-SHA1: eabea8b079781f09221698578595a3db279f0e02
-SHA256: 490e3a5755099d285ec46df1a89da69cded740afb2fa92a36e8d3a398da262bd
+Size: 150580
+MD5sum: 525e3089651765622671e3bf42e8af4d
+SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
+SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
