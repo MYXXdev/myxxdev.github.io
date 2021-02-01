@@ -29,12 +29,12 @@ body {
                                         <br><br><center><center><img src="https://myxxdev.github.io/images/r-MYbloXX.png"></center><br>
                                             <p style="font-size:14px"><center>A crowdsourced <b>AUTO-UPDATING</b> "xBlocker" for iOS!<br>• ADS | REVOKES | TRACKERS | MINERS & MORE •</center></p>
           <hr>                              
-                                            <p style="font-size:14px"><center><B>PLEASE GO TO SETTINGS APP<br></b><i>(Settings - MYbloXX for iOS)</i></b><b><br><u>AFTER REBOOT</u> TO CONTINUE<br>PROFILE INSTALLATION PROCESS!</b>
+                                            <p style="font-size:14px"><center><B>PLEASE GO TO SETTINGS APP<br></b><i>(Settings - MYbloXX for iOS)</i></b><b><br><u>AFTER RESPRING</u> TO CONTINUE<br>PROFILE INSTALLATION PROCESS!</b>
                                                 </p><hr>
-                                                <p><i><b>"<u>MUST BE SUPERVISED</u>"</i></b> ERROR?<br>OPEN <b>SETTINGS - MYBLOXX FOR IOS:</b><br>TAP <b>SOFT REBOOT</b></u> AND TRY AGAIN!</b><p></p>
+                                                <p><i><b>"<u>MUST BE SUPERVISED</u>"</i></b> ERROR?<br><br>OPEN <b>SETTINGS - MYBLOXX FOR IOS:</b><br>TAP <b>SOFT REBOOT</b></u> AND TRY AGAIN!</b><p></p>
                                                 <hr>
-                                                <p><a href="https://t.me/MYXXdevSupport">Official Telegram Support Group</a><br><i>See below for FAQ!</i><p><hr>
-                                                <p></center></center>After many months of closed beta testing, MYbloXX for iOS is now officially available to the general public!<br><br>I don't see it happening but if I get bamboozled with reports for the first few days as new users join the family, I kindly ask for your patience in advance. I will respond to your report as soon as I possibly can. Thanks!<br><br><b><i>What makes MYbloXX for iOS better than the alternatives?</b></i>
+                                                <p><a href="https://t.me/MYXXdevSupport">Official Telegram Support Group</a><br><br><a href="https://myxxdev.github.io/depic/MYbloXXforiOS/FAQ.html">FAQ | User Guide</a><br><br><a href="https://myxxdev.github.io/depic/MYbloXXforiOS/Changelog.html">Changelog</a><p><hr>
+                                                <p></center></center>What makes MYbloXX for iOS better than the alternatives?</b></i>
                                     <br><BR>
     - AUTO-UPDATING<br>- BETTER BATTERY LIFE<br>- FASTER BROWSING<br>- INTEGRATED POP-UP/REDIRECT BLOCKER<br>- NO FILESYSTEM MODIFICATIONS</p>
                                         <hr>
@@ -153,82 +153,11 @@ This is a restriction set in place by Apple on a system level due to the nature 
                                         A special thanks to Charlie Todd, Droom0ne, John Coates, LakesideMiners, Usman, yoyo and all beta testers for their contributions!
 </b></p>
 <HR>
-<p><b><center><u>FAQ:</u></center></b><br><b>#1 - Why does my device say "This iDevice is supervised and managed"?</u></b><br><br>At no point is your device actually TRULY supervised. The message in Settings can cause alarm (and so it should under legitimate circumstances) but MYbloXX for iOS doesn’t actually supervise (or “manage”) your device.<br><br>MYbloXX for iOS uses a hidden stock Apple feature (usually only available to devices that are supervised under Mobile Device Management (MDM)) in order to block ads, revokes, miners etc. Under normal circumstances, this would require a person to manually supervise their device with Apple Configurator 2. This not only requires a Mac but also requires restoring your device.<br><br>The beauty of being jailbroken, we can SPOOF this setting, fooling iOS into BELIEVING it’s in a “supervised” state. Obtaining “spoofed supervised” status was simple: Changing one key string (“isSupervised”) in CloudConfigurationDetails.plist from “false” to “true”.<br><br>You can try this for yourself <a href="filza:///var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/CloudConfigurationDetails.plist">HERE</a> (Opens Filza).<br><br>You’ll see that the “warning” message is now in Settings.<br><br>Again, at no point is your device TRULY supervised... This would require YOU physically restoring your device in your possession. MYbloXX simply tricks iOS into thinking it is to allow the installation (this is also why MYbloXX for iOS is available for stock users as they have the option to legitimately supervise their device to use it).
-                        <br><br><br><br>
-    
-                        <b>#2 - Can I remove the supervised message in Settings?</u></b><br><br>YES! <b><u>AFTER</b></u> you've installed the MYbloXX for iOS profile, you can use the <b>Disable Spoofing (Remove Message)</b> button in MYbloXX for iOS Settings to remove this message.<br><br><b>NOTE:</b> THIS REVERTS SUPERVISION SPOOFING ENTIRELY. If for whatever reason you remove the MYbloXX for iOS profile, you will need to use the <b>Enable Supervision Spoofing</b> option prior to reinstalling the profile.
-<br><br><br><br>
-                        <b>#3 - Does this block ads systemwide or just Safari?</u></b><br><br><b>SYSTEMWIDE!</b> MYbloXX for iOS blocks ads, revokes, trackers, miners and more in all browsers, games, tweaks and apps that use external/dedicated ad servers!
-                <br><br><br><br>
-                                        <b>#4 - Does MYbloXX for iOS work in stock mode?</u></b><br><br><b>YES!</b> MYbloXX for iOS xBlocking technology works in both jailbroken AND stock mode!
-<br><br><br><br>
-        <b>#5 - How often is MYbloXX for iOS updated?</u></b><br><br>MYbloXX for iOS is updated by hand by yours truly as reports come in/as I find ad-servers... Updates are typically more than once per day!
-<br><br><br><br>
-        <b>#6 - How do I get the updates?</u></b><br><br>No enduser interaction is required! Your device will automatically call out and receive the latest PAC rules from the MYXXdev GitHub repository. This will only occur when you use something that requires an active internet connection so there's no fear of overnight/standby battery drain. Sit back, relax and enjoy up to the minute protection!
-<br><br><br><br>
-        <b>#7 - Will I have to update anything in Cydia?</u></b><br><br>This package will rarely receive updates... Only if features are added/changed that require a full package update. Everything else is handled by the PAC automatically.
-<br><br><br><br>
-<b>#8 - Does this block YouTube ads?</u></b><br><br><b>NO!</b> Some apps/services self-host their ads... YouTube being one of those services. This requires patching out the ads in the app directly with a separate tweak. Why? The ads are hosted on the same servers as the content itself - Blocking the ad-server would block the service entirely... Very smart on their behalf but annoying for us!<br><br><u><i>Services that use this ad-hosting technique:</u><br>
-<br>- Facebook/Messenger
-<br>- Instagram
-<br>- Reddit
-<br>- Snapchat
-<br>- Twitch
-<br>- Twitter
-    <br>- YouTube</i>
-<br><br>I recommend using <a href="https://haoict.github.io/cydia/">Haoict's</a> family of ad-blocking patches/tweaks alongside MYbloXX for iOS for these particular apps.
-<br><br>
-<b>NOTE:</b><br><br><u>Snapchat</u> - <i>They have recently started moving their ads from snapads.com to the same servers that host stories and Snaps. MYbloXX for iOS will still block the majority of ads until they fully transition but it's possible you'll see a small percentage of them. This requires a patch to remove them completely but it's unlikely that will happen due to their stance on tweaks injecting into their app.</i>
-<br><br><u>YouTube</u> - <i>There are multiple tweaks available to block YouTube ads. I recommend <a href="https://www.reddit.com/r/jailbreak/comments/jhe0g7/free_release_youtopia_the_perfect_youtube/">YouTopia</a> by sinfool... Lightweight and FREE.</i>
-<br><br><br><br>
-<b>#9 - Does this block Cercube/Watusi banner ads?</u></b><br><br><b>NO!</b> MYbloXX for iOS blocks ads that are hosted on dedicated/external servers. Removing these types of hard-coded self-promotional banners is considered piracy and will NOT be removed by MYbloXX for iOS. Some tweaks use this method to encourage purchasing a license... Please support the developers!
-<br><br><br><br>
-<b>#10 - How do I fully remove MYbloXX for iOS?</u></b><br><br>You can remove this profile/package at any time using your choice of package manager (Cydia etc.) as well as/or navigating to Settings - General - Profiles & Device Management - MYbloXX for iOS.
-<br><br><br><br>
-<b>#11 - MYbloXX for iOS blocks app revokes?</u></b><br><br><b>YES!</b> MYbloXX for iOS blocks apps revokes meaning even if a certificate is revoked for an app you have downloaded from a third-party store, it will continue to open and remain VERIFIED even in stock mode!<br><br>NOTE: This will only work if the CERTIFICATE OWNER revokes the certificate. If this happens, it will continue to open and last until the expiration date of the certificate. HOWEVER, If APPLE remove the developer account attached to the certificate entirely, the application will unverify and crash on launch.
-<br><br><br><br>
-<b>#12 - Can I uninstall the MYbloXX for iOS package after installing the profile?</u></b><br><br>You'll lose the integrated pop-up/redirect blocker (TabBlocker) that's included in the package.
-<br><br><br><br>
-<b>#13 - How can I support your work?</u></b><br><br>Donations are not required but definitely appreciated. It takes a lot of work to ensure MYbloXX for iOS is efficient and up to date. Although everything updates for you as an enduser automatically, it's still very much so manual research and data entry on my end. If you wish to donate to support continued development for years to come, a PayPal donation page is setup <a href="https://paypal.me/MYXXfm">HERE.</a> Thank you in advance for your generosity. MYbloXX for iOS relies soley on donations since it cannot be monetized by ads for obvious reasons ;)
-<br><br><br><br>
-<b>#14 - What is MYXX FM?</u></b><br><br>MYXX FM is another of my projects that I own/operate... I included MYXX FM branding simply for exposure and for those that enjoy music that wish to support another of my hobbies... Again, commercial/ad free so non-monetized but it's something I enjoy doing.
-<br><p></p><hr>
 <p><b><center>Version:</center></b><center>1.121820</center></p>
 <hr>
 <p><b><center>Support Development:</center></b><center>PayPal - <a href="https://paypal.me/MYXXfm">MYXXdev@MYXXfm.com</a></center></p><hr>
 <p><b><center>Bugs:</center></b><center>iOS 14: 99% functional - Pending TabBlocker update.
-    <p></p><hr></center></p><p><b><center>Package Changelog:</center></b><center><br><u><b>1.121820</b></u></center>
-    <br>
-        <br>
-        	• Ad/Issue reporting has been moved to the Settings bundle.
-        <br>
-        <br>
-        	• Enable/Disable options added.
-        <br>
-        <br>
-        	• isSupervisedBeGone has been replaced with on-the-fly buttons within the Settings bundle. You can spoof/remove "supervision" / "the message" with ease.
-        <br>
-        <br>
-        	• ldrestart button has been added to the Settings bundle for quick access.
-        <br>
-        <br>
-        	• MYbloXX Legacy profile added (for iOS 12 and BELOW only).
-        <br>
-        <br>
-        	• Overall visual overhall.
-        <br>
-        <br>
-        	• TabBlocker settings have been moved into their own category within the Settings bundle.
-        <br>
-        <br>
-        <br>
-        <center><u><b>1.101220</b></u>
-        <br>
-        <br>
-        Initial Release</center></p>
-
-<hr>
-<p></p><center>MYbloXX for iOS | <a href="https://t.me/MYXXdev">MYXXdev</a><br><br><i>Powered by <a href="https://myxxfm.com">MYXX FM</a><br>#1 for Spanglish Hits!</center></i></p>
+    <p></p><center>MYbloXX for iOS | <a href="https://t.me/MYXXdev">MYXXdev</a><br><br><i>Powered by <a href="https://myxxfm.com">MYXX FM</a><br>#1 for Spanglish Hits!</center></i></p>
                                 
 									</div>
 </div>
