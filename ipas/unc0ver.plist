@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd …">
 <plist version="1.0">
 <dict>
 <key>items</key>
@@ -15,13 +16,13 @@
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
-<string>science.xnu.undecimus</string>
+<string>science.xnu.undecimus31158</string>
 <key>bundle-version</key>
-<string>6.0.0</string>
+<string>5.3.1</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>
-<string>unc0ver - MYXXdev</string>
+<string>unc0ver</string>
 </dict>
 </dict>
 </array>
