@@ -1,0 +1,310 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="//counter.websiteout.net/js/36/0/1988/0"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Install MYbloXX for iOS</title>
+  <style>
+    :root {
+      touch-action: pan-x pan-y;
+      height: 100%
+    }
+
+    body {
+      overflow: hidden;
+      background-image: url(https://myxxdev.github.io/images/MYXXbg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: sans-serif;
+      margin: 0;
+
+    }
+
+    .topbar {
+      width: 100%;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: saturate(180%) blur(100px);
+      -webkit-backdrop-filter: saturate(180%) blur(100px);
+      color: white;
+      padding: 20px 0px;
+      text-align: center;
+      top: 0;
+      font-weight: bold;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .bottombar {
+      width: 100%;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: saturate(180%) blur(100px);
+      -webkit-backdrop-filter: saturate(180%) blur(100px);
+      color: white;
+      bottom: 0;
+      padding: 20px 0px;
+    }
+
+    .slider {
+      background-color: rgba(17, 17, 17, 0);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      padding: 15px 0px;
+      border-radius: 10px;
+      color: white;
+      width: 90%;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      margin: 0;
+    }
+
+    .arrow {
+      font-size: 20px;
+      left: 34px;
+      color: white;
+      position: absolute;
+      opacity: 0.3;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .sliderbox {
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: saturate(180%) blur(4px);
+      -webkit-backdrop-filter: saturate(180%) blur(4px);
+      border-radius: 10px;
+      position: absolute;
+      -webkit-tap-highlight-color: transparent;
+      padding: 10px 0px;
+      width: 80px;
+      height: 30px;
+      margin-top: -15px;
+      z-index: 999 !important;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+
+    span {
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      background: linear-gradient(to right, #c2c2c2 0, white 10%, #c2c2c2 20%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s infinite linear;
+      animation-fill-mode: forwards;
+      -webkit-text-size-adjust: none;
+      text-decoration: none: white-space: nowrap;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      opacity: 0.5;
+    }
+
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
+
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0;
+      }
+
+      60% {
+        background-position: 180px;
+      }
+
+      100% {
+        background-position: 180px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      display: none;
+    }
+
+    .modal-header {
+      padding: 2px 16px;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .modal-body {
+      padding: 2px 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">Slide to install MYbloXX..</div>
+  <div class="bottombar" id="hide">
+    <center>
+      <div class="slider" id="well">
+        <div class="sliderbox" id="slider">
+          <div class="arrow">></div>
+        </div> <span>&nbsp;</span>
+      </div>
+    </center>
+
+  </div>
+  </div>
+
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Installing MYbloXX...</h1>
+      </div>
+      <div class="modal-body">
+          <p class="t1" id="tt1"><b>Gathering files:</b></p>
+          <p class="t2" id="tt2">When prompted, click <b><u>ALLOW</b></u> and follow prompts...</p>
+          <p class="t3" id="tt3"><b>Please wait...</b></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+<script>
+  var modal = document.getElementById("myModal");
+
+  var t1 = document.getElementById("tt1");
+  var t2 = document.getElementById("tt2");
+  var t3 = document.getElementById("tt3");
+  var hid = document.getElementById("arw");
+
+  var span = document.getElementsByClassName("close")[0];
+
+
+  function text() {
+    setTimeout(function () {
+      t1.style.display = "block";
+    }, 3000);
+    setTimeout(function () {
+      t2.style.display = "block";
+    }, 6000);
+    setTimeout(function () {
+      t3.style.display = "block";
+    }, 9000);      
+    setTimeout(function () {
+      window.location.href = "https://myxxdev.github.io/MYbloXX/MYbloXXnoOTA.mobileconfig";
+    }, 12000);
+  }
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  $(function () {
+
+    $("#slider").draggable({
+      axis: 'x',
+      containment: 'parent',
+      drag: function (event, ui) {
+        if (ui.position.left > 200) {
+          modal.style.display = "block";
+          $("#well").fadeOut();
+          text();
+        } else {
+
+        }
+      },
+      stop: function (event, ui) {
+        if (ui.position.left < 200) {
+          $(this).animate({
+            left: 0
+          })
+        }
+      }
+    });
+
+    $('#slider')[0].addEventListener('touchmove', function (event) {
+      event.preventDefault();
+      var el = event.target;
+      var touch = event.touches[0];
+      curX = touch.pageX - this.offsetLeft - 73;
+      if (curX <= 0) return;
+      if (curX > 100) {
+        modal.style.display = "block";
+        $("#well").fadeOut();
+        text();
+      }
+      el.style.webkitTransform = 'translateX(' + curX + 'px)';
+    }, false);
+
+    $('#slider')[0].addEventListener('touchend', function (event) {
+      this.style.webkitTransition = '-webkit-transform 0.3s ease-in';
+      this.addEventListener('webkitTransitionEnd', function (event) {
+        this.style.webkitTransition = 'none';
+      }, false);
+      this.style.webkitTransform = 'translateX(0px)';
+    }, false);
+
+  });
+</script>
+
+</html>
