@@ -63,25 +63,25 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.020121
+Version: 2.032121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1108
-Pre-Depends: dpkg
-Depends: mobilesubstrate, preferenceloader, ws.hbang.common
+Installed-Size: 996
+Pre-Depends: dpkg, sudo
+Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
-Size: 150580
-MD5sum: 525e3089651765622671e3bf42e8af4d
-SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
-SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.032121_iphoneos-arm.deb
+Size: 163484
+MD5sum: 31ee4ac3adf9ee5594d2c8db07c1405a
+SHA1: deaacdc76724e5e5bcb25cfce67792d62582097b
+SHA256: 059c80007297690a954946e20ee4f5744f8ca7aa0cef5a6e601ca97463c43106
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS
-Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: sudo
 Version: 1.8.27-4
