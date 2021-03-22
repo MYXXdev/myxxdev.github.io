@@ -68,14 +68,14 @@ Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 996
 Pre-Depends: dpkg
-Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, sudo
+Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, sudo, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
 Filename: ./debs/net.myxxdev.mybloxx_2.032121_iphoneos-arm.deb
-Size: 163502
-MD5sum: 68c85f0c64a391896d5467db2e65140c
-SHA1: 59096a53817926213dfb4be3d4085e859612df51
-SHA256: 6e136d868eae9b16c219399c7a6a0aa2fabd3735e9a7521dcdef4a858e2bc4cb
+Size: 163484
+MD5sum: 18179dc0b353f8ef7f765737d1c342c0
+SHA1: e66861fd61065406ca76ed3a879dca15b1f64963
+SHA256: 6d8ea9825287632b4e11d4b3d9b9c77762d926b7d27083aebaeef3676230ade4
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
