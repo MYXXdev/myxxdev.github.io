@@ -72,15 +72,15 @@ Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferen
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
 Filename: ./debs/net.myxxdev.mybloxx_2.032121_iphoneos-arm.deb
-Size: 163484
-MD5sum: 18179dc0b353f8ef7f765737d1c342c0
-SHA1: e66861fd61065406ca76ed3a879dca15b1f64963
-SHA256: 6d8ea9825287632b4e11d4b3d9b9c77762d926b7d27083aebaeef3676230ade4
+Size: 163502
+MD5sum: a51ea51df47fa9fa27619658767dcc8a
+SHA1: 07f989ed0704ae7e7f983673842f57940cedf3bd
+SHA256: 1443e7c6c07dfe80f034ca6504cdd53d7fd1bd2a0297274b970a85e2227b9262
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS
+Name: TEST - DO NOT INSTALL
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: ws.hbang.common
