@@ -83,22 +83,6 @@ Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
-Package: sudo
-Version: 1.8.27-4
-Architecture: iphoneos-arm
-Maintainer: Sam Bingner <maintainer@sbdhi.com>
-Installed-Size: 2736
-Pre-Depends: dpkg (>= 1.14.25-8)
-Filename: ./debs/sudo_1.8.27-4_iphoneos-arm.deb
-Size: 276408
-MD5sum: 26f641ea169d1d2f1bb62f0e7dcb0475
-SHA1: 8e1a5700ed7ebd9c9877790ecf87dc4ab8f0fc4d
-SHA256: 48d417dc191bfae5db9c888a0c2509e94e5fbe1ec2a18662ba7daa0e4e6eae1b
-Section: Administration
-Priority: standard
-Description: temporarily assume root priviledges
-Name: Sudo
-
 Package: ws.hbang.common
 Version: 1.16
 Architecture: iphoneos-arm
