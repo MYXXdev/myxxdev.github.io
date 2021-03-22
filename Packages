@@ -63,25 +63,25 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.032221
+Version: 2.020121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 996
+Installed-Size: 1108
 Pre-Depends: dpkg
-Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, sudo, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.032221_iphoneos-arm.deb
-Size: 197426
-MD5sum: c6cbbab5f54dccb3d7f5cfab14836ddf
-SHA1: 83eb3d343e8a81937145771b919413050d160697
-SHA256: 394a1822902de472cc1ae3199edc8ef5cff0e67041b32971df58307ab94b2a6d
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
+Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
+Size: 150580
+MD5sum: 525e3089651765622671e3bf42e8af4d
+SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
+SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: ws.hbang.common
 Version: 1.16
