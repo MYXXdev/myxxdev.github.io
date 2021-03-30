@@ -19,61 +19,23 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.033021-13
+Version: 2.020121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1316
-Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
-Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.033021-13_iphoneos-arm.deb
-Size: 205986
-MD5sum: 40442f94347e4486b096db5a3373576a
-SHA1: ea14a3e1088295f4db3cc94c90ce40281286dc46
-SHA256: e5f51d0656c8e9066cf8960eb1c2840bd1ecef90dadd8ccff5f5af9b79fb652f
+Installed-Size: 1108
+Pre-Depends: dpkg
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
+Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
+Size: 150580
+MD5sum: 525e3089651765622671e3bf42e8af4d
+SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
+SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: TEST - DO NOT INSTALL
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-
-Package: net.myxxdev.mybloxx11
-Version: 2.033021-11
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 1188
-Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
-Depends: com.opa334.ccsupport, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx11_2.033021-11_iphoneos-arm.deb
-Size: 166150
-MD5sum: d32f5bc17751966ff7b1f72ea3607835
-SHA1: 5c59a9d08cde1751cca9197d8e9f98b2ba48cc3e
-SHA256: 23ca597bec01df950b70e29338ebaf3fcbc96a75a9ac4e2b7d316a4cc30d5351
-Section: Networking
-Description: The most advanced iOS xBlocker!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: TEST - DO NOT INSTALL
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-
-Package: net.myxxdev.mybloxxhipfix
-Version: 2.033021
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 1
-Pre-Depends: dpkg, mobilesubstrate
-Depends: net.myxxdev.mybloxx
-Filename: ./debs/net.myxxdev.mybloxxhipfix_2.033021_iphoneos-arm.deb
-Size: 1086
-MD5sum: 7e4e42282b670399508e754cb8cfb951
-SHA1: 9629bb064c8638627eec59142616ed9248ba6cea
-SHA256: 372a8ef688d05d1aeecb4535ccf3a848163b613c5935d27fa8db85dd2dee0751
-Section: Networking
-Description: A utility to clean up an old installation of MYbloXX for iOS that may have caused Half-Installed Package (HIP) / Killed: 9 errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.032921 to a later package (v2.033031 +). This will stop that from happening by removing the old postrm script prior to installation, ensuring it's unable to run.
-Author: MYXXdev
-Name: TEST - DO NOT INSTALL
+Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS
+Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
 
