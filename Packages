@@ -19,44 +19,23 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.032921-13
+Version: 2.020121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1308
+Installed-Size: 1108
 Pre-Depends: dpkg
-Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.032921-13_iphoneos-arm.deb
-Size: 206546
-MD5sum: f4d88c23e6e2bb637d44d9ce2e6f056c
-SHA1: bdf0a68834108ac03efc91cf910ca4d395c6c300
-SHA256: 85d9bf9a9bf62ab3e886805b235a7205b2c737c5e9fa9e71e7eeb04707ed6702
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
+Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
+Size: 150580
+MD5sum: 525e3089651765622671e3bf42e8af4d
+SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
+SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS (iOS 13+)
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-
-Package: net.myxxdev.mybloxx11
-Version: 2.032921-11
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 1180
-Pre-Depends: dpkg
-Depends: com.opa334.ccsupport, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx11_2.032921-11_iphoneos-arm.deb
-Size: 166700
-MD5sum: 72e5f580b9b5ce783bf8c7d0f5200eb8
-SHA1: 20e734de3fd38d16d607e1d0da5ee22cc02c2062
-SHA256: 1c8d074711d728887c1101eacbfbe60d95a7514ec30f898695f813712c7db870
-Section: Networking
-Description: The most advanced iOS xBlocker!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS (iOS 11 & 12)
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS
+Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
 
