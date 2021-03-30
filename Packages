@@ -19,23 +19,44 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.020121
+Version: 2.033021-13
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1108
-Pre-Depends: dpkg
-Depends: mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.ps.letmeblock, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
-Replaces: com.droomone.tabblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.020121_iphoneos-arm.deb
-Size: 150580
-MD5sum: 525e3089651765622671e3bf42e8af4d
-SHA1: 8f2cebecda0572aef48a997d8d86e30c0edce695
-SHA256: caf39bdd101a1cf891c9407b4a2f5d8a32d690eb42b838a56cee3314321ae06e
+Installed-Size: 1316
+Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
+Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.033021-13_iphoneos-arm.deb
+Size: 206008
+MD5sum: 66b78b975079f49562280e3b8e0a8480
+SHA1: 462f34aca6f27bc7886666fb5675353ab4d68f7d
+SHA256: c4e80e20d9395d690c417df5ee845fded3caa395770011fdc844a1c2d2ccac09
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS
-Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Name: TEST - DO NOT INSTALL
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+
+Package: net.myxxdev.mybloxx11
+Version: 2.033021-11
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 1188
+Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
+Depends: com.opa334.ccsupport, mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx11_2.033021-11_iphoneos-arm.deb
+Size: 166166
+MD5sum: 9cde111fab011e14df28dad9ecf0ce0b
+SHA1: bb494a5ab126e414e74c52fb090dbe3583efd9b0
+SHA256: 51ca37fe0c436f45289a17bd5462ee37df733572421313a237029f1264676f8d
+Section: Networking
+Description: The most advanced iOS xBlocker!
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Name: TEST - DO NOT INSTALL
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
