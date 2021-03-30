@@ -65,12 +65,13 @@ Version: 2.033021
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 1
-Pre-Depends: dpkg, mobilesubstrate
+Pre-Depends: dpkg
+Depends: mobilesubstrate
 Filename: ./debs/net.myxxdev.mybloxxhipfix_2.033021_iphoneos-arm.deb
-Size: 1084
-MD5sum: a0d15e08c6d2802eec15c54a77c4032c
-SHA1: 4cf076523d424b0642b466d4b9e65222a051e1c8
-SHA256: 58414f94e25140d9eb7b94dedf083c877f28d2e0802ce96e5813e9a269b79c81
+Size: 1082
+MD5sum: f6f5ab25453e1fd6176eb4a59d9623f9
+SHA1: 92c3d80f5c550d9be6ecfcbd8e432e2c9b8f7b64
+SHA256: f157a2285de8ab3d9cc3b6f179961f60a98b25dba89094d1269a509890d1f10b
 Section: Networking
 Description: A utility installed alongside the core MYbloXX packages to ensure it removes any prior postrm scripts that were installed with older versions - These may have caused Half-Installed Package (HIP) / Killed: 9 errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.032921 to a later package (v2.033031 +). This will prevent that from happening.
 Author: MYXXdev
