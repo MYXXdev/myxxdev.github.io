@@ -60,3 +60,20 @@ Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: TEST - DO NOT INSTALL
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
+Package: net.myxxdev.mybloxxhipfix
+Version: 2.033021
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 1
+Pre-Depends: dpkg, mobilesubstrate
+Depends: net.myxxdev.mybloxx
+Filename: ./debs/net.myxxdev.mybloxxhipfix_2.033021_iphoneos-arm.deb
+Size: 1086
+MD5sum: 7e4e42282b670399508e754cb8cfb951
+SHA1: 9629bb064c8638627eec59142616ed9248ba6cea
+SHA256: 372a8ef688d05d1aeecb4535ccf3a848163b613c5935d27fa8db85dd2dee0751
+Section: Networking
+Description: A utility to clean up an old installation of MYbloXX for iOS that may have caused Half-Installed Package (HIP) / Killed: 9 errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.032921 to a later package (v2.033031 +). This will stop that from happening by removing the old postrm script prior to installation, ensuring it's unable to run.
+Author: MYXXdev
+Name: TEST - DO NOT INSTALL
+
