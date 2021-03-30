@@ -68,12 +68,12 @@ Installed-Size: 1316
 Pre-Depends: dpkg, mobilesubstrate
 Depends: net.myxxdev.mybloxx
 Filename: ./debs/net.myxxdev.test2_2.033021_iphoneos-arm.deb
-Size: 1068
-MD5sum: db097f5561d4086d3cf9024bcd6d7a76
-SHA1: 16997a4f834132d6ad22208c1004d0a31660bba6
-SHA256: a7d6f28d1cadb0992cc631ef8eac70cd04190440e105d3d7011124a338668eaa
+Size: 1094
+MD5sum: 20e6b4176b8da8a658b4419e723680b7
+SHA1: 4c7016a659cf7c7ceeb2222d8b88556ff6eb8770
+SHA256: 5ea5e5527ff620e960c56059a8a9db1cce47c626690058463de06cb2c8f34273
 Section: Networking
-Description: A utility to clean up an old installation of MYbloXX for iOS that may cause Half-Installed package errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.032921 to the new package (v2.033031 +). This will stop that from happening by removing the old postrm script prior to installing to ensure it doesn't run.
+Description: A utility to clean up an old installation of MYbloXX for iOS that may cause Half-Installed package errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.032921 to the new package (v2.033031 +). This will stop that from happening by removing the old postrm script prior to installing to ensure it doesn't run. You may remove this package after installing/upgrading MYbloXX for iOS.
 Author: MYXXdev
 Name: TEST - DO NOT INSTALL
 
