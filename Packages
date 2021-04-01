@@ -60,7 +60,7 @@ Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS (11 & 12)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
-Package: net.myxxdev.mybloxxcleaner
+Package: net.myxxdev.mybloxxhipfix
 Version: 2.040121
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
@@ -68,11 +68,11 @@ Pre-Depends: dpkg
 Depends: mobilesubstrate
 Conflicts: net.myxxdev.mybloxxhipfix
 Replaces: net.myxxdev.mybloxxhipfix
-Filename: ./debs/net.myxxdev.mybloxxcleaner_2.040121_iphoneos-arm.deb
-Size: 1264
-MD5sum: 28aa331745f73782cf14cb99a95e8f77
-SHA1: 1975fcdfbc2003075e8982c31297ac00b32bffb0
-SHA256: 032bd8575c442c3fcf035490fa8bf8e1939bca2a840d3897494d1ad9d216aeff
+Filename: ./debs/net.myxxdev.mybloxxhipfix_2.040121_iphoneos-arm.deb
+Size: 1004
+MD5sum: beca46f8d5862d8a59508a1af01e8ea1
+SHA1: e3a3df5f7a9579be3a80c49e6085ab4261e7899f
+SHA256: 9b436d8f3e65d1c2d52e59c3ada7164282a7987229723886e686c7bc374e99d7
 Section: Networking
 Description: A utility installed alongside the core MYbloXX packages to clean old MYbloXX for iOS installation files (mainly postrm scripts) that were installed with older versions - These may have caused Half-Installed Package (HIP) / Killed: 9 errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.033021 to a later package (v2.040121 +). This will prevent that from happening.
 Author: MYXXdev
