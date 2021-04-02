@@ -19,19 +19,19 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.040121-13
+Version: 2.040221-13
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 1304
-Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
+Pre-Depends: dpkg
 Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx11
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx11, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.040121-13_iphoneos-arm.deb
-Size: 212550
-MD5sum: 690eb3dd93ca48ebd88f6af8b69f7033
-SHA1: e929dd2e5681613b02ee4b70ec56c3d5f5695a06
-SHA256: 7844712ef02851e093fd98c1e1a3c8ec9bccbc34f23be3420f31c536eef1ff27
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx11, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx11, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx_2.040221-13_iphoneos-arm.deb
+Size: 212538
+MD5sum: 8e316b65ca6c62f0a256a5b6d0d3ea73
+SHA1: aeffda0550579743ac164fb288f49736cff2f719
+SHA256: 874cf1b60eec504abd4ae02e6ba9b979ad416346f47b59b848388446678521ed
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
@@ -40,41 +40,23 @@ Name: MYbloXX for iOS (13+)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: net.myxxdev.mybloxx11
-Version: 2.040121-11
+Version: 2.040221-11
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 1172
-Pre-Depends: dpkg, net.myxxdev.mybloxxhipfix
+Pre-Depends: dpkg
 Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx11_2.040121-11_iphoneos-arm.deb
-Size: 178146
-MD5sum: 3d0b80cd76538abe3fe1239c9c936f82
-SHA1: c7854dd696a9b40efac7d6cf5f1ee2009bb9c22a
-SHA256: 812683392f06cfe0ea3358d9922408f1868056c56d50a0c1c01148aef59a7993
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx11_2.040221-11_iphoneos-arm.deb
+Size: 178126
+MD5sum: 0014d3f8e56b222a52dcddd60bc24c52
+SHA1: 57d392dd6aa6b6110e56047f256ab2622bf9f3c1
+SHA256: 5a0cdacf251a6b51831c9e170206e2a4a05e00d7830b1f9007a79a9a0e2f0b9e
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS (11 & 12)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-
-Package: net.myxxdev.mybloxxhipfix
-Version: 2.040121
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Pre-Depends: dpkg
-Depends: mobilesubstrate
-Conflicts: net.myxxdev.mybloxxhipfix
-Replaces: net.myxxdev.mybloxxhipfix
-Filename: ./debs/net.myxxdev.mybloxxhipfix_2.040121_iphoneos-arm.deb
-Size: 1004
-MD5sum: beca46f8d5862d8a59508a1af01e8ea1
-SHA1: e3a3df5f7a9579be3a80c49e6085ab4261e7899f
-SHA256: 9b436d8f3e65d1c2d52e59c3ada7164282a7987229723886e686c7bc374e99d7
-Section: Networking
-Description: A utility installed alongside the core MYbloXX packages to clean old MYbloXX for iOS installation files (mainly postrm scripts) that were installed with older versions - These may have caused Half-Installed Package (HIP) / Killed: 9 errors on unc0ver 6.x / Substitute 2.x when upgrading from < v2.033021 to a later package (v2.040121 +). This will prevent that from happening.
-Author: MYXXdev
-Name: MYbloXX Cleaner
 
