@@ -19,19 +19,19 @@ Author: sinfool
 Name: YouTopia
 
 Package: net.myxxdev.mybloxx
-Version: 2.040221-13
+Version: 2.040821-13
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1304
+Installed-Size: 1644
 Pre-Depends: dpkg
 Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx11, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx11, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_2.040221-13_iphoneos-arm.deb
-Size: 212562
-MD5sum: 175b1ecdedc60daaacc5c3f0de9ff55c
-SHA1: 597738e847817574037a1bce45c9b5b777454566
-SHA256: 06bb12ad267b84628321585830fde835be37de3c64dda8cc6ceb3a984076ff48
+Filename: ./debs/net.myxxdev.mybloxx_2.040821-13_iphoneos-arm.deb
+Size: 487700
+MD5sum: 754a593cbc3b1bff0f0c2258d210e842
+SHA1: fca54487983b73636ad53adc53e69e72859d0bd2
+SHA256: a7fe4414fb46ea0fc1058aae4033211501be51fadf880c62a91cb62a36b0e271
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
@@ -40,19 +40,19 @@ Name: MYbloXX for iOS (13+)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: net.myxxdev.mybloxx11
-Version: 2.040221-11
+Version: 2.040821-11
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 1172
+Installed-Size: 1512
 Pre-Depends: dpkg
 Depends: com.opa334.ccsupport, com.opa334.libundirect, mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx11_2.040221-11_iphoneos-arm.deb
-Size: 178134
-MD5sum: 8fe7508b3c044e456505a7423da8670e
-SHA1: bde0dd439741e3d22a5847d1ddb7bd40a435d85b
-SHA256: d94138e4cee7e2fa8c23c4683791fd21b5f745535cad7d35e518ec95f926ec59
+Filename: ./debs/net.myxxdev.mybloxx11_2.040821-11_iphoneos-arm.deb
+Size: 453308
+MD5sum: 7b64edddeab945cb0dc2ee1a907e8474
+SHA1: 79c151632c73ccf38950b1233546953bb7749c92
+SHA256: 35c1ee4b4f248337557062dc88db57409ab8b8ab80c8fdc523bbd865d1c4694f
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
