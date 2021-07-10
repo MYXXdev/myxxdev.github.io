@@ -87,10 +87,10 @@ Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=13.0
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Filename: ./debs/net.myxxdev.mybloxx13_3.071021-13-BFM_iphoneos-arm.deb
-Size: 379196
-MD5sum: 007863546bbee43390eca0f4fb2ba5c7
-SHA1: 33c0b5c6483024a355e0fb95b21bd8dca4b6eb04
-SHA256: 2f74ee73361604b91092f416b6885e951acc004f7764d5d4412339bd0435dc4d
+Size: 378906
+MD5sum: 0cca6808b9bfcbed089b5ee8516b2683
+SHA1: 5b9887184367a120039cd2bfb8eddf1a64786e25
+SHA256: 91ee9d98ac18eb12d397f5ffce9d11dd7e615b3711cd2361dda8fab1607fe21c
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
