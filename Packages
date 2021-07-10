@@ -35,27 +35,6 @@ Description: YouTopia by sinfool | The perfect YouTube experience!
 Author: sinfool
 Name: YouTopia
 
-Package: net.myxxdev.mybloxx
-Version: 3.071021-13-BFM
-Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 2232
-Pre-Depends: dpkg
-Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=13.0), mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx_3.071021-13-BFM_iphoneos-arm.deb
-Size: 379700
-MD5sum: 6de0bad11bf903a2972582601f604b92
-SHA1: ce45cefbf2e5dbce89475b9f009ddf0feb526e4b
-SHA256: 8e9fb44b7cb9f842316cbc216dc1ff79745ceeb85e2c550a56b66bc2a79311e3
-Section: Networking
-Description: The most advanced iOS xBlocker!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS (13+)
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-
 Package: net.myxxdev.mybloxx10
 Version: 3.071021-10-BFM
 Architecture: iphoneos-arm
@@ -96,6 +75,48 @@ Description: The most advanced iOS xBlocker!
 Author: MYXXdev
 Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS (11 & 12)
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+
+Package: net.myxxdev.mybloxx13
+Version: 3.071021-13-BFM
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 2232
+Pre-Depends: dpkg
+Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=13.0), mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx13_3.071021-13-BFM_iphoneos-arm.deb
+Size: 379196
+MD5sum: 007863546bbee43390eca0f4fb2ba5c7
+SHA1: 33c0b5c6483024a355e0fb95b21bd8dca4b6eb04
+SHA256: 2f74ee73361604b91092f416b6885e951acc004f7764d5d4412339bd0435dc4d
+Section: Networking
+Description: The most advanced iOS xBlocker!
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS (13)
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+
+Package: net.myxxdev.mybloxx14
+Version: 3.071021-14-BFM
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 2232
+Pre-Depends: dpkg
+Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=13.0), mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: ./debs/net.myxxdev.mybloxx14_3.071021-14-BFM_iphoneos-arm.deb
+Size: 379318
+MD5sum: 148dc5c955d486b92205be21468bdbd9
+SHA1: 009072e596a014b5296b20359b84eec79544ec8b
+SHA256: 4294111954d313847a9011d5f2a027d3adb2f47d507bdf6b00c15d2cc7b1961c
+Section: Networking
+Description: The most advanced iOS xBlocker!
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS (14+)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: net.myxxdev.mybloxx4
