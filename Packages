@@ -99,19 +99,19 @@ Name: MYbloXX for iOS (13)
 Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
 
 Package: net.myxxdev.mybloxx14
-Version: 3.071021-14-BFM
+Version: 3.071121-14-BFM
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
 Installed-Size: 2232
 Pre-Depends: dpkg
-Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=14.0), mobilesubstrate, preferenceloader, ws.hbang.common
+Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=14.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx14_3.071021-14-BFM_iphoneos-arm.deb
-Size: 380114
-MD5sum: fab5528533a0d9d042f81737abd6ac1a
-SHA1: 021d5cc25e3476af14bb96c78f990afd5495d98b
-SHA256: 1dc7af02032b6d5834fe97c1317fadf58447d71f5b9f39f567893d66e4b52ff9
+Filename: ./debs/net.myxxdev.mybloxx14_3.071121-14-BFM_iphoneos-arm.deb
+Size: 379578
+MD5sum: 241a30b90398f432b3fcd7853d18f702
+SHA1: 7266295bbd5bcc74843c869b7d8bd31825bb682b
+SHA256: 17da82b1425208b69acdf85dbdd858fbe6957ebfac9431799b0d60642ef3e5ad
 Section: Networking
 Description: The most advanced iOS xBlocker!
 Author: MYXXdev
@@ -139,4 +139,21 @@ Author: MYXXdev
 Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
 Name: MYbloXX for iOS (4 - 9)
 Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+
+Package: plutil
+Version: 0.2.2-1
+Architecture: iphoneos-arm
+Maintainer: Hayden Seay <me@diatr.us>
+Installed-Size: 164
+Conflicts: com.ericasadun.utilities, com.bingner.plutil
+Provides: com.bingner.plutil (=0.2.2-1)
+Filename: ./debs/plutil_0.2.2-1_iphoneos-arm.deb
+Size: 29920
+MD5sum: 7255363331680cab4ddd93d340a0b574
+SHA1: dec2d23629b63a88d611d9a7d9ba41531e6e0f5f
+SHA256: 8206aa5221f38acdcfd4b78c06e5cde1aee682d9fcba8262c534391115a27077
+Section: System
+Description: Utility for creating and editing Apple property list files.
+Tag: role::hacker
+Author: Samuel Bingner
 
