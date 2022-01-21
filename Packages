@@ -1,12 +1,11 @@
 Package: com.myxxdev.otadelay
 Architecture: iphoneos-arm
-Pre-Depends: dpkg
 Depends: file-cmds, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
 Filename: ./debs/com.myxxdev.otadelay_1.012122_iphoneos-arm.deb
-Size: 182160
-MD5sum: a875e3872261b56cb8d83ec99a663fb5
-SHA1: e3fde095a189ba1d74adbebb07e8781b6b2cf596
-SHA256: 3d728216c103d5c5286848b21159fbb146f06f8a0bd43141cc019f0e6e15ad00
+Size: 182080
+MD5sum: 3950363015e404d77f6546509df50467
+SHA1: 696ffd38eec76148ce9b5a1c9618ee390aaac9f2
+SHA256: a02584ef847d49d484928f06241188efc25f46d60354495345ed0cd9c7511b59
 Description: otaDelay / AlternateSU made easy!
 Name: otaDelay
 
