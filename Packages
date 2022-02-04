@@ -2,7 +2,7 @@ Package: com.myxxdev.badabing
 Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Depends: mobilesubstrate, ws.hbang.common
-Filename: ./debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
+Filename: debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
 Size: 118272
 MD5sum: a450b53320bf78eea46fd43a38ac835c
 SHA1: f27cb2027479f3ddcbd63ecea92d11a8f2f63a73
@@ -16,7 +16,7 @@ Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Depends: bash, file-cmds, gawk, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
 Conflicts: com.apple.memecity, jp.akusio.kernbypass, jp.akusio.kernbypassbeta, jp.akusio.kernbypass-unofficial
-Filename: ./debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
+Filename: debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
 Size: 173032
 MD5sum: bdbaf841136bda4867deeda58ebc83e4
 SHA1: 06ae6c16f10c1f6443653d29bc0f3c86278200bd
@@ -29,7 +29,7 @@ Package: com.myxxdev.pissoffprotection
 Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
-Filename: ./debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
+Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
 Size: 125240
 MD5sum: b8866390de3ea7b0303be40ebbf42b79
 SHA1: e4040fc81873091c1cbe6f9ba8a0f0d2c55b3957
@@ -43,7 +43,7 @@ Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
 Conflicts: com.pheux.fixrandomresprings
-Filename: ./debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
+Filename: debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
 Size: 130292
 MD5sum: 6878471dceb3520a680022556a3331e6
 SHA1: 334a15db8f5ee759132585fba0cbc0a0e2b0df01
@@ -58,7 +58,7 @@ Architecture: iphoneos-arm
 Maintainer: sinfool
 Installed-Size: 152
 Depends: mobilesubstrate
-Filename: ./debs/com.sinfool.youtopia_0.0.2_iphoneos-arm.deb
+Filename: debs/com.sinfool.youtopia_0.0.2_iphoneos-arm.deb
 Size: 5700
 MD5sum: 797781f4514e5e4fe7ac5a5d82a5dc02
 SHA1: 41910c137d73e2d0f119c57efe7e278eebddefa5
@@ -81,7 +81,7 @@ Pre-Depends: dpkg
 Depends: firmware (>=10.0), firmware (<=11.0), mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.sinfool.youtopia, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx10_3.071021-10-BFM_iphoneos-arm.deb
+Filename: debs/net.myxxdev.mybloxx10_3.071021-10-BFM_iphoneos-arm.deb
 Size: 369392
 MD5sum: e745ccc4631464ff070b5b1208e20335
 SHA1: 8dd0a11ae40c0c7d47ae47db319e94b06186184e
@@ -102,7 +102,7 @@ Pre-Depends: dpkg
 Depends: com.opa334.ccsupport, firmware (>=11.0), firmware (<=13.0), mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.sinfool.youtopia, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.sinfool.youtopia, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx11_3.071021-11-BFM_iphoneos-arm.deb
+Filename: debs/net.myxxdev.mybloxx11_3.071021-11-BFM_iphoneos-arm.deb
 Size: 358530
 MD5sum: 16229cab5345501f52a88c84872a9a46
 SHA1: a7c30b82f2e61333083ec01d71dc0255d69c1bd7
@@ -123,7 +123,7 @@ Pre-Depends: dpkg
 Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=13.0), firmware (<=14.0), mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx13_3.071021-13-BFM_iphoneos-arm.deb
+Filename: debs/net.myxxdev.mybloxx13_3.071021-13-BFM_iphoneos-arm.deb
 Size: 379010
 MD5sum: c6c29a5585d3865836063602439d2e8d
 SHA1: 12b3fdefb1d0d7963ba53c19f03a3915bc1fbe7b
@@ -144,7 +144,7 @@ Pre-Depends: dpkg
 Depends: applist, com.opa334.ccsupport, com.opa334.libundirect, firmware (>=14.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, com.pheux.fixrandomresprings, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx14_3.071121-14-BFM_iphoneos-arm.deb
+Filename: debs/net.myxxdev.mybloxx14_3.071121-14-BFM_iphoneos-arm.deb
 Size: 379578
 MD5sum: 241a30b90398f432b3fcd7853d18f702
 SHA1: 7266295bbd5bcc74843c869b7d8bd31825bb682b
@@ -165,7 +165,7 @@ Pre-Depends: dpkg
 Depends: firmware (>=4.0), firmware (<=10.0), mobilesubstrate, preferenceloader, ws.hbang.common
 Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
 Replaces: net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: ./debs/net.myxxdev.mybloxx4_3.071021-4-BFM_iphoneos-arm.deb
+Filename: debs/net.myxxdev.mybloxx4_3.071021-4-BFM_iphoneos-arm.deb
 Size: 360876
 MD5sum: 7087fbff047b9ac5e9b9cb0e6a7dc6fc
 SHA1: 865a096ff4799a448bc11203d60936470ac5f7f6
@@ -184,7 +184,7 @@ Maintainer: Hayden Seay <me@diatr.us>
 Installed-Size: 164
 Conflicts: com.ericasadun.utilities, com.bingner.plutil
 Provides: com.bingner.plutil (=0.2.2-1)
-Filename: ./debs/plutil_0.2.2-1_iphoneos-arm.deb
+Filename: debs/plutil_0.2.2-1_iphoneos-arm.deb
 Size: 29920
 MD5sum: 7255363331680cab4ddd93d340a0b574
 SHA1: dec2d23629b63a88d611d9a7d9ba41531e6e0f5f
