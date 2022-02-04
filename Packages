@@ -31,6 +31,7 @@ Pre-Depends: dpkg
 Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
 Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
 Size: 125240
+Installed-Size: 125240
 MD5sum: b8866390de3ea7b0303be40ebbf42b79
 SHA1: e4040fc81873091c1cbe6f9ba8a0f0d2c55b3957
 SHA256: ee6296c1ec3d0ebd7ee80e458447672a9f4430990a06ed15790e43145f561fd3
