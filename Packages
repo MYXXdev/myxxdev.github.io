@@ -44,10 +44,10 @@ Pre-Depends: dpkg
 Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
 Conflicts: com.pheux.fixrandomresprings
 Filename: ./debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
-Size: 130390
-MD5sum: d9c63203c07b8f3e756448134848bd5b
-SHA1: de3625bd9efa924c25b06e3377727ee952c7df28
-SHA256: db7939bf11bc1c87d234cc47ee3e7c7f9a8a0b8340460dff5860c781a0f46b16
+Size: 130292
+MD5sum: 6878471dceb3520a680022556a3331e6
+SHA1: 334a15db8f5ee759132585fba0cbc0a0e2b0df01
+SHA256: 5b0fb6b338f00e38b01a6de1a4e738458f045f82f738d186b573afef3379a402
 Description: A more stable iOS 14!
  • Description:
 Name: SamJet (for iOS 14)
