@@ -1,17 +1,28 @@
-Package: com.myxxdev.otadelay
-Version: 1.012122
+Package: com.myxxdev.badabing
 Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 604
-Depends: file-cmds, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
-Filename: ./debs/com.myxxdev.otadelay_1.012122_iphoneos-arm.deb
-Size: 181466
-MD5sum: 857e38d38641b69b1044a272deb8a233
-SHA1: 29f8bb4ceca0b9e12305dba4bd9d4ce1d0ba6c93
-SHA256: e1e429b42b40ccd95b5f9fd4f40425cf8426bbc8eec942ba9b722b84855434a5
-Section: Tweaks
-Description: otaDelay / AlternateSU made easy!
-Author: MYXXdev
+Pre-Depends: dpkg
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
+Size: 118272
+MD5sum: a450b53320bf78eea46fd43a38ac835c
+SHA1: f27cb2027479f3ddcbd63ecea92d11a8f2f63a73
+SHA256: 148146902db1c62fff6a70503bc1b6b9e76a6f5e3582fbf9b5786934f7262306
+Description: Inconspicuous camera sounds!
+ • Description:
+Name: BaDaBing
+
+Package: com.myxxdev.otadelay
+Architecture: iphoneos-arm
+Pre-Depends: dpkg
+Depends: bash, file-cmds, gawk, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.apple.memecity, jp.akusio.kernbypass, jp.akusio.kernbypassbeta, jp.akusio.kernbypass-unofficial
+Filename: ./debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
+Size: 173032
+MD5sum: bdbaf841136bda4867deeda58ebc83e4
+SHA1: 06ae6c16f10c1f6443653d29bc0f3c86278200bd
+SHA256: 3427a2129d479873abc11be2a89d09d38ae254183bf760cf91c90df8867e3575
+Description: Delayed OTA updates made easy!
+ • Description:
 Name: otaDelay
 
 Package: com.myxxdev.pissoffprotection
@@ -30,6 +41,20 @@ Section: Tweaks
 Description: If you're sick of vibing to your favorite song, only to be interrupted half way through because iOS decides it wants to lower the volume to "protect your hearing", then this is for you... PissOffProtection! - Simply install and enjoy - No options to configure.
 Author: MYXXdev
 Name: PissOffProtection! (iOS 14)
+
+Package: com.myxxdev.samjet
+Architecture: iphoneos-arm
+Pre-Depends: dpkg
+Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
+Conflicts: com.pheux.fixrandomresprings
+Filename: ./debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
+Size: 130390
+MD5sum: d9c63203c07b8f3e756448134848bd5b
+SHA1: de3625bd9efa924c25b06e3377727ee952c7df28
+SHA256: db7939bf11bc1c87d234cc47ee3e7c7f9a8a0b8340460dff5860c781a0f46b16
+Description: A more stable iOS 14!
+ • Description:
+Name: SamJet (for iOS 14)
 
 Package: com.sinfool.youtopia
 Version: 0.0.2
