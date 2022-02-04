@@ -1,3 +1,16 @@
+Package: com.myxxdev.pissoffprotection
+Architecture: iphoneos-arm
+Pre-Depends: dpkg
+Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
+Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
+Size: 125228
+MD5sum: 54df231515ba6540b1730d7b48e5f0e6
+SHA1: 47bc4bf72e238afd73b43462dbfb6b6d4f572680
+SHA256: 5b6a9d36884aa6b05079f982b89d384538b44181ffb629979562b4d844c96e03
+Description: Disable 'Headphone Safety'!
+ • Description:
+Name: PissOffProtection (for iOS 14)
+
 Package: com.sinfool.youtopia
 Version: 0.0.2
 Architecture: iphoneos-arm
