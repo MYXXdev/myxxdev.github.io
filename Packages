@@ -1,72 +1,19 @@
-Package: com.myxxdev.badabing
-Architecture: iphoneos-arm
-Pre-Depends: dpkg
-Depends: mobilesubstrate, ws.hbang.common
-Filename: debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
-Size: 118272
-MD5sum: a450b53320bf78eea46fd43a38ac835c
-SHA1: f27cb2027479f3ddcbd63ecea92d11a8f2f63a73
-SHA256: 148146902db1c62fff6a70503bc1b6b9e76a6f5e3582fbf9b5786934f7262306
-Description: Inconspicuous camera sounds!
- • Description:
-Name: BaDaBing
-
-Package: com.myxxdev.otadelay
-Architecture: iphoneos-arm
-Pre-Depends: dpkg
-Depends: bash, file-cmds, gawk, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
-Conflicts: com.apple.memecity, jp.akusio.kernbypass, jp.akusio.kernbypassbeta, jp.akusio.kernbypass-unofficial
-Filename: debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
-Size: 173032
-MD5sum: bdbaf841136bda4867deeda58ebc83e4
-SHA1: 06ae6c16f10c1f6443653d29bc0f3c86278200bd
-SHA256: 3427a2129d479873abc11be2a89d09d38ae254183bf760cf91c90df8867e3575
-Description: Delayed OTA updates made easy!
- • Description:
-Name: otaDelay
-
-Package: com.myxxdev.pissoffprotection
-Architecture: iphoneos-arm
-Pre-Depends: dpkg
-Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
-Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
-Size: 125240
-MD5sum: b8866390de3ea7b0303be40ebbf42b79
-SHA1: e4040fc81873091c1cbe6f9ba8a0f0d2c55b3957
-SHA256: ee6296c1ec3d0ebd7ee80e458447672a9f4430990a06ed15790e43145f561fd3
-Description: Disable 'Headphone Safety'!
- • Description:
-Name: PissOffProtection (for iOS 14)
-
-Package: com.myxxdev.test
-Version: 0
+Package: com.myxxdev.cydiatest
+Version: 2.020422
 Architecture: iphoneos-arm
 Maintainer: MYXXdev
-Installed-Size: 152
-Depends: mobilesubstrate
-Filename: debs/com.myxxdev.test.deb
-Size: 5700
-MD5sum: 797781f4514e5e4fe7ac5a5d82a5dc02
-SHA1: 41910c137d73e2d0f119c57efe7e278eebddefa5
-SHA256: 27cb81ef765e17da03d3429c769f27b122414f8d3bd801f72518471ee33ac735
-Section: Test
-Description: Test
-Author: MYXXdev
-Name: Test
-
-Package: com.myxxdev.samjet
-Architecture: iphoneos-arm
+Installed-Size: 448
 Pre-Depends: dpkg
-Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
-Conflicts: com.pheux.fixrandomresprings
-Filename: debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
-Size: 130292
-MD5sum: 6878471dceb3520a680022556a3331e6
-SHA1: 334a15db8f5ee759132585fba0cbc0a0e2b0df01
-SHA256: 5b0fb6b338f00e38b01a6de1a4e738458f045f82f738d186b573afef3379a402
-Description: A more stable iOS 14!
- • Description:
-Name: SamJet (for iOS 14)
+Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
+Filename: debs/com.myxxdev.cydiatest_2.020422_iphoneos-arm.deb
+Size: 124956
+MD5sum: 4bd6a37e5cd03657397d1914e5f3e31d
+SHA1: cb2c25fe904b614b77fe5c5142e0baf1544a3e73
+SHA256: a5259c966167704a3ca873cbf8690cb0219d3af07e2a7d5561708ff34821dc24
+Section: Tweaks
+Description: Cydia Test
+Author: MYXXdev
+Name: Cydia Test
 
 Package: com.sinfool.youtopia
 Version: 0.0.2
