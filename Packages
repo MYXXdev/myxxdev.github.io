@@ -26,21 +26,17 @@ Description: Delayed OTA updates made easy!
 Name: otaDelay
 
 Package: com.myxxdev.pissoffprotection
-Version: 1.041321
 Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 1644
 Pre-Depends: dpkg
-Depends: mobilesubstrate, firmware (>> 14.0)
-Filename: ./debs/com.myxxdev.pissoffprotection_1.041321_iphoneos-arm.deb
-Size: 1668
-MD5sum: 230a8fc2d1ca2464f64701aef832f887
-SHA1: 84267e9c166614d09ae2e469f2111658d67f859e
-SHA256: 39dfb64e21f4b3643786f4235dfee7d75b2cfca07ced5a19feeeb825318e4758
-Section: Tweaks
-Description: If you're sick of vibing to your favorite song, only to be interrupted half way through because iOS decides it wants to lower the volume to "protect your hearing", then this is for you... PissOffProtection! - Simply install and enjoy - No options to configure.
-Author: MYXXdev
-Name: PissOffProtection! (iOS 14)
+Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
+Filename: ./debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
+Size: 125240
+MD5sum: b8866390de3ea7b0303be40ebbf42b79
+SHA1: e4040fc81873091c1cbe6f9ba8a0f0d2c55b3957
+SHA256: ee6296c1ec3d0ebd7ee80e458447672a9f4430990a06ed15790e43145f561fd3
+Description: Disable 'Headphone Safety'!
+ • Description:
+Name: PissOffProtection (for iOS 14)
 
 Package: com.myxxdev.samjet
 Architecture: iphoneos-arm
