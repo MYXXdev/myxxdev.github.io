@@ -6,15 +6,14 @@ Installed-Size: 448
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
 Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
-Size: 125228
-MD5sum: 1cf6ae4c67ac8c3b792483c867396146
-SHA1: eb766c0691d4bdd295d2ee57cbfa17beb8750199
-SHA256: b3370d4167e785b692ee695b6d98de5a1cc9da0bb49014007250ac2ac1c3c04c
+Size: 125198
+MD5sum: 1637e5cef601f9c2024f001df53ff56b
+SHA1: 5de9249a85a32599d9b4265dc3c99752fb08b3af
+SHA256: b8d9ad608c889a4e10609a20263f175327587b35550461b578a79fd1adb77462
 Section: Tweaks
 Description: Disable 'Headphone Safety'!
  • Description:
  If you're sick of vibing to your favorite song, only to be interrupted half way through because iOS decides it wants to lower the volume to "protect your hearing", then this is for you...
- No options to configure.
  Thank you for choosing PissOffProtection!
  - MYXXdev
  • Changelog:
