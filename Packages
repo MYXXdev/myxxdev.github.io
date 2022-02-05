@@ -1,3 +1,100 @@
+Package: com.myxxdev.badabing
+Version: 1.020422
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 440
+Pre-Depends: dpkg
+Depends: mobilesubstrate, ws.hbang.common
+Filename: debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
+Size: 117766
+MD5sum: a7980ba835b5e6a332a8afc66ad85be2
+SHA1: 6feb6a09f67e9b25e1ac3886c13f71c9a70308ae
+SHA256: 4d6dc7ec4adba8d39146c373dc77153dd9ef703178db337dac94b0a6befbda7b
+Section: Tweaks
+Description: Inconspicuous camera sounds!
+ • Description:
+ Take a picture / record a video without being so obvious!
+ -
+ This tweak will:
+ -
+ Change the camera shutter sound to the default notification "Tri-tone" sound.
+ -
+ Change the video record start sound to the default received mail "Ding" sound.
+ -
+ Change the video record end sound to the default sent mail "Swoosh" sound.
+ -
+ No options to configure.
+ -
+ Thank you for choosing BaDaBing®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020422
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: BaDaBing®
+
+Package: com.myxxdev.otadelay
+Version: 1.020422
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 600
+Pre-Depends: dpkg
+Depends: bash, file-cmds, gawk, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.apple.memecity, jp.akusio.kernbypass, jp.akusio.kernbypassbeta, jp.akusio.kernbypass-unofficial
+Filename: debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
+Size: 172958
+MD5sum: 7c30b6442e3265146ad15f4eeaa16207
+SHA1: 3a9c347ff23bd057aa2936d913742ac85cd2fa25
+SHA256: f8c19bbbb0a0121ac58b40520def53a5f41658edded383afb2ec9a032ef426fd
+Section: System
+Description: Delayed OTA updates made easy!
+ • Description:
+ otaDelay® will allow you to UPDATE your device via OTA to an iOS firmware that is no longer available for regular users by extending the OTA update windows, enforcing a 90 day software update delay.
+ -
+ Thanks to otaDelay®, this can be done in 4 easy steps... No profiles, no manual file modifications, all automated!
+ -
+ All available firmware dates are clearly listed within the "Enable otaDelay®" prompt.
+ -
+ An optional AlternateSU patch is also available within otaDelay® settings that will allow you to install firmwares typically only available to those coming from specific firmwares. For example: As of this writing, this will benefit those coming from <14.5 that would like to update to 14.8 - Without the AlternateSU patch, 15.0.2 will show as the latest update. With AlternateSU enabled, 14.8 will be available to download and install.
+ -
+ Please ensure you read ALL prompts when navigating through the steps - There's important information given throughout the process!
+ -
+ Support is available via Telegram (preferred) and Discord - Links can be found in otaDelay® settings under "Tweak Support".
+ -
+ A special thanks to dhinakG, nyuszika7h and Tanbeer_191!
+ -
+ Thank you for choosing otaDelay®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020422
+ -
+ Fixed preference bundle for certain devices.
+ -
+ Fixed contingency issue.
+ -
+ Updated / added firmware dates.
+ -
+ Updated OTAEnabler to 0.4.0.
+ -
+ --------------------------------------
+ -
+ ~ v1.012122
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: otaDelay®
+
 Package: com.myxxdev.pissoffprotection
 Version: 2.020422
 Architecture: iphoneos-arm
@@ -6,29 +103,73 @@ Installed-Size: 448
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
 Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
-Size: 125214
-MD5sum: 2e3eee2d14cfca485b857fbf5a488f6b
-SHA1: 868684ec5fb70bd590c9e4c1b73430b17c8b5863
-SHA256: 0bb733afe257bbeeca59e596d3fbb331b12eb7629dbca3a082aafcbc7fdb8790
+Size: 125146
+MD5sum: 765f76f17c01936946be8bca49db67a4
+SHA1: 3fed624b7bb1692239b1491116fcb53b10b6362a
+SHA256: 856ad13403c38f474734b025b68d6750e9ab09dd7b4c9bd748aabed61c9c2985
 Section: Tweaks
 Description: Disable 'Headphone Safety'!
  • Description:
  If you're sick of vibing to your favorite song, only to be interrupted half way through because iOS decides it wants to lower the volume to "protect your hearing", then this is for you...
- --------------------
+ --------------------------------------
  Thank you for choosing PissOffProtection®!
  ♥ MYXXdev™
- --------------------
- --------------------
- --------------------
+ --------------------------------------
+ --------------------------------------
  • Changelog:
- --------------------
+ --------------------------------------
+ -
  ~ v2.020422
-   - Changed how the .plist is modified.
- --------------------
+ -
+ Changed how the .plist is modified.
+ -
+ --------------------------------------
+ -
  ~ v1.041321
-   - Initial release.
+ -
+ Initial release.
+ -
 Author: MYXXdev™
 Name: PissOffProtection® (for iOS 14)
+
+Package: com.myxxdev.samjet
+Version: 1.020422
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 436
+Pre-Depends: dpkg
+Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
+Conflicts: com.pheux.fixrandomresprings
+Replaces: com.pheux.fixrandomresprings
+Filename: debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
+Size: 130354
+MD5sum: 70019971b7dd4fc8dfca475eb53ab6ab
+SHA1: 9ba0818e2084f057cea079cc1102681d039a9c46
+SHA256: 9733e65896748df106214b00d4748e027faf505966235a0aaf567ee232ca5882
+Section: System
+Description: A more stable iOS 14!
+ • Description:
+ This utility will raise values for problematic jetsam entries (for iOS 14 ONLY)!
+ -
+ Your jetsam file will be backed up in its current state (whether that be stock or self-modified), with that version restored upon removal of SamJet®. Two different backups are stored in /usr/sbin/MYXXdev/SamJet/Backups and /var/mobile/Media/MYXXdev/SamJet/Backups
+ -
+ DO NOT DELETE THESE FILES/ FOLDERS!
+ -
+ Any modifications you have made to entries other than those in SamJet® prior to using this tweak will remain in tact.
+ --------------------------------------
+ Thank you for choosing SamJet®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020422
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: SamJet® (for iOS 14)
 
 Package: com.sinfool.youtopia
 Version: 0.0.2
