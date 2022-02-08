@@ -317,6 +317,48 @@ Description: YouTopia by sinfool | The perfect YouTube experience!
 Author: sinfool
 Name: YouTopia
 
+Package: net.myxxdev.mybloxx10
+Version: 3.071021-10-BFM
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 1420
+Pre-Depends: dpkg
+Depends: firmware (>=10.0), firmware (<=11.0), mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.sinfool.youtopia, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxx10_3.071021-10-BFM_iphoneos-arm.deb
+Size: 369392
+MD5sum: e745ccc4631464ff070b5b1208e20335
+SHA1: 8dd0a11ae40c0c7d47ae47db319e94b06186184e
+SHA256: d46d2b6710ef0ab1d6f330850259fbca2b557efa3347962e425d6997ea8118de
+Section: Networking
+Description: The most advanced iOS xBlocker!
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS (10)
+Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+
+Package: net.myxxdev.mybloxx4
+Version: 3.071021-4-BFM
+Architecture: iphoneos-arm
+Maintainer: MYXXdev
+Installed-Size: 988
+Pre-Depends: dpkg
+Depends: firmware (>=4.0), firmware (<=10.0), mobilesubstrate, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxx4_3.071021-4-BFM_iphoneos-arm.deb
+Size: 360876
+MD5sum: 7087fbff047b9ac5e9b9cb0e6a7dc6fc
+SHA1: 865a096ff4799a448bc11203d60936470ac5f7f6
+SHA256: 4974f06335003355d4fa22bebe0e0e2948862dd4e0c1dadb90a62a6c1c1801a9
+Section: Networking
+Description: The first crowd-sourced auto-updating "xBlocker" for iOS, where safety and security is top priority!
+Author: MYXXdev
+Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Name: MYbloXX for iOS (4 - 9)
+Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+
 Package: plutil
 Version: 0.2.2-1
 Architecture: iphoneos-arm
