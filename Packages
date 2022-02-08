@@ -317,47 +317,1232 @@ Description: YouTopia by sinfool | The perfect YouTube experience!
 Author: sinfool
 Name: YouTopia
 
-Package: net.myxxdev.mybloxx10
-Version: 3.071021-10-BFM
+Package: net.myxxdev.mybloxx11
+Version: 4.020822-11
 Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 1420
+Maintainer: MYXXdev™
+Installed-Size: 1976
 Pre-Depends: dpkg
-Depends: firmware (>=10.0), firmware (<=11.0), mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Replaces: com.sinfool.youtopia, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: debs/net.myxxdev.mybloxx10_3.071021-10-BFM_iphoneos-arm.deb
-Size: 369392
-MD5sum: e745ccc4631464ff070b5b1208e20335
-SHA1: 8dd0a11ae40c0c7d47ae47db319e94b06186184e
-SHA256: d46d2b6710ef0ab1d6f330850259fbca2b557efa3347962e425d6997ea8118de
+Depends: com.opa334.ccsupport, curl, firmware (>=11.0), firmware (<=13.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxx11_4.020822-11_iphoneos-arm.deb
+Size: 174774
+MD5sum: 7591cb52407243fb5c5aaa4f1a96cb9d
+SHA1: 4493362f46d11656968ad40024c5cd6b52547f18
+SHA256: 29aac7cf0085a8acd5766f4584c5f88a0f81560d81589d5ed3f5ba65acff56d8
 Section: Networking
-Description: The most advanced iOS xBlocker!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS (10)
-Sileodepiction: https://myxxdev.github.io/depictions/MYbloXXforiOS/MYbloXXforiOS.html
+Description: An AUTO-UPDATING Ad Blocker!
+ • Description:
+ What makes MYbloXX® better than the alternatives?
+ -
+ • AUTO-UPDATING.
+ • BETTER BATTERY LIFE.
+ • FASTER BROWSING.
+ • INTEGRATED POP-UP/REDIRECT BLOCKER.
+ -
+ Security is a top priority for everybody... MYbloXX® is no different. This uses absolutely no third-party servers to re-route your traffic, unlike ffapple and other third-party DNS/Ad blocking App Store apps. They claim to not do so but how do we REALLY know that? MYbloXX® is different: All traffic is routed DIRECT...
+ -
+ MYbloXX® checks against specified rules set within a PAC file. If the domain requested is within the PAC's rule list, it will sinkhole. The PAC congifuration uses wildcards to more effeciently block targeted ad-servers and known domain structures like http://ad._____
+ -
+ The use of wildcards means a vast majority of entries within the hosts file can be removed to ensure a fast, efficient ad-blocking method.
+ -
+ MYbloXX® uses a powerful Apple stock feature that is usually only available to those with "supervised" devices. It also allows for on-the-fly updates to quickly add new ad-servers and works on all versions of iOS, all carriers and ISP’s (IPv4 and IPv6 respectively).
+ -
+ MYbloXX® aims to block as many ads as possible out of the box using a technique that has not been used in any other ad-blocking tweaks until now. With new ad servers being created on a daily basis, on rare occasions, it’s possible you’ll come across an ad in an app/on a website.
+ -
+ If this happens, please use the reporting feature in Settings.
+ -
+ Ad-servers that are added to MYbloXX® will be updated AUTOMATICALLY on your device providing up to the minute protection from ads, revokes, trackers, miners and all other malicious content/threats.
+ -
+ • Works for Wi-Fi and data (5G/LTE/4G/3G) connections.
+ • Does not rely on hosts/other tweaks to work.
+ • Works in stock AND jailbroken mode.
+ • Works alongside VPN servers/apps.
+ • Blocks all language ad-servers.
+ • Blocks user stats scripts.
+ • Blocks pop-ups/Redirects.
+ • IPv4/IPv6 compatibility.
+ • Blocks in-game ads.
+ • Blocks tweak ads*.
+ • No battery drain.
+ • Auto-updates.
+ -
+ Thank you for choosing MYbloXX®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v4.020822
+ -
+ A fix for the stock iOS 14 notifications bug that we’ve all been plagued with (notifications not coming in from apps) is now included with MYbloXX®.
+ -
+ Access Tester has been renamed to Access Checker with the addition Blocking Statistics.
+ -
+ AdReport! / xReport! pages are now consolidated into one with new options to report via Telegram, Reddit and Discord.
+ -
+ Added additional projects to ‘Tweak Support’ section.
+ -
+ Advanced Settings section added with the ability to add custom blacklist / whitelist rules to a self-hosted PAC that can also be applied to your device. Custom rules you input will be added by downloading the latest ruleset from the current MYbloXX® Default PAC, inserted and generated into your own PAC file (saved at /var/mobile/MYbloXXCustom.pac) that you can then upload to your chosen hosting provider. Please reference the Advanced Settings page for additional information (on the page and in pop ups) as well as a How-To video. Both URL’s and wildcards can be entered separated by a comma (eg. cnn.com,facebook.com,espn.com)
+ -
+ All PAC files have been re-written from scratch, omitting ASCII and other characters / rules that I suspect iOS may have had issues rendering.
+ -
+ All behind-the-scenes scripts have been re-written and optimized.
+ -
+ All buttons / toggles will now run cFix as an added measure to ensure CFNetwork doesn’t hang / lose configuration. This will also help if somebody experiences a connection issue (GOD FORBID)... A simple toggle on / off will bring back connectivity (as well as ‘Reset iOS Connection Cache’ button / switching between other configurations) without the need of an reboot / ldrestart.
+ -
+ All scripts optimized for reliability.
+ -
+ Changes made to CFNetwork that will force iOS to keep the service alive - The reason why some were seeing connectivity issues was due to this service losing its configuration / dying and not restarting like it should. MYbloXX® will now take care of this automatically. This was addressed officially in 15.2 by  along with some other CFNetworkAgent related issues.
+ -
+ Compressed images to make Debian package smaller in size.
+ -
+ Custom PAC Configuration video added for step-by-step instructions on how to use.
+ -
+ Custom Proxy Server section added for those that may need to use a proxy server while having MYbloXX® installed... If you don’t know what this is, please don’t use it. To add, unlike iOS stock implementation of this where you can only add a proxy server to your current WiFi connection, this will allow the proxy server to run on mobile data too. Enter as http://server:port
+ -
+ DownDetector button/link added for convenience to allow a user to check if a website/service/app is down prior to submitting an unnecessary report.
+ -
+ Everything MYbloXX® filesystem wise has been relocated at the request of a user... This won’t effect usability/performance in any way.
+ -
+ Fallback has been enabled to ensure users never lose connectivity if the PAC host goes down (very rare). If this were to happen, ads will show temporarily until the PAC host is back up.
+ -
+ for iOS dropped from name to become uniform with other tweaks.
+ -
+ Future MYbloXX® updates will now remember prior settings / configurations after installation so it will keep whatever configuration the user had prior to updating instead of reverting everything back to Default settings (including YouTopia / SafariBlocker).
+ -
+ General overall improvements while browsing.
+ -
+ Jetsam modifications are no longer included in MYbloXX®. With the changes made, they’re no longer a necessity for most devices (with MYbloXX® specifically) BUT they’re still available for those that wish to apply them for general system stability (for iOS 14 only). You can find this in the newly released package on the MYXXdev™ repository (SamJet®).
+ -
+ Legacy Mode has been added at the request of a user which allows the old method of installation (via Profiles)... I don’t recommend using this unless you truly have a reason to.
+ -
+ MYbloXX® will no longer remain installed when a user performs rootfs or restores from backup on a new/updated device.
+ -
+ New Configuration added (allowY - Allow Yahoo! Ads - This fixes some features in Yahoo! apps but WILL show ads!)
+ -
+ Patreon option added for those that wish to contribute monthly. Other donation options have been separated and moved to Tweak Support.
+ -
+ Re-written the tweak from the ground up omitting unnecessary code.
+ -
+ Reddit and Email contact links added.
+ -
+ Removed otaDelay®, making it a stand-alone tweak (available on the MYXXdev™ Repository).
+ -
+ Removed package depictions because I’m too lazy to have to update via HTML every update. Shifted back to control file for ease.
+ -
+ Reset (basically a re-install) button added to Settings > Utilities / Other.
+ -
+ Root check added on pre-installation to ensure user has correct r/w permissions.
+ -
+ Settings UI overhaul / complete re-design.
+ -
+ Shifted everything PAC related from GitHub to archive.org to ensure more users can benefit from MYbloXX® if they reside in a country that blocks access to GitHub. At this time, test results show that CHINA is the only country that will NOT be able to use MYbloXX®. Users do have the option to select whether they’d like to use the PAC hosted on archive.org (default selection on install) or GitHub. All PAC’s are the same, just hosted on different platforms. It’s down to personal preference (if you have the luxury of residing somewhere that doesn’t block GitHub). This will also come in handy if/when a host goes down. For example: If you’re using archive.org and their servers go down, you can switch to the GitHub PAC temporarily until service is restored. This very rarely happens but at least the option is there.
+ -
+ Support for iOS 4 - 10 has been dropped for now - This may return in the future depending on demand.
+ -
+ Toggle status is now checked against the file to ensure the change has been made to cease iOS confusion. This may cause a slight delay in toggle times periodically (depending on your current RAM usage) but this is a fail-safe feature that assists in files not becoming corrupted in turn needing re-installation.
+ -
+ Updated changelog for all prior public releases in control file.
+ -
+ Updated ‘Other MYXXdev™ Projects’ section.
+ -
+ With SamJet’s release, the MYbloXX® (14+) package is no longer needed. The 13+ package will now cover both iOS 13 and 14.
+ -
+ --------------------------------------
+ -
+ ~ v3.071121-BFM
+ -
+ Active Configuration added to settings bundle to show which configuration you're currently running.
+ ~Default Configuration (formerly Standard PAC Profile) is now applied immediately after installation and active upon respring.
+ -
+ Discord Support Group added.
+ -
+ Full support for all jailbreaks including the latest versions of unc0ver and Taurine.
+ -
+ Full support for iOS 4 - 14.
+ -
+ General code cleanup.
+ -
+ Jetsam modifications to fix connectivity issues on iOS 14.0 - 14.3.
+ -
+ MYbloXX® is now a one tap installation / uninstallation process.
+ -
+ Manual installation of profiles is no longer required.
+ -
+ New configurations added as requested by users (noSocials / noApple).
+ -
+ One tap configuration switching.
+ -
+ Optional DNS addons (Cloudflare / Google / Quad9 - iOS 14 only).
+ -
+ PAC files re-written / optimized.
+ -
+ Settings bundle re-designed.
+ -
+ Speedy Ads feature added (with CC toggle).
+ -
+ Supervision spoofing is no longer required (but remains an option for those wanting to use otaDelay at a later date).
+ -
+ YouTopia (sinfool) is now bundled with MYbloXX®.
+ -
+ noFB renamed to allowFB for clarity.
+ -
+ --------------------------------------
+ -
+ ~ v2.042721
+ -
+ Added measures to ensure profile doesn't get stuck during re-installation/update if disabled.
+ -
+ Added unc0ver advisory message during installation.
+ -
+ Changed how configd is restarted when toggled.
+ -
+ Cleaned up inst code.
+ -
+ Modified the CC icon (a little smaller).
+ -
+ MYbloXX® Data+ Added: Take further control of your data/privacy by using the MYbloXX® Data+ addon to enable/disable Wi-Fi and/or cellular data on an app by app basis. Settings > Cellular > Choose App.
+ -
+ otaDelay Added: This profile is the same profile that was used recently to OTA update from <14.2.1 to 14.3 by enforcing a 90 day delay on your device... You'll benefit from this in the future if a jailbreak is released for an unsigned version that falls within the 90 day delay update window. More information will follow regarding this if/when that happens.
+ -
+ OTA Disabler / Enabler: Similar to iCleaner Pro and other OTA disabling tweaks, OTA Disabler / Enabler provides a one-click solution to quickly enable/disable OTA updates at a system-level.
+ -
+ Refresh Connection Cache Added: This has been added to allow the user quick access to clear their connection cache by restarting configd and mDNSResponder. Although not needed, if you think your connection is lagging, this will keep things running smoothly and could potentially help with those that want to stay on u0 6.1.2 (not recommended).
+ -
+ --------------------------------------
+ -
+ ~ v2.040821
+ -
+ 14.3 update loophole added for one-click convenience.
+ -
+ Banners / Logo redesigned.
+ -
+ CC toggles further improved to shorten time between status changes (delay).
+ -
+ Changes to preinst to ensure everything related to MYbloXX® from older versions is cleared / removed prior to installing the new package.
+ -
+ Enable / Disable SafariBlocker option added.
+ -
+ Scripts optimized.
+ -
+ --------------------------------------
+ -
+ ~ v2.040221
+ -
+ Added “don’t trip” messages to script about yellow/red message during installation/removal.
+ -
+ Changed the look of the Control Center toggle.
+ -
+ Fancy installation script removed for the sake of Substitute.
+ -
+ Fixed buttons on CoolStar jailbreaks.
+ -
+ Fixed Killed: 9 bug on u0 / Substitute.
+ -
+ Removed MYbloXX® Cleaner as a dependency / Added as a conflict to automatically remove the package on update... (No longer needed) - This was temporary... You may or may not have this installed currently.
+ -
+ Updated for Taurine jailbreak.
+ -
+ Updated SafariBlocker to 1.2.
+ -
+ --------------------------------------
+ -
+ ~ v2.033021
+ -
+ Added a separate package for users on iOS 11 & 12 (includes TabBlocker).
+ -
+ Added a separate package for users on iOS 13+ (includes SafariBlocker).
+ -
+ Added 'Debugging Tool' section to be used for reporting when requested by myself.
+ -
+ Added informative FYI pop-ups to profile installation buttons.
+ -
+ Added / re-wrote details to user facing installation scripts.
+ -
+ BETA profile added for iOS 14 ONLY (DNS) - (iOS 13+ package).
+ -
+ Buttons in Settings now work on all iOS versions/jailbreaks.
+ -
+ Buttons in Settings are now dynamic and will show depending on current status.
+ -
+ Changed the method used to enable/disable MYbloXX®. The toggles will now work on ALL versions of iOS without breaking Safari/browser connections.
+ -
+ Changed the profile installation fetch method to direct links rather than "slide to install" to fix iPad issues.
+ -
+ Commands now run from a .sh script outside of postinst/postrm.
+ -
+ Control Center toggle added to easily enable/disable MYbloXX® blocking.
+ -
+ Exchanged SafariBlocker for TabBlocker - (iOS 11 - 12 package).
+ -
+ ldrestart is no longer required. Profiles can be installed immediately after installation as well as on-the-fly spoofing changes.
+ -
+ LetMeBlock has been removed as a conflict to allow those that need to modify/use their hosts file to access content in geo-restricted areas etc.
+ -
+ MYXX FM™ now opens with Music for immediate listening - (iOS 13+ package).
+ -
+ Overall changes within Settings bundle.
+ -
+ PAC + noFB and PAC + noXXX have been added to profile selections.
+ -
+ P2Kdev support section added to Settings bundle - (iOS 13+ package).
+ -
+ P2Kdev support section removed from Settings bundle - (iOS 11 - 12 package).
+ -
+ Removed confirmation prompts from Control Center toggles - Now dynamic / immediate.
+ -
+ Removed noOTA profile due to upcoming expiration date (04/01/21) - To be re-added at a later date.
+ -
+ Scripts have been stripped to a bare minimum for the sake of Substitute.
+ -
+ Soft Reboot button has been removed (no longer required).
+ -
+ TabBlocker updated for iOS 14 (now SafariBlocker by P2KDev) - (iOS 13+ package).
+ -
+ Updated SafariBlocker to 1.1.1
+ -
+ --------------------------------------
+ -
+ ~ v2.020121
+ -
+ Fixed additional checkra1n issues that were caused by certain commands.
+ -
+ Fixed TabBlocker Preferences bundle hijack issue for some users (TabBlocker now has its own section as well as inside of the MYbloXX® bundle).
+ -
+ Removed launchctl reboot userspace commands and reverted to ldrestart for the time-being until Coolstar fully fixes Chimera/Odyssey officially.
+ -
+ Small UI changes.
+ -
+ Switched from sbreload to killall -9 backboardd to fix crashing app issue on checkra1n after installation.
+ -
+ --------------------------------------
+ -
+ ~ v2.013121
+ -
+ Fixed (Cancel) button colors.
+ -
+ Fixed Disable Profile link.
+ -
+ Fixed Header in Settings for light mode users.
+ -
+ --------------------------------------
+ -
+ ~ v2.013021
+ -
+ Fixed Music and AirDrop
+ -
+ Package will no longer trigger an automatic ldrestart upon successful installation. Prompts have been added in Settings - MYbloXX®.
+ -
+ Switched from ldrestart to official launchctl reboot userspace support. Chimera/Odyssey users: Although userspace is “fixed” according to Coolstar, I have included a hacky solution that will always ensure you’re booted back into a jailbroken state.
+ -
+ Added confirmation prompts to all sections in MYbloXX® settings.
+ -
+ General visual overhaul.
+ -
+ FAQ | User Guide link added.
+ -
+ MYbloXX® Access Tester added - A quick easy way to check if MYbloXX® is enabled on your device.
+ -
+ Soft Reboot button changed/added - Easily perform a userspace reboot.
+ -
+ sinfool section added.
+ -
+ --------------------------------------
+ -
+ ~ v1.121820
+ -
+ Ad/Issue reporting has been moved to the Settings bundle.
+ -
+ Enable/Disable options added.
+ -
+ isSupervisedBeGone has been replaced with on-the-fly buttons within the Settings bundle. You can spoof/remove "supervision" / "the message" with ease.
+ -
+ ldrestart button has been added to the Settings bundle for quick access.
+ -
+ MYbloXX® Legacy profile added (for iOS 12 and BELOW only).
+ -
+ Overall visual overhaul.
+ -
+ TabBlocker settings have been moved into their own category within the Settings bundle.
+ -
+ --------------------------------------
+ -
+ ~ v1.101220
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: MYbloXX® (iOS 11 & 12)
 
-Package: net.myxxdev.mybloxx4
-Version: 3.071021-4-BFM
+Package: net.myxxdev.mybloxx13
+Version: 4.020822-13
 Architecture: iphoneos-arm
-Maintainer: MYXXdev
-Installed-Size: 988
+Maintainer: MYXXdev™
+Installed-Size: 2588
 Pre-Depends: dpkg
-Depends: firmware (>=4.0), firmware (<=10.0), mobilesubstrate, preferenceloader, ws.hbang.common
-Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Replaces: net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx4, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
-Filename: debs/net.myxxdev.mybloxx4_3.071021-4-BFM_iphoneos-arm.deb
-Size: 360876
-MD5sum: 7087fbff047b9ac5e9b9cb0e6a7dc6fc
-SHA1: 865a096ff4799a448bc11203d60936470ac5f7f6
-SHA256: 4974f06335003355d4fa22bebe0e0e2948862dd4e0c1dadb90a62a6c1c1801a9
+Depends: com.opa334.ccsupport, com.opa334.libundirect, curl, firmware (>=13.0), firmware (<=15.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxx13_4.020822-13_iphoneos-arm.deb
+Size: 218856
+MD5sum: aea5b8985bd0481555f541753cac275e
+SHA1: 81e7feab461ac9fe003a42af55afd23c65a3aa21
+SHA256: af51d859824b9378307471395a83b4c2810e055f39b1d8602ce4e57e37c36af8
 Section: Networking
-Description: The first crowd-sourced auto-updating "xBlocker" for iOS, where safety and security is top priority!
-Author: MYXXdev
-Depiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
-Name: MYbloXX for iOS (4 - 9)
-Sileodepiction: https://myxxdev.github.io/depic/MYbloXXforiOS/MYbloXXforiOS.html
+Description: An AUTO-UPDATING Ad Blocker!
+ • Description:
+ What makes MYbloXX® better than the alternatives?
+ -
+ • AUTO-UPDATING.
+ • BETTER BATTERY LIFE.
+ • FASTER BROWSING.
+ • INTEGRATED POP-UP/REDIRECT BLOCKER.
+ -
+ Security is a top priority for everybody... MYbloXX® is no different. This uses absolutely no third-party servers to re-route your traffic, unlike ffapple and other third-party DNS/Ad blocking App Store apps. They claim to not do so but how do we REALLY know that? MYbloXX® is different: All traffic is routed DIRECT...
+ -
+ MYbloXX® checks against specified rules set within a PAC file. If the domain requested is within the PAC's rule list, it will sinkhole. The PAC congifuration uses wildcards to more effeciently block targeted ad-servers and known domain structures like http://ad._____
+ -
+ The use of wildcards means a vast majority of entries within the hosts file can be removed to ensure a fast, efficient ad-blocking method.
+ -
+ MYbloXX® uses a powerful Apple stock feature that is usually only available to those with "supervised" devices. It also allows for on-the-fly updates to quickly add new ad-servers and works on all versions of iOS, all carriers and ISP’s (IPv4 and IPv6 respectively).
+ -
+ MYbloXX® aims to block as many ads as possible out of the box using a technique that has not been used in any other ad-blocking tweaks until now. With new ad servers being created on a daily basis, on rare occasions, it’s possible you’ll come across an ad in an app/on a website.
+ -
+ If this happens, please use the reporting feature in Settings.
+ -
+ Ad-servers that are added to MYbloXX® will be updated AUTOMATICALLY on your device providing up to the minute protection from ads, revokes, trackers, miners and all other malicious content/threats.
+ -
+ • Works for Wi-Fi and data (5G/LTE/4G/3G) connections.
+ • Does not rely on hosts/other tweaks to work.
+ • Works in stock AND jailbroken mode.
+ • Works alongside VPN servers/apps.
+ • Blocks all language ad-servers.
+ • Blocks user stats scripts.
+ • Blocks pop-ups/Redirects.
+ • IPv4/IPv6 compatibility.
+ • Blocks in-game ads.
+ • Blocks tweak ads*.
+ • No battery drain.
+ • Auto-updates.
+ -
+ Thank you for choosing MYbloXX®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v4.020822
+ -
+ A fix for the stock iOS 14 notifications bug that we’ve all been plagued with (notifications not coming in from apps) is now included with MYbloXX®.
+ -
+ Access Tester has been renamed to Access Checker with the addition Blocking Statistics.
+ -
+ AdReport! / xReport! pages are now consolidated into one with new options to report via Telegram, Reddit and Discord.
+ -
+ Added additional projects to ‘Tweak Support’ section.
+ -
+ Advanced Settings section added with the ability to add custom blacklist / whitelist rules to a self-hosted PAC that can also be applied to your device. Custom rules you input will be added by downloading the latest ruleset from the current MYbloXX® Default PAC, inserted and generated into your own PAC file (saved at /var/mobile/MYbloXXCustom.pac) that you can then upload to your chosen hosting provider. Please reference the Advanced Settings page for additional information (on the page and in pop ups) as well as a How-To video. Both URL’s and wildcards can be entered separated by a comma (eg. cnn.com,facebook.com,espn.com)
+ -
+ All PAC files have been re-written from scratch, omitting ASCII and other characters / rules that I suspect iOS may have had issues rendering.
+ -
+ All behind-the-scenes scripts have been re-written and optimized.
+ -
+ All buttons / toggles will now run cFix as an added measure to ensure CFNetwork doesn’t hang / lose configuration. This will also help if somebody experiences a connection issue (GOD FORBID)... A simple toggle on / off will bring back connectivity (as well as ‘Reset iOS Connection Cache’ button / switching between other configurations) without the need of an reboot / ldrestart.
+ -
+ All scripts optimized for reliability.
+ -
+ Changes made to CFNetwork that will force iOS to keep the service alive - The reason why some were seeing connectivity issues was due to this service losing its configuration / dying and not restarting like it should. MYbloXX® will now take care of this automatically. This was addressed officially in 15.2 by  along with some other CFNetworkAgent related issues.
+ -
+ Compressed images to make Debian package smaller in size.
+ -
+ Custom PAC Configuration video added for step-by-step instructions on how to use.
+ -
+ Custom Proxy Server section added for those that may need to use a proxy server while having MYbloXX® installed... If you don’t know what this is, please don’t use it. To add, unlike iOS stock implementation of this where you can only add a proxy server to your current WiFi connection, this will allow the proxy server to run on mobile data too. Enter as http://server:port
+ -
+ DownDetector button/link added for convenience to allow a user to check if a website/service/app is down prior to submitting an unnecessary report.
+ -
+ Everything MYbloXX® filesystem wise has been relocated at the request of a user... This won’t effect usability/performance in any way.
+ -
+ Fallback has been enabled to ensure users never lose connectivity if the PAC host goes down (very rare). If this were to happen, ads will show temporarily until the PAC host is back up.
+ -
+ for iOS dropped from name to become uniform with other tweaks.
+ -
+ Future MYbloXX® updates will now remember prior settings / configurations after installation so it will keep whatever configuration the user had prior to updating instead of reverting everything back to Default settings (including YouTopia / SafariBlocker).
+ -
+ General overall improvements while browsing.
+ -
+ Jetsam modifications are no longer included in MYbloXX®. With the changes made, they’re no longer a necessity for most devices (with MYbloXX® specifically) BUT they’re still available for those that wish to apply them for general system stability (for iOS 14 only). You can find this in the newly released package on the MYXXdev™ repository (SamJet®).
+ -
+ Legacy Mode has been added at the request of a user which allows the old method of installation (via Profiles)... I don’t recommend using this unless you truly have a reason to.
+ -
+ MYbloXX® will no longer remain installed when a user performs rootfs or restores from backup on a new/updated device.
+ -
+ New Configuration added (allowY - Allow Yahoo! Ads - This fixes some features in Yahoo! apps but WILL show ads!)
+ -
+ Patreon option added for those that wish to contribute monthly. Other donation options have been separated and moved to Tweak Support.
+ -
+ Re-written the tweak from the ground up omitting unnecessary code.
+ -
+ Reddit and Email contact links added.
+ -
+ Removed otaDelay®, making it a stand-alone tweak (available on the MYXXdev™ Repository).
+ -
+ Removed package depictions because I’m too lazy to have to update via HTML every update. Shifted back to control file for ease.
+ -
+ Reset (basically a re-install) button added to Settings > Utilities / Other.
+ -
+ Root check added on pre-installation to ensure user has correct r/w permissions.
+ -
+ Settings UI overhaul / complete re-design.
+ -
+ Shifted everything PAC related from GitHub to archive.org to ensure more users can benefit from MYbloXX® if they reside in a country that blocks access to GitHub. At this time, test results show that CHINA is the only country that will NOT be able to use MYbloXX®. Users do have the option to select whether they’d like to use the PAC hosted on archive.org (default selection on install) or GitHub. All PAC’s are the same, just hosted on different platforms. It’s down to personal preference (if you have the luxury of residing somewhere that doesn’t block GitHub). This will also come in handy if/when a host goes down. For example: If you’re using archive.org and their servers go down, you can switch to the GitHub PAC temporarily until service is restored. This very rarely happens but at least the option is there.
+ -
+ Support for iOS 4 - 10 has been dropped for now - This may return in the future depending on demand.
+ -
+ Toggle status is now checked against the file to ensure the change has been made to cease iOS confusion. This may cause a slight delay in toggle times periodically (depending on your current RAM usage) but this is a fail-safe feature that assists in files not becoming corrupted in turn needing re-installation.
+ -
+ Updated changelog for all prior public releases in control file.
+ -
+ Updated ‘Other MYXXdev™ Projects’ section.
+ -
+ With SamJet’s release, the MYbloXX® (14+) package is no longer needed. The 13+ package will now cover both iOS 13 and 14.
+ -
+ --------------------------------------
+ -
+ ~ v3.071121-BFM
+ -
+ Active Configuration added to settings bundle to show which configuration you're currently running.
+ ~Default Configuration (formerly Standard PAC Profile) is now applied immediately after installation and active upon respring.
+ -
+ Discord Support Group added.
+ -
+ Full support for all jailbreaks including the latest versions of unc0ver and Taurine.
+ -
+ Full support for iOS 4 - 14.
+ -
+ General code cleanup.
+ -
+ Jetsam modifications to fix connectivity issues on iOS 14.0 - 14.3.
+ -
+ MYbloXX® is now a one tap installation / uninstallation process.
+ -
+ Manual installation of profiles is no longer required.
+ -
+ New configurations added as requested by users (noSocials / noApple).
+ -
+ One tap configuration switching.
+ -
+ Optional DNS addons (Cloudflare / Google / Quad9 - iOS 14 only).
+ -
+ PAC files re-written / optimized.
+ -
+ Settings bundle re-designed.
+ -
+ Speedy Ads feature added (with CC toggle).
+ -
+ Supervision spoofing is no longer required (but remains an option for those wanting to use otaDelay at a later date).
+ -
+ YouTopia (sinfool) is now bundled with MYbloXX®.
+ -
+ noFB renamed to allowFB for clarity.
+ -
+ --------------------------------------
+ -
+ ~ v2.042721
+ -
+ Added measures to ensure profile doesn't get stuck during re-installation/update if disabled.
+ -
+ Added unc0ver advisory message during installation.
+ -
+ Changed how configd is restarted when toggled.
+ -
+ Cleaned up inst code.
+ -
+ Modified the CC icon (a little smaller).
+ -
+ MYbloXX® Data+ Added: Take further control of your data/privacy by using the MYbloXX® Data+ addon to enable/disable Wi-Fi and/or cellular data on an app by app basis. Settings > Cellular > Choose App.
+ -
+ otaDelay Added: This profile is the same profile that was used recently to OTA update from <14.2.1 to 14.3 by enforcing a 90 day delay on your device... You'll benefit from this in the future if a jailbreak is released for an unsigned version that falls within the 90 day delay update window. More information will follow regarding this if/when that happens.
+ -
+ OTA Disabler / Enabler: Similar to iCleaner Pro and other OTA disabling tweaks, OTA Disabler / Enabler provides a one-click solution to quickly enable/disable OTA updates at a system-level.
+ -
+ Refresh Connection Cache Added: This has been added to allow the user quick access to clear their connection cache by restarting configd and mDNSResponder. Although not needed, if you think your connection is lagging, this will keep things running smoothly and could potentially help with those that want to stay on u0 6.1.2 (not recommended).
+ -
+ --------------------------------------
+ -
+ ~ v2.040821
+ -
+ 14.3 update loophole added for one-click convenience.
+ -
+ Banners / Logo redesigned.
+ -
+ CC toggles further improved to shorten time between status changes (delay).
+ -
+ Changes to preinst to ensure everything related to MYbloXX® from older versions is cleared / removed prior to installing the new package.
+ -
+ Enable / Disable SafariBlocker option added.
+ -
+ Scripts optimized.
+ -
+ --------------------------------------
+ -
+ ~ v2.040221
+ -
+ Added “don’t trip” messages to script about yellow/red message during installation/removal.
+ -
+ Changed the look of the Control Center toggle.
+ -
+ Fancy installation script removed for the sake of Substitute.
+ -
+ Fixed buttons on CoolStar jailbreaks.
+ -
+ Fixed Killed: 9 bug on u0 / Substitute.
+ -
+ Removed MYbloXX® Cleaner as a dependency / Added as a conflict to automatically remove the package on update... (No longer needed) - This was temporary... You may or may not have this installed currently.
+ -
+ Updated for Taurine jailbreak.
+ -
+ Updated SafariBlocker to 1.2.
+ -
+ --------------------------------------
+ -
+ ~ v2.033021
+ -
+ Added a separate package for users on iOS 11 & 12 (includes TabBlocker).
+ -
+ Added a separate package for users on iOS 13+ (includes SafariBlocker).
+ -
+ Added 'Debugging Tool' section to be used for reporting when requested by myself.
+ -
+ Added informative FYI pop-ups to profile installation buttons.
+ -
+ Added / re-wrote details to user facing installation scripts.
+ -
+ BETA profile added for iOS 14 ONLY (DNS) - (iOS 13+ package).
+ -
+ Buttons in Settings now work on all iOS versions/jailbreaks.
+ -
+ Buttons in Settings are now dynamic and will show depending on current status.
+ -
+ Changed the method used to enable/disable MYbloXX®. The toggles will now work on ALL versions of iOS without breaking Safari/browser connections.
+ -
+ Changed the profile installation fetch method to direct links rather than "slide to install" to fix iPad issues.
+ -
+ Commands now run from a .sh script outside of postinst/postrm.
+ -
+ Control Center toggle added to easily enable/disable MYbloXX® blocking.
+ -
+ Exchanged SafariBlocker for TabBlocker - (iOS 11 - 12 package).
+ -
+ ldrestart is no longer required. Profiles can be installed immediately after installation as well as on-the-fly spoofing changes.
+ -
+ LetMeBlock has been removed as a conflict to allow those that need to modify/use their hosts file to access content in geo-restricted areas etc.
+ -
+ MYXX FM™ now opens with Music for immediate listening - (iOS 13+ package).
+ -
+ Overall changes within Settings bundle.
+ -
+ PAC + noFB and PAC + noXXX have been added to profile selections.
+ -
+ P2Kdev support section added to Settings bundle - (iOS 13+ package).
+ -
+ P2Kdev support section removed from Settings bundle - (iOS 11 - 12 package).
+ -
+ Removed confirmation prompts from Control Center toggles - Now dynamic / immediate.
+ -
+ Removed noOTA profile due to upcoming expiration date (04/01/21) - To be re-added at a later date.
+ -
+ Scripts have been stripped to a bare minimum for the sake of Substitute.
+ -
+ Soft Reboot button has been removed (no longer required).
+ -
+ TabBlocker updated for iOS 14 (now SafariBlocker by P2KDev) - (iOS 13+ package).
+ -
+ Updated SafariBlocker to 1.1.1
+ -
+ --------------------------------------
+ -
+ ~ v2.020121
+ -
+ Fixed additional checkra1n issues that were caused by certain commands.
+ -
+ Fixed TabBlocker Preferences bundle hijack issue for some users (TabBlocker now has its own section as well as inside of the MYbloXX® bundle).
+ -
+ Removed launchctl reboot userspace commands and reverted to ldrestart for the time-being until Coolstar fully fixes Chimera/Odyssey officially.
+ -
+ Small UI changes.
+ -
+ Switched from sbreload to killall -9 backboardd to fix crashing app issue on checkra1n after installation.
+ -
+ --------------------------------------
+ -
+ ~ v2.013121
+ -
+ Fixed (Cancel) button colors.
+ -
+ Fixed Disable Profile link.
+ -
+ Fixed Header in Settings for light mode users.
+ -
+ --------------------------------------
+ -
+ ~ v2.013021
+ -
+ Fixed Music and AirDrop
+ -
+ Package will no longer trigger an automatic ldrestart upon successful installation. Prompts have been added in Settings - MYbloXX®.
+ -
+ Switched from ldrestart to official launchctl reboot userspace support. Chimera/Odyssey users: Although userspace is “fixed” according to Coolstar, I have included a hacky solution that will always ensure you’re booted back into a jailbroken state.
+ -
+ Added confirmation prompts to all sections in MYbloXX® settings.
+ -
+ General visual overhaul.
+ -
+ FAQ | User Guide link added.
+ -
+ MYbloXX® Access Tester added - A quick easy way to check if MYbloXX® is enabled on your device.
+ -
+ Soft Reboot button changed/added - Easily perform a userspace reboot.
+ -
+ sinfool section added.
+ -
+ --------------------------------------
+ -
+ ~ v1.121820
+ -
+ Ad/Issue reporting has been moved to the Settings bundle.
+ -
+ Enable/Disable options added.
+ -
+ isSupervisedBeGone has been replaced with on-the-fly buttons within the Settings bundle. You can spoof/remove "supervision" / "the message" with ease.
+ -
+ ldrestart button has been added to the Settings bundle for quick access.
+ -
+ MYbloXX® Legacy profile added (for iOS 12 and BELOW only).
+ -
+ Overall visual overhaul.
+ -
+ TabBlocker settings have been moved into their own category within the Settings bundle.
+ -
+ --------------------------------------
+ -
+ ~ v1.101220
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: MYbloXX® (iOS 13+)
+
+Package: net.myxxdev.mybloxx14
+Version: 4.020822-14
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 2588
+Pre-Depends: dpkg
+Depends: com.opa334.ccsupport, com.opa334.libundirect, curl, firmware (>=13.0), firmware (<=15.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.droomone.tabblocker, com.git-anish.mdnsrestart, com.nathanaccidentally.mdnsflush, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.p2kdev.safariblocker, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.sinfool.youtopia, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: com.droomone.tabblocker, com.p2kdev.safariblocker, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxx14_4.020822-14_iphoneos-arm.deb
+Size: 219750
+MD5sum: c021e75d830b0574f32321220b220b3b
+SHA1: dfd99bcdff81ac25ecdbb956a8e6787abb4c642f
+SHA256: cf64e22194ee90ddfbc8a7b8b1728a393a709da94926d6ef5e80c8b9aafbc0fb
+Section: Networking
+Description: An AUTO-UPDATING Ad Blocker!
+ • Description:
+ What makes MYbloXX® better than the alternatives?
+ -
+ • AUTO-UPDATING.
+ • BETTER BATTERY LIFE.
+ • FASTER BROWSING.
+ • INTEGRATED POP-UP/REDIRECT BLOCKER.
+ -
+ Security is a top priority for everybody... MYbloXX® is no different. This uses absolutely no third-party servers to re-route your traffic, unlike ffapple and other third-party DNS/Ad blocking App Store apps. They claim to not do so but how do we REALLY know that? MYbloXX® is different: All traffic is routed DIRECT...
+ -
+ MYbloXX® checks against specified rules set within a PAC file. If the domain requested is within the PAC's rule list, it will sinkhole. The PAC congifuration uses wildcards to more effeciently block targeted ad-servers and known domain structures like http://ad._____
+ -
+ The use of wildcards means a vast majority of entries within the hosts file can be removed to ensure a fast, efficient ad-blocking method.
+ -
+ MYbloXX® uses a powerful Apple stock feature that is usually only available to those with "supervised" devices. It also allows for on-the-fly updates to quickly add new ad-servers and works on all versions of iOS, all carriers and ISP’s (IPv4 and IPv6 respectively).
+ -
+ MYbloXX® aims to block as many ads as possible out of the box using a technique that has not been used in any other ad-blocking tweaks until now. With new ad servers being created on a daily basis, on rare occasions, it’s possible you’ll come across an ad in an app/on a website.
+ -
+ If this happens, please use the reporting feature in Settings.
+ -
+ Ad-servers that are added to MYbloXX® will be updated AUTOMATICALLY on your device providing up to the minute protection from ads, revokes, trackers, miners and all other malicious content/threats.
+ -
+ • Works for Wi-Fi and data (5G/LTE/4G/3G) connections.
+ • Does not rely on hosts/other tweaks to work.
+ • Works in stock AND jailbroken mode.
+ • Works alongside VPN servers/apps.
+ • Blocks all language ad-servers.
+ • Blocks user stats scripts.
+ • Blocks pop-ups/Redirects.
+ • IPv4/IPv6 compatibility.
+ • Blocks in-game ads.
+ • Blocks tweak ads*.
+ • No battery drain.
+ • Auto-updates.
+ -
+ Thank you for choosing MYbloXX®!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v4.020822
+ -
+ A fix for the stock iOS 14 notifications bug that we’ve all been plagued with (notifications not coming in from apps) is now included with MYbloXX®.
+ -
+ Access Tester has been renamed to Access Checker with the addition Blocking Statistics.
+ -
+ AdReport! / xReport! pages are now consolidated into one with new options to report via Telegram, Reddit and Discord.
+ -
+ Added additional projects to ‘Tweak Support’ section.
+ -
+ Advanced Settings section added with the ability to add custom blacklist / whitelist rules to a self-hosted PAC that can also be applied to your device. Custom rules you input will be added by downloading the latest ruleset from the current MYbloXX® Default PAC, inserted and generated into your own PAC file (saved at /var/mobile/MYbloXXCustom.pac) that you can then upload to your chosen hosting provider. Please reference the Advanced Settings page for additional information (on the page and in pop ups) as well as a How-To video. Both URL’s and wildcards can be entered separated by a comma (eg. cnn.com,facebook.com,espn.com)
+ -
+ All PAC files have been re-written from scratch, omitting ASCII and other characters / rules that I suspect iOS may have had issues rendering.
+ -
+ All behind-the-scenes scripts have been re-written and optimized.
+ -
+ All buttons / toggles will now run cFix as an added measure to ensure CFNetwork doesn’t hang / lose configuration. This will also help if somebody experiences a connection issue (GOD FORBID)... A simple toggle on / off will bring back connectivity (as well as ‘Reset iOS Connection Cache’ button / switching between other configurations) without the need of an reboot / ldrestart.
+ -
+ All scripts optimized for reliability.
+ -
+ Changes made to CFNetwork that will force iOS to keep the service alive - The reason why some were seeing connectivity issues was due to this service losing its configuration / dying and not restarting like it should. MYbloXX® will now take care of this automatically. This was addressed officially in 15.2 by  along with some other CFNetworkAgent related issues.
+ -
+ Compressed images to make Debian package smaller in size.
+ -
+ Custom PAC Configuration video added for step-by-step instructions on how to use.
+ -
+ Custom Proxy Server section added for those that may need to use a proxy server while having MYbloXX® installed... If you don’t know what this is, please don’t use it. To add, unlike iOS stock implementation of this where you can only add a proxy server to your current WiFi connection, this will allow the proxy server to run on mobile data too. Enter as http://server:port
+ -
+ DownDetector button/link added for convenience to allow a user to check if a website/service/app is down prior to submitting an unnecessary report.
+ -
+ Everything MYbloXX® filesystem wise has been relocated at the request of a user... This won’t effect usability/performance in any way.
+ -
+ Fallback has been enabled to ensure users never lose connectivity if the PAC host goes down (very rare). If this were to happen, ads will show temporarily until the PAC host is back up.
+ -
+ for iOS dropped from name to become uniform with other tweaks.
+ -
+ Future MYbloXX® updates will now remember prior settings / configurations after installation so it will keep whatever configuration the user had prior to updating instead of reverting everything back to Default settings (including YouTopia / SafariBlocker).
+ -
+ General overall improvements while browsing.
+ -
+ Jetsam modifications are no longer included in MYbloXX®. With the changes made, they’re no longer a necessity for most devices (with MYbloXX® specifically) BUT they’re still available for those that wish to apply them for general system stability (for iOS 14 only). You can find this in the newly released package on the MYXXdev™ repository (SamJet®).
+ -
+ Legacy Mode has been added at the request of a user which allows the old method of installation (via Profiles)... I don’t recommend using this unless you truly have a reason to.
+ -
+ MYbloXX® will no longer remain installed when a user performs rootfs or restores from backup on a new/updated device.
+ -
+ New Configuration added (allowY - Allow Yahoo! Ads - This fixes some features in Yahoo! apps but WILL show ads!)
+ -
+ Patreon option added for those that wish to contribute monthly. Other donation options have been separated and moved to Tweak Support.
+ -
+ Re-written the tweak from the ground up omitting unnecessary code.
+ -
+ Reddit and Email contact links added.
+ -
+ Removed otaDelay®, making it a stand-alone tweak (available on the MYXXdev™ Repository).
+ -
+ Removed package depictions because I’m too lazy to have to update via HTML every update. Shifted back to control file for ease.
+ -
+ Reset (basically a re-install) button added to Settings > Utilities / Other.
+ -
+ Root check added on pre-installation to ensure user has correct r/w permissions.
+ -
+ Settings UI overhaul / complete re-design.
+ -
+ Shifted everything PAC related from GitHub to archive.org to ensure more users can benefit from MYbloXX® if they reside in a country that blocks access to GitHub. At this time, test results show that CHINA is the only country that will NOT be able to use MYbloXX®. Users do have the option to select whether they’d like to use the PAC hosted on archive.org (default selection on install) or GitHub. All PAC’s are the same, just hosted on different platforms. It’s down to personal preference (if you have the luxury of residing somewhere that doesn’t block GitHub). This will also come in handy if/when a host goes down. For example: If you’re using archive.org and their servers go down, you can switch to the GitHub PAC temporarily until service is restored. This very rarely happens but at least the option is there.
+ -
+ Support for iOS 4 - 10 has been dropped for now - This may return in the future depending on demand.
+ -
+ Toggle status is now checked against the file to ensure the change has been made to cease iOS confusion. This may cause a slight delay in toggle times periodically (depending on your current RAM usage) but this is a fail-safe feature that assists in files not becoming corrupted in turn needing re-installation.
+ -
+ Updated changelog for all prior public releases in control file.
+ -
+ Updated ‘Other MYXXdev™ Projects’ section.
+ -
+ With SamJet’s release, the MYbloXX® (14+) package is no longer needed. The 13+ package will now cover both iOS 13 and 14.
+ -
+ --------------------------------------
+ -
+ ~ v3.071121-BFM
+ -
+ Active Configuration added to settings bundle to show which configuration you're currently running.
+ ~Default Configuration (formerly Standard PAC Profile) is now applied immediately after installation and active upon respring.
+ -
+ Discord Support Group added.
+ -
+ Full support for all jailbreaks including the latest versions of unc0ver and Taurine.
+ -
+ Full support for iOS 4 - 14.
+ -
+ General code cleanup.
+ -
+ Jetsam modifications to fix connectivity issues on iOS 14.0 - 14.3.
+ -
+ MYbloXX® is now a one tap installation / uninstallation process.
+ -
+ Manual installation of profiles is no longer required.
+ -
+ New configurations added as requested by users (noSocials / noApple).
+ -
+ One tap configuration switching.
+ -
+ Optional DNS addons (Cloudflare / Google / Quad9 - iOS 14 only).
+ -
+ PAC files re-written / optimized.
+ -
+ Settings bundle re-designed.
+ -
+ Speedy Ads feature added (with CC toggle).
+ -
+ Supervision spoofing is no longer required (but remains an option for those wanting to use otaDelay at a later date).
+ -
+ YouTopia (sinfool) is now bundled with MYbloXX®.
+ -
+ noFB renamed to allowFB for clarity.
+ -
+ --------------------------------------
+ -
+ ~ v2.042721
+ -
+ Added measures to ensure profile doesn't get stuck during re-installation/update if disabled.
+ -
+ Added unc0ver advisory message during installation.
+ -
+ Changed how configd is restarted when toggled.
+ -
+ Cleaned up inst code.
+ -
+ Modified the CC icon (a little smaller).
+ -
+ MYbloXX® Data+ Added: Take further control of your data/privacy by using the MYbloXX® Data+ addon to enable/disable Wi-Fi and/or cellular data on an app by app basis. Settings > Cellular > Choose App.
+ -
+ otaDelay Added: This profile is the same profile that was used recently to OTA update from <14.2.1 to 14.3 by enforcing a 90 day delay on your device... You'll benefit from this in the future if a jailbreak is released for an unsigned version that falls within the 90 day delay update window. More information will follow regarding this if/when that happens.
+ -
+ OTA Disabler / Enabler: Similar to iCleaner Pro and other OTA disabling tweaks, OTA Disabler / Enabler provides a one-click solution to quickly enable/disable OTA updates at a system-level.
+ -
+ Refresh Connection Cache Added: This has been added to allow the user quick access to clear their connection cache by restarting configd and mDNSResponder. Although not needed, if you think your connection is lagging, this will keep things running smoothly and could potentially help with those that want to stay on u0 6.1.2 (not recommended).
+ -
+ --------------------------------------
+ -
+ ~ v2.040821
+ -
+ 14.3 update loophole added for one-click convenience.
+ -
+ Banners / Logo redesigned.
+ -
+ CC toggles further improved to shorten time between status changes (delay).
+ -
+ Changes to preinst to ensure everything related to MYbloXX® from older versions is cleared / removed prior to installing the new package.
+ -
+ Enable / Disable SafariBlocker option added.
+ -
+ Scripts optimized.
+ -
+ --------------------------------------
+ -
+ ~ v2.040221
+ -
+ Added “don’t trip” messages to script about yellow/red message during installation/removal.
+ -
+ Changed the look of the Control Center toggle.
+ -
+ Fancy installation script removed for the sake of Substitute.
+ -
+ Fixed buttons on CoolStar jailbreaks.
+ -
+ Fixed Killed: 9 bug on u0 / Substitute.
+ -
+ Removed MYbloXX® Cleaner as a dependency / Added as a conflict to automatically remove the package on update... (No longer needed) - This was temporary... You may or may not have this installed currently.
+ -
+ Updated for Taurine jailbreak.
+ -
+ Updated SafariBlocker to 1.2.
+ -
+ --------------------------------------
+ -
+ ~ v2.033021
+ -
+ Added a separate package for users on iOS 11 & 12 (includes TabBlocker).
+ -
+ Added a separate package for users on iOS 13+ (includes SafariBlocker).
+ -
+ Added 'Debugging Tool' section to be used for reporting when requested by myself.
+ -
+ Added informative FYI pop-ups to profile installation buttons.
+ -
+ Added / re-wrote details to user facing installation scripts.
+ -
+ BETA profile added for iOS 14 ONLY (DNS) - (iOS 13+ package).
+ -
+ Buttons in Settings now work on all iOS versions/jailbreaks.
+ -
+ Buttons in Settings are now dynamic and will show depending on current status.
+ -
+ Changed the method used to enable/disable MYbloXX®. The toggles will now work on ALL versions of iOS without breaking Safari/browser connections.
+ -
+ Changed the profile installation fetch method to direct links rather than "slide to install" to fix iPad issues.
+ -
+ Commands now run from a .sh script outside of postinst/postrm.
+ -
+ Control Center toggle added to easily enable/disable MYbloXX® blocking.
+ -
+ Exchanged SafariBlocker for TabBlocker - (iOS 11 - 12 package).
+ -
+ ldrestart is no longer required. Profiles can be installed immediately after installation as well as on-the-fly spoofing changes.
+ -
+ LetMeBlock has been removed as a conflict to allow those that need to modify/use their hosts file to access content in geo-restricted areas etc.
+ -
+ MYXX FM™ now opens with Music for immediate listening - (iOS 13+ package).
+ -
+ Overall changes within Settings bundle.
+ -
+ PAC + noFB and PAC + noXXX have been added to profile selections.
+ -
+ P2Kdev support section added to Settings bundle - (iOS 13+ package).
+ -
+ P2Kdev support section removed from Settings bundle - (iOS 11 - 12 package).
+ -
+ Removed confirmation prompts from Control Center toggles - Now dynamic / immediate.
+ -
+ Removed noOTA profile due to upcoming expiration date (04/01/21) - To be re-added at a later date.
+ -
+ Scripts have been stripped to a bare minimum for the sake of Substitute.
+ -
+ Soft Reboot button has been removed (no longer required).
+ -
+ TabBlocker updated for iOS 14 (now SafariBlocker by P2KDev) - (iOS 13+ package).
+ -
+ Updated SafariBlocker to 1.1.1
+ -
+ --------------------------------------
+ -
+ ~ v2.020121
+ -
+ Fixed additional checkra1n issues that were caused by certain commands.
+ -
+ Fixed TabBlocker Preferences bundle hijack issue for some users (TabBlocker now has its own section as well as inside of the MYbloXX® bundle).
+ -
+ Removed launchctl reboot userspace commands and reverted to ldrestart for the time-being until Coolstar fully fixes Chimera/Odyssey officially.
+ -
+ Small UI changes.
+ -
+ Switched from sbreload to killall -9 backboardd to fix crashing app issue on checkra1n after installation.
+ -
+ --------------------------------------
+ -
+ ~ v2.013121
+ -
+ Fixed (Cancel) button colors.
+ -
+ Fixed Disable Profile link.
+ -
+ Fixed Header in Settings for light mode users.
+ -
+ --------------------------------------
+ -
+ ~ v2.013021
+ -
+ Fixed Music and AirDrop
+ -
+ Package will no longer trigger an automatic ldrestart upon successful installation. Prompts have been added in Settings - MYbloXX®.
+ -
+ Switched from ldrestart to official launchctl reboot userspace support. Chimera/Odyssey users: Although userspace is “fixed” according to Coolstar, I have included a hacky solution that will always ensure you’re booted back into a jailbroken state.
+ -
+ Added confirmation prompts to all sections in MYbloXX® settings.
+ -
+ General visual overhaul.
+ -
+ FAQ | User Guide link added.
+ -
+ MYbloXX® Access Tester added - A quick easy way to check if MYbloXX® is enabled on your device.
+ -
+ Soft Reboot button changed/added - Easily perform a userspace reboot.
+ -
+ sinfool section added.
+ -
+ --------------------------------------
+ -
+ ~ v1.121820
+ -
+ Ad/Issue reporting has been moved to the Settings bundle.
+ -
+ Enable/Disable options added.
+ -
+ isSupervisedBeGone has been replaced with on-the-fly buttons within the Settings bundle. You can spoof/remove "supervision" / "the message" with ease.
+ -
+ ldrestart button has been added to the Settings bundle for quick access.
+ -
+ MYbloXX® Legacy profile added (for iOS 12 and BELOW only).
+ -
+ Overall visual overhaul.
+ -
+ TabBlocker settings have been moved into their own category within the Settings bundle.
+ -
+ --------------------------------------
+ -
+ ~ v1.101220
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: MYbloXX® (iOS 14+)
+
+Package: net.myxxdev.mybloxxlite11
+Version: 1.020822-11-L
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 1024
+Pre-Depends: dpkg
+Depends: com.opa334.ccsupport, curl, firmware (>=11.0), firmware (<=13.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxxlite11_1.020822-11-L_iphoneos-arm.deb
+Size: 140022
+MD5sum: 833e95386f2c5c073129a5897777ab6e
+SHA1: dbf94aaead99d054c1b8ef693a58e05f6e3146d0
+SHA256: a83e89dbbbb11c2b6b4c416c2343b2f1cf65c449bbfd938000bfc3feee7edd15
+Section: Networking
+Description: MYbloXX® (on a diet!)
+ • Description:
+ Lite? What's that?! Glad you asked!
+ -
+ By request, it's simply MYbloXX® ad blocking without the extras! The following extras are removed:
+ -
+ X SpeedyAds
+ X TabBlocker
+ X YouTopia
+ -
+ If you would like the "Pro" version, please install the regular version.
+ -
+ So... What makes MYbloXX® Lite better than the alternatives?
+ -
+ • AUTO-UPDATING.
+ • BETTER BATTERY LIFE.
+ • FASTER BROWSING.
+ • INTEGRATED POP-UP/REDIRECT BLOCKER.
+ -
+ Security is a top priority for everybody... MYbloXX® Lite is no different. This uses absolutely no third-party servers to re-route your traffic, unlike ffapple and other third-party DNS/Ad blocking App Store apps. They claim to not do so but how do we REALLY know that? MYbloXX® Lite is different: All traffic is routed DIRECT...
+ -
+ MYbloXX® Lite checks against specified rules set within a PAC file. If the domain requested is within the PAC's rule list, it will sinkhole. The PAC congifuration uses wildcards to more effeciently block targeted ad-servers and known domain structures like http://ad._____
+ -
+ The use of wildcards means a vast majority of entries within the hosts file can be removed to ensure a fast, efficient ad-blocking method.
+ -
+ MYbloXX® Lite uses a powerful Apple stock feature that is usually only available to those with "supervised" devices. It also allows for on-the-fly updates to quickly add new ad-servers and works on all versions of iOS, all carriers and ISP’s (IPv4 and IPv6 respectively).
+ -
+ MYbloXX® Lite aims to block as many ads as possible out of the box using a technique that has not been used in any other ad-blocking tweaks until now. With new ad servers being created on a daily basis, on rare occasions, it’s possible you’ll come across an ad in an app/on a website.
+ -
+ If this happens, please use the reporting feature in Settings.
+ -
+ Ad-servers that are added to MYbloXX® Lite will be updated AUTOMATICALLY on your device providing up to the minute protection from ads, revokes, trackers, miners and all other malicious content/threats.
+ -
+ • Works for Wi-Fi and data (5G/LTE/4G/3G) connections.
+ • Does not rely on hosts/other tweaks to work.
+ • Works in stock AND jailbroken mode.
+ • Works alongside VPN servers/apps.
+ • Blocks all language ad-servers.
+ • Blocks user stats scripts.
+ • IPv4/IPv6 compatibility.
+ • Blocks in-game ads.
+ • Blocks tweak ads*.
+ • No battery drain.
+ • Auto-updates.
+ -
+ Thank you for choosing MYbloXX® Lite!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020822
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: MYbloXX® Lite (iOS 11 + 12)
+
+Package: net.myxxdev.mybloxxlite13
+Version: 1.020822-13-L
+Architecture: iphoneos-arm
+Maintainer: MYXXdev™
+Installed-Size: 1288
+Pre-Depends: dpkg
+Depends: com.opa334.ccsupport, curl, firmware (>=13.0), firmware (<=15.0), mobilesubstrate, plutil, preferenceloader, ws.hbang.common
+Conflicts: com.ceadd.blockyoux-procursus, com.ceadd.blockyoux, com.ceadd.blockyou10, com.ceadd.blockyou11, com.ceadd.blockyou12, com.myrepospace.reddestdream.minimal, com.myrepospace.basic.basic, com.reddestdream.minimalhostsblocker, com.reddestdream.mhbcb, com.thireus.hostscleaner, com.thireus.untrustedhostsblockerlight, com.thireus.untrustedhostsblockermegaipv4, com.thireus.untrustedhostsblockermega, com.thireus.untrustedhostsblockerexperimental, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.issupervisedbegone, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Replaces: net.myxxdev.issupervisedbegone, net.myxxdev.mybloxx, net.myxxdev.mybloxx10, net.myxxdev.mybloxx11, net.myxxdev.mybloxx13, net.myxxdev.mybloxx14, net.myxxdev.mybloxx4, net.myxxdev.mybloxxlite13, net.myxxdev.mybloxxlite14, net.myxxdev.mybloxxhipfix, net.myxxdev.mybloxxupdater
+Filename: debs/net.myxxdev.mybloxxlite13_1.020822-13-L_iphoneos-arm.deb
+Size: 159730
+MD5sum: a76a4cf2921fa7501ee6aa9ab499c009
+SHA1: dc7125948d176a3926ec6b7e695e1bc41113c3cf
+SHA256: abf52849a5fad7151c76bb59690314ba7897771c90191ebc8201e207d9100879
+Section: Networking
+Description: MYbloXX® (on a diet!)
+ • Description:
+ Lite? What's that?! Glad you asked!
+ -
+ By request, it's simply MYbloXX® ad blocking without the extras! The following extras are removed:
+ -
+ X SafariBlocker
+ X SpeedyAds
+ X YouTopia
+ -
+ If you would like the "Pro" version, please install the regular version.
+ -
+ So... What makes MYbloXX® Lite better than the alternatives?
+ -
+ • AUTO-UPDATING.
+ • BETTER BATTERY LIFE.
+ • FASTER BROWSING.
+ -
+ Security is a top priority for everybody... MYbloXX® Lite is no different. This uses absolutely no third-party servers to re-route your traffic, unlike ffapple and other third-party DNS/Ad blocking App Store apps. They claim to not do so but how do we REALLY know that? MYbloXX® Lite is different: All traffic is routed DIRECT...
+ -
+ MYbloXX® Lite checks against specified rules set within a PAC file. If the domain requested is within the PAC's rule list, it will sinkhole. The PAC congifuration uses wildcards to more effeciently block targeted ad-servers and known domain structures like http://ad._____
+ -
+ The use of wildcards means a vast majority of entries within the hosts file can be removed to ensure a fast, efficient ad-blocking method.
+ -
+ MYbloXX® Lite uses a powerful Apple stock feature that is usually only available to those with "supervised" devices. It also allows for on-the-fly updates to quickly add new ad-servers and works on all versions of iOS, all carriers and ISP’s (IPv4 and IPv6 respectively).
+ -
+ MYbloXX® Lite aims to block as many ads as possible out of the box using a technique that has not been used in any other ad-blocking tweaks until now. With new ad servers being created on a daily basis, on rare occasions, it’s possible you’ll come across an ad in an app/on a website.
+ -
+ If this happens, please use the reporting feature in Settings.
+ -
+ Ad-servers that are added to MYbloXX® Lite will be updated AUTOMATICALLY on your device providing up to the minute protection from ads, revokes, trackers, miners and all other malicious content/threats.
+ -
+ • Works for Wi-Fi and data (5G/LTE/4G/3G) connections.
+ • Does not rely on hosts/other tweaks to work.
+ • Works in stock AND jailbroken mode.
+ • Works alongside VPN servers/apps.
+ • Blocks all language ad-servers.
+ • Blocks user stats scripts.
+ • IPv4/IPv6 compatibility.
+ • Blocks in-game ads.
+ • Blocks tweak ads*.
+ • No battery drain.
+ • Auto-updates.
+ -
+ Thank you for choosing MYbloXX® Lite!
+ ♥ MYXXdev™
+ --------------------------------------
+ --------------------------------------
+ • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020822
+ -
+ Initial release.
+ -
+Author: MYXXdev™
+Name: MYbloXX® Lite (iOS 13+)
 
 Package: plutil
 Version: 0.2.2-1
