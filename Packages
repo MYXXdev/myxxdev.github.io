@@ -1,15 +1,15 @@
 Package: com.myxxdev.badabing
-Version: 1.020422
+Version: 1.020722
 Architecture: iphoneos-arm
 Maintainer: MYXXdev™
-Installed-Size: 440
+Installed-Size: 380
 Pre-Depends: dpkg
 Depends: mobilesubstrate, ws.hbang.common
-Filename: debs/com.myxxdev.badabing_1.020422_iphoneos-arm.deb
-Size: 117766
-MD5sum: a7980ba835b5e6a332a8afc66ad85be2
-SHA1: 6feb6a09f67e9b25e1ac3886c13f71c9a70308ae
-SHA256: 4d6dc7ec4adba8d39146c373dc77153dd9ef703178db337dac94b0a6befbda7b
+Filename: debs/com.myxxdev.badabing_1.020722_iphoneos-arm.deb
+Size: 61476
+MD5sum: 083740c93decce133d5eac047521f296
+SHA1: 60f2c6fbf62b6901a7348811235b6059c31d5125
+SHA256: 7a639e981dd27d478b8300d40bd2e1e55eb1b02ce9b002d6f141ae924c88cd38
 Section: Tweaks
 Description: Inconspicuous camera sounds!
  • Description:
@@ -32,6 +32,16 @@ Description: Inconspicuous camera sounds!
  • Changelog:
  --------------------------------------
  -
+ ~ v1.020722
+ -
+ Compressed images for space saving.
+ -
+ Corrected root check.
+ -
+ Updated preferences.
+ -
+ --------------------------------------
+ -
  ~ v1.020422
  -
  Initial release.
@@ -40,18 +50,18 @@ Author: MYXXdev™
 Name: BaDaBing®
 
 Package: com.myxxdev.otadelay
-Version: 1.020422
+Version: 1.020722
 Architecture: iphoneos-arm
 Maintainer: MYXXdev™
-Installed-Size: 600
+Installed-Size: 524
 Pre-Depends: dpkg
 Depends: bash, file-cmds, gawk, mobilesubstrate, plutil, preferenceloader, ws.hbang.common
 Conflicts: com.apple.memecity, jp.akusio.kernbypass, jp.akusio.kernbypassbeta, jp.akusio.kernbypass-unofficial
-Filename: debs/com.myxxdev.otadelay_1.020422_iphoneos-arm.deb
-Size: 172958
-MD5sum: 7c30b6442e3265146ad15f4eeaa16207
-SHA1: 3a9c347ff23bd057aa2936d913742ac85cd2fa25
-SHA256: f8c19bbbb0a0121ac58b40520def53a5f41658edded383afb2ec9a032ef426fd
+Filename: debs/com.myxxdev.otadelay_1.020722_iphoneos-arm.deb
+Size: 98016
+MD5sum: c157a4364945ea7d9744630d60195935
+SHA1: cc963898d3b2019d957e9e4c4373e46eaa2d816a
+SHA256: aadc04c535269b35883931eec5d947fdee2863f6bc02d769b35611245daac555
 Section: System
 Description: Delayed OTA updates made easy!
  • Description:
@@ -76,6 +86,16 @@ Description: Delayed OTA updates made easy!
  • Changelog:
  --------------------------------------
  -
+ ~ v1.020722
+ -
+ Compressed images for space saving.
+ -
+ Corrected root check.
+ -
+ Updated preferences.
+ -
+ --------------------------------------
+ -
  ~ v1.020422
  -
  Fixed preference bundle for certain devices.
@@ -96,17 +116,17 @@ Author: MYXXdev™
 Name: otaDelay®
 
 Package: com.myxxdev.pissoffprotection
-Version: 2.020422
+Version: 2.020722
 Architecture: iphoneos-arm
 Maintainer: MYXXdev™
-Installed-Size: 448
+Installed-Size: 384
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), mobilesubstrate, ws.hbang.common
-Filename: debs/com.myxxdev.pissoffprotection_2.020422_iphoneos-arm.deb
-Size: 125146
-MD5sum: 765f76f17c01936946be8bca49db67a4
-SHA1: 3fed624b7bb1692239b1491116fcb53b10b6362a
-SHA256: 856ad13403c38f474734b025b68d6750e9ab09dd7b4c9bd748aabed61c9c2985
+Filename: debs/com.myxxdev.pissoffprotection_2.020722_iphoneos-arm.deb
+Size: 64800
+MD5sum: bff9264cabcfac4aba4defd6a10cdcf2
+SHA1: b2030684d5414bac83455afa1bfd73b80c4e4fcc
+SHA256: 6057cbeadd9c8f8589aef4a216a051fe79c24f90acbbec0e916e533181b90bf7
 Section: Tweaks
 Description: Disable 'Headphone Safety'!
  • Description:
@@ -117,6 +137,16 @@ Description: Disable 'Headphone Safety'!
  --------------------------------------
  --------------------------------------
  • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020722
+ -
+ Compressed images for space saving.
+ -
+ Corrected root check.
+ -
+ Updated preferences.
+ -
  --------------------------------------
  -
  ~ v2.020422
@@ -133,19 +163,19 @@ Author: MYXXdev™
 Name: PissOffProtection® (for iOS 14)
 
 Package: com.myxxdev.samjet
-Version: 1.020422
+Version: 1.020722
 Architecture: iphoneos-arm
 Maintainer: MYXXdev™
-Installed-Size: 436
+Installed-Size: 376
 Pre-Depends: dpkg
 Depends: firmware (>=14.0), firmware (<=15.0), mobilesubstrate, plutil, ws.hbang.common
 Conflicts: com.pheux.fixrandomresprings
 Replaces: com.pheux.fixrandomresprings
-Filename: debs/com.myxxdev.samjet_1.020422_iphoneos-arm.deb
-Size: 130354
-MD5sum: 70019971b7dd4fc8dfca475eb53ab6ab
-SHA1: 9ba0818e2084f057cea079cc1102681d039a9c46
-SHA256: 9733e65896748df106214b00d4748e027faf505966235a0aaf567ee232ca5882
+Filename: debs/com.myxxdev.samjet_1.020722_iphoneos-arm.deb
+Size: 68754
+MD5sum: 9c8bb6b67044a8abd7de8aca4c6a3a25
+SHA1: 0d6ec789286f7027e87f8143b5036a6272c41560
+SHA256: 9197023c29838db360b1e229bb399f554e7f1cd846579fc275953ec7c2fc786f
 Section: System
 Description: A more stable iOS 14!
  • Description:
@@ -156,12 +186,63 @@ Description: A more stable iOS 14!
  DO NOT DELETE THESE FILES/ FOLDERS!
  -
  Any modifications you have made to entries other than those in SamJet® prior to using this tweak will remain in tact.
+ -
+ Modifications are made to the following jetsam entries:
+ -
+ • CommCenter
+ • CommCenterMobileHelper
+ • CommCenterRootHelper
+ • DragUI.druid
+ • NetworkProcess
+ • SpringBoard
+ • accountsd
+ • aggregated
+ • apsd
+ • assetsd
+ • bulletindistributord
+ • cfnetwork.AuthBrokerAgent
+ • cfnetwork.cfnetworkagent
+ • cloudd
+ • configd
+ • coreduetd
+ • dasd
+ • duetexpertd
+ • healthd
+ • locationd
+ • mDNSResponder.reloaded
+ • mlmodelingd
+ • nanoprefsyncd.2
+ • navd
+ • networkd
+ • nsurlsessiond
+ • routined
+ • searchd
+ • sharingd
+ • splashboard
+ • symptomsd
+ • symptomsd.helper
+ • wifid
+ -
  --------------------------------------
  Thank you for choosing SamJet®!
  ♥ MYXXdev™
  --------------------------------------
  --------------------------------------
  • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020722
+ -
+ Added additional modification entries.
+ -
+ Compressed images for space saving.
+ -
+ Corrected root check.
+ -
+ Updated description to list modifications.
+ -
+ Updated preferences.
+ -
  --------------------------------------
  -
  ~ v1.020422
@@ -172,17 +253,17 @@ Author: MYXXdev™
 Name: SamJet® (for iOS 14)
 
 Package: com.myxxdev.shutupcr4shed
-Version: 1.020622
+Version: 1.020722
 Architecture: iphoneos-arm
 Maintainer: MYXXdev™
-Installed-Size: 464
+Installed-Size: 384
 Pre-Depends: dpkg
 Depends: mobilesubstrate, ws.hbang.common
-Filename: debs/com.myxxdev.shutupcr4shed_1.020622_iphoneos-arm.deb
-Size: 145714
-MD5sum: a6a570160438826c40a1ecb71054117e
-SHA1: 8875f4cb43edf579eb3afc057b30fe4bf8552e83
-SHA256: 1bd02bc6338d01274d72544beba79bf5ee4401a51fa756239cc06e23266b0459
+Filename: debs/com.myxxdev.shutupcr4shed_1.020722_iphoneos-arm.deb
+Size: 66276
+MD5sum: 0de1d5aa94b43f021cb0041dadfe9c2f
+SHA1: f0087f63b2dc162d071a4c2e9568f5daccd4eecf
+SHA256: 310691d5e160e4a62bf4172fbdba35a924d3d7a1deb0a5612e91bf7207443091
 Section: Tweaks
 Description: Silence Cr4shed jetsam crashes!
  • Description:
@@ -197,6 +278,16 @@ Description: Silence Cr4shed jetsam crashes!
  --------------------------------------
  --------------------------------------
  • Changelog:
+ --------------------------------------
+ -
+ ~ v1.020722
+ -
+ Compressed images for space saving.
+ -
+ Corrected root check.
+ -
+ Updated preferences.
+ -
  --------------------------------------
  -
  ~ v1.020622
