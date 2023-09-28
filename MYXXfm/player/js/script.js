@@ -1,18 +1,33 @@
+/*
+The MIT License (MIT)
 
+Github: https://github.com/gsavio
 
-const RADIO_NAME = 'M12345';
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
-//Put Your Mount Point Here
-var zenoid = '9500'
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-// URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
-const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 
-// Visit https://api.vagalume.com.br/docs/ to get your API key
-const API_KEY = "994683a4d6d202230a0af0d92aa341b7";
-
-// Set HISTORIC to true to get the last songs played
-const HISTORIC = true;
+const RADIO_NAME = settings.radio_name;
+const URL_STREAMING = settings.url_streaming;
+const STREAMING_TYPE = settings.streaming_type;
+const API_KEY = settings.api_key;
+const HISTORIC = settings.historic;
+const NEXT_SONG = settings.next_song;
+const DEFAULT_COVER_ART = settings.default_cover_art;
 
 window.onload = function () {
     var page = new Page;
@@ -26,7 +41,7 @@ window.onload = function () {
     // Interval to get streaming data in miliseconds
     setInterval(function () {
         getStreamingData();
-    }, 7000);
+    }, 4000);
 
     var coverArt = document.getElementsByClassName('cover-album')[0];
 
@@ -68,17 +83,16 @@ function Page() {
         var $artistName = document.querySelectorAll('#historicSong article .music-info .artist');
 
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = DEFAULT_COVER_ART;
 
         // Get cover art for song history
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
                 var data = JSON.parse(this.responseText);
-                var artworking = data.results;
-                var gotit = artworking.artwork;
+                var artworkUrl100 = (data.resultCount) ? data.results[0].artworkUrl100 : urlCoverArt;
 
-                document.querySelectorAll('#historicSong article .cover-historic')[n].style.backgroundImage = 'url(' + gotit + ')';
+                document.querySelectorAll('#historicSong article .cover-historic')[n].style.backgroundImage = 'url(' + artworkUrl100 + ')';
             }
             // Formating characters to UTF-8
             var music = info.song.replace(/&apos;/g, '\'');
@@ -94,7 +108,7 @@ function Page() {
             $historicDiv[n].classList.add('animated');
             $historicDiv[n].classList.add('slideInRight');
         }
-        xhttp.open('GET', 'https://api.streamafrica.net/search.php?query=' + info.artist + ' ' + info.song);
+        xhttp.open('GET', 'https://itunes.apple.com/search?term=' + info.artist + ' ' + info.song + '&media=music&limit=1', true);
         xhttp.send();
 
         setTimeout(function () {
@@ -107,7 +121,7 @@ function Page() {
 
     this.refreshCover = function (song = '', artist) {
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = DEFAULT_COVER_ART;
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -117,13 +131,15 @@ function Page() {
             // Get cover art URL on iTunes API
             if (this.readyState === 4 && this.status === 200) {
                 var data = JSON.parse(this.responseText);
-                var artworkUrl100 = data.results;
-                var urlCoverArt = artworkUrl100.artwork;
-                var urlCoverArt2 = artworkUrl100.artwork_cdn;
-                
-                if (urlCoverArt == null){
-                    return urlCoverArt2;
-                }
+                var artworkUrl100 = (data.resultCount) ? data.results[0].artworkUrl100 : urlCoverArt;
+
+                // Se retornar algum dado, alterar a resolução da imagem ou definir a padrão
+                urlCoverArt = (artworkUrl100 != urlCoverArt) ? artworkUrl100.replace('100x100bb', '512x512bb') : urlCoverArt;
+                var urlCoverArt96 = (artworkUrl100 != urlCoverArt) ? urlCoverArt.replace('512x512bb', '96x96bb') : urlCoverArt;
+                var urlCoverArt128 = (artworkUrl100 != urlCoverArt) ? urlCoverArt.replace('512x512bb', '128x128bb') : urlCoverArt;
+                var urlCoverArt192 = (artworkUrl100 != urlCoverArt) ? urlCoverArt.replace('512x512bb', '192x192bb') : urlCoverArt;
+                var urlCoverArt256 = (artworkUrl100 != urlCoverArt) ? urlCoverArt.replace('512x512bb', '256x256bb') : urlCoverArt;
+                var urlCoverArt384 = (artworkUrl100 != urlCoverArt) ? urlCoverArt.replace('512x512bb', '384x384bb') : urlCoverArt;
 
                 coverArt.style.backgroundImage = 'url(' + urlCoverArt + ')';
                 coverArt.className = 'animated bounceInLeft';
@@ -139,27 +155,27 @@ function Page() {
                         title: song,
                         artist: artist,
                         artwork: [{
-                                src: urlCoverArt,
+                                src: urlCoverArt96,
                                 sizes: '96x96',
                                 type: 'image/png'
                             },
                             {
-                                src: urlCoverArt,
+                                src: urlCoverArt128,
                                 sizes: '128x128',
                                 type: 'image/png'
                             },
                             {
-                                src: urlCoverArt,
+                                src: urlCoverArt192,
                                 sizes: '192x192',
                                 type: 'image/png'
                             },
                             {
-                                src: urlCoverArt,
+                                src: urlCoverArt256,
                                 sizes: '256x256',
                                 type: 'image/png'
                             },
                             {
-                                src: urlCoverArt,
+                                src: urlCoverArt384,
                                 sizes: '384x384',
                                 type: 'image/png'
                             },
@@ -173,7 +189,7 @@ function Page() {
                 }
             }
         }
-        xhttp.open('GET', 'https://api.streamafrica.net/search.php?query=' + artist + ' ' + song);
+        xhttp.open('GET', 'https://itunes.apple.com/search?term=' + artist + ' ' + song + '&media=music&limit=1', true);
         xhttp.send();
     }
 
@@ -230,8 +246,8 @@ var audio = new Audio(URL_STREAMING);
 
 // Player control
 function Player() {
-    this.play = function () {
-        audio.play();
+    this.play = async function () {
+        await audio.play();
 
         var defaultVolume = document.getElementById('volume').value;
 
@@ -255,20 +271,18 @@ function Player() {
 // On play, change the button to pause
 audio.onplay = function () {
     var botao = document.getElementById('playerButton');
-    var bplay = document.getElementById('buttonPlay');
+
     if (botao.className === 'fa fa-play') {
         botao.className = 'fa fa-pause';
-        bplay.firstChild.data = 'PAUSE';
     }
 }
 
 // On pause, change the button to play
 audio.onpause = function () {
     var botao = document.getElementById('playerButton');
-    var bplay = document.getElementById('buttonPlay');
+
     if (botao.className === 'fa fa-pause') {
         botao.className = 'fa fa-play';
-        bplay.firstChild.data = 'PLAY';
     }
 }
 
@@ -280,7 +294,7 @@ audio.onvolumechange = function () {
 }
 
 audio.onerror = function () {
-    var confirmacao = confirm('Stream Down / Network Error. \nClick OK to try again.');
+    var confirmacao = confirm('Error on communicate to server. \nClick OK to try again.');
 
     if (confirmacao) {
         window.location.reload();
@@ -350,17 +364,21 @@ function getStreamingData() {
 
             var page = new Page();
 
+            var currentSongElement = document.getElementById('currentSong').innerHTML.replace(/&apos;/g, '\'');
+            let currentSongEl = currentSongElement.replace(/&amp;/g, '&');
+
             // Formating characters to UTF-8
             let song = data.currentSong.replace(/&apos;/g, '\'');
-            currentSong = song.replace(/&amp;/g, '&');
+            let currentSong = song.replace(/&amp;/g, '&');
 
             let artist = data.currentArtist.replace(/&apos;/g, '\'');
-            currentArtist = artist.replace(/&amp;/g, '&');
-
+            let currentArtist = artist.replace(/&amp;/g, '&');
+            currentArtist = currentArtist.replace('  ', ' '); 
+            
             // Change the title
             document.title = currentSong + ' - ' + currentArtist + ' | ' + RADIO_NAME;
 
-            if (document.getElementById('currentSong').innerHTML !== song) {
+            if (currentSongEl.trim() !== currentSong.trim()) {
                 page.refreshCover(currentSong, currentArtist);
                 page.refreshCurrentSong(currentSong, currentArtist);
                 page.refreshLyric(currentSong, currentArtist);
@@ -375,7 +393,7 @@ function getStreamingData() {
     var d = new Date();
 
     // Requisition with timestamp to prevent cache on mobile devices
-    xhttp.open('GET', 'http://freeuk21.listen2myradio.com:'+zenoid);
+    xhttp.open('GET', 'api.php?url=' + URL_STREAMING + '&streamtype=' + STREAMING_TYPE + '&historic=' + HISTORIC + '&next=' + NEXT_SONG + '&t=' + d.getTime(), true);
     xhttp.send();
 }
 
@@ -543,51 +561,3 @@ function intToDecimal(vol) {
 function decimalToInt(vol) {
     return vol * 100;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CREATIVO AGENCIA DE PUBLICIDAD */
-/* DERECHOS RESERVADOS 2021 */
