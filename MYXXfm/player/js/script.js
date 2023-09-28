@@ -3,7 +3,7 @@
 const RADIO_NAME = 'M123';
 
 //Put Your Mount Point Here
-var zenoid = 'myxxfm'
+var zenoid = '9500'
 
 // URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
 const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
@@ -375,7 +375,7 @@ function getStreamingData() {
     var d = new Date();
 
     // Requisition with timestamp to prevent cache on mobile devices
-    xhttp.open('GET', 'https://forwardmystream.com/api/v1/metadata/'+zenoid);
+    xhttp.open('GET', 'http://freeuk21.listen2myradio.com:'+zenoid);
     xhttp.send();
 }
 
