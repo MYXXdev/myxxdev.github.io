@@ -6,7 +6,7 @@ const RADIO_NAME = 'Syndicated Hip Hop RaDiO';
 var zenoid = 'stream'
 
 // URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
-const URL_STREAMING = 'https://usa19.fastcast4u.com:4200';
+const URL_STREAMING = 'https://usa19.fastcast4u.com:4200/stream';
 
 // Visit https://api.vagalume.com.br/docs/ to get your API key
 const API_KEY = "994683a4d6d202230a0af0d92aa341b7";
