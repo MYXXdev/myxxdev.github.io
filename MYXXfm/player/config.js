@@ -9,10 +9,10 @@
 */
 
 var settings = {
-    'radio_name': 'Brasil Hits',
+    'radio_name': 'MYXX FM',
 
     // URL of streaming without / on the final, eg: http://streaming.com:8080
-    'url_streaming': 'https://forwardmystream.com/myxxfm',
+    'url_streaming': 'https://usa19.fastcast4u.com:4200/stream',
     'url_streaming_data': 'https://usa19.fastcast4u.com:4200',
 
     // When choosing icecast, make sure the file 'player.log' in the document root is writeable.
