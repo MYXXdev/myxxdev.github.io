@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Box Radio</title>
-
-
-    <link rel="icon" type="image/png" href="img/cover.png" />
+    <title>Web Rádio</title>
+    <meta name="description" content="HTML5 Player for SHOUTCast streaming">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#171717">
+    <meta property="og:url" content="http://gsavio.github.io/player-shoutcast-html5">
+    <meta property="og:title" content="I'm listening Rock FM!">
+    <meta property="og:site_name" content="Não deixe o Rock sair de você">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="img/bg-capa.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css?v2322">
-    
-    
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <div class="cover-site">
         <div id="bgCover"></div>
         <div class="bg-mask"></div>
@@ -39,15 +42,14 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="info-current-song">
-                                            <h2 id="currentSong" class="current-song text-uppercase">Song</h2>
-                                            <h3 id="currentArtist" class="current-artist text-captalize">Artist</h3>
+                                            <h2 id="currentSong" class="current-song text-uppercase">...</h2>
+                                            <h3 id="currentArtist" class="current-artist text-captalize">...</h3>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <!--
-                                       <div class="row">
+                                        <div class="row">
                                             <div class="play-pause col-12 col-md-2 text-center">
-                                                <i id="playerButton" class="fa fa-play-circle" onclick="togglePlay()"></i>
+                                                <i id="playerButton" class="fa fa-play" onclick="togglePlay()"></i>
                                             </div>
                                             <div class="col-12 col-md-10 text-center">
                                                 <div class="row volume-control">
@@ -58,29 +60,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 text-center call-lyrics">
-                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics">VER LETRA</a>
-                                            </div>
-                                        </div>-->
-                                        
-                                        <div class="row">
-                                            <div class="play-pause col-12 col-md-6 text-center">
-                                                <button  class="btn-play" onclick="togglePlay()"><i id="playerButton" class="fa fa-play"></i> <span id="buttonPlay">PLAY</span></button>
-                
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 text-center">
-                                                <div class="row volume-control">
-                                                    <div class="volume-icon col-1"><i class="fa fa-volume-up"></i></div>
-                                                    <div class="volume-slide col-10 text-center"><input type="range" id="volume"
-                                                            step="1" min="0" max="100" value="80"></div>
-                                                    <div class="percentual-volume col-12">Volume <span id="volIndicator">...</span>%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 text-center call-lyrics">
-                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics">LYRICS</a>
+                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics">Lyrics</a>
                                             </div>
                                         </div>
                                     </div>
@@ -91,27 +71,22 @@
                 </div>
                 <div class="row historic">
                     <div class="col-12">
-                        <h2>RECENTLY PLAYED</h2>
+                        <h2>Recently Played</h2>
                         <div class="row" id="historicSong">
                             <article class="col-12 col-md-6">
                                 <div class="cover-historic"></div>
                                 <div class="music-info">
-                                    <div class="song">No Song</div>
-                                    <div class="artist">No Artist</div>
+                                    <div class="song">...</div>
+                                    <div class="artist">...</div>
                                 </div>
-                                
                             </article>
                             <article class="col-12 col-md-6">
                                 <div class="cover-historic"></div>
                                 <div class="music-info">
-                                    <div class="song">No Title</div>
-                                    <div class="artist">No Artist</div>
+                                    <div class="song">...</div>
+                                    <div class="artist">...</div>
                                 </div>
-                                
-                                
                             </article>
-                            
-                            
                         </div>
                     </div>
                 </div>
@@ -122,12 +97,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="lyricsSong">Lyrics</h5>
+                    <h5 class="modal-title" id="lyricsSong">Lyric</h5>
                     <button type="button" style="color: #fff" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                
+                <div class="vagalume text-center"><a href="https://www.vagalume.com.br/" target="_blank" rel="noopener"><img
+                            src="img/103-fundo-escuro.jpg" class="" /></a><br />Powered by <a href="https://www.vagalume.com.br/"
+                        target="_blank" rel="noopener">Vagalume</a></div>
                 <div class="modal-body" id="lyric"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -138,7 +115,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js?v1000"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html>

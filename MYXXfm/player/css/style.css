@@ -1,6 +1,5 @@
 @charset 'utf-8';
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Share:400i,700i');
 @import url('bootstrap.min.css');
 
 html, body {
@@ -14,36 +13,27 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
-
-
 .cover-site {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    background: url('../../images/logopage.png') no-repeat;
+    background: url('../img/background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     transition: background-image 1s;
+    background-position: center;
     background-attachment: fixed;
 }
 
-/* FONDO DESENFOQUE */
-
 #bgCover {
-    height: 100%;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
-    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    background-position: center 20%;
-    filter: blur(20px);
-    -webkit-filter: blur(20px);
-    transition: all .5s linear;
-    transform: scale(2.2);
-  
+    transition: background-image 1s;
+    background-position: center;
+    background-attachment: fixed;
     z-index: 1;
 }
 
@@ -51,7 +41,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-     background-color: rgba(0,0,0,0.0);
+    background: radial-gradient(rgba(0, 0, 0, .5) 20%, #000 85%);
     z-index: 2;
 }
 
@@ -67,17 +57,25 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../../images/logopage.png') no-repeat;
+    background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
+    border: 1px solid #383838;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
-    border-radius: 10px;
-
     margin-bottom: 15px;
 }
 
-
+.watermark {
+    width: 89px;
+    height: 35px;
+    background: url(../img/logo.png) no-repeat;
+    background-size: auto 35px;
+    opacity: 0.5;
+    position: relative;
+    bottom: 36px;
+    right: -1px;
+    z-index: 5;
+}
 
 #currentCoverArt {
     width: 100%;
@@ -85,8 +83,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     border-radius: 10px;
-  
     transition: background-image 1s;
 }
 
@@ -95,28 +91,22 @@ body {
 }
 
 .info-current-song {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Share', sans-serif;
     text-align: center;
 }
 
 .info-current-song h2 {
-    font-size: 46px;
-    text-transform: uppercase;
-    font-weight: 800;
-   
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .info-current-song h3 {
-    font-size: 22px;
-   
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .play-pause {
     font-size: 65px;
-
-   
- 
 }
 
 .play-pause i {
@@ -129,7 +119,7 @@ body {
 }
 
 .volume-slide {
-    
+    line-height: 35px;
 }
 
 .volume-control {
@@ -164,12 +154,11 @@ body {
 .modal-content {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff !important;
-    border-radius: 20px;
+    border-radius: 0;
 }
 
 .modal-content .btn {
-    border-radius: 20px;
-    background-color: #00E1E7;
+    border-radius: 0;
 }
 
 /* Chrome */
@@ -266,40 +255,28 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     text-transform: uppercase;
     margin: 10px 0;
-    
 }
-
-
-/* ZONA FONDO CANCIONES SONADAS */
 
 .historic article {
     margin: 5px 0;
-    padding: 10px;
-    background-color: none;
 }
 
-.historic .cover-historic { 
+.historic .cover-historic {
     width: 95px;
     height: 95px;
     margin-right: 15px;
     float: left;
-    border-radius: 10px;
-    background: url('../../images/logopage.png') no-repeat;
+    background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
-   
+    border: 1px solid #383838;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
 
-/* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-family: 'Share', sans-serif;
 }
-
-
-/* COLOR TEXTO CANCION */
 
 .historic .music-info .song {
     width: 100%;
@@ -307,7 +284,6 @@ input[type=range]::-ms-thumb {
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: -5px;
-    color: white;
 }
 
 @media(max-width: 370px) {
@@ -361,7 +337,7 @@ input[type=range]::-ms-thumb {
     }
 
     .info-current-song {
-        margin-top: 20px;
+        margin-top: 50px;
         text-align: left;
     }
 
@@ -369,32 +345,3 @@ input[type=range]::-ms-thumb {
         margin-top: 10%;
     }
 }
-
-#buttonPlay {
-    padding-left: 10px;
-}
-#playerButton {
-    color: black;
-}
-.play-pause i {
-    cursor: pointer;
-}
-.btn-play {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    width: 100%;
-    transition: transform .2s;
-    box-shadow: 1px 3px #30303022;
-}
-.btn-play:focus {outline:0;}
-.btn-play:hover {
-    box-shadow: 1px 5px #30303022;
-    transform: scale(1.1);
-}
-
