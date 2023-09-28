@@ -1,6 +1,6 @@
 
 
-const RADIO_NAME = 'M123';
+const RADIO_NAME = 'M12345';
 
 //Put Your Mount Point Here
 var zenoid = '9500'
