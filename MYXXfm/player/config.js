@@ -9,10 +9,10 @@
 */
 
 var settings = {
-    'radio_name': 'MYXX Hits',
+    'radio_name': 'MYXX Hits 1',
 
     // URL of streaming without / on the final, eg: http://streaming.com:8080
-    'url_streaming': 'http://78.129.185.81:9500',
+    'url_streaming': 'https://rbx2.hnux.com/http://e15446.cloudrad.io:10934/live',
 
     // When choosing icecast, make sure the file 'player.log' in the document root is writeable.
     // Choose between 'shoutcast' or 'icecast'
