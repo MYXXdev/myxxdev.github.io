@@ -12,7 +12,8 @@ var settings = {
     'radio_name': 'Brasil Hits',
 
     // URL of streaming without / on the final, eg: http://streaming.com:8080
-    'url_streaming': 'https://streaming.brasilhits.com/acc',
+    'url_streaming': 'https://forwardmystream.com/myxxfm',
+    'url_streaming_data': 'https://usa19.fastcast4u.com:4200',
 
     // When choosing icecast, make sure the file 'player.log' in the document root is writeable.
     // Choose between 'shoutcast' or 'icecast'
