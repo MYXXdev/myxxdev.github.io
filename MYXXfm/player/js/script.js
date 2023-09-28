@@ -1,12 +1,12 @@
 
 
-const RADIO_NAME = 'Syndicated Hip Hop RaDiO';
+const RADIO_NAME = 'M123';
 
 //Put Your Mount Point Here
-var zenoid = 'stream'
+var zenoid = 'myxxfm'
 
 // URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
-const URL_STREAMING = 'https://usa19.fastcast4u.com:4200/stream';
+const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
 
 // Visit https://api.vagalume.com.br/docs/ to get your API key
 const API_KEY = "994683a4d6d202230a0af0d92aa341b7";
@@ -375,7 +375,7 @@ function getStreamingData() {
     var d = new Date();
 
     // Requisition with timestamp to prevent cache on mobile devices
-    xhttp.open('GET', 'https://api.streamafrica.net/zeno/index.php?z='+zenoid);
+    xhttp.open('GET', 'https://forwardmystream.com/api/v1/metadata/'+zenoid);
     xhttp.send();
 }
 
