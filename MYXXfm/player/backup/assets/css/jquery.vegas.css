@@ -1,0 +1,38 @@
+.vegas-loading {
+	border-radius: 10px;
+	background: #000;
+	background: rgba(0,0,0,0.7);
+	/* */
+	background: url(../images/loading.gif) no-repeat center center;  
+	height: 400px;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	margin-top:-200px;
+	margin-left:-200px;
+	/* */
+	width: 400px; 
+	z-index: 0;
+}
+
+.vegas-overlay {
+	background: transparent url(../images/albdroid.jpg);
+	opacity: 0.5;
+	z-index: -1;
+}
+
+.vegas-background {
+	-ms-interpolation-mode: bicubic;
+	image-rendering: optimizeQuality;
+    max-width: none !important; /* counteracts global img modification by twitter bootstrap library */
+	z-index: -2;
+}
+
+.vegas-overlay,
+.vegas-background {
+	-webkit-user-select: none;
+	 -khtml-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}

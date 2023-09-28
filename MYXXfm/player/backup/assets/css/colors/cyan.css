@@ -1,0 +1,32 @@
+/*color styles*/
+
+#jpreBar,#jpreButton,.btn-group .btn-default, .open .dropdown-toggle.btn-default,.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active,.banner_slider .btn-default,.fractionSlide .btn-default,.play_list,.channels_list li a:hover,.news_box .hover a, .track_box .hover a,.carousel_controls span:hover,.newsletter_form input[type="submit"], .newsletter_form button,.event_promo a.btn,.btn_buy_ticket:hover,.btn_watch_video:hover,.rock_controls div,.galery_widget .channels_list li a:hover,.galery_widget .owl-theme .owl-controls .owl-buttons div:hover{
+	background-color:#1eace3;
+}
+
+
+h2:after,.primary_color,.section_head_widget h5,.banner_slider h1:after,.banner_slider h2,.audio-timer,.banner h4,.video_caption,.navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus,.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus,.tweet li a:hover,.tweet li .date,.tweet_icon,.news_box h6, .track_box h6,.testimonial blockquote b,.testimonial a,.event_promo h3,.media_widget,.media_widget figure a:after,.media_widget figure:hover h6,.tour_row_header,.music_row_header,.music_widget h6,.music_row .column_seven a:hover,.members_carousel figure:hover a,.about_section .section_head_widget h4,.copyrights a:hover{
+	color:#1eace3;
+}
+
+a.ScrollTo,.poison_slider .owl-controls .owl-page.active span:before,.fs-pager-wrapper a.active:before,.video_controls .play-pause,.tour_row:hover,.btn_itunes span{
+	border-color:#1eace3;
+}
+
+.overlay_gradient .banner_slide:before{
+	 background-image: linear-gradient(-24deg, #f000ff 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(335deg, #f000ff 50%, #1eace3 50%, #1eace3);
+	
+}
+
+.play_list .music_row_header, .play_list .music_widget{
+	color:#fff;
+	color:rgba(255,255,255,0.5);
+}
+.play_list .music_row{
+	border-color:#fff;
+	border-color:rgba(255,255,255,0.5);
+}
+.play_list .btn_watch_video{
+	background-color:#fff;
+	background-color:rgba(255,255,255,0.3);
+}

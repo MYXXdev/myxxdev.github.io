@@ -1,34 +1,28 @@
 /*
 |--------------------------------------------------------------------------
-| Configuration
+| Конфигурација на сктирптата - Trajce Gogov
 |--------------------------------------------------------------------------
 |
-| To configure your streaming, define the name of your radio, url and 
-| type of your streaming below.
+| За да го конфигурирате стримот треба да ги промените овие сетинзи
 |
 */
 
 var settings = {
-    'radio_name': 'MYXX Hits 2',
-
-    // URL of streaming without / on the final, eg: http://streaming.com:8080
-    'url_streaming': 'https://rbx2.hnux.com/http://e15446.cloudrad.io:10934/live',
-
-    // When choosing icecast, make sure the file 'player.log' in the document root is writeable.
-    // Choose between 'shoutcast' or 'icecast'
-    'streaming_type': 'icecast',
-
-    // Visit https://api.vagalume.com.br/docs/ to get your API key
-    'api_key': '18fe07917957c289983464588aabddfb',
-
-    // Set to true to get the last songs played
+    'radio_name': 'Kanal77', // името на радио станицата
+    'url_streaming': 'https://radiocnd.mms.mk/proxy/metadata/', // од каде го зима 7.html
+    'url_streaming2': 'https://radiocnd.mms.mk/proxy/player/stream', 
+    'streaming_type': 'shoutcast', // вид на стимот
+    'api_key': '8bdadfdacfbf37333270410117cc0dcb', // клуч за апито
     'historic': true,
-
-    // Only for SHOUTCast!
-    // Set to true to show the next song to be played. 
-    // Make sure your streaming show this information!
-    'next_song': false,
-
-    // Path to default cover art when none are found
-    'default_cover_art': 'img/bg-capa.jpg',
+    'next_song': false, // се користи само е shoutcast за да ја прикаже следната песна што иде
+    'default_cover_art': 'img/bg-capa.png', // позадинска слика на песните што неможат да се препознаат
 };
+
+const RADIO_NAME = settings.radio_name;
+const URL_STREAMING = settings.url_streaming;
+const URL_STREAMING2 = settings.url_streaming2;
+const STREAMING_TYPE = settings.streaming_type;
+const API_KEY = settings.api_key;
+const HISTORIC = settings.historic;
+const NEXT_SONG = settings.next_song;
+const DEFAULT_COVER_ART = settings.default_cover_art;

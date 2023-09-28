@@ -1,5 +1,6 @@
 /*
-Изработено од Trajce Gogov - GospoD
+The MIT License (MIT)
+Trajce Gogov - GospoD
 */
 
 window.onload = function () {
@@ -21,6 +22,7 @@ window.onload = function () {
     coverArt.style.height = coverArt.offsetWidth + 'px';
 }
 
+// DOM control
 function Page() {
     this.changeTitlePage = function (title = RADIO_NAME) {
         document.title = title;
@@ -413,28 +415,26 @@ function Page() {
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
-          if (this.readyState === 4 && this.status === 200) {
-            var data = JSON.parse(this.responseText);
-            var artworkUrl100 = (data.resultCount) ? data.results[0].artworkUrl100 : urlCoverArt;
-        
-            document.querySelectorAll('#historicSong article .cover-historic')[n].style.backgroundImage = 'url(' + artworkUrl100 + ')';
-          }
-          var music = info.song.replace(/&apos;/g, '\'');
-          var songHist = music.replace(/&amp;/g, '&');
-          songHist = songHist.replace(/[.*]/g, ''); // Remove periods and asterisks from song name
-        
-          var artist = info.artist.replace(/&apos;/g, '\'');
-          var artistHist = artist.replace(/&amp;/g, '&');
-        
-          $songName[n].innerHTML = songHist;
-          $artistName[n].innerHTML = artistHist;
-        
-          $historicDiv[n].classList.add('animated');
-          $historicDiv[n].classList.add('slideInRight');
-        };
-        xhttp.open('GET', 'https://itunes.apple.com/search?term=' + encodeURIComponent(info.artist + ' ' + info.song.replace(/[.*]/g, '')) + '&media=music&limit=1', true);
+            if (this.readyState === 4 && this.status === 200) {
+                var data = JSON.parse(this.responseText);
+                var artworkUrl100 = (data.resultCount) ? data.results[0].artworkUrl100 : urlCoverArt;
+
+                document.querySelectorAll('#historicSong article .cover-historic')[n].style.backgroundImage = 'url(' + artworkUrl100 + ')';
+            }
+            var music = info.song.replace(/&apos;/g, '\'');
+            var songHist = music.replace(/&amp;/g, '&');
+
+            var artist = info.artist.replace(/&apos;/g, '\'');
+            var artistHist = artist.replace(/&amp;/g, '&');
+
+            $songName[n].innerHTML = songHist;
+            $artistName[n].innerHTML = artistHist;
+
+            $historicDiv[n].classList.add('animated');
+            $historicDiv[n].classList.add('slideInRight');
+        }
+        xhttp.open('GET', 'https://itunes.apple.com/search?term=' + info.artist + ' ' + info.song + '&media=music&limit=1', true);
         xhttp.send();
-        
 
         setTimeout(function () {
             for (var j = 0; j < 2; j++) {
@@ -888,38 +888,37 @@ function Page() {
         }
     }
 
-    this.refreshLyric = function (currentSong, currentArtist) {
+     this.refreshLyric = function (currentSong, currentArtist) {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState === 4 && this.status === 200) {
-            var data = JSON.parse(this.responseText);
-      
-            var openLyric = document.getElementsByClassName('lyrics')[0];
-      
-            if (data.type === 'exact' || data.type === 'aprox') {
-              var lyric = data.mus[0].text;
-      
-              document.getElementById('lyric').innerHTML = lyric.replace(/\n/g, '<br />');
-              openLyric.style.opacity = "1";
-              openLyric.setAttribute('data-toggle', 'modal');
-            } else {
-              openLyric.style.opacity = "0.3";
-              openLyric.removeAttribute('data-toggle');
-      
-              var modalLyric = document.getElementById('modalLyrics');
-              modalLyric.style.display = "none";
-              modalLyric.setAttribute('aria-hidden', 'true');
-              (document.getElementsByClassName('modal-backdrop')[0]) ? document.getElementsByClassName('modal-backdrop')[0].remove() : '';
-            }
-          } else {
-            document.getElementsByClassName('lyrics')[0].style.opacity = "0.3";
-            document.getElementsByClassName('lyrics')[0].removeAttribute('data-toggle');
-          }
-        }
-        var sanitizedSong = currentSong.replace(/\*/g, ''); // Remove asterisks from song name
-        xhttp.open('GET', 'https://api.vagalume.com.br/search.php?apikey=' + API_KEY + '&art=' + currentArtist + '&mus=' + sanitizedSong.toLowerCase(), true);
-        xhttp.send();
-      }
+          xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                var data = JSON.parse(this.responseText);
+
+                var openLyric = document.getElementsByClassName('lyrics')[0];
+
+                 if (data.type === 'exact' || data.type === 'aprox') {
+                    var lyric = data.mus[0].text;
+
+                    document.getElementById('lyric').innerHTML = lyric.replace(/\n/g, '<br />');
+                    openLyric.style.opacity = "1";
+                    openLyric.setAttribute('data-toggle', 'modal');
+                 } else {
+                    openLyric.style.opacity = "0.3";
+                    openLyric.removeAttribute('data-toggle');
+
+                    var modalLyric = document.getElementById('modalLyrics');
+                    modalLyric.style.display = "none";
+                    modalLyric.setAttribute('aria-hidden', 'true');
+                    (document.getElementsByClassName('modal-backdrop')[0]) ? document.getElementsByClassName('modal-backdrop')[0].remove(): '';
+                }
+             } else {
+                document.getElementsByClassName('lyrics')[0].style.opacity = "0.3";
+                 document.getElementsByClassName('lyrics')[0].removeAttribute('data-toggle');
+             }
+         }
+         xhttp.open('GET', 'https://api.vagalume.com.br/search.php?apikey=' + API_KEY + '&art=' + currentArtist + '&mus=' + currentSong.toLowerCase(), true); // Од каде да ги чита текстовите за песните
+         xhttp.send()
+     }
 }
 
 var audio = new Audio(URL_STREAMING2);
@@ -930,15 +929,15 @@ function Player() {
 
         var defaultVolume = document.getElementById('volume').value;
 
-        if (typeof (Storage) !== 'undefined') {
-            if (localStorage.getItem('volume') !== null) {
-                audio.volume = intToDecimal(localStorage.getItem('volume'));
-            } else {
-                audio.volume = intToDecimal(defaultVolume);
-            }
-        } else {
-            audio.volume = intToDecimal(defaultVolume);
-        }
+        //if (typeof (Storage) !== 'undefined') {
+            //if (localStorage.getItem('volume') !== null) {
+                //audio.volume = intToDecimal(localStorage.getItem('volume'));
+            //} else {
+                //audio.volume = intToDecimal(defaultVolume);
+            //}
+        //} else {
+            //audio.volume = intToDecimal(defaultVolume);
+        //}
         document.getElementById('volIndicator').innerHTML = defaultVolume;
     };
 
@@ -1078,13 +1077,13 @@ document.addEventListener('keydown', function (k) {
     var page = new Page();
 
     switch (key) {
-        // Arrow up
+        // Стрелка нагоре
         case 38:
             volumeUp();
             slideVolume.value = decimalToInt(audio.volume);
             page.changeVolumeIndicator(decimalToInt(audio.volume));
             break;
-        // Arrow down
+        // Стрелка надоле
         case 40:
             volumeDown();
             slideVolume.value = decimalToInt(audio.volume);
@@ -1205,7 +1204,7 @@ document.addEventListener('keydown', function (k) {
             page.changeVolumeIndicator(80);
             break;
         // 8 numeric key
-        case 104:
+        case 104: 
             audio.volume = .8;
             slideVolume.value = 80;
             page.changeVolumeIndicator(80);
@@ -1225,10 +1224,6 @@ document.addEventListener('keydown', function (k) {
     }
 });
 
-function intToDecimal(vol) {
-    return vol / 100;
-}
+function intToDecimal(vol) {return vol / 50;}
 
-function decimalToInt(vol) {
-    return vol * 100;
-}
+function decimalToInt(vol) {return vol * 50;}

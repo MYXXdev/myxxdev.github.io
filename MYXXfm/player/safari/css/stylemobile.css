@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css?family=Share:400i,700i');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 @import url('bootstrap.min.css');
 
 html, body {
@@ -17,10 +17,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    background: url('../img/background.jpg') no-repeat;
     background-position: center;
-    background-size: cover;
-    transition: background-image 1s;
     background-position: center;
     background-attachment: fixed;
 }
@@ -41,13 +38,13 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-    background: radial-gradient(rgba(0, 0, 0, .5) 20%, #000 85%);
+    background: radial-gradient(rgba(255, 255, 255, 0.5) 20%, #000 85%);
     z-index: 2;
 }
 
 .web-player {
     height: 100%;
-    color: #fff;
+    color: #ffffff;
     padding: 5px;
     position: relative;
     z-index: 3;
@@ -57,9 +54,9 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../img/bg-capa.jpg') no-repeat;
+    background: url('https://exyu.kanal77.mk/img/ex-yu.jpg') no-repeat;
     background-size: cover;
-    border: 1px solid #383838;
+    border: 1px solid #ff0000;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
     margin-bottom: 15px;
@@ -68,13 +65,13 @@ body {
 .watermark {
     width: 89px;
     height: 35px;
-    background: url(../img/logo.png) no-repeat;
+    background: url(https://ex-yu.kanal77.mk/img/logo.png) no-repeat;
     background-size: auto 35px;
     opacity: 0.5;
-    position: relative;
-    bottom: 36px;
-    right: -1px;
-    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
 }
 
 #currentCoverArt {
@@ -127,13 +124,13 @@ body {
 }
 
 .vagalume a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 .lyrics {
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
     font-size: 1em;
     font-weight: 400;
     outline: none;
@@ -152,7 +149,7 @@ body {
 
 .modal-content {
     background-color: rgba(0, 0, 0, 0.8);
-    color: #fff !important;
+    color: #ffffff !important;
     border-radius: 0;
 }
 
@@ -177,7 +174,7 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #fff;
+    background: #ffffff;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -185,7 +182,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: #ff0000;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8px;
@@ -207,7 +204,7 @@ input[type=range]::-moz-range-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: #000;
     cursor: pointer;
 }
 
@@ -248,8 +245,8 @@ input[type=range]::-ms-thumb {
 
 
 .historic h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
+    color: #000;
+    border-bottom: 2px solid #000;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -265,7 +262,7 @@ input[type=range]::-ms-thumb {
     height: 95px;
     margin-right: 15px;
     float: left;
-    background: url('../img/bg-capa.jpg') no-repeat;
+    background: url('https://exyu.kanal77.mk/img/ex-yu.jpg') no-repeat; /* историја за позадина на слика (ако нема) */
     background-size: cover;
     border: 1px solid #383838;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
@@ -273,7 +270,7 @@ input[type=range]::-ms-thumb {
 }
 
 .historic .music-info {
-    color: #fff;
+    color: #000;
     font-family: 'Share', sans-serif;
 }
 
@@ -337,7 +334,8 @@ input[type=range]::-ms-thumb {
 
     .info-current-song {
         margin-top: 50px;
-        text-align: left;
+        margin-left: 80px;
+        text-align: right;
     }
 
     .volume-control {
@@ -362,4 +360,35 @@ input[type=range]::-ms-thumb {
         display: inline-block;
         line-height: 1em;
       }
+
+      /* Нови додадени - 04.05.2023 */ 
+      header {
+        position: relative;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: #fff;
+        }
+
+        header h1 {
+            margin-top: 0;
+            padding-top: 80px;
+            font-size: 3em;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        footer img {
+            max-width: 100%;
+        }
 }

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ExYu Radio - Kanal 77 Radio Player</title>
+    <meta name="description" content="Изработено со AI од страна на Трајче Гогов">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="fb:app_id" content="2080734365498786">
+    <meta property="og:image" content="https://exyu.kanal77.mk/img/pozadina900.jpg">
+    <meta property="og:title" content="ExYu Radio - Kanal 77 Radio Player">
+    <meta property="og:site_name" content="ExYu Radio">
+    <meta property="og:description" content="Изработено со AI од страна на Трајче Гогов">
+    <meta property="og:type" content="website">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <link rel="stylesheet" href="https://exyu.kanal77.mk/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
+    <script async src="//ads.mms.mk/www/delivery/asyncjs.php"></script>
+    <!--Стил за плеерот-->
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Small Resolution Background Image */
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url(/safari/img/pozadinamobile-mala.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Medium Resolution Background Image */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-image: url(/safari/img/pozadinamobile-sredna.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Large Resolution Background Image */
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: url(/safari/img/pozadinamobile-golema.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.header {
+    height: 90px;
+    background-color: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu i {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.menu span:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: initial;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.radio-background {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transition: transform 0.5s ease;
+    margin-top: 20px;
+}
+
+.radio-background::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/img/logo-exyu.png);
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.radio-image {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(136, 136, 136, 0.904); /* Add box shadow */
+    margin-top: 20px;
+}
+
+.radio-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radio-info .btn {
+    margin-top: 20px;
+}
+
+.radio-info-text {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    color: black;
+    cursor: pointer;
+}
+
+.icon-button i {
+    font-size: 24px;
+}
+    </style>
+</head>
+<body>
+<!--<div class="header">
+    <div class="menu">
+        <i class="fas fa-headphones"></i>
+        <span onclick="location.href='#';">ExYu</span>
+    </div>
+    <div class="menu">
+        <i class="fas fa-headphones"></i>
+        <span onclick="location.href='#';">CityMall</span>
+    </div>
+    <div class="menu">
+        <i class="fas fa-headphones"></i>
+        <span onclick="location.href='#';">NULL</span>
+    </div>
+    <div class="menu">
+        <i class="fas fa-headphones"></i>
+        <span onclick="location.href='#';">NULL</span>
+    </div>
+    <div class="menu">
+        <i class="fas fa-headphones"></i>
+        <span onclick="location.href='#';">NULL</span>
+    </div>
+</div>-->
+
+<div class="radio-container">
+    <div class="radio-background" id="radio-image"></div>
+    <div class="radio-info">
+    <div class="radio-info-text">
+        <div id="song-name">Loading...</div>
+        <div id="artist">Loading...</div>
+    </div>
+    <div id="play-button" class="icon-button">
+        <i class="fas fa-play"></i>
+    </div>
+    <a href="https://radio.kanal77.mk" target="_blank"><img src="/safari/reklami/mobilna_reklama.jpg" width="360" height="59"></a>
+</div>
+</div>
+
+<!-- Тука треба да стои рекламата за радио плеерот в.1-->
+
+<!--JS од skripta.js за debug-->
+<script>
+const radioLink = 'https://radiocnd.mms.mk/proxy/exyu/stream';
+let audio = null;
+
+
+    function fetchSongInfo() {
+        console.log('fetchSongInfo()');
+        fetch('https://exyu.kanal77.mk/api.php?url=https://radiocnd.mms.mk/proxy/exyu&streamtype=shoutcast&historic=true&next=false&t=1684398759392')
+            .then(response => response.json())
+            .then(data => {
+                const currentSong = data.currentSong;
+                const currentArtist = data.currentArtist;
+                updateSongInfo(currentSong, currentArtist);
+                fetchArtistImage(currentArtist);
+            })
+            .catch(error => console.error(error)); // Логирање во Console.log()
+    }
+    // Промена на изведувач и песна
+    function updateSongInfo(songName, artist) {
+        console.log('updateSongInfo()');
+        document.getElementById('song-name').innerText = songName;
+        document.getElementById('artist').innerText = artist;
+    }
+    // Превзимање од itunes
+    function fetchArtistImage(artist) {
+        console.log('fetchArtistImage()');
+        const term = encodeURIComponent(artist);
+        fetch(`https://itunes.apple.com/search?term=${term}`)
+            .then(response => response.json())
+            .then(data => {
+                const results = data.results;
+                if (results.length > 0) {
+                    const artistImage = results[0].artworkUrl100.replace('100x100bb', '256x256bb');
+                    updateRadioBackground(artistImage);
+                }
+            })
+            .catch(error => console.error(error)); // Логирање во Console.log()
+    }
+
+    function updateRadioBackground(artist) {
+    console.log('updateRadioBackground()');
+    const radioImage = document.getElementById('radio-image');
+    const formattedArtist = artist.replace(/\s+/g, '-').toLowerCase();
+    const imageUrl = `/img/izveduvaci/${formattedArtist}.jpg`;
+
+  const image = new Image();
+  image.onload = () => {
+    radioImage.style.backgroundImage = `url(${imageUrl})`;
+  };
+  image.onerror = () => {
+    fetchArtistImage(artist);
+  };
+  image.src = imageUrl;
+
+  const caption = document.createElement('div');
+  caption.classList.add('radio-info-artist');
+  caption.innerText = artist;
+
+  const radioContainer = document.querySelector('.radio-container');
+  radioContainer.appendChild(caption);
+}
+
+function fetchArtistImage(artist) {
+  console.log('fetchArtistImage()');
+  const term = encodeURIComponent(artist);
+  fetch(`https://itunes.apple.com/search?term=${term}`)
+    .then(response => response.json())
+    .then(data => {
+      const results = data.results;
+      if (results.length > 0) {
+        const artistImage = results[0].artworkUrl100.replace('100x100bb', '256x256bb');
+        const radioImage = document.getElementById('radio-image');
+        radioImage.style.backgroundImage = `url(${artistImage})`;
+      }
+    })
+    .catch(error => console.error(error));
+}
+
+    function playRadio() {
+        console.log('playRadio()');
+        audio = new Audio(radioLink);
+        audio.play();
+        fetchSongInfo();
+        document.getElementById('play-button').innerText = 'Исклучи';
+        document.getElementById('play-button').classList.remove('btn-primary');
+        document.getElementById('play-button').classList.add('btn-danger');
+    }
+
+    function stopRadio() {
+        console.log('stopRadio()');
+        if (audio) {
+            audio.pause();
+            audio = null;
+            document.getElementById('play-button').innerText = 'Вклучи';
+            document.getElementById('play-button').classList.remove('btn-danger');
+            document.getElementById('play-button').classList.add('btn-primary');
+        }
+    }
+
+    document.getElementById('play-button').addEventListener('click', () => {
+        if (audio && !audio.paused) {
+            stopRadio();
+        } else {
+            playRadio();
+        }
+    });
+
+    fetchSongInfo();
+    setInterval(fetchSongInfo, 5000);
+
+</script>
+
+<!--почеток на скриптата-->
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/7056b27111.js" crossorigin="anonymous"></script>
+<!--<script src="skripta.js"></script>-->
+
+
+</body>
+</html>
