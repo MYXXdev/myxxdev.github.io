@@ -381,15 +381,15 @@ input[type=range]::-ms-thumb {
     padding-left: 10px;
 }
 #playerButton {
-    color: black;
+    color: yellow;
 }
 .play-pause i {
     cursor: pointer;
 }
 .btn-play {
-    background-color: white;
+    background-color: black;
     border: none;
-    color: black;
+    color: yellow;
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
