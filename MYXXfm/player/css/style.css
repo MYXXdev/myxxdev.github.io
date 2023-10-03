@@ -93,6 +93,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+     border-radius: 10px;
     transition: background-image 1s;
 }
 
@@ -101,18 +102,18 @@ body {
 }
 
 .info-current-song {
-    font-family: 'Share', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
 }
 
 .info-current-song h2 {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
 }
 
 .info-current-song h3 {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .play-pause {
@@ -129,7 +130,7 @@ body {
 }
 
 .volume-slide {
-    line-height: 35px;
+
 }
 
 .volume-control {
@@ -137,7 +138,7 @@ body {
 }
 
 .vagalume a {
-    color: #000000;
+    color: #fff;
     text-decoration: underline;
 }
 
@@ -259,12 +260,13 @@ input[type=range]::-ms-thumb {
 
 
 .historic h2 {
-    color: #000000;
-    border-bottom: 2px solid #000000;
+    color: #fff;
+    border-bottom: 2px solid #fff;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 10px 0;
+    
 }
 
 .historic article {
@@ -278,7 +280,7 @@ input[type=range]::-ms-thumb {
     float: left;
     background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 1px solid #383838;
+    border: 1px solid #fefefe;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
@@ -291,7 +293,7 @@ input[type=range]::-ms-thumb {
 .historic .music-info .song {
     width: 100%;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 10px;
     text-transform: uppercase;
     margin-bottom: -5px;
 }
@@ -373,4 +375,32 @@ input[type=range]::-ms-thumb {
         display: inline-block;
         line-height: 1em;
       }
+}
+
+#buttonPlay {
+    padding-left: 10px;
+}
+#playerButton {
+    color: black;
+}
+.play-pause i {
+    cursor: pointer;
+}
+.btn-play {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 100%;
+    transition: transform .2s;
+    box-shadow: 1px 3px #30303022;
+}
+.btn-play:focus {outline:0;}
+.btn-play:hover {
+    box-shadow: 1px 5px #30303022;
+    transform: scale(1.1);
 }
