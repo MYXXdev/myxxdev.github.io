@@ -13,7 +13,22 @@
     <link rel="stylesheet" type="text/css" href="https://myxxdev.github.io/MYXXfm/player/css/animate.css">
     <link rel="stylesheet" href="https://myxxdev.github.io/MYXXfm/player/css/style.css?v2322">
     
-    
+ <style>
+	/*Desktop*/
+	.desktop {
+    display: block;
+	}
+
+	/*Mobile*/
+	@media (max-width: 768px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+	}
+</style>   
     
 </head>
 
@@ -78,12 +93,27 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 text-center call-lyrics">
+                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                				<!--Desktop-->
+<div class="desktop">
+    <ins data-revive-zoneid="85" data-revive-ct0="{clickurl_enc}" data-revive-id="99bd19a24a3dd7bb6f8b5a3422f0055c"></ins>
+</div>
+
+<!--Mobile-->
+<div class="mobile">
+    <ins data-revive-zoneid="86" data-revive-ct0="{clickurl_enc}" data-revive-id="99bd19a24a3dd7bb6f8b5a3422f0055c"></ins>
+</div>
+                    </div>
                 <div class="row historic">
                     <div class="col-12">
                         <h2>RECENTLY PLAYED</h2>
@@ -113,6 +143,23 @@
             </div>
         </section>
     </main>
+    <div class="modal fade" id="modalLyrics" tabindex="-1" role="dialog" aria-labelledby="lyricsSong" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lyricsSong">Lyrics</h5>
+                    <button type="button" style="color: #fff" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body" id="lyric"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://myxxdev.github.io/MYXXfm/player/js/bootstrap.min.js"></script>
