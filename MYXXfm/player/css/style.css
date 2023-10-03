@@ -304,7 +304,7 @@ input[type=range]::-ms-thumb {
 .historic .music-info .song {
     width: 100%;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     text-transform: uppercase;
     margin-bottom: -5px;
     color: white;
