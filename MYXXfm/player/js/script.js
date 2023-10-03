@@ -6,7 +6,7 @@ const RADIO_NAME = 'MYXX FM';
 var zenoid = 'q9ar4zedtqzuv'
 
 // URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
-const URL_STREAMING = 'https://stream-149.zeno.fm/k1cra0edtqzuv?zs=VC8STUcsQSWP9ScjBZSGCQ';
+const URL_STREAMING = 'https://forwardmystream.com/myxxfmhq';
 
 // Visit https://api.vagalume.com.br/docs/ to get your API key
 const API_KEY = "994683a4d6d202230a0af0d92aa341b7";
