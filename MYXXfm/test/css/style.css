@@ -43,7 +43,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-     background-color: rgba(0,0,0,0.0);
+    background-color: rgba(0,0,0,0.0);
     z-index: 2;
 }
 
@@ -68,16 +68,13 @@ body {
     margin-bottom: 15px;
 }
 
-
-
 #currentCoverArt {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     border-radius: 20px;
-  
+    border-radius: 0px;
     transition: background-image 1s;
 }
 
