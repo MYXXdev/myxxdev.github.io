@@ -17,7 +17,7 @@ body {
 .cover-site {
     min-width: 100%;
     min-height: 100%;
-    position: absolute;
+    position: fixed;
     background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
