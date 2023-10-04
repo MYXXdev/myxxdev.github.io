@@ -25,36 +25,6 @@ body {
     background-attachment: fixed;
 }
 
-@media (max-width: 767px) {
-    .cover-site {
-        background-image: url('https://radio.kanal77.mk/pozadini/412x914_mobilni.jpg');
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .cover-site {
-        background-image: url('https://radio.kanal77.mk/pozadini/768x1024_ipad_mini.jpg');
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1203px) {
-    .cover-site {
-        background-image: url('https://radio.kanal77.mk/pozadini/820x1180_ipad.jpg');
-    }
-}
-
-@media (min-width: 1204px) and (max-width: 1365px) {
-    .cover-site {
-        background-image: url('https://radio.kanal77.mk/pozadini/1024x1364_pozadina.jpg');
-    }
-}
-
-@media (min-width: 1366px) {
-    .cover-site {
-        background-image: url('https://radio.kanal77.mk/pozadini/1080x1080_pozadina.jpg');
-    }
-}
-
 #bgCover {
     height: 100%;
     width: 100%;
@@ -90,11 +60,12 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../img/bg-capa.jpg') no-repeat;
+    background: url('../img/MYXXfm.png') no-repeat;
     background-size: cover;
-    border: 1px solid #383838;
+    border: 3px solid #fefefe;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
+    border-radius: 15px;
     margin-bottom: 15px;
 }
 
