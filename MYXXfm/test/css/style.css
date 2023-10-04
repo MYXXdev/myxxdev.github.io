@@ -14,18 +14,13 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
-
-
 .cover-site {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
     background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: fixed;
     transition: background-image 1s;
     background-attachment: fixed;
 }
