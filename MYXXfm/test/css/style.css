@@ -20,10 +20,12 @@ body {
     position: fixed;
     background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
-    background-size: fixed;
+    background-size: cover;
     transition: background-image 1s;
     background-attachment: fixed;
 }
+
+/* FONDO DESENFOQUE */
 
 #bgCover {
     height: 100%;
@@ -76,7 +78,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 10px;
     transition: background-image 1s;
 }
 
@@ -102,7 +103,7 @@ body {
 }
 
 .play-pause {
-    font-size: 30px;
+    font-size: 65px;
  
 }
 
