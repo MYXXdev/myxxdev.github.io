@@ -17,7 +17,7 @@ body {
 .cover-site {
     min-width: 100%;
     min-height: 100%;
-    position: fixed;
+    position: absolute;
     background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
@@ -61,10 +61,10 @@ body {
     margin: auto;
     background: url('../img/MYXXfm.png') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
+    border: 4px solid #fefefe;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 15px;
 }
 
@@ -76,7 +76,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     border-radius: 10px;
+     border-radius: 20px;
   
     transition: background-image 1s;
 }
@@ -252,7 +252,7 @@ input[type=range]::-ms-thumb {
 
 .historic h2 {
     color: #fff;
-    border-bottom: 2px solid #fff;
+    border-bottom: 4px solid #fff;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -274,10 +274,10 @@ input[type=range]::-ms-thumb {
     height: 95px;
     margin-right: 15px;
     float: left;
-    border-radius: 10px;
+    border-radius: 20px;
     background: url('../img/MYXXfm.png') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
+    border: 4px solid #fefefe;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
@@ -378,7 +378,7 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     cursor: pointer;
     border-radius: 25px;
-    width: 25%;
+    width: 50%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
