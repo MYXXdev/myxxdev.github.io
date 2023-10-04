@@ -1,0 +1,400 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,800&display=swap');
+@import url('bootstrap.min.css');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+.cover-site {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    background: url('../img/bg_site.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 1s;
+    background-attachment: fixed;
+}
+
+/* FONDO DESENFOQUE */
+
+#bgCover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 20%;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    transition: all .5s linear;
+    transform: scale(2.2);
+  
+    z-index: 1;
+}
+
+.bg-mask {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+     background-color: rgba(0,0,0,0.0);
+    z-index: 2;
+}
+
+.web-player {
+    height: 100%;
+    color: #fff;
+    padding: 5px;
+    position: relative;
+    z-index: 3;
+    margin-top: 25px;
+}
+
+.cover-album {
+    max-width: 80%;
+    margin: auto;
+    background: url('../img/cover.png') no-repeat;
+    background-size: cover;
+    border: 2px solid #fefefe;
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
+    transition: background-image 1s;
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+
+#currentCoverArt {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     border-radius: 10px;
+  
+    transition: background-image 1s;
+}
+
+.logo {
+    display: none;
+}
+
+.info-current-song {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.info-current-song h2 {
+    font-size: 46px;
+    text-transform: uppercase;
+    font-weight: 800;
+   
+}
+
+.info-current-song h3 {
+    font-size: 22px;
+   
+    font-weight: 600;
+}
+
+.play-pause {
+    font-size: 65px;
+
+   
+ 
+}
+
+.play-pause i {
+    cursor: pointer;
+}
+
+.volume-icon {
+    font-size: 28px;
+    margin-top: -5px;
+}
+
+.volume-slide {
+    
+}
+
+.volume-control {
+    display: none;
+}
+
+.vagalume a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.lyrics {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    outline: none;
+    transition: .3s;
+}
+
+.lyrics:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+.lyrics:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff !important;
+    border-radius: 20px;
+}
+
+.modal-content .btn {
+    border-radius: 20px;
+    background-color: #00E1E7;
+}
+
+/* Chrome */
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #fff;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+}
+
+/* Firefox */
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #fff;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* IE e Edge */
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 10px 0;
+    top: -10px;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #fff;
+    border: 0px solid #000101;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #fff;
+    border: 0px solid #000101;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+
+.historic h2 {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0;
+    
+}
+
+
+/* ZONA FONDO CANCIONES SONADAS */
+
+.historic article {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: none;
+}
+
+.historic .cover-historic { 
+    width: 95px;
+    height: 95px;
+    margin-right: 15px;
+    float: left;
+    border-radius: 10px;
+    background: url('../img/cover.png') no-repeat;
+    background-size: cover;
+    border: 2px solid #fefefe;
+   
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-image 1s;
+}
+
+/* COLOR TEXTO INFO ARTISTA */
+.historic .music-info {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* COLOR TEXTO CANCION */
+
+.historic .music-info .song {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: -5px;
+    color: white;
+}
+
+@media(max-width: 370px) {
+    .cover-album {
+        max-width: 100%;
+    }
+}
+
+@media(min-width: 576px) {
+    .volume-control {
+        display: flex;
+    }
+
+    .call-lyrics {
+        margin-top: 20px;
+    }
+}
+
+@media(min-width: 768px) {
+    body {
+        align-items: center;
+    }
+
+    .h1-logo {
+        text-align: center;
+    }
+
+    .logo {
+        display: block;
+        z-index: 2;
+    }
+
+    .logo img {
+        max-width: 200px;
+    }
+
+    .web-player {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .cover-album {
+        margin: 10px auto;
+        min-width: 320px;
+        height: 320px;
+    }
+
+    .logo img {
+        max-width: 300px;
+        margin: 65px 0;
+    }
+
+    .info-current-song {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .volume-control {
+        margin-top: 10%;
+    }
+}
+
+#buttonPlay {
+    padding-left: 10px;
+}
+#playerButton {
+    color: black;
+}
+.play-pause i {
+    cursor: pointer;
+}
+.btn-play {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 100%;
+    transition: transform .2s;
+    box-shadow: 1px 3px #30303022;
+}
+.btn-play:focus {outline:0;}
+.btn-play:hover {
+    box-shadow: 1px 5px #30303022;
+    transform: scale(1.1);
+}
+

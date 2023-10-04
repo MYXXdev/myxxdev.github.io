@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RadioPlayer</title>
+
+
+    <link rel="icon" type="image/png" href="img/cover.png" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css?v2322">
+
+    
+</head>
+
+<body>
+
+    <div class="cover-site">
+        <div id="bgCover"></div>
+        <div class="bg-mask"></div>
+    </div>
+    <main>
+        <section id="player">
+            <div class="container">
+                <div class="row web-player">
+                    <div class="col-12 col-lg-10">
+                        <div class="row">
+                            <div class="col-12 col-md-5">
+                                <div class="cover-album">
+                                    <div id="currentCoverArt"></div>
+                                    <div class="watermark"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 ml-md-auto col-md-6">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="info-current-song">
+                                            <h2 id="currentSong" class="current-song text-uppercase">Song</h2>
+                                            <h3 id="currentArtist" class="current-artist text-captalize">Artist</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <!--
+                                       <div class="row">
+                                            <div class="play-pause col-12 col-md-2 text-center">
+                                                <i id="playerButton" class="fa fa-play-circle" onclick="togglePlay()"></i>
+                                            </div>
+                                            <div class="col-12 col-md-10 text-center">
+                                                <div class="row volume-control">
+                                                    <div class="volume-icon col-1"><i class="fa fa-volume-up"></i></div>
+                                                    <div class="volume-slide col-10 text-center"><input type="range" id="volume"
+                                                            step="1" min="0" max="100" value="80"></div>
+                                                    <div class="percentual-volume col-12">Volume <span id="volIndicator">...</span>%</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center call-lyrics">
+                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics">VER LETRA</a>
+                                            </div>
+                                        </div>-->
+                                        
+                                        <div class="row">
+                                            <div class="play-pause col-12 col-md-6 text-center">
+                                                <button  class="btn-play" onclick="togglePlay()"><i id="playerButton" class="fa fa-play"></i> <span id="buttonPlay">PLAY</span></button>
+                
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 text-center">
+                                                <div class="row volume-control">
+                                                    <div class="volume-icon col-1"><i class="fa fa-volume-up"></i></div>
+                                                    <div class="volume-slide col-10 text-center"><input type="range" id="volume"
+                                                            step="1" min="0" max="100" value="80"></div>
+                                                    <div class="percentual-volume col-12">Volume <span id="volIndicator">...</span>%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 text-center call-lyrics">
+                                                <a href="#" class="lyrics" style="" data-target="#modalLyrics">LYRICS</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row historic">
+                    <div class="col-12">
+                        <h2>RECENTLY PLAYED</h2>
+                        <div class="row" id="historicSong">
+                            <article class="col-12 col-md-6">
+                                <div class="cover-historic"></div>
+                                <div class="music-info">
+                                    <div class="song">No Song</div>
+                                    <div class="artist">No Artist</div>
+                                </div>
+                                
+                            </article>
+                            <article class="col-12 col-md-6">
+                                <div class="cover-historic"></div>
+                                <div class="music-info">
+                                    <div class="song">No Title</div>
+                                    <div class="artist">No Artist</div>
+                                </div>
+                                
+                                
+                            </article>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="modalLyrics" tabindex="-1" role="dialog" aria-labelledby="lyricsSong" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lyricsSong">Lyrics</h5>
+                    <button type="button" style="color: #fff" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body" id="lyric"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/script.js?3892920001992"></script>
+</body>
+
+</html>
