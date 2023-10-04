@@ -68,7 +68,7 @@ function Page() {
         var $artistName = document.querySelectorAll('#historicSong article .music-info .artist');
 
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = 'img/MYXXfm.png';
 
         // Get cover art for song history
         var xhttp = new XMLHttpRequest();
@@ -107,7 +107,7 @@ function Page() {
 
     this.refreshCover = function (song = '', artist) {
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = 'img/MYXXfm.png';
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
