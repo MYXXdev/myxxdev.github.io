@@ -42,7 +42,7 @@ body {
     filter: blur(20px);
     -webkit-filter: blur(20px);
     transition: all .5s linear;
-    transform: scale(2.2);
+    transform: scale(1.0);
   
     z-index: 50;
 }
@@ -394,7 +394,7 @@ input[type=range]::-ms-thumb {
 .btn-play:focus {outline:0;}
 .btn-play:hover {
     box-shadow: 1px 5px #30303022;
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 
     .ml7 {
