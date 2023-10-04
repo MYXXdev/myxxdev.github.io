@@ -344,7 +344,7 @@ input[type=range]::-ms-thumb {
     }
 
     .web-player {
-        height: auto;
+        height: relative;
         margin-top: 0;
     }
 
@@ -387,7 +387,7 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     cursor: pointer;
     border-radius: 25px;
-    width: 50%;
+    width: 100%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
