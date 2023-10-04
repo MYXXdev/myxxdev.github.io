@@ -74,7 +74,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 0px;
+    border-radius: 5px;
     transition: background-image 1s;
 }
 
