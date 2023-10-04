@@ -102,7 +102,7 @@ body {
 }
 
 .play-pause {
-    font-size: 65px;
+    font-size: 30px;
  
 }
 
@@ -244,10 +244,9 @@ input[type=range]::-ms-thumb {
     cursor: pointer;
 }
 
-
 .historic h2 {
-    color: #000000;
-    border-bottom: 2px solid #000000;
+    color: #fff;
+    border-bottom: 2px solid #fff;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -256,6 +255,8 @@ input[type=range]::-ms-thumb {
 
 .historic article {
     margin: 5px 0;
+    padding: 10px;
+    background-color: none;
 }
 
 .historic .cover-historic {
@@ -263,9 +264,9 @@ input[type=range]::-ms-thumb {
     height: 95px;
     margin-right: 15px;
     float: left;
-    background: url('../img/bg-capa.jpg') no-repeat;
+    background: url('../img/MYXXfm.jpg') no-repeat;
     background-size: cover;
-    border: 1px solid #383838;
+    border: 2px solid #fefefe;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
