@@ -244,9 +244,10 @@ input[type=range]::-ms-thumb {
     cursor: pointer;
 }
 
+
 .historic h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
+    color: #000000;
+    border-bottom: 2px solid #000000;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -255,8 +256,6 @@ input[type=range]::-ms-thumb {
 
 .historic article {
     margin: 5px 0;
-    padding: 10px;
-    background-color: none;
 }
 
 .historic .cover-historic {
@@ -264,16 +263,16 @@ input[type=range]::-ms-thumb {
     height: 95px;
     margin-right: 15px;
     float: left;
-    background: url('../img/MYXXfm.jpg') no-repeat;
+    background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
+    border: 1px solid #383838;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
 
 .historic .music-info {
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-family: 'Share', sans-serif;
 }
 
 .historic .music-info .song {
@@ -282,7 +281,6 @@ input[type=range]::-ms-thumb {
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: -5px;
-    color: white;
 }
 
 @media(max-width: 370px) {
