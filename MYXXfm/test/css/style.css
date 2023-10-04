@@ -18,7 +18,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    background: url('../img/bg_site.jpg') no-repeat;
+    background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     transition: background-image 1s;
@@ -59,7 +59,7 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../img/cover.png') no-repeat;
+    background: url('../img/MYXXfm.png') no-repeat;
     background-size: cover;
     border: 2px solid #fefefe;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
@@ -275,7 +275,7 @@ input[type=range]::-ms-thumb {
     margin-right: 15px;
     float: left;
     border-radius: 10px;
-    background: url('../img/cover.png') no-repeat;
+    background: url('../img/MYXXfm.png') no-repeat;
     background-size: cover;
     border: 2px solid #fefefe;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
