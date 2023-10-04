@@ -44,7 +44,7 @@ body {
     transition: all .5s linear;
     transform: scale(2.2);
   
-    z-index: 1;
+    z-index: 50;
 }
 
 .bg-mask {
@@ -72,7 +72,7 @@ body {
     border: 2px solid #fefefe;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
-    border-radius: 10px;
+    border-radius: 15px;
 
     margin-bottom: 15px;
 }
@@ -85,7 +85,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     border-radius: 10px;
+     border-radius: 15px;
   
     transition: background-image 1s;
 }
@@ -100,14 +100,14 @@ body {
 }
 
 .info-current-song h2 {
-    font-size: 46px;
+    font-size: 22px;
     text-transform: uppercase;
     font-weight: 800;
    
 }
 
 .info-current-song h3 {
-    font-size: 22px;
+    font-size: 18px;
    
     font-weight: 600;
 }
@@ -164,11 +164,11 @@ body {
 .modal-content {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff !important;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 .modal-content .btn {
-    border-radius: 20px;
+    border-radius: 0px;
     background-color: #00E1E7;
 }
 
