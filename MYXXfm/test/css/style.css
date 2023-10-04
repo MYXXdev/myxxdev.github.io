@@ -14,23 +14,16 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
-
-
 .cover-site {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    background: url('../img/MYXXfm_Background.jpg') no-repeat;
+    background: url('../img/bg_site.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     transition: background-image 1s;
     background-attachment: fixed;
 }
-
-/* FONDO DESENFOQUE */
 
 #bgCover {
     height: 100%;
@@ -42,8 +35,8 @@ body {
     filter: blur(20px);
     -webkit-filter: blur(20px);
     transition: all .5s linear;
-    transform: scale(1.0);
-    z-index: 50;
+    transform: scale(2.2);
+    z-index: 1;
 }
 
 .bg-mask {
@@ -66,12 +59,12 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../img/MYXXfm.png') no-repeat;
+    background: url('../img/cover.png') no-repeat;
     background-size: cover;
-    border: 3px solid #fefefe;
+    border: 2px solid #fefefe;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
-    border-radius: 15px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
@@ -83,6 +76,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+     border-radius: 10px;
+  
     transition: background-image 1s;
 }
 
@@ -96,19 +91,22 @@ body {
 }
 
 .info-current-song h2 {
-    font-size: 22px;
+    font-size: 46px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
    
 }
 
 .info-current-song h3 {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 22px;
+   
+    font-weight: 600;
 }
 
 .play-pause {
     font-size: 65px;
+
+   
  
 }
 
@@ -122,7 +120,7 @@ body {
 }
 
 .volume-slide {
-    line-height: 35px;
+    
 }
 
 .volume-control {
@@ -136,6 +134,7 @@ body {
 
 .lyrics {
     text-transform: uppercase;
+    text-decoration: underline;
     color: #fff;
     font-size: 1em;
     font-weight: 400;
@@ -156,11 +155,11 @@ body {
 .modal-content {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff !important;
-    border-radius: 0;
+    border-radius: 20px;
 }
 
 .modal-content .btn {
-    border-radius: 0;
+    border-radius: 20px;
     background-color: #00E1E7;
 }
 
@@ -181,7 +180,7 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #000000;
+    background: #fff;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -189,7 +188,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #000000;
+    background: #fff;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8px;
@@ -202,7 +201,7 @@ input[type=range]::-moz-range-track {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #000000;
+    background: #fff;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -211,7 +210,7 @@ input[type=range]::-moz-range-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #000000;
+    background: #fff;
     cursor: pointer;
 }
 
@@ -229,13 +228,13 @@ input[type=range]::-ms-track {
 }
 
 input[type=range]::-ms-fill-lower {
-    background: #000000;
+    background: #fff;
     border: 0px solid #000101;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
 
 input[type=range]::-ms-fill-upper {
-    background: #000000;
+    background: #fff;
     border: 0px solid #000101;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
@@ -246,40 +245,51 @@ input[type=range]::-ms-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #000000;
+    background: #fff;
     cursor: pointer;
 }
 
 
 .historic h2 {
-    color: #000000;
-    border-bottom: 2px solid #000000;
+    color: #fff;
+    border-bottom: 2px solid #fff;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 10px 0;
+    
 }
+
+
+/* ZONA FONDO CANCIONES SONADAS */
 
 .historic article {
     margin: 5px 0;
+    padding: 10px;
+    background-color: none;
 }
 
-.historic .cover-historic {
+.historic .cover-historic { 
     width: 95px;
     height: 95px;
     margin-right: 15px;
     float: left;
-    background: url('../img/bg-capa.jpg') no-repeat;
+    border-radius: 10px;
+    background: url('../img/cover.png') no-repeat;
     background-size: cover;
-    border: 1px solid #383838;
+    border: 2px solid #fefefe;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
 
+/* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
-    color: #000000;
-    font-family: 'Share', sans-serif;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
+
+
+/* COLOR TEXTO CANCION */
 
 .historic .music-info .song {
     width: 100%;
@@ -341,48 +351,39 @@ input[type=range]::-ms-thumb {
     }
 
     .info-current-song {
-        margin-top: 50px;
+        margin-top: 20px;
         text-align: left;
     }
 
     .volume-control {
         margin-top: 10%;
     }
-    
+}
+
+#buttonPlay {
+    padding-left: 10px;
+}
+#playerButton {
+    color: black;
+}
+.play-pause i {
+    cursor: pointer;
+}
 .btn-play {
-    background-color: black;
+    background-color: white;
     border: none;
-    color: yellow;
+    color: black;
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 25px;
-    width: 100%;
+    width: 50%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
 .btn-play:focus {outline:0;}
 .btn-play:hover {
     box-shadow: 1px 5px #30303022;
-    transform: scale(1.0);
+    transform: scale(1.1);
 }
-
-    .ml7 {
-        position: relative;
-        font-weight: 700;
-        font-size: 1.7em;
-      }
-      .ml7 .text-wrapper {
-        position: relative;
-        display: inline-block;
-        padding-top: 0.2em;
-        padding-right: 0.05em;
-        padding-bottom: 0.1em;
-        overflow: hidden;
-      }
-      .ml7 .letter {
-        transform-origin: 0 100%;
-        display: inline-block;
-        line-height: 1em;
-      }
