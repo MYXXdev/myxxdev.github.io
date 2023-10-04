@@ -1,6 +1,5 @@
 @charset 'utf-8';
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Share:400i,700i');
 @import url('bootstrap.min.css');
 
 html, body {
@@ -14,36 +13,55 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
-
-
 .cover-site {
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     transition: background-image 1s;
     background-attachment: fixed;
 }
 
-/* FONDO DESENFOQUE */
+@media (max-width: 767px) {
+    .cover-site {
+        background-image: url('https://radio.kanal77.mk/pozadini/412x914_mobilni.jpg');
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cover-site {
+        background-image: url('https://radio.kanal77.mk/pozadini/768x1024_ipad_mini.jpg');
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1203px) {
+    .cover-site {
+        background-image: url('https://radio.kanal77.mk/pozadini/820x1180_ipad.jpg');
+    }
+}
+
+@media (min-width: 1204px) and (max-width: 1365px) {
+    .cover-site {
+        background-image: url('https://radio.kanal77.mk/pozadini/1024x1364_pozadina.jpg');
+    }
+}
+
+@media (min-width: 1366px) {
+    .cover-site {
+        background-image: url('https://radio.kanal77.mk/pozadini/1080x1080_pozadina.jpg');
+    }
+}
 
 #bgCover {
-    height: 100%;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
-    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    background-position: center 20%;
-    filter: blur(20px);
-    -webkit-filter: blur(20px);
-    transition: all .5s linear;
-    transform: scale(1.0);
-  
+    transition: background-image 1s;
+    background-position: center;
+    background-attachment: fixed;
     z-index: 50;
 }
 
@@ -51,13 +69,13 @@ body {
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-     background-color: rgba(0,0,0,0.0);
+
     z-index: 2;
 }
 
 .web-player {
     height: 100%;
-    color: #fff;
+    color: #000000;
     padding: 5px;
     position: relative;
     z-index: 3;
@@ -67,17 +85,25 @@ body {
 .cover-album {
     max-width: 80%;
     margin: auto;
-    background: url('../img/MYXXfm.png') no-repeat;
+    background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 3px solid #fefefe;
+    border: 1px solid #383838;
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
     transition: background-image 1s;
-    border-radius: 15px;
-
     margin-bottom: 15px;
 }
 
-
+.watermark {
+    width: 89px;
+    height: 35px;
+    background: url(../img/logo.png) no-repeat;
+    background-size: auto 35px;
+    opacity: 0.5;
+    position: relative;
+    bottom: 36px;
+    right: -1px;
+    z-index: 5;
+}
 
 #currentCoverArt {
     width: 100%;
@@ -85,8 +111,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     border-radius: 15px;
-  
     transition: background-image 1s;
 }
 
@@ -95,28 +119,22 @@ body {
 }
 
 .info-current-song {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Share', sans-serif;
     text-align: center;
 }
 
 .info-current-song h2 {
-    font-size: 16px;
-    text-transform: uppercase;
+    font-size: 22px;
     font-weight: 700;
-   
 }
 
 .info-current-song h3 {
-    font-size: 12px;
-   
+    font-size: 18px;
     font-weight: 400;
 }
 
 .play-pause {
     font-size: 65px;
-
-   
- 
 }
 
 .play-pause i {
@@ -129,7 +147,7 @@ body {
 }
 
 .volume-slide {
-    
+    line-height: 35px;
 }
 
 .volume-control {
@@ -137,13 +155,12 @@ body {
 }
 
 .vagalume a {
-    color: #fff;
+    color: #000000;
     text-decoration: underline;
 }
 
 .lyrics {
     text-transform: uppercase;
-    text-decoration: underline;
     color: #fff;
     font-size: 1em;
     font-weight: 400;
@@ -153,23 +170,22 @@ body {
 
 .lyrics:active {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 
 .lyrics:visited {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 
 .modal-content {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff !important;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .modal-content .btn {
-    border-radius: 0px;
-    background-color: #00E1E7;
+    border-radius: 0;
 }
 
 /* Chrome */
@@ -189,7 +205,7 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #fff;
+    background: #000000;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -197,7 +213,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: #000000;
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8px;
@@ -210,7 +226,7 @@ input[type=range]::-moz-range-track {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #fff;
+    background: #000000;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -219,7 +235,7 @@ input[type=range]::-moz-range-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: #000000;
     cursor: pointer;
 }
 
@@ -237,13 +253,13 @@ input[type=range]::-ms-track {
 }
 
 input[type=range]::-ms-fill-lower {
-    background: #fff;
+    background: #000000;
     border: 0px solid #000101;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
 
 input[type=range]::-ms-fill-upper {
-    background: #fff;
+    background: #000000;
     border: 0px solid #000101;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
@@ -254,51 +270,40 @@ input[type=range]::-ms-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #fff;
+    background: #000000;
     cursor: pointer;
 }
 
 
 .historic h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
+    color: #000000;
+    border-bottom: 2px solid #000000;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 10px 0;
-    
 }
-
-
-/* ZONA FONDO CANCIONES SONADAS */
 
 .historic article {
     margin: 5px 0;
-    background-color: none;
 }
 
-.historic .cover-historic { 
+.historic .cover-historic {
     width: 95px;
     height: 95px;
     margin-right: 15px;
     float: left;
-    border-radius: 10px;
-    background: url('../img/MYXXfm.png') no-repeat;
+    background: url('../img/bg-capa.jpg') no-repeat;
     background-size: cover;
-    border: 2px solid #fefefe;
-   
+    border: 1px solid #383838;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-image 1s;
 }
 
-/* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-family: 'Share', sans-serif;
 }
-
-
-/* COLOR TEXTO CANCION */
 
 .historic .music-info .song {
     width: 100%;
@@ -306,7 +311,6 @@ input[type=range]::-ms-thumb {
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: -5px;
-    color: white;
 }
 
 @media(max-width: 370px) {
@@ -344,7 +348,7 @@ input[type=range]::-ms-thumb {
     }
 
     .web-player {
-        height: relative;
+        height: auto;
         margin-top: 0;
     }
 
@@ -360,43 +364,14 @@ input[type=range]::-ms-thumb {
     }
 
     .info-current-song {
-        margin-top: 20px;
+        margin-top: 50px;
         text-align: left;
     }
 
     .volume-control {
         margin-top: 10%;
     }
-}
-
-#buttonPlay {
-    padding-left: 10px;
-}
-#playerButton {
-    color: yellow;
-}
-.play-pause i {
-    cursor: pointer;
-}
-.btn-play {
-    background-color: black;
-    border: none;
-    color: yellow;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    width: 100%;
-    transition: transform .2s;
-    box-shadow: 1px 3px #30303022;
-}
-.btn-play:focus {outline:0;}
-.btn-play:hover {
-    box-shadow: 1px 5px #30303022;
-    transform: scale(1.0);
-}
-
+    
     .ml7 {
         position: relative;
         font-weight: 700;
@@ -415,3 +390,4 @@ input[type=range]::-ms-thumb {
         display: inline-block;
         line-height: 1em;
       }
+}
