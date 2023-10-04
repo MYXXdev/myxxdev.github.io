@@ -17,7 +17,7 @@ body {
 .cover-site {
     min-width: 100%;
     min-height: 100%;
-    position: fixed;
+    position: cover;
     background: url('../img/MYXXfm_Background.jpg') no-repeat;
     background-position: center;
     background-size: cover;
@@ -378,7 +378,7 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     cursor: pointer;
     border-radius: 25px;
-    width: 50%;
+    width: 25%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
