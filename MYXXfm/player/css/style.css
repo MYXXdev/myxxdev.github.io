@@ -382,7 +382,7 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     cursor: pointer;
     border-radius: 25px;
-    width: 100%;
+    width:50%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
