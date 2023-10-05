@@ -138,7 +138,6 @@ body {
     font-size: 10px;
     font-weight: 400;
     font-style: italic;
-    -webkit-text-stroke: 0.1px #000000;
     outline: none;
     transition: .3s;
 }
@@ -255,9 +254,9 @@ input[type=range]::-ms-thumb {
     color: #fff;
     border-bottom: 2px solid #fff;
     font-size: 16px;
-    -webkit-text-stroke: 0.5px #000000;
     font-weight: bold;
     text-transform: uppercase;
+    -webkit-text-stroke: 1px #000000;
     margin: 10px 0;
     
 }
