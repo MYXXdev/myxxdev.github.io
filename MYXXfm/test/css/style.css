@@ -99,6 +99,7 @@ body {
 .info-current-song h3 {
     font-size: 14px;
     font-weight: 600;
+    font-style: italic;
     -webkit-text-stroke: 0.5px #000000;
 }
 
@@ -136,6 +137,7 @@ body {
     color: #fff;
     font-size: 26px;
     font-weight: 400;
+    -webkit-text-stroke: 0.5px #000000;
     outline: none;
     transition: .3s;
 }
@@ -284,6 +286,7 @@ input[type=range]::-ms-thumb {
 .historic .music-info {
     font-weight: bold;
     font-size: 14px;
+    font-style: italic;
     -webkit-text-stroke: 0.5px #000000;
     color: white;
     font-family: 'Poppins', sans-serif;
