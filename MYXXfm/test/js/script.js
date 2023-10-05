@@ -1,12 +1,12 @@
 
 
-const RADIO_NAME = 'Game! Radio 1';
+const RADIO_NAME = 'MYXX FM | Spanglish Hits Live Here';
 
 // SELECT ARTWORK PROVIDER, ITUNES, DEEZER & SPOTIFY  eg : spotify 
-var API_SERVICE = 'SPOTIFY';
+var API_SERVICE = 'DEEZER';
 
 // Change Stream URL Here, Supports, ICECAST, ZENO, SHOUTCAST, RADIOJAR and any other stream service.
-const URL_STREAMING = 'https://stream-51.zeno.fm/cfhkm5fs1uhvv?zs=HOu6hxV1SG-7iGi9WGVTqQ';
+const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
 
 //API URL / if you use MEDIA CP, CHANGE THIS TO : https://api.streamafrica.net/metadata/mediacp.php?url='+MEDIACP_JSON_URL
 const API_URL = 'https://api.streamafrica.net/metadata/index.php?z='+URL_STREAMING
@@ -68,7 +68,7 @@ function Page() {
         var $artistName = document.querySelectorAll('#historicSong article .music-info .artist');
 
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = 'img/MYXXfm.png';
 
         // Get cover art for song history
         var xhttp = new XMLHttpRequest();
@@ -107,7 +107,7 @@ function Page() {
 
     this.refreshCover = function (song = '', artist) {
         // Default cover art
-        var urlCoverArt = 'img/cover.png';
+        var urlCoverArt = 'img/MYXXfm.png';
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -538,4 +538,3 @@ function intToDecimal(vol) {
 function decimalToInt(vol) {
     return vol * 100;
 }
-
