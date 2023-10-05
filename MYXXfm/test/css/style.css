@@ -92,8 +92,8 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
-	-webkit-text-stroke: 1px #282828;
-	text-shadow: 0px 4px 4px #282828;
+	-webkit-text-stroke: 1px #000000;
+	text-shadow: 0px 2px 2px #000000;
 }
    
 }
@@ -102,9 +102,10 @@ body {
     font-size: 12px;
     font-weight: 600;
     color: #fff;
-	-webkit-text-stroke: 1px #282828;
-	text-shadow: 0px 4px 4px #282828;
+	-webkit-text-stroke: 1px #000000;
+	text-shadow: 0px 2px 2px #000000;
 }
+
 }
 
 .play-pause {
