@@ -254,6 +254,7 @@ input[type=range]::-ms-thumb {
     color: #fff;
     border-bottom: 2px solid #fff;
     font-size: 16px;
+    -webkit-text-stroke: 0.5px #000000;
     font-weight: bold;
     text-transform: uppercase;
     margin: 10px 0;
@@ -285,7 +286,7 @@ input[type=range]::-ms-thumb {
 /* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
     font-size: 14px;
-    -webkit-text-stroke: 0.5px #000000;
+    -webkit-text-stroke: 0.2px #000000;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
