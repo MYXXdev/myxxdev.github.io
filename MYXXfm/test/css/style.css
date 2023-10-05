@@ -288,7 +288,7 @@ input[type=range]::-ms-thumb {
     color: white;
 }
 
-@media(max-width: 370px) {
+@media(max-width: 250px) {
 .cover-album {
     max-width: 100%;
     }
@@ -329,12 +329,12 @@ body {
 
 .cover-album {
     margin: 10px auto;
-    min-width: 320px;
-    height: 320px;
+    min-width: 250px;
+    height: 250px;
 }
 
     .logo img {
-        max-width: 300px;
+        max-width: 250px;
         margin: 65px 0;
 }
 
@@ -371,7 +371,7 @@ body {
     -webkit-text-stroke: 0.5px #000000;
     cursor: pointer;
     border-radius: 25px;
-    width: 50%;
+    width: 90%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
