@@ -285,6 +285,7 @@ input[type=range]::-ms-thumb {
 
 /* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
+    font-weight: bold;
     font-size: 14px;
     -webkit-text-stroke: 0.1px #000000;
     color: white;
