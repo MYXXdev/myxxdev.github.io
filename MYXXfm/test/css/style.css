@@ -137,6 +137,7 @@ body {
     color: #fff;
     font-size: 10px;
     font-weight: 400;
+    font-style: italic;
     outline: none;
     transition: .3s;
 }
@@ -283,6 +284,8 @@ input[type=range]::-ms-thumb {
 
 /* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
+    font-size: 12px;
+    -webkit-text-stroke: 1px #000000;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
