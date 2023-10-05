@@ -288,9 +288,9 @@ input[type=range]::-ms-thumb {
     color: white;
 }
 
-@media(max-width: 570px) {
+@media(max-width: 575px) {
 .cover-album {
-    max-width: 40%;
+    max-width: 10%;
     }
 }
 
