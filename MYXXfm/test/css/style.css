@@ -366,7 +366,7 @@ input[type=range]::-ms-thumb {
     padding-left: 10px;
 }
 #playerButton {
-    color: black;
+    color: yellow;
 }
 .play-pause i {
     cursor: pointer;
