@@ -92,13 +92,13 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
-	-webkit-text-stroke: 2px #000000;
+	-webkit-text-stroke: 1px #000000;
 }
    
 }
 
 .info-current-song h3 {
-    font-size: 22px;
+    font-size: 12px;
    
     font-weight: 600;
 }
