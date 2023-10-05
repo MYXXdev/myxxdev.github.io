@@ -93,7 +93,6 @@ body {
     font-weight: 800;
     color: #fff;
 	-webkit-text-stroke: 0.5px #000000;
-}
    
 }
 
@@ -104,6 +103,7 @@ body {
 }
 
 .play-pause {
+
     font-size: 65px;
 
    
