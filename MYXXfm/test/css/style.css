@@ -92,7 +92,7 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
-	-webkit-text-stroke: 1px #000000;
+	-webkit-text-stroke: 0.5px #000000;
 }
    
 }
@@ -285,7 +285,7 @@ input[type=range]::-ms-thumb {
 /* COLOR TEXTO INFO ARTISTA */
 .historic .music-info {
     font-size: 14px;
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 0.5px #000000;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
@@ -298,7 +298,7 @@ input[type=range]::-ms-thumb {
     font-weight: bold;
     font-size: 16px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 0.5px #000000;
     margin-bottom: -5px;
     color: white;
 }
