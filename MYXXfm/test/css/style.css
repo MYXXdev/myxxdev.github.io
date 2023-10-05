@@ -138,6 +138,7 @@ body {
     font-size: 10px;
     font-weight: 400;
     font-style: italic;
+    -webkit-text-stroke: 0.1px #000000;
     outline: none;
     transition: .3s;
 }
