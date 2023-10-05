@@ -91,7 +91,7 @@ body {
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 800;
-    color: #333;
+    color: #fff;
 	-webkit-text-stroke: 1px #282828;
 	text-shadow: 0px 4px 4px #282828;
 }
@@ -101,7 +101,7 @@ body {
 .info-current-song h3 {
     font-size: 22px;
     font-weight: 600;
-    color: #333;
+    color: #fff;
 	-webkit-text-stroke: 1px #282828;
 	text-shadow: 0px 4px 4px #282828;
 }
