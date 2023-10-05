@@ -1,17 +1,7 @@
-
-
 const RADIO_NAME = 'MYXX FM | Spanglish Hits Live Here';
-
-// SELECT ARTWORK PROVIDER, ITUNES, DEEZER & SPOTIFY  eg : spotify 
 var API_SERVICE = 'DEEZER';
-
-// Change Stream URL Here, Supports, ICECAST, ZENO, SHOUTCAST, RADIOJAR and any other stream service.
 const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
-
-//API URL / if you use MEDIA CP, CHANGE THIS TO : https://api.streamafrica.net/metadata/mediacp.php?url='+MEDIACP_JSON_URL
 const API_URL = 'https://api.streamafrica.net/metadata/index.php?z='+URL_STREAMING
-
-// Visit https://api.vagalume.com.br/docs/ to get your API key
 const API_KEY = "18fe07917957c289983464588aabddfb";
 
 window.onload = function () {
@@ -23,7 +13,6 @@ window.onload = function () {
     player.play();
 
     getStreamingData();
-    // Interval to get streaming data in miliseconds
     setInterval(function () {
         getStreamingData();
     }, 10000);
@@ -33,7 +22,6 @@ window.onload = function () {
     coverArt.style.height = coverArt.offsetWidth + 'px';
 }
 
-// DOM control
 function Page() {
     this.changeTitlePage = function (title = RADIO_NAME) {
         document.title = title;
@@ -44,17 +32,14 @@ function Page() {
         var currentArtist = document.getElementById('currentArtist');
 
         if (song !== currentSong.innerHTML) {
-            // Animate transition
             currentSong.className = 'animated flipInY text-uppercase';
             currentSong.innerHTML = song;
 
             currentArtist.className = 'animated flipInY text-capitalize';
             currentArtist.innerHTML = artist;
 
-            // Refresh modal title
             document.getElementById('lyricsSong').innerHTML = song + ' - ' + artist;
 
-            // Remove animation classes
             setTimeout(function () {
                 currentSong.className = 'text-uppercase';
                 currentArtist.className = 'text-capitalize';
@@ -67,10 +52,8 @@ function Page() {
         var $songName = document.querySelectorAll('#historicSong article .music-info .song');
         var $artistName = document.querySelectorAll('#historicSong article .music-info .artist');
 
-        // Default cover art
         var urlCoverArt = 'img/MYXXfm.png';
 
-        // Get cover art for song history
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
@@ -80,7 +63,7 @@ function Page() {
 
                 document.querySelectorAll('#historicSong article .cover-historic')[n].style.backgroundImage = 'url(' + gotit + ')';
             }
-            // Formating characters to UTF-8
+
             var music = info.song.replace(/&apos;/g, '\'');
             var songHist = music.replace(/&amp;/g, '&');
 
@@ -90,7 +73,6 @@ function Page() {
             $songName[n].innerHTML = songHist;
             $artistName[n].innerHTML = artistHist;
 
-            // Add class for animation
             $historicDiv[n].classList.add('animated');
             $historicDiv[n].classList.add('slideInRight');
         }
@@ -106,7 +88,7 @@ function Page() {
     }
 
     this.refreshCover = function (song = '', artist) {
-        // Default cover art
+
         var urlCoverArt = 'img/MYXXfm.png';
 
         var xhttp = new XMLHttpRequest();
@@ -114,7 +96,6 @@ function Page() {
             var coverArt = document.getElementById('currentCoverArt');
             var coverBackground = document.getElementById('bgCover');
 
-            // Get cover art URL on iTunes API
             if (this.readyState === 4 && this.status === 200) {
                 var data = JSON.parse(this.responseText);
                 var artworkUrl100 = data.results;
@@ -223,7 +204,6 @@ function Page() {
 
 var audio = new Audio(URL_STREAMING);
 
-// Player control
 function Player() {
     this.play = function () {
         audio.play();
@@ -247,7 +227,6 @@ function Player() {
     };
 }
 
-// On play, change the button to pause
 audio.onplay = function () {
     var botao = document.getElementById('playerButton');
     var bplay = document.getElementById('buttonPlay');
@@ -257,7 +236,6 @@ audio.onplay = function () {
     }
 }
 
-// On pause, change the button to play
 audio.onpause = function () {
     var botao = document.getElementById('playerButton');
     var bplay = document.getElementById('buttonPlay');
@@ -267,7 +245,6 @@ audio.onpause = function () {
     }
 }
 
-// Unmute when volume changed
 audio.onvolumechange = function () {
     if (audio.volume > 0) {
         audio.muted = false;
@@ -369,12 +346,10 @@ function getStreamingData() {
 
     var d = new Date();
 
-    // Requisition with timestamp to prevent cache on mobile devices
     xhttp.open('GET', API_URL);
     xhttp.send();
 }
 
-// Player control by keys
 document.addEventListener('keydown', function (k) {
     var k = k || window.event;
     var key = k.keyCode || k.which;
@@ -384,145 +359,121 @@ document.addEventListener('keydown', function (k) {
     var page = new Page();
 
     switch (key) {
-        // Arrow up
+
         case 38:
             volumeUp();
             slideVolume.value = decimalToInt(audio.volume);
             page.changeVolumeIndicator(decimalToInt(audio.volume));
             break;
-        // Arrow down
         case 40:
             volumeDown();
             slideVolume.value = decimalToInt(audio.volume);
             page.changeVolumeIndicator(decimalToInt(audio.volume));
             break;
-        // Spacebar
         case 32:
             togglePlay();
             break;
-        // P
         case 80:
             togglePlay();
             break;
-        // M
         case 77:
             mute();
             break;
-        // 0
         case 48:
             audio.volume = 0;
             slideVolume.value = 0;
             page.changeVolumeIndicator(0);
             break;
-        // 0 numeric keyboard
         case 96:
             audio.volume = 0;
             slideVolume.value = 0;
             page.changeVolumeIndicator(0);
             break;
-        // 1
         case 49:
             audio.volume = .1;
             slideVolume.value = 10;
             page.changeVolumeIndicator(10);
             break;
-        // 1 numeric key
         case 97:
             audio.volume = .1;
             slideVolume.value = 10;
             page.changeVolumeIndicator(10);
             break;
-        // 2
         case 50:
             audio.volume = .2;
             slideVolume.value = 20;
             page.changeVolumeIndicator(20);
             break;
-        // 2 numeric key
         case 98:
             audio.volume = .2;
             slideVolume.value = 20;
             page.changeVolumeIndicator(20);
             break;
-        // 3
         case 51:
             audio.volume = .3;
             slideVolume.value = 30;
             page.changeVolumeIndicator(30);
             break;
-        // 3 numeric key
         case 99:
             audio.volume = .3;
             slideVolume.value = 30;
             page.changeVolumeIndicator(30);
             break;
-        // 4
         case 52:
             audio.volume = .4;
             slideVolume.value = 40;
             page.changeVolumeIndicator(40);
             break;
-        // 4 numeric key
         case 100:
             audio.volume = .4;
             slideVolume.value = 40;
             page.changeVolumeIndicator(40);
             break;
-        // 5
         case 53:
             audio.volume = .5;
             slideVolume.value = 50;
             page.changeVolumeIndicator(50);
             break;
-        // 5 numeric key
         case 101:
             audio.volume = .5;
             slideVolume.value = 50;
             page.changeVolumeIndicator(50);
             break;
-        // 6 
         case 54:
             audio.volume = .6;
             slideVolume.value = 60;
             page.changeVolumeIndicator(60);
             break;
-        // 6 numeric key
         case 102:
             audio.volume = .6;
             slideVolume.value = 60;
             page.changeVolumeIndicator(60);
             break;
-        // 7
         case 55:
             audio.volume = .7;
             slideVolume.value = 70;
             page.changeVolumeIndicator(70);
             break;
-        // 7 numeric key
         case 103:
             audio.volume = .7;
             slideVolume.value = 70;
             page.changeVolumeIndicator(70);
             break;
-        // 8
         case 56:
             audio.volume = .8;
             slideVolume.value = 80;
             page.changeVolumeIndicator(80);
             break;
-        // 8 numeric key
         case 104:
             audio.volume = .8;
             slideVolume.value = 80;
             page.changeVolumeIndicator(80);
             break;
-        // 9
         case 57:
             audio.volume = .9;
             slideVolume.value = 90;
             page.changeVolumeIndicator(90);
             break;
-        // 9 numeric key
         case 105:
             audio.volume = .9;
             slideVolume.value = 90;
