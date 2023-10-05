@@ -288,15 +288,9 @@ input[type=range]::-ms-thumb {
     color: white;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 370px) {
 .cover-album {
-    max-width: 10%;
-    }
-}
-
-@media(max-width: 576px) {
-.cover-album {
-    max-width: 100%;
+    max-width: 70%;
     }
 }
 
@@ -335,12 +329,12 @@ body {
 
 .cover-album {
     margin: 10px auto;
-    min-width: 250px;
-    height: 250px;
+    min-width: 320px;
+    height: 320px;
 }
 
     .logo img {
-        max-width: 150px;
+        max-width: 300px;
         margin: 65px 0;
 }
 
@@ -377,7 +371,7 @@ body {
     -webkit-text-stroke: 0.5px #000000;
     cursor: pointer;
     border-radius: 25px;
-    width: 90%;
+    width: 80%;
     transition: transform .2s;
     box-shadow: 1px 3px #30303022;
 }
