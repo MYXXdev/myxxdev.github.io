@@ -91,13 +91,20 @@ body {
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 800;
+    color: #333;
+	-webkit-text-stroke: 1px #282828;
+	text-shadow: 0px 4px 4px #282828;
+}
    
 }
 
 .info-current-song h3 {
     font-size: 22px;
-   
     font-weight: 600;
+    color: #333;
+	-webkit-text-stroke: 1px #282828;
+	text-shadow: 0px 4px 4px #282828;
+}
 }
 
 .play-pause {
@@ -131,7 +138,6 @@ body {
 
 .lyrics {
     text-transform: uppercase;
-    text-decoration: underline;
     color: #fff;
     font-size: 1em;
     font-weight: 400;
