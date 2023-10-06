@@ -290,7 +290,7 @@ input[type=range]::-ms-thumb {
 
 @media(max-width: 370px) {
 .cover-album {
-    max-width: 65%;
+    max-width: 60%;
     }
 }
 
