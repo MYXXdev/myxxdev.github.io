@@ -1,5 +1,5 @@
 const RADIO_NAME = 'MYXX FM | Spanglish Hits Live Here';
-var API_SERVICE = 'DEEZER';
+var API_SERVICE = 'ITUNES';
 const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
 const API_URL = 'https://api.streamafrica.net/metadata/index.php?z='+URL_STREAMING
 const API_KEY = "18fe07917957c289983464588aabddfb";
