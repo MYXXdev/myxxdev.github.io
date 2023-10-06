@@ -6,7 +6,7 @@ const RADIO_NAME = 'Game! Radio 1';
 var API_SERVICE = 'SPOTIFY';
 
 // Change Stream URL Here, Supports, ICECAST, ZENO, SHOUTCAST, RADIOJAR and any other stream service.
-const URL_STREAMING = 'https://fowardmystream.com/myxxfm;
+const URL_STREAMING = 'https://forwardmystream.com/myxxfm;
 
 //API URL / if you use MEDIA CP, CHANGE THIS TO : https://api.streamafrica.net/metadata/mediacp.php?url='+MEDIACP_JSON_URL
 const API_URL = 'https://api.streamafrica.net/metadata/index.php?z='+URL_STREAMING
