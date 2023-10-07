@@ -119,11 +119,6 @@ function Page() {
                 var data = JSON.parse(this.responseText);
                 var artworkUrl100 = data.results;
                 var urlCoverArt = artworkUrl100.artwork;
-                var urlCoverArt2 = artworkUrl100.artwork_cdn;
-                
-                if (urlCoverArt == null){
-                    return urlCoverArt2;
-                }
 
                 coverArt.style.backgroundImage = 'url(' + urlCoverArt + ')';
                 coverArt.className = 'animated bounceInLeft';
