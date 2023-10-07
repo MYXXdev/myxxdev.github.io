@@ -1,18 +1,18 @@
 
 
-const RADIO_NAME = 'Game! Radio 1';
+const RADIO_NAME = 'Syndicated Hip Hop RaDiO';
 
-// SELECT ARTWORK PROVIDER, ITUNES, DEEZER & SPOTIFY  eg : spotify 
-var API_SERVICE = 'SPOTIFY';
+//Put Your Mount Point Here
+var zenoid = 'q9ar4zedtqzuv'
 
-// Change Stream URL Here, Supports, ICECAST, ZENO, SHOUTCAST, RADIOJAR and any other stream service.
+// URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
 const URL_STREAMING = 'https://forwardmystream.com/myxxfm';
 
-//API URL / if you use MEDIA CP, CHANGE THIS TO : https://api.streamafrica.net/metadata/mediacp.php?url='+MEDIACP_JSON_URL
-const API_URL = 'https://api.streamafrica.net/metadata/index.php?z='+URL_STREAMING
-
 // Visit https://api.vagalume.com.br/docs/ to get your API key
-const API_KEY = "18fe07917957c289983464588aabddfb";
+const API_KEY = "994683a4d6d202230a0af0d92aa341b7";
+
+// Set HISTORIC to true to get the last songs played
+const HISTORIC = true;
 
 window.onload = function () {
     var page = new Page;
@@ -26,7 +26,7 @@ window.onload = function () {
     // Interval to get streaming data in miliseconds
     setInterval(function () {
         getStreamingData();
-    }, 10000);
+    }, 7000);
 
     var coverArt = document.getElementsByClassName('cover-album')[0];
 
@@ -94,7 +94,7 @@ function Page() {
             $historicDiv[n].classList.add('animated');
             $historicDiv[n].classList.add('slideInRight');
         }
-        xhttp.open('GET', 'https://api.streamafrica.net/new.search.php?query=' + info.artist + ' ' + info.song + '&service=' + API_SERVICE.toLowerCase());
+        xhttp.open('GET', 'https://api.streamafrica.net/search.php?query=' + info.artist + ' ' + info.song);
         xhttp.send();
 
         setTimeout(function () {
@@ -119,6 +119,11 @@ function Page() {
                 var data = JSON.parse(this.responseText);
                 var artworkUrl100 = data.results;
                 var urlCoverArt = artworkUrl100.artwork;
+                var urlCoverArt2 = artworkUrl100.artwork_cdn;
+                
+                if (urlCoverArt == null){
+                    return urlCoverArt2;
+                }
 
                 coverArt.style.backgroundImage = 'url(' + urlCoverArt + ')';
                 coverArt.className = 'animated bounceInLeft';
@@ -168,7 +173,7 @@ function Page() {
                 }
             }
         }
-        xhttp.open('GET', 'https://api.streamafrica.net/new.search.php?query=' + artist + ' ' + song + '&service=' + API_SERVICE.toLowerCase());
+        xhttp.open('GET', 'https://api.streamafrica.net/search.php?query=' + artist + ' ' + song);
         xhttp.send();
     }
 
@@ -370,7 +375,7 @@ function getStreamingData() {
     var d = new Date();
 
     // Requisition with timestamp to prevent cache on mobile devices
-    xhttp.open('GET', API_URL);
+    xhttp.open('GET', 'https://api.streamafrica.net/zeno/index.php?z='+zenoid);
     xhttp.send();
 }
 
@@ -539,3 +544,50 @@ function decimalToInt(vol) {
     return vol * 100;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CREATIVO AGENCIA DE PUBLICIDAD */
+/* DERECHOS RESERVADOS 2021 */
