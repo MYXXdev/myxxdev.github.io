@@ -4,166 +4,87 @@
 <html lang="en-US">
 <head>
 <meta charset="utf-8">
-<title>MYXX FM DB2</title>
-<meta name="description" content="MYXX FM DB2">
+<title>MYXX FM</title>
+<meta name="description" content="MYXX FM">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="https://players.rcast.net/assets/img/favicon.png" />
-<link rel="image_src" href="https://players.rcast.net/assets/img/favicon.png" />
-<link rel="SHORTCUT ICON" href="https://players.rcast.net/assets/img/favicon.png" type="image/png" />
+<link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+<link rel="image_src" href="/assets/img/favicon.png" />
+<link rel="SHORTCUT ICON" href="/assets/img/favicon.png" type="image/png" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="MYXX FM DB2" />
-<meta property="og:description" content="Listen live to MYXX FM DB2" />
-<meta property="og:url" content="https://dir.rcast.net/sombras/70997/" />
-<meta property="og:site_name" content="MYXX FM DB2" />
+<meta property="og:title" content="MYXX FM" />
+<meta property="og:description" content="Listen live to MYXX FM" />
+<meta property="og:url" content="https://dir.rcast.net/luna/65873/" />
+<meta property="og:site_name" content="MYXX FM" />
 <meta property="og:image" content="/assets/img/favicon.png" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="Listen live to MYXX FM DB2" />
-<meta name="twitter:title" content="Listen live to MYXX FM DB2" />
+<meta name="twitter:description" content="Listen live to MYXX FM" />
+<meta name="twitter:title" content="Listen live to MYXX FM" />
 <meta name="twitter:site" content="@RCAST" />
-<meta name="twitter:url" value="https://dir.rcast.net/sombras/70997/" />
+<meta name="twitter:url" value="https://dir.rcast.net/luna/65873/" />
 <meta name="twitter:image" content="/assets/img/favicon.png" />
 <meta name="twitter:creator" content="@RCAST" />
 
-<link rel="shortcut icon" href="https://players.rcast.net/favicon.ico">
-<link rel="icon" type="image/png" sizes="192x192" href="https://players.rcast.net/assets/img/favicon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://players.rcast.net/assets/img/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://players.rcast.net/assets/img/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://players.rcast.net/assets/img/favicon-32x32.png">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link id="maintheme" href="https://players.rcast.net/assets/players/sombras/sombras.css" rel="stylesheet" type="text/css">
-<style>
-.cover-site {
-	min-width: 100%;
-	min-height: 100%;
-	position: fixed;
-	background: url('') no-repeat;
-	background-position: center;
-	background-size: cover;
-	transition: background-image 1s;
-	background-position: center;
-	background-attachment: fixed;
-}
-.cover-album {
-	max-width: 80%;
-	margin: auto;
-	background: url('') no-repeat;
-	background-size: cover;
-	border: 1px solid #383838;
-	box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.4);
-	transition: background-image 1s;
-	margin-bottom: 15px;
-}
-.watermark {
-	width: 89px;
-	height: 35px;
-	background-size: auto 35px;
-	opacity: 0.5;
-	position: relative;
-	bottom: 36px;
-	right: -1px;
-	z-index: 5;
-}
-.info-current-song h2 {
-    color: rgba(255,255,255,1)!important;
-}
-.info-current-song h3 {
-    color: rgba(255,255,255,1)!important;
-}
-.play-pause i {
-    color: rgba(221,81,16,1)!important;
-}
-
-.bg-mask {
-    min-width: 100%;
-    min-height: 100%;
-    position: absolute;
-    background: radial-gradient(rgba(0,0,0,.5) 20%,rgba(33,33,33,1) 85%)!important;
-    z-index: 2;
-}
-</style>
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-32x32.png">
+<script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery.play.min.js"></script>
 </head>
-<body style="background-color:rgba(33,33,33,1);color:rgba(255,255,255,1);margin: 0;">
-<div class="cover-site">
-<div id="bgCover"></div>
-<div class="bg-mask"></div>
+<body style="background-color:#000000;color:rgba(255,255,255,1);margin: 0;">
+<div id="radioplayer" style="width:100%; height:450px;
+background-color:#000000;
+-webkit-border-top-left-radius: 0px;
+-webkit-border-top-right-radius: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-webkit-border-bottom-left-radius: 0px;
+-moz-border-radius-topleft: 0px;
+-moz-border-radius-topright: 0px;
+-moz-border-radius-bottomright: 0px;
+-moz-border-radius-bottomleft: 0px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+border: none;">
 </div>
-<main>
-<section id="player">
-<div class="container">
-<div class="row web-player">
-<div class="col-12 col-lg-10">
-<div class="row">
-<div class="col-12 col-md-5">
-<div class="cover-album" style="height: 320px;">
-<a href target="_blank" id="afflink">
-<div id="currentCoverArt"></div>
-<div class="watermark"></div>
-</a>
-</div>
-</div>
-<div class="col-12 ml-md-auto col-md-6">
-<div class="row">
-<div class="col-12">
-<div class="info-current-song">
-<h2 id="currentSong" class="text-uppercase">Loading...</h2>
-<h3 id="currentArtist" class="text-capitalize">MYXX FM | DB2</h3>
-</div>
-</div>
-<div class="col-12">
-<div class="row">
-<div class="play-pause col-12 col-md-2 text-center"> <i id="playerButton" class="fa fa-play" onclick="togglePlay()"></i>
-</div>
-<div class="col-12 col-md-10 text-center">
-<div class="row volume-control">
-<div class="volume-icon col-1"><i class="fa fa-volume-up"></i>
-</div>
-<div class="volume-slide col-10 text-center">
-<input type="range" id="volume" step="1" min="0" max="100" value>
-</div>
-<div class="percentual-volume col-12">Volume: <span id="volIndicator"></span>%</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script type="text/javascript">
-var settings = {
-    'radio_name': 'MYXX FM DB2',
-    'url_streaming': 'https://stream.rcast.net/70997',
-	'artworkurl': 'https://artwork.rcast.net/70997',
-	'statusurl': 'https://status.rcast.net/70997',
-    'default_cover_art': '',
-    'updateinterval': '12000',
-    'volume': '',
-    'amazon_aff_active': true,
-    'amazonaff': 'rcast-20',
-    'autoplay': 'false',
-
-};
-
-const RADIO_NAME = settings.radio_name;
-const URL_STREAMING = settings.url_streaming;
-const ARTWORKURL = settings.artworkurl;
-const STATUSURL = settings.statusurl;
-const DEFAULT_COVER_ART = settings.default_cover_art;
-const UPDATEINTERVAL = settings.updateinterval;
-const VOLUME = settings.volume;
-const AMAZONAFFACTIVE = settings.amazon_aff_active;
-const AMAZONAFF = settings.amazonaff;
-const AUTOPLAY = settings.autoplay;
+$("#radioplayer").radioplayer({
+userinterface: "big",
+backgroundcolor: "rgba(0,0,0,0)",
+fontcolor: "#ffffff",
+hightlightcolor: "#efd500",
+fontname: "Advent Pro",
+googlefont: "Advent Pro:300",
+fontratio: "0.4",
+radioname: "MYXX FM",
+scroll: "true",
+coverimage: "https://myxxdev.github.io/images/MYXXfmCircle.png",
+onlycoverimage: "false",
+coverstyle: "circle",
+usevisualizer: "real",
+visualizertype: "7",
+itunestoken: "",
+metadatatechnic: "ownmetadataurl",
+ownmetadataurl: "https://status.rcast.net/65873",
+artworkurl: "https://artwork.rcast.net/65873",streamurl: "https://usa19.fastcast4u.com:4200/stream",
+streamtype: "icecast2",
+icecastmountpoint: "",
+radionomyid: "",
+radionomyapikey: "",
+radiojarid: "",
+radiocoid: "zxZ",
+shoutcastpath: "",
+shoutcastid: "1",
+streamsuffix: "",
+metadatainterval: "32000",
+volume: "100",
+debug: "false",
+usestreamcorsproxy: "true",
+corsproxy: "",
+});
 </script>
-<script type="text/javascript" src="https://players.rcast.net/assets/players/sombras/jquery.sombras.min2.js"></script>
 </body>
 </html>
