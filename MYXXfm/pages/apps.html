@@ -24,16 +24,18 @@
             align-items: center;
             gap: 20px; /* Space between images */
             flex-wrap: nowrap; /* Prevent wrapping */
+            max-width: 100%; /* Prevent the container from being too wide */
+            padding: 10px; /* Add padding around the container */
         }
 
         .container a {
             display: block;
-            flex: 1; /* Allow images to grow and shrink */
+            flex: 1;
+            max-width: 45%; /* Control the maximum size of images */
         }
 
         .image {
             width: 100%;
-            max-width: 300px; /* Set a maximum width for larger screens */
             height: auto;
             display: block;
         }
@@ -41,13 +43,16 @@
         /* Ensure responsiveness */
         @media (max-width: 600px) {
             .container {
-                flex-direction: column; /* Stack images vertically on smaller screens */
-                align-items: center; /* Center images horizontally */
+                flex-direction: row; /* Ensure images stay side by side */
+                overflow-x: auto; /* Allow horizontal scrolling if needed */
+            }
+
+            .container a {
+                max-width: 50%; /* Allow more space for each image on small screens */
             }
 
             .image {
-                max-width: 80%; /* Adjust width to fit smaller screens */
-                height: auto; /* Maintain aspect ratio */
+                max-width: 100%; /* Adjust width to fit smaller screens */
             }
         }
     </style>
