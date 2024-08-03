@@ -32,15 +32,16 @@
 
         .container a {
             display: block;
-            flex: 1;
-            max-width: 100%; /* Ensure images can take full width of container */
+            width: 100%;
+            max-width: 300px; /* Maximum width of each image container */
+            margin: 0 auto; /* Center images horizontally */
         }
 
         .image {
             width: 100%; /* Ensure images fill their container */
             height: auto; /* Maintain aspect ratio */
             display: block;
-            max-height: 400px; /* Set a max-height to prevent overly large images */
+            max-height: 400px; /* Prevent images from being too tall */
         }
 
         /* Ensure responsiveness */
@@ -48,18 +49,19 @@
             .container {
                 flex-direction: column; /* Stack images vertically on small screens */
                 align-items: center; /* Center images horizontally */
-                gap: 10px; /* Adjust space between images if needed */
-                padding: 10px; /* Adjust padding for better fit */
+                gap: 10px; /* Space between stacked images */
+                padding: 10px; /* Add padding around the container */
             }
 
             .container a {
-                max-width: 100%; /* Ensure images use full width of container */
-                width: 100%; /* Allow image to scale down to container width */
+                width: 100%; /* Ensure images take full width of container */
+                max-width: 100%; /* Prevent images from being too wide */
+                margin: 0; /* Remove margin */
             }
 
             .image {
-                width: 100%; /* Ensure images fill their container */
-                max-height: 300px; /* Adjust max-height to control image size */
+                max-height: 300px; /* Adjust max-height to fit smaller screens */
+                width: auto; /* Ensure images don’t stretch horizontally */
             }
         }
     </style>
