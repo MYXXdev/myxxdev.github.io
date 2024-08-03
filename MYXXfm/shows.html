@@ -43,8 +43,19 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: left; /* Align text inside the container to the left */
-            overflow-y: auto; /* Allow vertical scrolling inside container */
-            margin: 0 auto; /* Center container horizontally */
+            overflow-y: auto; /* Allow vertical scrolling */
+            position: relative; /* To manage the scrolling container */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+
+        /* Hide scrollbar for WebKit browsers */
+        .container::-webkit-scrollbar {
+            width: 0px;
+            background: transparent; /* For WebKit browsers */
+        }
+
+        .container {
+            scrollbar-width: none; /* For Firefox */
         }
 
         .schedule-item {
@@ -113,9 +124,8 @@
     </style>
 </head>
 <body>
-    <div class="header"></div>
     <div class="container">
-        <div class="schedule">
+        <div class="schedule"><br>
             <div class="schedule-item">
                 <img src="https://via.placeholder.com/50" alt="Placeholder Image">
                 <p><strong>Sun</strong> • <em>12pm - 3pm</em><br>Airplay40<br>w/ Spencer James</p>
