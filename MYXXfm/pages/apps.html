@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            overflow: hidden; /* Prevent scrollbars from appearing */
         }
 
         .container {
@@ -22,19 +23,25 @@
             justify-content: center;
             align-items: center;
             gap: 20px; /* Space between images */
+            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+        }
+
+        .container a {
+            display: block;
+            max-width: 100%;
+            flex: 1 1 200px; /* Allow images to grow and shrink, minimum width of 200px */
         }
 
         .image {
             max-width: 100%;
             height: auto;
-            flex: 1; /* Ensure images grow to fit available space */
             display: block;
         }
 
         /* Ensure responsiveness */
         @media (max-width: 600px) {
-            .image {
-                max-width: 45%; /* Adjust width to fit smaller screens */
+            .container a {
+                flex: 1 1 100%; /* Stack images vertically on smaller screens */
             }
         }
     </style>
