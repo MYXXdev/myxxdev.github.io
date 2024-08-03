@@ -11,112 +11,82 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh; /* Ensure full viewport height */
-            box-sizing: border-box; /* Apply box-sizing globally */
-            font-family: Kanit;
+            min-height: 100vh;
+            box-sizing: border-box;
+            font-family: Kanit, sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #000000); /* Black to Golden Yellow */
+            background: linear-gradient(to bottom, #FFD700, #000000);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-x: hidden;
         }
 
         body {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center horizontally */
-            justify-content: center; /* Center vertically */
-            padding: 20px; /* Add some padding to ensure space around the content */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .header {
             font-size: 2em;
-            margin-bottom: 20px; /* Space between header and content */
-            text-align: center; /* Center the header text */
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .container {
+        .schedule {
             width: 100%;
-            max-width: 95%; /* Limit container width for readability */
-            padding: 20px;
-            box-sizing: border-box;
+            max-width: 900px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: left; /* Align text inside the container to the left */
-            overflow-y: auto; /* Allow vertical scrolling */
-            position: relative; /* To manage the scrolling container */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            box-sizing: border-box;
         }
 
-        /* Hide scrollbar for WebKit browsers */
-        .container::-webkit-scrollbar {
-            width: 0px;
-            background: transparent; /* For WebKit browsers */
+        .schedule h2 {
+            margin-top: 0;
         }
 
-        .container {
-            scrollbar-width: none; /* For Firefox */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
         }
 
         .schedule-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px; /* Increased space between items */
-        }
-
-        .schedule-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 20px; /* Space between image and text */
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .schedule-item p {
             margin: 0;
-            font-size: 1em;
-            line-height: 1.4;
+            font-size: 0.9em;
         }
 
-        /* Italicize the times */
+        .schedule-item strong {
+            color: #FFD700; /* Yellow color for days of the week */
+            font-size: 1.1em;
+        }
+
         .schedule-item em {
             font-style: italic;
+            font-size: 0.8em;
+        }
+
+        .schedule-item span {
+            font-size: 0.8em; /* Smaller font size for times */
         }
 
         @media (max-width: 600px) {
             .header {
-                font-size: 1.8em;
-            }
-
-            .schedule-item img {
-                width: 40px;
-                height: 40px;
-                margin-right: 15px; /* Adjust space for smaller images */
-            }
-
-            .schedule-item p {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .container {
-                padding: 10px;
-                width: 100%; /* Full width on very small screens */
-            }
-
-            .header {
-                font-size: 1.6em;
-            }
-
-            .schedule-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .schedule-item img {
-                margin-bottom: 10px; /* Space below image for mobile */
+                font-size: 1.5em;
             }
 
             .schedule-item p {
@@ -126,31 +96,27 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="schedule">
-            <div class="schedule-item"><p></p>
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Sun</strong> • <em>12pm - 3pm</em><br>Airplay40<br>w/ Spencer James</p>
+    <div class="header">
+    </div>
+    <div class="schedule">
+        <div class="schedule-grid">
+            <div class="schedule-item">
+                <p><strong>Sun</strong><br><span>12pm - 3pm</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>Airplay40<br><em>w/ Spencer James</em></p>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Mon - Fri</strong> • <em>8am - 9am</em><br>The Morning MYXX<br>w/ DJcity DJs</p>
+                <p><strong>Mon - Fri</strong><br><span>8am - 9am</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>The Morning MYXX<br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Mon - Fri</strong> • <em>12pm - 1pm</em><br>The Lunch FYXX<br>w/ DJcity DJs</p>
+                <p><strong>Mon - Thu</strong><br><span>12pm - 1pm</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>The Lunch FYXX<br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Mon - Fri</strong> • <em>5pm - 6pm</em><br>The Traffic MYXX<br>w/ DJcity DJs</p>
+                <p><strong>Mon - Fri</strong><br><span>5pm - 6pm</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>The Traffic MYXX<br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Thu - Sun</strong> • <em>10pm - 4am</em><br>Club MYXX @ El Potrero Night Club<br>w/ DJ Ommix</p>
+                <p><strong>Thu - Sun</strong><br><span>10pm - 4am</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>Club MYXX<br>@ El Potrero Night Club<br><em>w/ DJ Ommix</em></p>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><em>Fri • 12pm - 2pm</em><br><strong>House Story Dance Anthems</strong><br>w/ Andy Sutton</p>
+                <p><strong>Fri</strong><br><span>12pm - 2pm</span><br><br><img src="https://via.placeholder.com/50" alt="Placeholder Image"><br><br>House Story<br>Dance Anthems<br><em>w/ Andy Sutton</em></p>
             </div>
         </div>
     </div>
