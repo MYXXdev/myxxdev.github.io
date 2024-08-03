@@ -21,18 +21,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 20px; /* Space between images */
         }
 
         .image {
             max-width: 100%;
             height: auto;
-            margin: 0 10px; /* Space between images */
+            flex: 1; /* Ensure images grow to fit available space */
         }
 
         /* Ensure responsiveness */
         @media (max-width: 600px) {
             .image {
-                width: 90%;
+                max-width: 45%; /* Adjust width to fit smaller screens */
             }
         }
     </style>
