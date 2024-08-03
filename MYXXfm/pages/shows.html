@@ -18,7 +18,7 @@
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow-x: hidden;
+            overflow: hidden; /* Prevent scrollbars on the body */
         }
 
         body {
@@ -44,6 +44,16 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
             overflow-y: auto; /* Allow vertical scrolling if needed */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .schedule::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
+        }
+
+        .schedule {
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
         }
 
         .schedule h2 {
