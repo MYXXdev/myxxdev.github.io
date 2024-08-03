@@ -20,6 +20,7 @@
 
         .container {
             display: flex;
+            flex-direction: row; /* Default to horizontal layout */
             justify-content: center;
             align-items: center;
             gap: 20px; /* Space between images */
@@ -43,16 +44,17 @@
         /* Ensure responsiveness */
         @media (max-width: 600px) {
             .container {
-                flex-direction: row; /* Ensure images stay side by side */
-                overflow-x: auto; /* Allow horizontal scrolling if needed */
+                flex-direction: column; /* Stack images vertically on small screens */
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                align-items: stretch; /* Ensure images take full width */
             }
 
             .container a {
-                max-width: 50%; /* Allow more space for each image on small screens */
+                max-width: 100%; /* Allow images to take full width on small screens */
             }
 
             .image {
-                max-width: 100%; /* Adjust width to fit smaller screens */
+                width: 100%; /* Adjust width to fit smaller screens */
             }
         }
     </style>
