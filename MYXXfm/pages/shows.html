@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh;
             box-sizing: border-box;
             font-family: Kanit, sans-serif;
             color: #fff;
@@ -44,6 +43,7 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
+            overflow-y: auto; /* Allow vertical scrolling if needed */
         }
 
         .schedule h2 {
@@ -84,6 +84,12 @@
             font-size: 0.8em; /* Smaller font size for times */
         }
 
+        .schedule-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
         @media (max-width: 600px) {
             .header {
                 font-size: 1.5em;
@@ -91,6 +97,28 @@
 
             .schedule-item p {
                 font-size: 0.8em;
+            }
+
+            .schedule-item {
+                padding: 5px; /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .schedule {
+                padding: 10px;
+            }
+
+            .header {
+                font-size: 1.2em;
+            }
+
+            .schedule-item p {
+                font-size: 0.7em;
+            }
+
+            .schedule-item {
+                padding: 5px; /* Further adjust padding for very small screens */
             }
         }
     </style>
