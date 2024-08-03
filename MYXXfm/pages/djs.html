@@ -79,6 +79,15 @@
             line-height: 1.4;
         }
 
+        .schedule-item a {
+            color: #FFD700; /* Same yellow as background gradient */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .schedule-item a:hover {
+            text-decoration: underline; /* Add underline on hover for clarity */
+        }
+
         /* Italicize the times */
         .schedule-item em {
             font-style: italic;
@@ -126,23 +135,22 @@
     </style>
 </head>
 <body>
-        <div class="schedule">
-            <div class="schedule-item"><p></p>
-                <img src="https://via.placeholder.com/50">
-                <p><strong>Andy Sutton</strong><br>House Story Dance Anthems<br>The Vibe Vault</p>
-            </div>
-            <div class="schedule-item">
-                <img src="https://via.placeholder.com/50">
-                <p><strong>DJ MikeyB</strong><br>Filler</p>
-            </div>
-            <div class="schedule-item">
-                <img src="https://via.placeholder.com/50">
-                <p><strong>DJ Ommix</strong><br>Club MYXX @ El Potrero Night Club</p>
-            </div>
-            <div class="schedule-item">
-                <img src="https://via.placeholder.com/50">
-                <p><strong>Spencer James</strong><br>Airplay40</p>
-            </div>
+    <div class="container">
+        <div class="schedule-item">
+            <img src="https://via.placeholder.com/50" alt="Andy Sutton">
+            <p><a href="https://myxxfm.com/andysutton" target="_blank"><strong>Andy Sutton</strong></a><br><em>House Story Dance Anthems<br>The Vibe Vault</em></p>
+        </div>
+        <div class="schedule-item">
+            <img src="https://via.placeholder.com/50" alt="DJ MikeyB">
+            <p><a href="https://myxxfm.com/djmikeyb" target="_blank"><strong>DJ MikeyB</strong></a><br><em>Filler</em></p>
+        </div>
+        <div class="schedule-item">
+            <img src="https://via.placeholder.com/50" alt="DJ Ommix">
+            <p><a href="https://myxxfm.com/djommix" target="_blank"><strong>DJ Ommix</strong></a><br><em>Club MYXX @ El Potrero Night Club</em></p>
+        </div>
+        <div class="schedule-item">
+            <img src="https://via.placeholder.com/50" alt="Spencer James">
+            <p><a href="https://myxxfm.com/spencerjames" target="_blank"><strong>Spencer James</strong></a><br><em>Airplay40</em></p>
         </div>
     </div>
 </body>
