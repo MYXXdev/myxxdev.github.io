@@ -24,7 +24,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px; /* Space between images */
-            flex-wrap: nowrap; /* Prevent wrapping */
+            flex-wrap: wrap; /* Allow images to wrap if needed */
             max-width: 100%; /* Prevent the container from being too wide */
             padding: 10px; /* Add padding around the container */
             box-sizing: border-box; /* Include padding in width calculations */
@@ -32,15 +32,15 @@
 
         .container a {
             display: block;
-            width: 100%;
+            width: 100%; /* Full width for responsiveness */
             max-width: 300px; /* Maximum width of each image container */
-            margin: 0 auto; /* Center images horizontally */
         }
 
         .image {
-            width: 100%; /* Ensure images fill their container */
+            width: 100%; /* Make images responsive within their container */
             height: auto; /* Maintain aspect ratio */
             display: block;
+            object-fit: cover; /* Ensure images cover the container */
             max-height: 400px; /* Prevent images from being too tall */
         }
 
@@ -54,14 +54,12 @@
             }
 
             .container a {
-                width: 100%; /* Ensure images take full width of container */
-                max-width: 100%; /* Prevent images from being too wide */
-                margin: 0; /* Remove margin */
+                max-width: 100%; /* Ensure images use full width of container */
             }
 
             .image {
-                max-height: 300px; /* Adjust max-height to fit smaller screens */
-                width: auto; /* Ensure images don’t stretch horizontally */
+                max-height: 300px; /* Adjust max-height for smaller screens */
+                object-fit: contain; /* Ensure images are fully visible */
             }
         }
     </style>
