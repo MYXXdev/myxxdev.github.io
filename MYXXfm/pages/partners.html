@@ -64,6 +64,8 @@
             display: flex;
             align-items: center;
             margin-bottom: 25px; /* Increased space between items */
+            text-decoration: none; /* Remove underline from links */
+            color: #fff; /* Ensure text color is white */
         }
 
         .schedule-item img {
@@ -82,6 +84,17 @@
         /* Italicize the times */
         .schedule-item em {
             font-style: italic;
+        }
+
+        .schedule-item a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+            display: flex;
+            align-items: center;
+        }
+
+        .schedule-item a:hover {
+            color: #FFD700; /* Change text color on hover */
         }
 
         @media (max-width: 600px) {
@@ -128,21 +141,29 @@
 <body>
     <div class="container">
         <div class="schedule">
-            <div class="schedule-item"><p></p>
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>DJcity</p>
+            <div class="schedule-item">
+                <a href="https://myxxfm.com/djcity" target="_blank">
+                    <img src="https://via.placeholder.com/50" alt="DJcity Logo">
+                    <p><strong>DJcity</strong></p>
+                </a>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>El Potrero Night Club</p>
+                <a href="https://myxxfm.com/elpotreronightclub" target="_blank">
+                    <img src="https://via.placeholder.com/50" alt="El Potrero Night Club Logo">
+                    <p><strong>El Potrero Night Club</strong></p>
+                </a>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>ICRME</strong></p>
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/50" alt="ICRME Logo">
+                    <p><strong>ICRME</strong></p>
+                </a>
             </div>
             <div class="schedule-item">
-                <img src="https://via.placeholder.com/50" alt="Placeholder Image">
-                <p><strong>Rose & Co. Colorado</strong></p>
+                <a href="https://myxxfm.com/roseandcocolorado" target="_blank">
+                    <img src="https://via.placeholder.com/50" alt="Rose & Co. Colorado Logo">
+                    <p><strong>Rose & Co. Colorado</strong></p>
+                </a>
             </div>
         </div>
     </div>
