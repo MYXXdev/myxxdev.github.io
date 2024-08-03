@@ -23,25 +23,31 @@
             justify-content: center;
             align-items: center;
             gap: 20px; /* Space between images */
-            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+            flex-wrap: nowrap; /* Prevent wrapping */
         }
 
         .container a {
             display: block;
-            max-width: 100%;
-            flex: 1 1 200px; /* Allow images to grow and shrink, minimum width of 200px */
+            flex: 1; /* Allow images to grow and shrink */
         }
 
         .image {
-            max-width: 100%;
+            width: 100%;
+            max-width: 300px; /* Set a maximum width for larger screens */
             height: auto;
             display: block;
         }
 
         /* Ensure responsiveness */
         @media (max-width: 600px) {
-            .container a {
-                flex: 1 1 100%; /* Stack images vertically on smaller screens */
+            .container {
+                flex-direction: column; /* Stack images vertically on smaller screens */
+                align-items: center; /* Center images horizontally */
+            }
+
+            .image {
+                max-width: 80%; /* Adjust width to fit smaller screens */
+                height: auto; /* Maintain aspect ratio */
             }
         }
     </style>
