@@ -31,19 +31,19 @@
         }
 
         .container a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: block;
             width: 100%; /* Full width for responsiveness */
-            max-width: 300px; /* Maximum width of each image container */
-            height: auto; /* Ensure height is responsive */
+            max-width: 45%; /* Maximum width of each image container */
+            flex: 1; /* Allow images to grow/shrink as needed */
+            margin: 0 auto; /* Center images horizontally */
         }
 
         .image {
             width: 100%; /* Make images responsive within their container */
             height: auto; /* Maintain aspect ratio */
-            max-height: 100%; /* Prevent images from exceeding container height */
+            max-height: 80vh; /* Prevent images from becoming too tall */
             display: block;
+            object-fit: contain; /* Ensure images fit within container without cropping */
         }
 
         /* Ensure responsiveness */
@@ -56,12 +56,12 @@
             }
 
             .container a {
-                width: 100%; /* Ensure images take full width of container */
-                max-width: 100%; /* Prevent images from being too wide */
+                max-width: 100%; /* Ensure images use full width of container */
+                flex: none; /* Prevent links from stretching */
             }
 
             .image {
-                max-height: 300px; /* Adjust max-height for smaller screens */
+                max-height: 50vh; /* Adjust max-height for smaller screens */
                 object-fit: contain; /* Ensure images are fully visible without cropping */
             }
         }
