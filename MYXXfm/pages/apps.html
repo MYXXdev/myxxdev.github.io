@@ -40,6 +40,7 @@
             width: 100%; /* Ensure images fill their container */
             height: auto; /* Maintain aspect ratio */
             display: block;
+            max-height: 400px; /* Set a max-height to prevent overly large images */
         }
 
         /* Ensure responsiveness */
@@ -48,7 +49,7 @@
                 flex-direction: column; /* Stack images vertically on small screens */
                 align-items: center; /* Center images horizontally */
                 gap: 10px; /* Adjust space between images if needed */
-                padding: 10px 0; /* Adjust padding for better fit */
+                padding: 10px; /* Adjust padding for better fit */
             }
 
             .container a {
@@ -58,7 +59,7 @@
 
             .image {
                 width: 100%; /* Ensure images fill their container */
-                height: auto; /* Maintain aspect ratio */
+                max-height: 300px; /* Adjust max-height to control image size */
             }
         }
     </style>
