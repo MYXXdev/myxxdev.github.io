@@ -31,17 +31,19 @@
         }
 
         .container a {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%; /* Full width for responsiveness */
             max-width: 300px; /* Maximum width of each image container */
+            height: auto; /* Ensure height is responsive */
         }
 
         .image {
             width: 100%; /* Make images responsive within their container */
             height: auto; /* Maintain aspect ratio */
+            max-height: 100%; /* Prevent images from exceeding container height */
             display: block;
-            object-fit: cover; /* Ensure images cover the container */
-            max-height: 400px; /* Prevent images from being too tall */
         }
 
         /* Ensure responsiveness */
@@ -54,12 +56,13 @@
             }
 
             .container a {
-                max-width: 100%; /* Ensure images use full width of container */
+                width: 100%; /* Ensure images take full width of container */
+                max-width: 100%; /* Prevent images from being too wide */
             }
 
             .image {
                 max-height: 300px; /* Adjust max-height for smaller screens */
-                object-fit: contain; /* Ensure images are fully visible */
+                object-fit: contain; /* Ensure images are fully visible without cropping */
             }
         }
     </style>
