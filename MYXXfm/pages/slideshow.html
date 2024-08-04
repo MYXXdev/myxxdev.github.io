@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevents scrollbar from appearing */
+            background: black; /* Ensure background is black */
+        }
+
+        .slideshow-container {
+            position: absolute; /* Full-screen positioning */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+            background: black; /* Ensure background is black */
+        }
+
+        .slides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Smooth fade-in and fade-out */
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8); /* Smoky mask effect */
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+
+        /* Keyframes for smooth fade transition */
+        @keyframes fadeSlide {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .slides {
+            animation: fadeSlide 14s infinite; /* Continuous animation loop */
+        }
+
+        /* Adjusting the animation delay for each slide */
+        .slides:nth-child(1) { animation-delay: 0s; }
+        .slides:nth-child(2) { animation-delay: 2s; }
+        .slides:nth-child(3) { animation-delay: 4s; }
+        .slides:nth-child(4) { animation-delay: 6s; }
+        .slides:nth-child(5) { animation-delay: 8s; }
+        .slides:nth-child(6) { animation-delay: 10s; }
+        .slides:nth-child(7) { animation-delay: 12s; }
+        .slides:nth-child(8) { animation-delay: 14s; }
+        .slides:nth-child(9) { animation-delay: 16s; }
+        .slides:nth-child(10) { animation-delay: 18s; }
+        .slides:nth-child(11) { animation-delay: 20s; }
+        .slides:nth-child(12) { animation-delay: 22s; }
+        .slides:nth-child(13) { animation-delay: 24s; }
+        .slides:nth-child(14) { animation-delay: 26s; }
+        .slides:nth-child(15) { animation-delay: 28s; }
+        .slides:nth-child(16) { animation-delay: 30s; }
+        .slides:nth-child(17) { animation-delay: 32s; }
+        .slides:nth-child(18) { animation-delay: 34s; }
+        .slides:nth-child(19) { animation-delay: 36s; }
+        .slides:nth-child(20) { animation-delay: 38s; }
+        .slides:nth-child(21) { animation-delay: 40s; }
+        .slides:nth-child(22) { animation-delay: 42s; }
+        .slides:nth-child(23) { animation-delay: 44s; }
+        .slides:nth-child(24) { animation-delay: 46s; }
+        .slides:nth-child(25) { animation-delay: 48s; }
+        .slides:nth-child(26) { animation-delay: 50s; }
+        .slides:nth-child(27) { animation-delay: 52s; }
+        .slides:nth-child(28) { animation-delay: 54s; }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/1.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/2.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/3.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/4.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/5.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/6.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/7.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/8.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/9.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/10.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/11.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/12.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/13.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/14.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/15.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/16.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/17.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/18.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/19.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/20.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/21.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/22.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/23.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/24.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/25.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/26.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/27.png" alt="">
+        </div>
+        <div class="slides">
+            <img src="https://myxxdev.github.io/MYXXfm/images/28.png" alt="">
+        </div>
+    </div>
+    <script>
+        // Preload images to avoid loading issues
+        const images = [
+            "https://myxxdev.github.io/MYXXfm/images/1.png",
+            "https://myxxdev.github.io/MYXXfm/images/2.png",
+            "https://myxxdev.github.io/MYXXfm/images/3.png",
+            "https://myxxdev.github.io/MYXXfm/images/4.png",
+            "https://myxxdev.github.io/MYXXfm/images/5.png",
+            "https://myxxdev.github.io/MYXXfm/images/6.png",
+            "https://myxxdev.github.io/MYXXfm/images/7.png",
+            "https://myxxdev.github.io/MYXXfm/images/8.png",
+            "https://myxxdev.github.io/MYXXfm/images/9.png",
+            "https://myxxdev.github.io/MYXXfm/images/10.png",
+            "https://myxxdev.github.io/MYXXfm/images/11.png",
+            "https://myxxdev.github.io/MYXXfm/images/12.png",
+            "https://myxxdev.github.io/MYXXfm/images/13.png",
+            "https://myxxdev.github.io/MYXXfm/images/14.png",
+            "https://myxxdev.github.io/MYXXfm/images/15.png",
+            "https://myxxdev.github.io/MYXXfm/images/16.png",
+            "https://myxxdev.github.io/MYXXfm/images/17.png",
+            "https://myxxdev.github.io/MYXXfm/images/18.png",
+            "https://myxxdev.github.io/MYXXfm/images/19.png",
+            "https://myxxdev.github.io/MYXXfm/images/20.png",
+            "https://myxxdev.github.io/MYXXfm/images/21.png",
+            "https://myxxdev.github.io/MYXXfm/images/22.png",
+            "https://myxxdev.github.io/MYXXfm/images/23.png",
+            "https://myxxdev.github.io/MYXXfm/images/24.png",
+            "https://myxxdev.github.io/MYXXfm/images/25.png",
+            "https://myxxdev.github.io/MYXXfm/images/26.png",
+            "https://myxxdev.github.io/MYXXfm/images/27.png",
+            "https://myxxdev.github.io/MYXXfm/images/28.png"
+        ];
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+</body>
+</html>
