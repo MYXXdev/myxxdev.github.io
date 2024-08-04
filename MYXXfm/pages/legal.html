@@ -11,20 +11,20 @@
             color: #f4f4f4;
             background: linear-gradient(135deg, #FFD700 0%, #000000 100%);
             line-height: 1.8;
-            padding: 60px 0; /* Adds vertical padding */
+            padding: 20px 0 40px; /* Smaller top padding */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
         .container {
-            width: 90%;
+            width: 70%;
             max-width: 800px;
             background: rgba(0, 0, 0, 0.85);
             border-radius: 12px;
-            padding: 40px;
+            padding: 30px 40px; /* Added extra padding to sides */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-            margin: 0 auto;
+            margin: 20px; /* Increased margin for larger gap from screen edges */
             color: #e0e0e0;
         }
         h1, h2 {
@@ -67,7 +67,8 @@
         }
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 20px 40px; /* Adjusted padding for smaller screens */
+                margin: 10px; /* Adjusted margin for smaller gap on mobile */
             }
             h1 {
                 font-size: 22px;
