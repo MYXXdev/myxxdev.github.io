@@ -54,7 +54,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px 20px 20px; /* Added padding-top of 40px */
         }
 
         .schedule {
@@ -62,12 +62,13 @@
             max-width: 900px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
-            padding: 40px 20px 20px; /* Added 40px padding to the top */
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
+            margin-top: -40px; /* Adjusted margin-top to counter the padding-top added to body */
         }
 
         .schedule::-webkit-scrollbar {
@@ -187,7 +188,7 @@
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/spencerjames" target="_blank">Spencer James</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/SpencerJames.png" alt="Spencer James"><br><em>Airplay40</em></p>
             </div>
-                <div class="schedule-item">
+            <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djcity" target="_blank">DJcity DJs</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJcity.png" alt="DJCity"><br><em>The Morning MYXX<br>The Lunch FYXX<br>The Traffic MYXX</em></p>
             </div>
         </div>
