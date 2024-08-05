@@ -11,146 +11,143 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh; /* Ensure full viewport height */
-            box-sizing: border-box; /* Apply box-sizing globally */
-            font-family: Kanit;
+            box-sizing: border-box;
+            font-family: Kanit, sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #000000); /* Black to Golden Yellow */
+            background: linear-gradient(to bottom, #FFD700, #000000);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow: hidden; /* Prevent scrollbars on the body */
         }
 
         body {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center horizontally */
-            justify-content: center; /* Center vertically */
-            padding: 20px; /* Add some padding to ensure space around the content */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .header {
             font-size: 2em;
-            margin-bottom: 20px; /* Space between header and content */
-            text-align: center; /* Center the header text */
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .container {
+        .schedule {
             width: 100%;
-            max-width: 95%; /* Limit container width for readability */
-            padding: 20px;
-            box-sizing: border-box;
+            max-width: 900px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: left; /* Align text inside the container to the left */
-            overflow-y: auto; /* Allow vertical scrolling */
-            position: relative; /* To manage the scrolling container */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            box-sizing: border-box;
+            overflow-y: auto; /* Allow vertical scrolling if needed */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Hide scrollbar for WebKit browsers */
-        .container::-webkit-scrollbar {
-            width: 0px;
-            background: transparent; /* For WebKit browsers */
+        .schedule::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
         }
 
-        .container {
-            scrollbar-width: none; /* For Firefox */
+        .schedule {
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+        }
+
+        .schedule h2 {
+            margin-top: 0;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
         }
 
         .schedule-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px; /* Increased space between items */
-        }
-
-        .schedule-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 20px; /* Space between image and text */
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .schedule-item p {
             margin: 0;
-            font-size: 1em;
-            line-height: 1.4;
+            font-size: 0.9em;
         }
 
-        .schedule-item a {
-            color: #FFD700; /* Same yellow as background gradient */
-            text-decoration: none; /* Remove underline */
+        .schedule-item strong {
+            color: #FFD700; /* Yellow color for days of the week */
+            font-size: 1.1em;
         }
 
-        .schedule-item a:hover {
-            text-decoration: underline; /* Add underline on hover for clarity */
-        }
-
-        /* Italicize the times */
         .schedule-item em {
             font-style: italic;
+            font-size: 0.8em;
+        }
+
+        .schedule-item span {
+            font-size: 0.8em; /* Smaller font size for times */
+        }
+
+        .schedule-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0; /* Remove circular mask */
         }
 
         @media (max-width: 600px) {
             .header {
-                font-size: 1.8em;
-            }
-
-            .schedule-item img {
-                width: 40px;
-                height: 40px;
-                margin-right: 15px; /* Adjust space for smaller images */
-            }
-
-            .schedule-item p {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .container {
-                padding: 10px;
-                width: 100%; /* Full width on very small screens */
-            }
-
-            .header {
-                font-size: 1.6em;
-            }
-
-            .schedule-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .schedule-item img {
-                margin-bottom: 10px; /* Space below image for mobile */
+                font-size: 1.5em;
             }
 
             .schedule-item p {
                 font-size: 0.8em;
             }
+
+            .schedule-item {
+                padding: 5px; /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .schedule {
+                padding: 10px;
+            }
+
+            .header {
+                font-size: 1.2em;
+            }
+
+            .schedule-item p {
+                font-size: 0.7em;
+            }
+
+            .schedule-item {
+                padding: 5px; /* Further adjust padding for very small screens */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="schedule-item">
-            <img src="https://via.placeholder.com/50" alt="Andy Sutton">
-            <p><a href="https://myxxfm.com/andysutton" target="_blank"><strong>Andy Sutton</strong></a><br><em>House Story Dance Anthems<br>The Vibe Vault</em></p>
-        </div>
-        <div class="schedule-item">
-            <img src="https://via.placeholder.com/50" alt="DJ MikeyB">
-            <p><a href="https://myxxfm.com/djmikeyb" target="_blank"><strong>DJ MikeyB</strong></a><br><em>Filler</em></p>
-        </div>
-        <div class="schedule-item">
-            <img src="https://via.placeholder.com/50" alt="DJ Ommix">
-            <p><a href="https://myxxfm.com/djommix" target="_blank"><strong>DJ Ommix</strong></a><br><em>Club MYXX @ El Potrero Night Club</em></p>
-        </div>
-        <div class="schedule-item">
-            <img src="https://via.placeholder.com/50" alt="Spencer James">
-            <p><a href="https://myxxfm.com/spencerjames" target="_blank"><strong>Spencer James</strong></a><br><em>Airplay40</em></p>
+    <div class="schedule">
+        <div class="schedule-grid">
+            <div class="schedule-item">
+                <p><strong>Andy Sutton</strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Placeholder Image"><br><em>House Story<br>Dance Anthems</em></p>
+            </div>
+            <div class="schedule-item">
+                <p><strong>DJ MikeyB</strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="Placeholder Image"><br><em>Filler</em></p>
+            </div>
+            <div class="schedule-item">
+                <p><strong>DJ Ommix</strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJOmmix.png" alt="Placeholder Image"><br><em>Club MYXX<br>@ El Potrero Night Club</em></p>
+            </div>
+            <div class="schedule-item">
+                <p><strong>Spencer James</strong><br><img src="https://myxxdev.github.io/MYXXfm/images/SpencerJames.png" alt="Placeholder Image"><br><em>Airplay40</em></p>
+            </div>
         </div>
     </div>
 </body>
