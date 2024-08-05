@@ -5,20 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    <title>MYXX FM | Shows</title>
     <style>
         html, body {
-            margin: 0;
-            padding: 0;
             height: 100%;
-            box-sizing: border-box;
+            margin: 0;
             font-family: Kanit, sans-serif;
             color: #fff;
             background: linear-gradient(to bottom, #FFD700, #000000);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow: hidden; /* Prevent scrollbars on the body */
+            overflow: hidden;
+        }
+
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 8px solid #EFD500;
+            width: 100px;
+            height: 100px;
+            max-width: 10vw;
+            max-height: 10vw;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         body {
@@ -29,12 +57,6 @@
             padding: 20px;
         }
 
-        .header {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
         .schedule {
             width: 100%;
             max-width: 900px;
@@ -43,17 +65,18 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
-            overflow-y: auto; /* Allow vertical scrolling if needed */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto;
+            overflow-x: hidden;
+            text-align: center;
         }
 
         .schedule::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Webkit browsers */
+            display: none;
         }
 
         .schedule {
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .schedule h2 {
@@ -62,7 +85,7 @@
 
         .schedule-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
         }
 
@@ -76,12 +99,12 @@
         }
 
         .schedule-item p {
-            margin: 0;
+            margin: 5px 0; /* Adjusted margin to reduce gap */
             font-size: 0.9em;
         }
 
         .schedule-item strong {
-            color: #FFD700; /* Yellow color for days of the week */
+            color: #FFD700;
             font-size: 1.1em;
         }
 
@@ -91,18 +114,29 @@
         }
 
         .schedule-item span {
-            font-size: 0.8em; /* Smaller font size for times */
+            font-size: 0.8em;
+            display: block; /* Ensures each line is on a new line */
         }
 
         .schedule-item img {
             max-width: 100%;
             height: auto;
-            border-radius: 0; /* Remove circular mask */
+            border-radius: 0;
+            margin-top: 5px; /* Adjusted margin to reduce gap */
+        }
+
+        .schedule-item a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .schedule-item a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
-            .header {
-                font-size: 1.5em;
+            .schedule-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .schedule-item p {
@@ -110,7 +144,7 @@
             }
 
             .schedule-item {
-                padding: 5px; /* Adjust padding for smaller screens */
+                padding: 5px;
             }
         }
 
@@ -119,8 +153,8 @@
                 padding: 10px;
             }
 
-            .header {
-                font-size: 1.2em;
+            .schedule-grid {
+                grid-template-columns: 1fr;
             }
 
             .schedule-item p {
@@ -128,36 +162,52 @@
             }
 
             .schedule-item {
-                padding: 5px; /* Further adjust padding for very small screens */
+                padding: 5px;
             }
         }
     </style>
+    <title>MYXX FM | Shows</title>
 </head>
 <body>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
+
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong>Mon - Fri</strong><span> <em>‎ 8am - 9am</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/TheMorningMYXX.png" alt="Placeholder Image"><br>The Morning MYXX<br><em>w/ DJcity DJs</em></p>
+                <p><strong>The Morning MYXX</strong><br><span><em>Mon - Fri 8am - 9am</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheMorningMYXX.png" alt="The Morning MYXX"><br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Mon - Thu</strong><span> <em>‎ 12pm - 1pm</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/TheLunchFYXX.png" alt="Placeholder Image"><br>The Lunch FYXX<br><em>w/ DJcity DJs</em></p>
+                <p><strong>The Lunch FYXX</strong><br><span><em>Mon - Thu 12pm - 1pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheLunchFYXX.png" alt="The Lunch FYXX"><br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Mon - Fri</strong><span> <em>‎ 5pm - 6pm</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/TheTrafficMYXX.png" alt="Placeholder Image"><br>The Traffic MYXX<br><em>w/ DJcity DJs</em></p>
+                <p><strong>The Traffic MYXX</strong><br><span><em>Mon - Fri 5pm - 6pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheTrafficMYXX.png" alt="The Traffic MYXX"><br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Wed</strong><span> <em>‎ 12am - 12am</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/WayBackWednesday.png" alt="Placeholder Image"><br>WayBack Wednesday</p>
+                <p><strong>WayBack Wednesday</strong><br><span><em>Wed 12am - 12am</em></span><img src="https://myxxdev.github.io/MYXXfm/images/WayBackWednesday.png" alt="WayBack Wednesday"><br><em>More Throwbacks In The MYXX</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Thu - Sun</strong><span> <em>‎ 10pm - 4am</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/ClubMYXX.png" alt="Placeholder Image"><br>Club MYXX<br>@ El Potrero Night Club<br><em>w/ DJ Ommix</em></p>
+                <p><strong>Club MYXX</strong><br><span><em>Thu - Sun 10pm - 4am</em></span><img src="https://myxxdev.github.io/MYXXfm/images/ClubMYXX.png" alt="Club MYXX"><br><em>@ El Potrero Night Club<br>w/ DJ Ommix</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Fri</strong><span> <em>‎ 12pm - 2pm</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/HouseStoryDanceAnthems.png" alt="Placeholder Image"><br>House Story<br>Dance Anthems<br><em>w/ Andy Sutton</em></p>
+                <p><strong>The Friday Lunch MYXX</strong><br><span><em>Fri 12pm - 2pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/HouseStoryDanceAnthems.png" alt="House Story Dance Anthems"><br><em>House Story Dance Anthems<br>w/ Andy Sutton</em></p>
             </div>
             <div class="schedule-item">
-                <p><strong>Sun</strong><span> <em>‎ 12pm - 3pm</em></span><br><img src="https://myxxdev.github.io/MYXXfm/images/Airplay40.png" alt="Placeholder Image"><br>Airplay40<br><em>w/ Spencer James</em></p>
+                <p><strong>Airplay40</strong><br><span><em>Sun 12pm - 3pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/Airplay40.png" alt="Airplay40"><br><em>w/ Spencer James</em></p>
             </div>
         </div>
     </div>
+
+    <script>
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }, 2000);
+    </script>
 </body>
 </html>
