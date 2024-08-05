@@ -49,6 +49,14 @@
             100% { transform: rotate(360deg); }
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; /* Equal padding all around */
+        }
+
         .schedule {
             width: 100%;
             max-width: 900px;
@@ -60,11 +68,6 @@
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
-            margin: auto; /* Center align the schedule container */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .schedule::-webkit-scrollbar {
