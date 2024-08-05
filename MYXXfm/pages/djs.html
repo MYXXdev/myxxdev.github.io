@@ -15,16 +15,14 @@
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
             overflow: hidden;
         }
 
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            min-height: 100vh; /* Ensure the body covers the full viewport height */
+            padding: 0 20px; /* Horizontal padding */
         }
 
         .schedule {
@@ -38,6 +36,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
+            margin-bottom: 100px; /* Ensures space at the bottom for gradient visibility */
         }
 
         .schedule::-webkit-scrollbar {
@@ -106,7 +105,11 @@
 
         @media (max-width: 600px) {
             body {
-                padding: 10px 20px 60px; /* Increased bottom padding for medium screens */
+                padding: 0 20px; /* Horizontal padding */
+            }
+
+            .schedule {
+                margin-bottom: 80px; /* Increased bottom margin for medium screens */
             }
 
             .schedule-grid {
@@ -124,7 +127,11 @@
 
         @media (max-width: 400px) {
             body {
-                padding: 10px 20px 100px; /* Increased bottom padding for smaller screens */
+                padding: 0 20px; /* Horizontal padding */
+            }
+
+            .schedule {
+                margin-bottom: 500px; /* Increased bottom margin for small screens */
             }
 
             .schedule {
