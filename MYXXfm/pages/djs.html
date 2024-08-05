@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    <title>MYXX FM | DJs</title>
     <style>
         html, body {
-            margin: 0;
-            padding: 0;
             height: 100%;
-            box-sizing: border-box;
-            font-family: Kanit, sans-serif;
-            color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #000000);
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            overflow: hidden; /* Prevent scrollbars on the body */
+            margin: 0;
+        }
+
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 8px solid #EFD500;
+            width: 100px;
+            height: 100px;
+            max-width: 10vw;
+            max-height: 10vw;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         body {
@@ -27,12 +48,13 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-        }
-
-        .header {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
+            font-family: Kanit, sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #FFD700, #000000);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow: hidden;
         }
 
         .schedule {
@@ -43,18 +65,18 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
-            overflow-y: auto; /* Allow vertical scrolling if needed */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            text-align: center; /* Center the content */
+            overflow-y: auto;
+            overflow-x: hidden;
+            text-align: center;
         }
 
         .schedule::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Webkit browsers */
+            display: none;
         }
 
         .schedule {
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .schedule h2 {
@@ -63,7 +85,7 @@
 
         .schedule-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid-template-columns */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
         }
 
@@ -82,7 +104,7 @@
         }
 
         .schedule-item strong {
-            color: #FFD700; /* Yellow color for days of the week */
+            color: #FFD700;
             font-size: 1.1em;
         }
 
@@ -92,31 +114,27 @@
         }
 
         .schedule-item span {
-            font-size: 0.8em; /* Smaller font size for times */
+            font-size: 0.8em;
         }
 
         .schedule-item img {
             max-width: 100%;
             height: auto;
-            border-radius: 0; /* Remove circular mask */
+            border-radius: 0;
         }
 
         .schedule-item a {
-            color: #FFD700; /* Set link color to yellow */
-            text-decoration: none; /* Remove underline */
+            color: #FFD700;
+            text-decoration: none;
         }
 
         .schedule-item a:hover {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
-            .header {
-                font-size: 1.5em;
-            }
-
             .schedule-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .schedule-item p {
@@ -124,7 +142,7 @@
             }
 
             .schedule-item {
-                padding: 5px; /* Adjust padding for smaller screens */
+                padding: 5px;
             }
         }
 
@@ -133,12 +151,8 @@
                 padding: 10px;
             }
 
-            .header {
-                font-size: 1.2em;
-            }
-
             .schedule-grid {
-                grid-template-columns: 1fr; /* 1 item per row for very small screens */
+                grid-template-columns: 1fr;
             }
 
             .schedule-item p {
@@ -146,12 +160,17 @@
             }
 
             .schedule-item {
-                padding: 5px; /* Further adjust padding for very small screens */
+                padding: 5px;
             }
         }
     </style>
+    <title>MYXX FM | DJs</title>
 </head>
 <body>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
+
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
@@ -168,5 +187,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }, 2000);
+    </script>
 </body>
 </html>
