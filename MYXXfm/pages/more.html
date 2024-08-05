@@ -4,100 +4,202 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
+    <title>MYXX FM | Partners</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    <title>MYXX FM | Apps</title>
     <style>
-        /* Apply a gradient background from black to yellow */
-        body {
+        html, body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden; /* Prevent scrollbars from appearing */
+            height: 100%;
+            min-height: 100vh; /* Ensure full viewport height */
+            box-sizing: border-box; /* Apply box-sizing globally */
             font-family: 'Kanit', sans-serif;
-            color: #FFD700; /* Gold text color for contrast */
+            color: #FFD700; /* Set default text color to yellow */
+            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            padding: 20px; /* Add some padding to ensure space around the content */
+        }
+
+        .header {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 20px; /* Space between header and content */
+            text-align: center; /* Center the header text */
+            letter-spacing: 1px;
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
-            grid-template-rows: repeat(2, auto); /* Fixed 2 rows */
-            gap: 20px; /* Space between images */
-            max-width: 90vw; /* Prevent the container from being too wide */
-            max-height: 100vh; /* Prevent the container from being too tall */
-            padding: 20px; /* Add padding around the container */
-            box-sizing: border-box; /* Include padding in width calculations */
-            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for the container */
-            border-radius: 16px; /* Rounded corners for the container */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Shadow effect */
-            overflow: auto; /* Allow scrolling if content overflows */
+            width: 100%;
+            max-width: 90%; /* Limit container width for readability */
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            text-align: left; /* Align text inside the container to the left */
+            overflow-y: auto; /* Allow vertical scrolling */
+            position: relative; /* To manage the scrolling container */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         }
 
-        .container a {
-            display: block;
-            border-radius: 16px; /* Rounded corners for links */
-            overflow: hidden; /* Hide overflow for images */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        /* Hide scrollbar for WebKit browsers */
+        .container::-webkit-scrollbar {
+            width: 0px;
+            background: transparent; /* For WebKit browsers */
         }
 
-        .container a:hover {
-            transform: scale(1.05); /* Slight zoom on hover */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+        .container {
+            scrollbar-width: none; /* For Firefox */
         }
 
-        .container img {
-            width: 75%; /* Scale down the images to 75% of their container's width */
-            height: 75%; /* Scale down the images to 75% of their container's height */
-            object-fit: contain; /* Ensure images are not clipped */
-            border-radius: 16px; /* Rounded corners for images */
-            transition: opacity 0.3s ease; /* Smooth opacity transition */
-            display: block; /* Ensure images are displayed as block elements */
-            margin: auto; /* Center the images within their container */
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Space between items */
+            text-decoration: none; /* Remove underline from links */
+            color: #FFD700; /* Set text color to yellow */
+            transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
         }
 
-        .container a:hover img {
-            opacity: 0.8; /* Slight fade effect on hover */
+        .schedule-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px; /* Space between image and text */
+            transition: transform 0.3s; /* Smooth transform transition */
         }
 
-        /* Ensure fixed grid layout */
-        @media (min-width: 0px) {
+        .schedule-item p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Italicize the times */
+        .schedule-item em {
+            font-style: italic;
+        }
+
+        .schedule-item a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+            display: flex;
+            align-items: center;
+        }
+
+        .schedule-item a:hover {
+            color: #FFD700; /* Change text color on hover */
+            transform: scale(1.02); /* Slight scale effect on hover */
+        }
+
+        .schedule-item img:hover {
+            transform: scale(1.1); /* Slight scale effect on hover */
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                font-size: 2em;
+            }
+
+            .schedule-item img {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px; /* Adjust space for smaller images */
+            }
+
+            .schedule-item p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 400px) {
             .container {
-                grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns */
-                grid-template-rows: repeat(2, auto); /* Ensure 2 rows */
+                padding: 10px;
+                width: 100%; /* Full width on very small screens */
+            }
+
+            .header {
+                font-size: 1.8em;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .schedule-item img {
+                margin-bottom: 10px; /* Space below image for mobile */
+            }
+
+            .schedule-item p {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://myxxfm.com/facebook" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/Facebook.png" alt="MYXX FM Facebook">
-        </a>
-        <a href="https://myxxfm.com/instagram" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/Instagram.png" alt="MYXX FM Instagram">
-        </a>
-        <a href="https://myxxfm.com/snapchat" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/Snapchat.png" alt="MYXX FM Snapchat">
-        </a>
-        <a href="https://myxxfm.com/tiktok" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/TikTok.png" alt="MYXX FM TikTok">
-        </a>
-        <a href="https://myxxfm.com/twitch" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/Twitch.png" alt="MYXX FM Twitch">
-        </a>
-        <a href="https://myxxfm.com/twitter" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/Twitter.png" alt="MYXX FM Twitter">
-        </a>
-        <a href="https://myxxfm.com/whatsapp" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/WhatsApp.png" alt="MYXX FM WhatsApp">
-        </a>
-        <a href="https://myxxfm.com/youtube" target="_blank">
-            <img src="https://myxxdev.github.io/MYXXfm/images/YouTube.png" alt="MYXX FM YouTube">
-        </a>
+        <div class="header"></div>
+        <div class="schedule">
+            <div class="schedule-item">
+                <a href="https://myxxfm.com/djcity" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="DJcity Logo">
+                    <p><strong>Facebook</strong></p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="https://myxxfm.com/elpotreronightclub" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="El Potrero Night Club Logo">
+                    <p><strong>Instagram</strong></p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
+                    <p><strong>Snapchat</strong></p>
+                </a>
+            </div>
+            <div class="schedule-item">
+                <a href="https://myxxfm.com/roseandcocolorado" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="Rose & Co. Colorado Logo">
+                    <p><strong>TikTok</strong></p>
+                </a>
+            </div>
+                <div class="schedule-item">
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
+                    <p><strong>Twitch</strong></p>
+                </a>
+            </div>
+                <div class="schedule-item">
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
+                    <p><strong>Twitter / X</strong></p>
+                </a>
+            </div>
+                    <div class="schedule-item">
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
+                    <p><strong>WhatsApp</strong></p>
+                </a>
+            </div>
+                    <div class="schedule-item">
+                <a href="https://myxxfm.com/icrme" target="_blank">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
+                    <p><strong>YouTube</strong></p>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
