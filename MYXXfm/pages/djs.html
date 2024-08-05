@@ -16,9 +16,6 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .fade-overlay {
@@ -64,6 +61,10 @@
             overflow-x: hidden;
             text-align: center;
             margin: auto; /* Center align the schedule container */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .schedule::-webkit-scrollbar {
@@ -172,7 +173,7 @@
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems<br>The Vibe Vault</em></p>
+                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
             </div>
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
