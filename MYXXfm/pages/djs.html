@@ -18,43 +18,13 @@
             overflow: hidden;
         }
 
-        .fade-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: 1;
-            transition: opacity 0.5s ease-out;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .spinner {
-            border: 8px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top: 8px solid #EFD500;
-            width: 100px;
-            height: 100px;
-            max-width: 10vw;
-            max-height: 10vw;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px 40px; /* Smaller top padding, equal left/right padding, and larger bottom padding */
+            padding: 10px 20px;
+            min-height: 100vh; /* Ensure the body covers the full viewport height */
         }
 
         .schedule {
@@ -135,6 +105,10 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px 20px 60px; /* Increased bottom padding for medium screens */
+            }
+
             .schedule-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -149,6 +123,10 @@
         }
 
         @media (max-width: 400px) {
+            body {
+                padding: 10px 20px 100px; /* Increased bottom padding for smaller screens */
+            }
+
             .schedule {
                 padding: 10px;
             }
