@@ -15,31 +15,30 @@
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .content-wrapper {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            min-height: 100vh; /* Ensure full viewport height */
-            padding: 0 20px; /* Horizontal padding */
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
             box-sizing: border-box;
         }
 
         .schedule {
-            width: 100%;
-            max-width: 900px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
             overflow-y: auto;
-            overflow-x: hidden;
-            text-align: center;
-            margin-top: 0; /* Reset margin-top */
-            margin-bottom: 100px; /* Increased margin-bottom for space at bottom */
+            width: 100%;
+            max-height: 90vh; /* Ensure it doesn't overflow viewport */
+            box-sizing: border-box;
         }
 
         .schedule::-webkit-scrollbar {
@@ -49,10 +48,6 @@
         .schedule {
             scrollbar-width: none;
             -ms-overflow-style: none;
-        }
-
-        .schedule h2 {
-            margin-top: 0;
         }
 
         .schedule-grid {
@@ -71,7 +66,7 @@
         }
 
         .schedule-item p {
-            margin: 5px 0; /* Adjusted margin to reduce gap */
+            margin: 5px 0;
             font-size: 0.9em;
         }
 
@@ -87,14 +82,14 @@
 
         .schedule-item span {
             font-size: 0.8em;
-            display: block; /* Ensures each line is on a new line */
+            display: block;
         }
 
         .schedule-item img {
             max-width: 100%;
             height: auto;
             border-radius: 0;
-            margin-top: 5px; /* Adjusted margin to reduce gap */
+            margin-top: 5px;
         }
 
         .schedule-item a {
@@ -107,10 +102,6 @@
         }
 
         @media (max-width: 600px) {
-            .schedule {
-                margin-bottom: 80px; /* Increased bottom margin for medium screens */
-            }
-
             .schedule-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -125,14 +116,6 @@
         }
 
         @media (max-width: 400px) {
-            .schedule {
-                margin-bottom: 120px; /* Increased bottom margin for small screens */
-            }
-
-            .schedule {
-                padding: 10px;
-            }
-
             .schedule-grid {
                 grid-template-columns: 1fr;
             }
