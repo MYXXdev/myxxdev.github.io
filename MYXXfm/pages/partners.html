@@ -13,8 +13,8 @@
             height: 100%;
             min-height: 100vh; /* Ensure full viewport height */
             box-sizing: border-box; /* Apply box-sizing globally */
-            font-family: Kanit;
-            color: #fff;
+            font-family: 'Kanit', sans-serif;
+            color: #FFD700; /* Set default text color to yellow */
             background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
             background-size: cover;
             background-attachment: fixed;
@@ -31,19 +31,21 @@
         }
 
         .header {
-            font-size: 2em;
+            font-size: 2.4em;
+            font-weight: 700;
             margin-bottom: 20px; /* Space between header and content */
             text-align: center; /* Center the header text */
+            letter-spacing: 1px;
         }
 
         .container {
             width: 100%;
-            max-width: 95%; /* Limit container width for readability */
+            max-width: 90%; /* Limit container width for readability */
             padding: 20px;
             box-sizing: border-box;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
             text-align: left; /* Align text inside the container to the left */
             overflow-y: auto; /* Allow vertical scrolling */
             position: relative; /* To manage the scrolling container */
@@ -63,22 +65,24 @@
         .schedule-item {
             display: flex;
             align-items: center;
-            margin-bottom: 25px; /* Increased space between items */
+            margin-bottom: 20px; /* Space between items */
             text-decoration: none; /* Remove underline from links */
-            color: #fff; /* Ensure text color is white */
+            color: #FFD700; /* Set text color to yellow */
+            transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
         }
 
         .schedule-item img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             margin-right: 20px; /* Space between image and text */
+            transition: transform 0.3s; /* Smooth transform transition */
         }
 
         .schedule-item p {
             margin: 0;
-            font-size: 1em;
-            line-height: 1.4;
+            font-size: 1.1em;
+            line-height: 1.5;
         }
 
         /* Italicize the times */
@@ -95,21 +99,26 @@
 
         .schedule-item a:hover {
             color: #FFD700; /* Change text color on hover */
+            transform: scale(1.02); /* Slight scale effect on hover */
+        }
+
+        .schedule-item img:hover {
+            transform: scale(1.1); /* Slight scale effect on hover */
         }
 
         @media (max-width: 600px) {
             .header {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .schedule-item img {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
                 margin-right: 15px; /* Adjust space for smaller images */
             }
 
             .schedule-item p {
-                font-size: 0.9em;
+                font-size: 1em;
             }
         }
 
@@ -120,7 +129,7 @@
             }
 
             .header {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
 
             .schedule-item {
@@ -133,34 +142,36 @@
             }
 
             .schedule-item p {
-                font-size: 0.8em;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header"></div>
         <div class="schedule">
             <div class="schedule-item">
                 <a href="https://myxxfm.com/djcity" target="_blank">
-                    <img src="https://via.placeholder.com/50" alt="DJcity Logo">
+                    <img src="https://via.placeholder.com/60" alt="DJcity Logo">
                     <p><strong>DJcity</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/elpotreronightclub" target="_blank">
-                    <img src="https://via.placeholder.com/50" alt="El Potrero Night Club Logo">
+                    <img src="https://via.placeholder.com/60" alt="El Potrero Night Club Logo">
                     <p><strong>El Potrero Night Club</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/icrme" target="_blank">
-                    <img src="https://via.placeholder.com/50" alt="ICRME Logo">
+                    <img src="https://via.placeholder.com/60" alt="ICRME Logo">
                     <p><strong>ICRME</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/roseandcocolorado" target="_blank">
-                    <img src="https://via.placeholder.com/50" alt="Rose & Co. Colorado Logo">
+                    <img src="https://via.placeholder.com/60" alt="Rose & Co. Colorado Logo">
                     <p><strong>Rose & Co. Colorado</strong></p>
                 </a>
             </div>
