@@ -50,11 +50,13 @@
         }
 
         .container img {
-            width: 100%; /* Make images responsive within their container */
-            height: 100%; /* Ensure images fill the container */
+            width: 75%; /* Scale down the images to 75% of their container's width */
+            height: 75%; /* Scale down the images to 75% of their container's height */
             object-fit: contain; /* Ensure images are not clipped */
             border-radius: 16px; /* Rounded corners for images */
             transition: opacity 0.3s ease; /* Smooth opacity transition */
+            display: block; /* Ensure images are displayed as block elements */
+            margin: auto; /* Center the images within their container */
         }
 
         .container a:hover img {
