@@ -9,6 +9,13 @@
         html, body {
             height: 100%;
             margin: 0;
+            font-family: Kanit, sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #FFD700, #000000);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow: hidden;
         }
 
         .fade-overlay {
@@ -48,13 +55,6 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            font-family: Kanit, sans-serif;
-            color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #000000);
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            overflow: hidden;
         }
 
         .schedule {
@@ -99,7 +99,7 @@
         }
 
         .schedule-item p {
-            margin: 0;
+            margin: 5px 0; /* Adjusted margin to reduce gap */
             font-size: 0.9em;
         }
 
@@ -115,12 +115,14 @@
 
         .schedule-item span {
             font-size: 0.8em;
+            display: block; /* Ensures each line is on a new line */
         }
 
         .schedule-item img {
             max-width: 100%;
             height: auto;
             border-radius: 0;
+            margin-top: 5px; /* Adjusted margin to reduce gap */
         }
 
         .schedule-item a {
@@ -164,7 +166,7 @@
             }
         }
     </style>
-    <title>MYXX FM | DJs</title>
+    <title>MYXX FM | Shows</title>
 </head>
 <body>
     <div class="fade-overlay">
@@ -174,7 +176,7 @@
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story<br>Dance Anthems</em></p>
+                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
             </div>
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
