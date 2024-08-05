@@ -12,69 +12,89 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
-            background: linear-gradient(135deg, #000000, #f7c100);
+            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            text-align: center;
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            width: 80%;
+            border-radius: 12px;
+            padding: 30px;
             max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Header Styles */
         header {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
             color: #f7c100;
+        }
+
+        em {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #FFD700;
         }
 
         /* Contact Info Styles */
         .contact-info {
             background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 20px;
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #FFD700;
         }
 
-        .phone {
-            font-size: 1.5rem;
-            margin: 20px 0;
+        .contact-item {
+            font-size: 1.4rem;
+            margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .phone i {
-            margin-right: 10px;
+        .contact-item i {
+            margin-right: 15px;
             font-size: 24px;
-            color: #f7c100;
+            color: #FFD700;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         /* Social Media Styles */
         .social-media {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allows wrapping of icons */
+            flex-wrap: wrap;
             margin-top: 20px;
         }
 
         .social-link {
-            margin: 0 15px; /* Added margin for spacing */
+            margin: 0 20px;
         }
 
         .social-link i {
@@ -85,7 +105,7 @@
 
         .social-link:hover i {
             transform: scale(1.2);
-            color: #f7c100;
+            color: #FFD700;
         }
 
         /* Footer Styles */
@@ -93,53 +113,40 @@
             margin-top: 20px;
         }
 
-        /* Keyframe Animations */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+        footer p {
+            margin: 0;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>#MYXXfm</h1>
+            <h1>MYXX FM</h1>
+            <em>Spanglish Hits Live Here</em>
         </header>
-        <main>
-                <div class="phone">
-                    <!-- Phone Icon -->
-                    <i class="fas fa-phone-alt"></i>
-                    <span>(970) 989-6999</span><br><br>
-                </div>
-                <div class="social-media">
-                    <!-- Social Media Links -->
-                    <a href="https://facebook.com" class="social-link" target="_blank" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com" class="social-link" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com" class="social-link" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://linkedin.com" class="social-link" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://tiktok.com" class="social-link" target="_blank" title="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-            </section>
-        </main>
-        <footer><br>
-            <p>&copy; 2024 MYXX FM LLC</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>(970) 989-6999</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@myxxfm.com">contact@MYXXfm.com</a>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024‎ ‎ ‎ •‎ ‎ ‎ MYXX FM LLC‎ ‎ ‎ •‎ ‎ ‎ <a href="https://myxxfm.com/legal">Legal</a></p>
         </footer>
     </div>
 </body>
