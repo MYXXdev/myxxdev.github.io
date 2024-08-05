@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    <title>MYXX FM | Shows</title>
     <style>
         html, body {
             height: 100%;
@@ -167,18 +166,7 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const overlay = document.querySelector('.fade-overlay');
-                overlay.style.opacity = 0;
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 500);
-            }, 2000);
-        });
-    </script>
+    <title>MYXX FM | Shows</title>
 </head>
 <body>
     <div class="fade-overlay">
@@ -188,7 +176,7 @@
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
+                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy SuttonA</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
             </div>
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
@@ -199,10 +187,21 @@
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/spencerjames" target="_blank">Spencer James</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/SpencerJames.png" alt="Spencer James"><br><em>Airplay40</em></p>
             </div>
-            <div class="schedule-item">
+                <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djcity" target="_blank">DJcity DJs</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJcity.png" alt="DJCity"><br><em>The Morning MYXX<br>The Lunch FYXX<br>The Traffic MYXX</em></p>
             </div>
         </div>
     </div>
+
+    <script>
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }, 2000);
+    </script>
 </body>
 </html>
