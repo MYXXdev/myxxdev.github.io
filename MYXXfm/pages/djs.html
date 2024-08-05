@@ -15,18 +15,16 @@
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
         }
 
-        body {
-            padding: 0 20px; /* Horizontal padding */
-            box-sizing: border-box;
-            min-height: 100vh; /* Ensure body covers full viewport height */
+        .content-wrapper {
             display: flex;
             flex-direction: column;
             justify-content: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure full viewport height */
+            padding: 0 20px; /* Horizontal padding */
+            box-sizing: border-box;
         }
 
         .schedule {
@@ -40,7 +38,8 @@
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
-            margin-bottom: 100px; /* Space for bottom gradient visibility */
+            margin-top: 0; /* Reset margin-top */
+            margin-bottom: 100px; /* Increased margin-bottom for space at bottom */
         }
 
         .schedule::-webkit-scrollbar {
@@ -108,10 +107,6 @@
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 0 20px; /* Horizontal padding */
-            }
-
             .schedule {
                 margin-bottom: 80px; /* Increased bottom margin for medium screens */
             }
@@ -130,10 +125,6 @@
         }
 
         @media (max-width: 400px) {
-            body {
-                padding: 0 20px; /* Horizontal padding */
-            }
-
             .schedule {
                 margin-bottom: 120px; /* Increased bottom margin for small screens */
             }
@@ -158,23 +149,25 @@
     <title>MYXX FM | Shows</title>
 </head>
 <body>
-    <div class="fade-overlay">
-        <div class="spinner"></div>
-    </div>
+    <div class="content-wrapper">
+        <div class="fade-overlay">
+            <div class="spinner"></div>
+        </div>
 
-    <div class="schedule">
-        <div class="schedule-grid">
-            <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
-            </div>
-            <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
-            </div>
-            <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/djommix" target="_blank">DJ Ommix</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJOmmix.png" alt="DJ Ommix"><br><em>Club MYXX<br>@ El Potrero Night Club</em></p>
-            </div>
-            <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/spencerjames" target="_blank">Spencer James</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/SpencerJames.png" alt="Spencer James"><br><em>Airplay40</em></p>
+        <div class="schedule">
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
+                </div>
+                <div class="schedule-item">
+                    <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
+                </div>
+                <div class="schedule-item">
+                    <p><strong><a href="https://myxxfm.com/djommix" target="_blank">DJ Ommix</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJOmmix.png" alt="DJ Ommix"><br><em>Club MYXX<br>@ El Potrero Night Club</em></p>
+                </div>
+                <div class="schedule-item">
+                    <p><strong><a href="https://myxxfm.com/spencerjames" target="_blank">Spencer James</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/SpencerJames.png" alt="Spencer James"><br><em>Airplay40</em></p>
+                </div>
             </div>
         </div>
     </div>
