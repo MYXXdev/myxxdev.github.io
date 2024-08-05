@@ -16,13 +16,17 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             display: flex;
-            align-items: center; /* Center content vertically */
-            justify-content: center; /* Center content horizontally */
+            flex-direction: column;
             overflow: hidden;
         }
 
         body {
             padding: 0 20px; /* Horizontal padding */
+            box-sizing: border-box;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
         }
 
         .schedule {
@@ -36,7 +40,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
-            margin-bottom: 100px; /* Ensures space at the bottom for gradient visibility */
+            margin-bottom: 100px; /* Space for bottom gradient visibility */
         }
 
         .schedule::-webkit-scrollbar {
@@ -131,7 +135,7 @@
             }
 
             .schedule {
-                margin-bottom: 500px; /* Increased bottom margin for small screens */
+                margin-bottom: 120px; /* Increased bottom margin for small screens */
             }
 
             .schedule {
@@ -161,7 +165,7 @@
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy SuttonA</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
+                <p><strong><a href="https://myxxfm.com/andysutton" target="_blank">Andy Sutton</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/AndySutton.png" alt="Andy Sutton"><br><em>House Story Dance Anthems</em></p>
             </div>
             <div class="schedule-item">
                 <p><strong><a href="https://myxxfm.com/djmikeyb" target="_blank">DJ MikeyB</a></strong><br><img src="https://myxxdev.github.io/MYXXfm/images/DJMikeyB.png" alt="DJ MikeyB"><br><em>Filler</em></p>
