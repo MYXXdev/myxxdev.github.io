@@ -5,25 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    <title>MYXX FM | Shows</title>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             font-family: Kanit, sans-serif;
             color: #fff;
-            background: #000; /* Fallback background */
-            overflow: hidden;
-        }
-
-        .gradient-top {
-            width: 100%;
-            height: 20vh; /* Adjust this value for desired padding */
             background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            position: relative;
+            overflow: hidden;
+        }
+
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 8px solid #EFD500;
+            width: 100px;
+            height: 100px;
+            max-width: 10vw;
+            max-height: 10vw;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         body {
@@ -31,7 +54,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 20vh; /* Push content below the gradient */
+            padding: 20px;
         }
 
         .schedule {
@@ -143,9 +166,9 @@
             }
         }
     </style>
+    <title>MYXX FM | Shows</title>
 </head>
 <body>
-    <div class="gradient-top"></div>
     <div class="fade-overlay">
         <div class="spinner"></div>
     </div>
@@ -153,7 +176,7 @@
     <div class="schedule">
         <div class="schedule-grid">
             <div class="schedule-item">
-                <p><strong>The Morning MYXX</strong><br><span><em>Mon - Fri 8am - 9am</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheMorningMYXX.png" alt="The Morning MYXX"><br><em>w/ DJcity DJs</em></p>
+                <p><strong>The Morning MYXXA</strong><br><span><em>Mon - Fri 8am - 9am</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheMorningMYXX.png" alt="The Morning MYXX"><br><em>w/ DJcity DJs</em></p>
             </div>
             <div class="schedule-item">
                 <p><strong>The Lunch FYXX</strong><br><span><em>Mon - Thu‎ ‎ ‎ •‎ ‎ ‎ 12pm - 1pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheLunchFYXX.png" alt="The Lunch FYXX"><br><em>w/ DJcity DJs</em></p>
@@ -173,23 +196,21 @@
             <div class="schedule-item">
                 <p><strong>Airplay40</strong><br><span><em>Sun‎ ‎ ‎ •‎ ‎ ‎ 12pm - 3pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/Airplay40.png" alt="Airplay40"><br><em>w/ Spencer James</em></p>
             </div>
-            <div class="schedule-item">
+                <div class="schedule-item">
                 <p><strong>The Vibe Vault</strong><br><span><em>Every last Wed‎ ‎ ‎ •‎ ‎ ‎ 12pm - 2pm</em></span><img src="https://myxxdev.github.io/MYXXfm/images/TheVibeVault.png" alt="The Vibe Vault"><br><em>w/ Andy Sutton</em></p>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
             setTimeout(() => {
-                const overlay = document.querySelector('.fade-overlay');
-                overlay.style.opacity = 0;
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 500);
-            }, 2000);
-        });
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }, 2000);
     </script>
 </body>
 </html>
