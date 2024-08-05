@@ -24,12 +24,12 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
-            grid-template-rows: repeat(2, auto); /* Fixed 2 rows */
-            gap: 20px; /* Space between images */
-            max-width: 90vw; /* Prevent the container from being too wide */
-            max-height: 80vh; /* Prevent the container from being too tall */
-            padding: 20px; /* Add padding around the container */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+            grid-template-rows: repeat(auto-fit, minmax(150px, auto)); /* Responsive rows */
+            gap: 10px; /* Space between images */
+            width: 90vw; /* Width of the container */
+            height: 80vh; /* Height of the container */
+            padding: 10px; /* Add padding around the container */
             box-sizing: border-box; /* Include padding in width calculations */
             background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for the container */
             border-radius: 16px; /* Rounded corners for the container */
@@ -52,7 +52,7 @@
         .container img {
             width: 100%; /* Make images responsive within their container */
             height: 100%; /* Ensure images fill the container */
-            object-fit: contain; /* Ensure images are not clipped */
+            object-fit: cover; /* Ensure images cover the container */
             border-radius: 16px; /* Rounded corners for images */
             transition: opacity 0.3s ease; /* Smooth opacity transition */
         }
@@ -61,11 +61,11 @@
             opacity: 0.8; /* Slight fade effect on hover */
         }
 
-        /* Ensure fixed grid layout */
-        @media (min-width: 0px) {
+        /* Ensure responsive grid layout */
+        @media (max-width: 600px) {
             .container {
-                grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns */
-                grid-template-rows: repeat(2, auto); /* Ensure 2 rows */
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust for smaller screens */
+                grid-template-rows: repeat(auto-fit, minmax(120px, auto)); /* Adjust for smaller screens */
             }
         }
     </style>
