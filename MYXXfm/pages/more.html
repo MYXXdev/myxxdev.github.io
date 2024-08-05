@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <title>MYXX FM | Apps</title>
+    <style>
+        /* Apply a gradient background from black to yellow */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+            font-family: 'Kanit', sans-serif;
+            color: #FFD700; /* Gold text color for contrast */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+            grid-template-rows: repeat(2, auto); /* Fixed 2 rows */
+            gap: 20px; /* Space between images */
+            max-width: 90vw; /* Prevent the container from being too wide */
+            max-height: 80vh; /* Prevent the container from being too tall */
+            padding: 20px; /* Add padding around the container */
+            box-sizing: border-box; /* Include padding in width calculations */
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for the container */
+            border-radius: 16px; /* Rounded corners for the container */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Shadow effect */
+            overflow: auto; /* Allow scrolling if content overflows */
+        }
+
+        .container a {
+            display: block;
+            border-radius: 16px; /* Rounded corners for links */
+            overflow: hidden; /* Hide overflow for images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        .container a:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+        }
+
+        .container img {
+            width: 100%; /* Make images responsive within their container */
+            height: 100%; /* Ensure images fill the container */
+            object-fit: contain; /* Ensure images are not clipped */
+            border-radius: 16px; /* Rounded corners for images */
+            transition: opacity 0.3s ease; /* Smooth opacity transition */
+        }
+
+        .container a:hover img {
+            opacity: 0.8; /* Slight fade effect on hover */
+        }
+
+        /* Ensure fixed grid layout */
+        @media (min-width: 0px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns */
+                grid-template-rows: repeat(2, auto); /* Ensure 2 rows */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://myxxfm.com/facebook" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/Facebook.png" alt="MYXX FM Facebook">
+        </a>
+        <a href="https://myxxfm.com/instagram" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/Instagram.png" alt="MYXX FM Instagram">
+        </a>
+        <a href="https://myxxfm.com/snapchat" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/Snapchat.png" alt="MYXX FM Snapchat">
+        </a>
+        <a href="https://myxxfm.com/tiktok" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/TikTok.png" alt="MYXX FM TikTok">
+        </a>
+        <a href="https://myxxfm.com/twitch" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/Twitch.png" alt="MYXX FM Twitch">
+        </a>
+        <a href="https://myxxfm.com/twitter" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/Twitter.png" alt="MYXX FM Twitter">
+        </a>
+        <a href="https://myxxfm.com/whatsapp" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/WhatsApp.png" alt="MYXX FM WhatsApp">
+        </a>
+        <a href="https://myxxfm.com/youtube" target="_blank">
+            <img src="https://myxxdev.github.io/MYXXfm/images/YouTube.png" alt="MYXX FM YouTube">
+        </a>
+    </div>
+</body>
+</html>
