@@ -20,9 +20,6 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             overflow-x: hidden; /* Prevent horizontal overflow */
-        }
-
-        body {
             display: flex;
             flex-direction: column;
             align-items: center; /* Center horizontally */
@@ -145,61 +142,119 @@
                 font-size: 0.9em;
             }
         }
+
+        /* Spinner Overlay Styles */
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
+            z-index: 9999; /* Ensure it sits on top of other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border-radius: 50%;
+            border-top: 8px solid #EFD500; /* Spinner color */
+            width: 10vw; /* Responsive width (10% of viewport width) */
+            height: 10vw; /* Responsive height (10% of viewport width) */
+            max-width: 100px; /* Maximum width */
+            max-height: 100px; /* Maximum height */
+            animation: spin 1s linear infinite; /* Adjust animation duration */
+            margin-top: 40px; /* Adjust margin to move spinner down */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .spinner {
+                width: 10vw; /* Adjust size for smaller screens */
+                height: 10vw;
+                max-width: 80px; /* Maximum width */
+                max-height: 80px; /* Maximum height */
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">Our Partners</div>
         <div class="schedule">
             <div class="schedule-item">
                 <a href="https://myxxfm.com/facebook" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/Facebook.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/Facebook.png" alt="Facebook">
                     <p><strong>Facebook</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/instagram" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/Instagram.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/Instagram.png" alt="Instagram">
                     <p><strong>Instagram</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/snapchat" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/Snapchat.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/Snapchat.png" alt="Snapchat">
                     <p><strong>Snapchat</strong></p>
                 </a>
             </div>
             <div class="schedule-item">
                 <a href="https://myxxfm.com/tiktok" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/TikTok.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/TikTok.png" alt="TikTok">
                     <p><strong>TikTok</strong></p>
                 </a>
             </div>
-                <div class="schedule-item">
+            <div class="schedule-item">
                 <a href="https://myxxfm.com/twitch" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/Twitch.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/Twitch.png" alt="Twitch">
                     <p><strong>Twitch</strong></p>
                 </a>
             </div>
-                <div class="schedule-item">
+            <div class="schedule-item">
                 <a href="https://myxxfm.com/twitter" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/Twitter.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/Twitter.png" alt="Twitter / X">
                     <p><strong>Twitter / X</strong></p>
                 </a>
             </div>
-                    <div class="schedule-item">
+            <div class="schedule-item">
                 <a href="https://myxxfm.com/whatsapp" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/WhatsApp.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/WhatsApp.png" alt="WhatsApp">
                     <p><strong>WhatsApp</strong></p>
                 </a>
             </div>
-                    <div class="schedule-item">
+            <div class="schedule-item">
                 <a href="https://myxxfm.com/youtube" target="_blank">
-                    <img src="https://myxxdev.github.io/MYXXfm/images/YouTube.png">
+                    <img src="https://myxxdev.github.io/MYXXfm/images/YouTube.png" alt="YouTube">
                     <p><strong>YouTube</strong></p>
                 </a>
             </div>
         </div>
     </div>
+    <script>
+        // Automatically fade out after a set time
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            // Optional: Remove overlay after fade-out to clean up
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrollbars
+            }, 500); // Adjust the total duration before fading out
+        }, 2000); // Adjust the time before starting fade-out
+    </script>
 </body>
 </html>
