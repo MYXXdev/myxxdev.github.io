@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Iframe</title>
+    <title>Styled Iframe with Spinner</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Ensure the body and html elements take up the full height */
+        /* General resets and full viewport height */
         html, body {
             margin: 0;
             padding: 0;
@@ -15,6 +15,50 @@
             color: #f5f5f5; /* Light text color */
             font-family: 'Roboto', sans-serif;
             overflow: hidden; /* Prevent scrollbars */
+        }
+
+        /* Ensures full overlay on top */
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1); /* Fully opaque black background */
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
+            z-index: 9999; /* Ensure it sits on top of other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none; /* Ensure clicks pass through to the iframe underneath */
+        }
+
+        /* Adjustments to spinner */
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border-radius: 50%;
+            border-top: 8px solid #EFD500; /* Spinner color */
+            width: 10vw; /* Responsive width (10% of viewport width) */
+            height: 10vw; /* Responsive height (10% of viewport width) */
+            max-width: 100px; /* Maximum width */
+            max-height: 100px; /* Maximum height */
+            animation: spin 1s linear infinite; /* Adjust animation duration */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .spinner {
+                width: 10vw; /* Adjust size for smaller screens */
+                height: 10vw;
+                max-width: 80px; /* Maximum width */
+                max-height: 80px; /* Maximum height */
+            }
         }
 
         .iframe-container {
@@ -28,6 +72,7 @@
             border-radius: 12px; /* Rounded corners */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
             overflow: hidden; /* Hide any overflow */
+            z-index: 1; /* Ensure it is beneath the spinner */
         }
 
         .iframe-container iframe {
@@ -38,10 +83,25 @@
     </style>
 </head>
 <body>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
     <div class="iframe-container">
         <iframe scrolling="no" id="hearthis_at_user_myxxfm" 
                 src="https://app.hearthis.at/myxxfm/embed/?hcolor=ba9b00&css=&skin=black" 
                 frameborder="0" allowtransparency></iframe>
     </div>
+    <script>
+        // Automatically fade out after a set time
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            // Optional: Remove overlay after fade-out to clean up
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrollbars
+            }, 500); // Adjust the total duration before fading out
+        }, 2000); // Adjust the time before starting fade-out (reduced to 2 seconds)
+    </script>
 </body>
 </html>
