@@ -10,23 +10,24 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh;
-            box-sizing: border-box;
+            min-height: 100vh; /* Ensure full viewport height */
+            box-sizing: border-box; /* Apply box-sizing globally */
             font-family: 'Kanit', sans-serif;
-            color: #FFD700;
-            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
+            color: #FFD700; /* Set default text color to yellow */
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Gradient */
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-y: auto; /* Allow vertical scrolling */
         }
 
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            padding: 20px; /* Add some padding for space around content */
         }
 
         .header {
@@ -46,18 +47,18 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
             text-align: left;
-            overflow-y: auto;
+            overflow-y: auto; /* Make container scrollable */
             position: relative;
-            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         }
 
         .container::-webkit-scrollbar {
             width: 0px;
-            background: transparent;
+            background: transparent; /* Hide scrollbar for WebKit browsers */
         }
 
         .container {
-            scrollbar-width: none;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
         }
 
         .schedule-item {
@@ -118,7 +119,7 @@
         @media (max-width: 400px) {
             .container {
                 padding: 10px;
-                width: 100%;
+                width: 100%; /* Full width on very small screens */
             }
 
             .header {
@@ -146,23 +147,23 @@
             width: 100%;
             height: 100%;
             background-color: black;
-            opacity: 1;
-            transition: opacity 0.5s ease-out;
-            z-index: 9999;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease-out; /* Adjust timing and easing */
+            z-index: 9999; /* Ensure it sits on top of other content */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .spinner {
-            border: 8px solid rgba(0, 0, 0, 0.1);
+            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
             border-radius: 50%;
-            border-top: 8px solid #EFD500;
-            width: 10vw;
-            height: 10vw;
-            max-width: 100px;
-            max-height: 100px;
-            animation: spin 1s linear infinite;
+            border-top: 8px solid #EFD500; /* Spinner color */
+            width: 10vw; /* Responsive width */
+            height: 10vw; /* Responsive height */
+            max-width: 100px; /* Maximum width */
+            max-height: 100px; /* Maximum height */
+            animation: spin 1s linear infinite; /* Adjust animation duration */
         }
 
         @keyframes spin {
@@ -172,10 +173,10 @@
 
         @media (max-width: 768px) {
             .spinner {
-                width: 10vw;
+                width: 10vw; /* Adjust size for smaller screens */
                 height: 10vw;
-                max-width: 80px;
-                max-height: 80px;
+                max-width: 80px; /* Maximum width */
+                max-height: 80px; /* Maximum height */
             }
         }
     </style>
@@ -185,7 +186,7 @@
         <div class="spinner"></div>
     </div>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">Social Media Links</div> <!-- Add your header content -->
         <div class="schedule">
             <div class="schedule-item">
                 <a href="https://myxxfm.com/facebook" target="_blank">
@@ -243,9 +244,9 @@
             overlay.style.opacity = 0;
             setTimeout(() => {
                 overlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 500);
-        }, 2000);
+                document.body.style.overflow = 'auto'; // Restore scrollbars after fade-out
+            }, 500); // Adjust duration for fade-out
+        }, 2000); // Adjust delay before starting fade-out
     </script>
 </body>
 </html>
