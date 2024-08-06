@@ -11,11 +11,11 @@
             margin: 0;
             font-family: Kanit, sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Updated gradient */
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000);
             background-size: cover;
-            background-attachment: fixed; /* Keeps the gradient fixed */
+            background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow: auto; /* Allows scrolling */
+            overflow: hidden; /* Prevents extra scroll */
         }
 
         .fade-overlay {
@@ -55,7 +55,9 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            box-sizing: border-box;
             min-height: 100vh; /* Ensures body takes full viewport height */
+            overflow: hidden; /* Prevents extra scroll */
         }
 
         .schedule {
@@ -69,6 +71,8 @@
             overflow-y: auto;
             overflow-x: hidden;
             text-align: center;
+            max-height: 100vh; /* Limits height to viewport */
+            margin: 0 auto; /* Centers the container horizontally */
         }
 
         .schedule::-webkit-scrollbar {
