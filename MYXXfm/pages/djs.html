@@ -11,11 +11,11 @@
             margin: 0;
             font-family: Kanit, sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Updated gradient */
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: fixed; /* Ensures the gradient stays fixed */
             background-repeat: no-repeat;
-            overflow: hidden;
+            overflow: auto; /* Allow scrolling */
         }
 
         .fade-overlay {
@@ -55,6 +55,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            min-height: 100vh; /* Ensures body takes full viewport height */
         }
 
         .schedule {
@@ -208,7 +209,7 @@
             overlay.style.opacity = 0;
             setTimeout(() => {
                 overlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto'; // Ensure scrolling is enabled
             }, 500);
         }, 2000);
     </script>
