@@ -11,46 +11,48 @@
         /* General Styles */
         body {
             margin: 0;
-            font-family: 'Kanit', sans-serif; /* Updated font-family */
+            font-family: 'Kanit', sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Updated gradient */
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             padding: 20px;
-            box-sizing: border-box; /* Ensure padding is included in height calculation */
-            overflow: hidden; /* Prevent scrollbars from appearing */
+            box-sizing: border-box;
+            overflow: hidden;
+            min-height: 100vh; /* Ensures full viewport height */
         }
 
         .container {
             background: rgba(0, 0, 0, 0.8);
             border-radius: 15px;
-            padding: 40px;
-            max-width: 600px;
+            padding: 20px;
+            max-width: 90%; /* Adjusted to fit better on mobile */
             width: 100%;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            position: relative; /* Ensure that container is relative to position overlay */
-            z-index: 1; /* Ensure container sits below overlay */
+            position: relative;
+            z-index: 1;
+            max-height: calc(100vh - 40px); /* Ensure container fits within viewport */
+            overflow-y: auto; /* Allows scrolling if content overflows */
         }
 
         /* Header Styles */
         header {
-            margin-bottom: 40px;
+            margin-bottom: 20px; /* Reduced space for smaller screens */
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2rem; /* Scaled down for better mobile fit */
             margin: 0;
-            color: #fff; /* Changed to white */
+            color: #fff;
             font-weight: 700;
         }
 
         em {
             display: block;
-            font-size: 1.8rem;
-            margin-top: 10px;
+            font-size: 1.2rem; /* Scaled down for better mobile fit */
+            margin-top: 5px;
             color: #FFD700;
             font-style: normal;
             font-weight: 400;
@@ -60,21 +62,21 @@
         .contact-info {
             background: rgba(0, 0, 0, 0.6);
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 10px;
+            margin-bottom: 20px; /* Reduced space for smaller screens */
         }
 
         .contact-item {
-            font-size: 1.6rem;
-            margin: 20px 0;
+            font-size: 1.2rem; /* Scaled down for better mobile fit */
+            margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px; /* Adjusted space between items */
+            gap: 15px; /* Adjusted space between items */
         }
 
         .contact-item i {
-            font-size: 28px;
+            font-size: 24px; /* Scaled down for better mobile fit */
             color: #FFD700;
         }
 
@@ -92,33 +94,33 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 20px; /* Reduced space for smaller screens */
         }
 
         .social-link {
-            margin: 0 15px;
+            margin: 0 10px; /* Adjusted space between items */
         }
 
         .social-link i {
-            font-size: 40px;
+            font-size: 30px; /* Scaled down for better mobile fit */
             color: #fff;
             transition: transform 0.3s, color 0.3s;
         }
 
         .social-link:hover i {
-            transform: scale(1.3);
+            transform: scale(1.2);
             color: #FFD700;
         }
 
         /* Footer Styles */
         footer {
-            margin-top: 30px;
+            margin-top: 20px; /* Reduced space for smaller screens */
         }
 
         footer p {
             margin: 0;
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1rem; /* Scaled down for better mobile fit */
         }
 
         footer a {
@@ -137,24 +139,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000; /* Solid black background */
-            opacity: 1; /* Initially visible */
-            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
-            z-index: 9999; /* Ensure it sits on top of other content */
+            background-color: #000000;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .spinner {
-            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border: 8px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            border-top: 8px solid #EFD500; /* Spinner color */
-            width: 10vw; /* Responsive width (10% of viewport width) */
-            height: 10vw; /* Responsive height (10% of viewport width) */
-            max-width: 120px; /* Maximum width */
-            max-height: 120px; /* Maximum height */
-            animation: spin 1s linear infinite; /* Adjust animation duration */
+            border-top: 8px solid #EFD500;
+            width: 10vw;
+            height: 10vw;
+            max-width: 100px; /* Adjusted max-width for better mobile fit */
+            max-height: 100px; /* Adjusted max-height for better mobile fit */
+            animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
@@ -165,10 +167,10 @@
         /* Adjustments for responsiveness */
         @media (max-width: 768px) {
             .spinner {
-                width: 12vw; /* Adjust size for smaller screens */
+                width: 12vw;
                 height: 12vw;
-                max-width: 100px; /* Maximum width */
-                max-height: 100px; /* Maximum height */
+                max-width: 80px; /* Further reduced for smaller screens */
+                max-height: 80px;
             }
         }
     </style>
@@ -197,16 +199,14 @@
         </footer>
     </div>
     <script>
-        // Automatically fade out after a set time
         setTimeout(() => {
             const overlay = document.querySelector('.fade-overlay');
             overlay.style.opacity = 0;
-            // Optional: Remove overlay after fade-out to clean up
             setTimeout(() => {
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Restore scrollbars
-            }, 500); // Adjust the total duration before fading out
-        }, 2000); // Adjust the time before starting fade-out (2 seconds)
+            }, 500);
+        }, 2000);
     </script>
 </body>
 </html>
