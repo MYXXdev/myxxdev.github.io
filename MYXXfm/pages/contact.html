@@ -19,6 +19,7 @@
             height: 100vh;
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in height calculation */
+            overflow: hidden; /* Prevent scrollbars from appearing */
         }
 
         .container {
@@ -128,9 +129,55 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Spinner Overlay Styles */
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
+            z-index: 9999; /* Ensure it sits on top of other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border-radius: 50%;
+            border-top: 8px solid #EFD500; /* Spinner color */
+            width: 10vw; /* Responsive width (10% of viewport width) */
+            height: 10vw; /* Responsive height (10% of viewport width) */
+            max-width: 100px; /* Maximum width */
+            max-height: 100px; /* Maximum height */
+            animation: spin 1s linear infinite; /* Adjust animation duration */
+            margin-top: 40px; /* Adjust margin to move spinner down */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .spinner {
+                width: 10vw; /* Adjust size for smaller screens */
+                height: 10vw;
+                max-width: 80px; /* Maximum width */
+                max-height: 80px; /* Maximum height */
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
     <div class="container">
         <header>
             <h1>MYXX FM</h1>
@@ -150,5 +197,17 @@
             <p>&copy; 2024 ‎ ‎ ‎ •‎ ‎ ‎ MYXX FM LLC ‎ ‎ ‎ •‎ ‎ ‎ <a href="https://myxxfm.com/legal">Legal</a></p>
         </footer>
     </div>
+    <script>
+        // Automatically fade out after a set time
+        setTimeout(() => {
+            const overlay = document.querySelector('.fade-overlay');
+            overlay.style.opacity = 0;
+            // Optional: Remove overlay after fade-out to clean up
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrollbars
+            }, 500); // Adjust the total duration before fading out
+        }, 2000); // Adjust the time before starting fade-out (reduced to 2 seconds)
+    </script>
 </body>
 </html>
