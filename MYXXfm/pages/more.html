@@ -11,69 +11,71 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh; /* Ensure full viewport height */
-            box-sizing: border-box; /* Apply box-sizing globally */
+            min-height: 100vh;
+            box-sizing: border-box;
             font-family: 'Kanit', sans-serif;
-            color: #FFD700; /* Set default text color to yellow */
+            color: #FFD700;
             background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-x: hidden;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center horizontally */
-            justify-content: center; /* Center vertically */
-            padding: 20px; /* Add some padding to ensure space around the content */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .header {
             font-size: 2.4em;
             font-weight: 700;
-            margin-bottom: 20px; /* Space between header and content */
-            text-align: center; /* Center the header text */
+            margin-bottom: 20px;
+            text-align: center;
             letter-spacing: 1px;
         }
 
         .container {
             width: 100%;
-            max-width: 90%; /* Limit container width for readability */
+            max-width: 90%;
             padding: 20px;
             box-sizing: border-box;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-            text-align: left; /* Align text inside the container to the left */
-            overflow-y: auto; /* Allow vertical scrolling */
-            position: relative; /* To manage the scrolling container */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            text-align: left;
+            overflow-y: auto;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* Hide scrollbar for WebKit browsers */
         .container::-webkit-scrollbar {
             width: 0px;
-            background: transparent; /* For WebKit browsers */
+            background: transparent;
         }
 
         .container {
-            scrollbar-width: none; /* For Firefox */
+            scrollbar-width: none;
         }
 
         .schedule-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px; /* Space between items */
-            text-decoration: none; /* Remove underline from links */
-            color: #FFD700; /* Set text color to yellow */
-            transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #FFD700;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .schedule-item img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            margin-right: 20px; /* Space between image and text */
-            transition: transform 0.3s; /* Smooth transform transition */
+            margin-right: 20px;
+            transition: transform 0.3s;
         }
 
         .schedule-item p {
@@ -82,25 +84,20 @@
             line-height: 1.5;
         }
 
-        /* Italicize the times */
-        .schedule-item em {
-            font-style: italic;
-        }
-
         .schedule-item a {
             text-decoration: none;
-            color: inherit; /* Inherit text color */
+            color: inherit;
             display: flex;
             align-items: center;
         }
 
         .schedule-item a:hover {
-            color: #FFD700; /* Change text color on hover */
-            transform: scale(1.02); /* Slight scale effect on hover */
+            color: #FFD700;
+            transform: scale(1.02);
         }
 
         .schedule-item img:hover {
-            transform: scale(1.1); /* Slight scale effect on hover */
+            transform: scale(1.1);
         }
 
         @media (max-width: 600px) {
@@ -111,7 +108,7 @@
             .schedule-item img {
                 width: 50px;
                 height: 50px;
-                margin-right: 15px; /* Adjust space for smaller images */
+                margin-right: 15px;
             }
 
             .schedule-item p {
@@ -122,7 +119,7 @@
         @media (max-width: 400px) {
             .container {
                 padding: 10px;
-                width: 100%; /* Full width on very small screens */
+                width: 100%;
             }
 
             .header {
@@ -135,7 +132,7 @@
             }
 
             .schedule-item img {
-                margin-bottom: 10px; /* Space below image for mobile */
+                margin-bottom: 10px;
             }
 
             .schedule-item p {
@@ -143,7 +140,6 @@
             }
         }
 
-        /* Spinner Overlay Styles */
         .fade-overlay {
             position: fixed;
             top: 0;
@@ -151,24 +147,23 @@
             width: 100%;
             height: 100%;
             background-color: black;
-            opacity: 1; /* Initially visible */
-            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
-            z-index: 9999; /* Ensure it sits on top of other content */
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .spinner {
-            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border: 8px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            border-top: 8px solid #EFD500; /* Spinner color */
-            width: 10vw; /* Responsive width (10% of viewport width) */
-            height: 10vw; /* Responsive height (10% of viewport width) */
-            max-width: 100px; /* Maximum width */
-            max-height: 100px; /* Maximum height */
-            animation: spin 1s linear infinite; /* Adjust animation duration */
-            margin-top: 40px; /* Adjust margin to move spinner down */
+            border-top: 8px solid #EFD500;
+            width: 10vw;
+            height: 10vw;
+            max-width: 100px;
+            max-height: 100px;
+            animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
@@ -176,13 +171,12 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Adjustments for responsiveness */
         @media (max-width: 768px) {
             .spinner {
-                width: 10vw; /* Adjust size for smaller screens */
+                width: 10vw;
                 height: 10vw;
-                max-width: 80px; /* Maximum width */
-                max-height: 80px; /* Maximum height */
+                max-width: 80px;
+                max-height: 80px;
             }
         }
     </style>
@@ -192,7 +186,7 @@
         <div class="spinner"></div>
     </div>
     <div class="container">
-        <div class="header">Our Partners</div>
+        <div class="header"></div>
         <div class="schedule">
             <div class="schedule-item">
                 <a href="https://myxxfm.com/facebook" target="_blank">
@@ -245,16 +239,14 @@
         </div>
     </div>
     <script>
-        // Automatically fade out after a set time
         setTimeout(() => {
             const overlay = document.querySelector('.fade-overlay');
             overlay.style.opacity = 0;
-            // Optional: Remove overlay after fade-out to clean up
             setTimeout(() => {
                 overlay.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restore scrollbars
-            }, 500); // Adjust the total duration before fading out
-        }, 2000); // Adjust the time before starting fade-out
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }, 2000);
     </script>
 </body>
 </html>
