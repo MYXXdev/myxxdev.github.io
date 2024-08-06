@@ -14,11 +14,12 @@
             box-sizing: border-box; /* Apply box-sizing globally */
             font-family: 'Kanit', sans-serif;
             color: #FFD700; /* Set default text color to yellow */
-            background: linear-gradient(to bottom, #FFD700, #333333 40%, #000000);
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Updated gradient */
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
             overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-y: auto; /* Allow vertical scrolling */
         }
 
         body {
@@ -215,7 +216,7 @@
         <div class="spinner"></div>
     </div>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">Your Header Here</div> <!-- Add your header content -->
         <div class="schedule">
             <div class="schedule-item">
                 <a href="https://myxxfm.com/djcity" target="_blank">
@@ -242,12 +243,11 @@
                 </a>
             </div>
         </div>
-    </div><br>
+    </div>
     <div class="partner-link">
         <a href="https://myxxfm.com/contact" target="_blank">Advertise with Us</a>
     </div>
     <script>
-        // Automatically fade out after a set time
         setTimeout(() => {
             const overlay = document.querySelector('.fade-overlay');
             overlay.style.opacity = 0;
