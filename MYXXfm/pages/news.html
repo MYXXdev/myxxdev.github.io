@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Kanit, sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Gradient background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px; /* Padding on left and right */
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        #feed-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            margin-top: 2em;
+            overflow: hidden;
+        }
+
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1em;
+        }
+
+        .feed-item {
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #ddd;
+        }
+
+        .feed-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .feed-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+
+        .feed-item-content {
+            padding: 1em;
+        }
+
+        .feed-item h2 {
+            font-size: 1.3em;
+            margin: 0 0 0.5em;
+            color: #FFD700;
+        }
+
+        .feed-item h2 a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .feed-item h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .feed-item p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .feed-item small {
+            display: block;
+            margin-top: 0.5em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .feed-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 350px) {
+            .feed-item {
+                border: none;
+                border-radius: 0;
+            }
+
+            .feed-item img {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <main id="feed-container">
+            <div class="feed-grid">
+                <!-- Feed items will be inserted here -->
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const feedContainer = document.querySelector('.feed-grid');
+            const feedUrl = 'https://feeds.skynews.com/feeds/rss/entertainment.xml';
+
+            async function fetchRSS() {
+                try {
+                    const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`);
+                    const data = await response.json();
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(data.contents, 'text/xml');
+
+                    const items = xml.querySelectorAll('item');
+                    feedContainer.innerHTML = '';
+
+                    items.forEach(item => {
+                        const title = item.querySelector('title').textContent;
+                        const description = item.querySelector('description').textContent;
+                        const link = item.querySelector('link').textContent;
+                        const pubDate = item.querySelector('pubDate').textContent;
+                        const imageUrl = item.querySelector('enclosure') ? item.querySelector('enclosure').getAttribute('url') : '';
+
+                        const feedItem = document.createElement('div');
+                        feedItem.className = 'feed-item';
+
+                        feedItem.innerHTML = `
+                            <img src="${imageUrl}" alt="${title}">
+                            <div class="feed-item-content">
+                                <h2><a href="${link}" target="_blank">${title}</a></h2>
+                                <p>${description}</p>
+                                <small>${pubDate}</small>
+                            </div>
+                        `;
+
+                        feedContainer.appendChild(feedItem);
+                    });
+                } catch (error) {
+                    console.error('Error fetching the RSS feed:', error);
+                    feedContainer.innerHTML = '<p>Unable to fetch feed data.</p>';
+                }
+            }
+
+            fetchRSS();
+            setInterval(fetchRSS, 15 * 60 * 1000); // Refresh feed every 15 minutes
+        });
+    </script>
+</body>
+</html>
