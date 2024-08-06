@@ -1,44 +1,109 @@
-<script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery.play.min.js"></script>
-<body style="background-color:#000000;color:rgba(255,255,255,1);margin: 0;">
-<div id="radioplayer" style="width:100%; height:100vh;
-background-color:#000000;
--webkit-border-top-left-radius: 0px;
--webkit-border-top-right-radius: 0px;
--webkit-border-bottom-right-radius: 0px;
--webkit-border-bottom-left-radius: 0px;
--moz-border-radius-topleft: 0px;
--moz-border-radius-topright: 0px;
--moz-border-radius-bottomright: 0px;
--moz-border-radius-bottomleft: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-border-bottom-right-radius: 0px;
-border-bottom-left-radius: 0px;
-border: none;">
-</div>
-<script type="text/javascript">
-$("#radioplayer").radioplayer({
-userinterface: "big",
-backgroundcolor: "rgba(0,0,0,0)",
-fontcolor: "#ffffff",
-hightlightcolor: "#efd500",
-fontname: "Roboto",
-googlefont: "Roboto:300",
-fontratio: "0.3",
-radioname: "MYXX FM‎ ‎ •‎ ‎ HQ",
-scroll: "true",
-coverimage: "https://myxxdev.github.io/images/MYXXfmCircle.png",
-onlycoverimage: "true",
-coverstyle: "circle",
-usevisualizer: "real",
-visualizertype: "6",
-metadatatechnic: "ownmetadataurl",
-ownmetadataurl: "https://status.rcast.net/65873",
-streamurl: "https://rbx2.hnux.com/http://e15446.cloudrad.io:9438/stream",
-streamtype: "icecast2",
-metadatainterval: "32000",
-volume: "100",
-});
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://players.rcast.net/assets/players/luna/jquery.play.min.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: rgba(255,255,255,1);
+            margin: 0;
+            font-family: 'Kanit', sans-serif;
+            overflow: hidden; /* Prevent scrolling while spinner is active */
+        }
+        #radioplayer {
+            width: 100%;
+            height: 100vh;
+            background-color: #000000;
+            border-radius: 0;
+            border: none;
+        }
+
+        /* Overlay and spinner styles */
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
+            z-index: 9999; /* Ensure it sits on top of other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+            border-radius: 50%;
+            border-top: 8px solid #EFD500; /* Spinner color */
+            width: 10vw; /* Responsive width (10% of viewport width) */
+            height: 10vw; /* Responsive height (10% of viewport width) */
+            max-width: 100px; /* Maximum width */
+            max-height: 100px; /* Maximum height */
+            animation: spin 1s linear infinite; /* Adjust animation duration */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .spinner {
+                width: 10vw; /* Adjust size for smaller screens */
+                height: 10vw;
+                max-width: 80px; /* Maximum width */
+                max-height: 80px; /* Maximum height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="radioplayer"></div>
+    <div class="fade-overlay">
+        <div class="spinner"></div>
+    </div>
+    <script type="text/javascript">
+    $("#radioplayer").radioplayer({
+        userinterface: "big",
+        backgroundcolor: "rgba(0,0,0,0)",
+        fontcolor: "#ffffff",
+        hightlightcolor: "#efd500",
+        fontname: "Kanit",
+        googlefont: "Kanit:300",
+        fontratio: "0.3",
+        radioname: "MYXX FM‎ ‎ •‎ ‎ HQ",
+        scroll: "true",
+        coverimage: "https://myxxdev.github.io/images/MYXXfmCircle.png",
+        onlycoverimage: "true",
+        coverstyle: "circle",
+        usevisualizer: "real",
+        visualizertype: "6",
+        metadatatechnic: "ownmetadataurl",
+        ownmetadataurl: "https://status.rcast.net/65873",
+        streamurl: "https://rbx2.hnux.com/http://e15446.cloudrad.io:9438/stream",
+        streamtype: "icecast2",
+        metadatainterval: "32000",
+        volume: "100",
+    });
+
+    // Automatically fade out after a set time
+    setTimeout(() => {
+        const overlay = document.querySelector('.fade-overlay');
+        overlay.style.opacity = 0;
+        // Optional: Remove overlay after fade-out to clean up
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrollbars
+        }, 500); // Adjust the total duration before fading out
+    }, 2000); // Adjust the time before starting fade-out (reduced to 2 seconds)
+    </script>
 </body>
+</html>
