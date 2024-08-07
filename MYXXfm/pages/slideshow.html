@@ -38,14 +38,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block; /* Added to ensure no extra space */
         }
 
         /* Keyframes for fading through images */
         @keyframes fade {
-            0% { opacity: 0; }
-            5% { opacity: 1; }
-            20% { opacity: 1; }
-            25% { opacity: 0; }
+            0%, 25% { opacity: 0; }
+            5%, 20% { opacity: 1; }
         }
 
         /* Adjust animation delay for each slide */
@@ -78,37 +77,38 @@
         .slides:nth-child(27) { animation-delay: 182s; }
         .slides:nth-child(28) { animation-delay: 189s; }
     </style>
+    <link rel="preload" href="https://myxxdev.github.io/MYXXfm/pages/widget.js" as="script">
 </head>
 <body>
     <div class="slideshow-container">
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/1.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/2.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/3.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/4.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/5.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/6.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/7.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/8.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/9.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/10.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/11.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/12.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/13.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/14.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/15.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/16.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/17.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/18.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/19.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/20.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/21.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/22.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/23.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/24.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/25.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/26.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/27.png" alt=""></div>
-        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/28.png" alt=""></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/1.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/2.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/3.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/4.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/5.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/6.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/7.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/8.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/9.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/10.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/11.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/12.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/13.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/14.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/15.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/16.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/17.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/18.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/19.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/20.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/21.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/22.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/23.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/24.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/25.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/26.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/27.png" alt="" loading="lazy"></div>
+        <div class="slides"><img src="https://myxxdev.github.io/MYXXfm/images/28.png" alt="" loading="lazy"></div>
     </div>
 
     <script>var fanlistFloatingWidget = "d0847651bc259924";</script>
