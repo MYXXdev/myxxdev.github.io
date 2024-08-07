@@ -11,11 +11,11 @@
             margin: 0;
             font-family: Kanit, sans-serif;
             color: #fff;
-            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000); /* Updated gradient */
+            background: linear-gradient(to bottom, #FFD700, #FFB600 25%, #333333 75%, #000000);
             background-size: cover;
-            background-attachment: fixed; /* Ensures the gradient stays fixed */
+            background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow: hidden; /* Prevent double scrolling */
+            overflow: hidden; /* Prevents extra scroll */
         }
 
         .fade-overlay {
@@ -49,11 +49,18 @@
             100% { transform: rotate(360deg); }
         }
 
-        .schedule {
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 100vh; /* Ensures body takes full viewport height */
+            overflow: hidden; /* Prevents extra scroll */
+        }
+
+        .schedule {
             width: 100%;
             max-width: 900px;
             background-color: rgba(0, 0, 0, 0.6);
@@ -61,9 +68,11 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
             text-align: center;
-            margin: 0 auto; /* Center schedule horizontally */
+            max-height: 100vh; /* Limits height to viewport */
+            margin: 0 auto; /* Centers the container horizontally */
         }
 
         .schedule::-webkit-scrollbar {
@@ -204,7 +213,6 @@
             overlay.style.opacity = 0;
             setTimeout(() => {
                 overlay.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Ensure scrolling is enabled
             }, 500);
         }, 2000);
     </script>
