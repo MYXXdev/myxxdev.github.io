@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ConsentText</key>
+	<dict>
+		<key>default</key>
+		<string>This profile has been digitally signed by the Apple Root Certificate Authority to ensure its authenticity and integrity. The digital signature serves to confirm that the profile has not been altered or tampered with since it was signed. When the profile is installed, the device verifies this signature to validate that it originates from a trusted and legitimate source, thereby maintaining a high level of security and trustworthiness.
+
+The following access point dictionaries are included and can be verified post-installation by navigating to Settings &gt; General &gt; VPN &amp; Device Management &gt; US Mobile (Dark Star) &gt; More Details &gt; Cellular:
+
+* Name: ERESELLER
+* Authentication: CHAP
+* Proxy: proxy.mobile.att.net
+* Port: 80
+
+This profile is unofficial and has not been issued by US Mobile as of its creation. It has been authored, endorsed, and distributed by a private Dark Star beta customer, who is also an Apple Developer, to assist others until US Mobile provides an official solution.
+
+By using this profile, you acknowledge that I assume no responsibility for any issues that may arise from its use. All service-related concerns should be directed to US Mobile. This profile is provided solely for your convenience.
+
+Additionally, any warnings on the following page are intended by Apple to ensure legal transparency. The statement 'The network traffic of your iDevice may be filtered or monitored by a cellular configuration' indicates that installing this profile to set your device's APN to ERESELLER will facilitate connectivity and enable US Mobile (and the parent carrier) to provide information about your monthly usage metrics.
+
+MYXX FM LLC
+MYXXfm.com</string>
+	</dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>APNs</key>
+			<array>
+				<dict>
+					<key>AllowedProtocolMask</key>
+					<integer>3</integer>
+					<key>AllowedProtocolMaskInDomesticRoaming</key>
+					<integer>3</integer>
+					<key>AllowedProtocolMaskInRoaming</key>
+					<integer>3</integer>
+					<key>AuthenticationType</key>
+					<string>CHAP</string>
+					<key>DefaultProtocolMask</key>
+					<integer>3</integer>
+					<key>EnableXLAT464</key>
+					<false/>
+					<key>Name</key>
+					<string>ERESELLER</string>
+					<key>ProxyPort</key>
+					<integer>80</integer>
+					<key>ProxyServer</key>
+					<string>proxy.mobile.att.net</string>
+				</dict>
+			</array>
+			<key>AllowedProtocolMaskInDomesticRoaming</key>
+			<integer>3</integer>
+			<key>AttachAPN</key>
+			<dict>
+				<key>AllowedProtocolMask</key>
+				<integer>3</integer>
+				<key>AuthenticationType</key>
+				<string>CHAP</string>
+				<key>Name</key>
+				<string>US Mobile (Dark Star)</string>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Cellular</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.cellular.499A71A4-5627-4BEB-BE03-AE3220E6F4B1</string>
+			<key>PayloadType</key>
+			<string>com.apple.cellular</string>
+			<key>PayloadUUID</key>
+			<string>FEF65D8E-8210-490F-B3B2-4EB46A02A0DA</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>This .mobileconfig file includes all essential configuration details required for enabling Dark Star connectivity on the US Mobile network for iDevices.</string>
+	<key>PayloadDisplayName</key>
+	<string>US Mobile (Dark Star)</string>
+	<key>PayloadIdentifier</key>
+	<string>myxxdev.usmobile.darkstar</string>
+	<key>PayloadOrganization</key>
+	<string>MYXX FM LLC</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>CC6D1828-CEE9-425F-8549-A99EF22B1A42</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>RemovalDate</key>
+	<date>1970-01-01T16:37:24Z</date>
+	<key>TargetDeviceType</key>
+	<integer>0</integer>
+</dict>
+</plist>
