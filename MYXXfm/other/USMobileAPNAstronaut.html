@@ -26,12 +26,12 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #000; /* Background color of the footer */
-    color: #fff; /* Text color */
+    background-color: #000;
+    color: #fff;
     text-align: center;
-    padding: 5px 0; /* Padding to make footer skinny */
-    font-size: 14px; /* Font size */
-    border-top: 3px solid #FFD700; /* Yellow line on top of footer */
+    padding: 5px 0;
+    font-size: 14px;
+    border-top: 3px solid #FFD700;
 }
 
 .skinny-footer p {
@@ -45,9 +45,9 @@
         }
         
 .logo {
-    width: 300px; /* Adjust the size of the logo */
-    margin: 0 auto 0px; /* Center the logo and add space below it */
-    display: block; /* Ensures the margin auto works */
+    width: 300px;
+    margin: 0 auto 0px;
+    display: block;
 }
 
         .button-group {
@@ -111,8 +111,8 @@
         }
 
         .panel {
-            max-height: 0; /* Start with panel hidden */
-            overflow: hidden; /* Hide overflowing content */
+            max-height: 0;
+            overflow: hidden;
             background-color: #FFFFFF00;
             border-radius: 0 0 12px 12px;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
@@ -123,10 +123,10 @@
         }
 
         .panel.open {
-            max-height: 500px; /* Adjust as needed */
+            max-height: 500px;
             padding: 15px;
             opacity: 1;
-            overflow-y: auto; /* Enable scrolling */
+            overflow-y: auto;
         }
 
         .panel.closing {
@@ -160,21 +160,21 @@
         }
 
         .sub-button.android {
-            background-color: #A4C639; /* Android green */
+            background-color: #A4C639;
             color: #ffffff;
         }
 
         .sub-button.android:hover {
-            background-color: #8CBA2F; /* Darker Android green for hover */
+            background-color: #8CBA2F;
         }
         
         .sub-button.ios {
-            background-color: #8E8E8E; /* Android green */
+            background-color: #8E8E8E;
             color: #ffffff;
         }
 
         .sub-button.ios:hover {
-            background-color: #6E6E6E; /* Darker Android green for hover */
+            background-color: #6E6E6E;
         }
 
         .dropdown-content {
@@ -187,27 +187,27 @@
             margin-top: 10px;
             font-size: 14px;
             color: #333;
-            line-height: 1.6; /* Improve readability */
+            line-height: 1.6;
         }
 
         .dropdown-content p {
-            margin: 0 0 10px 0; /* Add bottom margin for better spacing */
+            margin: 0 0 10px 0;
         }
 
         .dropdown-content ul {
             padding-left: 20px;
-            margin: 0 0 10px 0; /* Add bottom margin for better spacing */
+            margin: 0 0 10px 0;
         }
 
         .dropdown-content li {
-            margin-bottom: 5px; /* Add space between list items */
+            margin-bottom: 5px;
         }
 
         .dropdown-content h3 {
             margin-top: 0;
             margin-bottom: 10px;
             font-size: 16px;
-            color: #1043B8; /* Heading color */
+            color: #1043B8;
         }
 
         .dropdown-content span {
@@ -261,7 +261,7 @@
         }
 
         .install-button {
-            background-color: #00D084; /* Mint Mobile green */
+            background-color: #00D084;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
@@ -277,7 +277,7 @@
         }
 
         .install-button:hover {
-            background-color: #00b56a; /* Darker Mint Mobile green */
+            background-color: #00b56a;
             transform: translateY(-1px);
         }
     </style>
@@ -334,7 +334,7 @@
                     <div class="help-content" id="help-w-proxy">
                         <h3>Dark Star: w/ Proxy</h3>
                         <p style="color: red;"><strong>w/ Proxy is the default MVNO setup. If you wish to use custom DNS servers, please use w/o Proxy.</strong></p>
-                                            <p>Follow these steps to install the APN profile on your iDevice:</p>
+                        <p>Follow these steps to install the APN profile on your iDevice:</p>
                     <ol>
                         <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
                             <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
@@ -435,13 +435,27 @@
                         <button class="dropdown-button" data-help="ios-legacy">Legacy Network</button>
                     </div>
                     <div class="help-content" id="ios-new">
-                        <h3>New Network: Need Help?</h3>
-                        <p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
+                    <h3>New Network: iOS Profile</h3><p>Follow these steps to install the APN profile on your iDevice:</p>
+                    <ol>
+                        <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
+                            <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
+                            <li>Tap <strong>Install</strong> in the top right corner and enter your device password.</li><p>
+                            <li>Review the consent information and tap <strong>Next</strong> in the top right corner.</li><p>
+                        <li>Tap <strong>Install</strong>, then <strong>Install</strong> again, and finally <strong>Done</strong>.</li><p>
+                    </ol>
+                    <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                         <a class="install-button" href="https://myxxdev.github.io/MYXXfm/other/USMobileLightSpeed.mobileconfig" download>Install</a>
                     </div>
                     <div class="help-content" id="ios-legacy">
-                        <h3>Legacy Network: Need Help?</h3>
-                        <p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
+                    <h3>Legacy Network: iOS Profile</h3><p>Follow these steps to install the APN profile on your iDevice:</p>
+                    <ol>
+                        <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
+                            <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
+                            <li>Tap <strong>Install</strong> in the top right corner and enter your device password.</li><p>
+                            <li>Review the consent information and tap <strong>Next</strong> in the top right corner.</li><p>
+                        <li>Tap <strong>Install</strong>, then <strong>Install</strong> again, and finally <strong>Done</strong>.</li><p>
+                    </ol>
+                    <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                         <a class="install-button" href="https://myxxdev.github.io/MYXXfm/other/USMobileLightSpeedLegacy.mobileconfig" download>Install</a>
                     </div>
                 </div>
@@ -484,7 +498,15 @@
                     <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                 </div>
                 <div class="dropdown-content" id="warp-dropdown2">
-                    <h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
+                    <h3>Warp: iOS Profile</h3><p>Follow these steps to install the APN profile on your iDevice:</p>
+                    <ol>
+                        <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
+                            <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
+                            <li>Tap <strong>Install</strong> in the top right corner and enter your device password.</li><p>
+                            <li>Review the consent information and tap <strong>Next</strong> in the top right corner.</li><p>
+                        <li>Tap <strong>Install</strong>, then <strong>Install</strong> again, and finally <strong>Done</strong>.</li><p>
+                    </ol>
+                    <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                         <a class="install-button" href="https://myxxdev.github.io/MYXXfm/other/USMobileWarp.mobileconfig" download>Install</a>
                     </div>
             </div>
@@ -504,58 +526,50 @@
                     // Close currently open panels
                     var openPanels = document.querySelectorAll('.panel.open');
                     openPanels.forEach(function(p) {
-                        if (p !== panel) { // Don't close the current panel if it is already open
+                        if (p !== panel) {
                             p.classList.remove('open');
-                            p.classList.add('closing'); // Add closing class for quick fade-out
+                            p.classList.add('closing');
                             
-                            // Remove closing class after transition ends to reset it
                             p.addEventListener('transitionend', function() {
                                 p.classList.remove('closing');
                             }, { once: true });
                         }
                     });
 
-                    // Open the clicked panel
                     if (!panel.classList.contains('open')) {
                         panel.classList.add('open');
                     }
                 });
             }
 
-            // Handle dropdowns inside sub-buttons
             document.querySelectorAll('.sub-button').forEach(function(button) {
                 button.addEventListener('click', function() {
                     var dropdownId = this.getAttribute('data-dropdown');
                     var dropdown = document.getElementById(dropdownId);
                     var isActive = dropdown.classList.contains('open');
 
-                    // Close all dropdowns
                     document.querySelectorAll('.dropdown-content').forEach(function(dropdown) {
                         dropdown.classList.remove('open');
                     });
 
-                    // Toggle current dropdown
                     if (!isActive) {
                         dropdown.classList.add('open');
                     }
                 });
             });
 
-            // Handle Help section visibility for the "W/ Proxy" and "W/O Proxy" buttons
             var helpButtons = document.querySelectorAll('.dropdown-button');
             helpButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     var helpContentId = this.getAttribute('data-help');
                     var helpContent = document.getElementById(helpContentId);
                     
-                    // Close all help contents
                     document.querySelectorAll('.help-content').forEach(function(content) {
                         if (content !== helpContent) {
                             content.classList.remove('open');
                         }
                     });
 
-                    // Toggle current help content
                     helpContent.classList.toggle('open');
                 });
             });
