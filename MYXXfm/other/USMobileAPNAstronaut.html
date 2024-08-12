@@ -20,6 +20,23 @@
             align-items: center;
             height: 100vh;
         }
+        
+.skinny-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* Background color of the footer */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px 0; /* Padding to make footer skinny */
+    font-size: 14px; /* Font size */
+    border-top: 3px solid #FFD700; /* Yellow line on top of footer */
+}
+
+.skinny-footer p {
+    margin: 0;
+}
 
         .container {
             width: 90%;
@@ -315,27 +332,31 @@
                         <button class="dropdown-button" data-help="help-w-o-proxy">w/o Proxy</button>
                     </div>
                     <div class="help-content" id="help-w-proxy">
-                        <h3>w/ Proxy: Need Help?</h3>
-                        <p><strong>What is W/ Proxy?</strong></p>
-                        <p>"W/ Proxy" stands for "With Proxy." This option allows you to connect to the internet through a proxy server.</p>
-                        <p><strong>When Should You Use This Option?</strong></p>
-                        <p>Use this option if you need to route your internet connection through a proxy server, either for privacy or network configuration purposes.</p>
-                        <p><strong>How to Use It:</strong></p>
-                        <p>1. Click the "W/ Proxy" button.<br>2. Ensure that your proxy settings are configured properly in your network settings.</p>
-                        <p><strong>Troubleshooting:</strong></p>
-                        <p>If you encounter issues while using "W/ Proxy," check your proxy settings and ensure that the proxy server is functioning correctly.</p>
+                        <h3>Dark Star: w/ Proxy</h3>
+                        <p style="color: red;"><strong>w/ Proxy is the default MVNO setup. If you wish to use custom DNS servers, please use w/o Proxy.</strong></p>
+                                            <p>Follow these steps to install the APN profile on your iDevice:</p>
+                    <ol>
+                        <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
+                            <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
+                            <li>Tap <strong>Install</strong> in the top right corner and enter your device password.</li><p>
+                            <li>Review the consent information and tap <strong>Next</strong> in the top right corner.</li><p>
+                        <li>Tap <strong>Install</strong>, then <strong>Install</strong> again, and finally <strong>Done</strong>.</li><p>
+                    </ol>
+                    <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                         <a class="install-button" href="https://myxxdev.github.io/MYXXfm/other/USMobileDarkStarwProxy.mobileconfig" download>Install</a>
                     </div>
                     <div class="help-content" id="help-w-o-proxy">
-                        <h3>w/o Proxy: Need Help?</h3>
-                        <p><strong>What is W/O Proxy?</strong></p>
-                        <p>"W/O Proxy" stands for "Without Proxy." This option allows you to connect to the internet directly without using a proxy server.</p>
-                        <p><strong>When Should You Use This Option?</strong></p>
-                        <p>Use this option if you do not require a proxy server for your internet connection or if you are experiencing issues with proxy configurations.</p>
-                        <p><strong>How to Use It:</strong></p>
-                        <p>1. Click the "W/O Proxy" button.<br>2. Ensure that no proxy settings are configured in your network settings.</p>
-                        <p><strong>Troubleshooting:</strong></p>
-                        <p>If you encounter issues while using "W/O Proxy," ensure that no proxy settings are enabled in your network configuration.</p>
+                        <h3>Dark Star: w/o Proxy</h3>
+                        <p style="color: red;"><strong>w/o Proxy is for advanced users that wish to use their own DNS servers on the Dark Star network.</strong></p>
+                        <p>Follow these steps to install the APN profile on your iDevice:</p>
+                    <ol>
+                        <li>Click <strong>Install</strong> below and select <strong>Allow </strong>on the pop-up.<p>
+                            <li>Navigate to <strong>Settings > General > VPN & Device Management > US Mobile - Dark Star (w/ Proxy).</strong></li><p>
+                            <li>Tap <strong>Install</strong> in the top right corner and enter your device password.</li><p>
+                            <li>Review the consent information and tap <strong>Next</strong> in the top right corner.</li><p>
+                        <li>Tap <strong>Install</strong>, then <strong>Install</strong> again, and finally <strong>Done</strong>.</li><p>
+                    </ol>
+                    <p><h3>Need Help?</h3><p>For further assistance, please get in touch with US Mobile support via chat, call <strong><a href="tel:+18782050088">(878) 205-0088</a></strong>, or email <strong><a href="mailto:help@usmobile.com">help@usmobile.com</a></strong>.</p>
                         <a class="install-button" href="https://myxxdev.github.io/MYXXfm/other/USMobileDarkStarwoProxy.mobileconfig" download>Install</a>
                     </div>
                 </div>
@@ -470,6 +491,9 @@
         </div>
     </div><br>
     <p style="text-align: center; font-size: 10px;">APN Astronaut and its content are unofficial and were not created or issued by US Mobile.<br><br>It has been developed, endorsed, and distributed by a US Mobile customer who is also an Apple Developer, in order to assist users until US Mobile provides an official solution.<br><br><a href="https://djmikeyb.com" style="text-decoration: none; color: #ADD8E6;">Michael Basquill</a> / <a href="https://djmikeyb.com" style="text-decoration: none; color: #ADD8E6;">MYXX FM LLC</a> has no affiliation with US Mobile.</p>
+    <footer class="skinny-footer">
+        <p>Powered by <a href="https://djmikeyb.com" style="text-decoration: none; color: #FFD700;">MYXX FM</a> - Spanglish Hits Live Here</p>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var acc = document.getElementsByClassName('accordion');
