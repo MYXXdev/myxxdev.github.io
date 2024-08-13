@@ -6,9 +6,6 @@
     <title>US Mobile | APN Astronaut</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap">
     <style>
-            a {
-      text-decoration: none;
-    }
         body {
             font-family: 'Kanit', sans-serif;
             margin: 0;
@@ -20,40 +17,34 @@
             align-items: center;
             height: 100vh;
         }
-        
-.skinny-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 14px;
-    border-top: 3px solid #FFD700;
-}
-
-.skinny-footer p {
-    margin: 0;
-}
-
+        .skinny-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+            border-top: 3px solid #FFD700;
+        }
+        .skinny-footer p {
+            margin: 0;
+        }
         .container {
             width: 90%;
             max-width: 500px;
             margin: 0 auto;
         }
-        
-.logo {
-    width: 400px;
-    margin: 0 auto 0px;
-    display: block;
-}
-
+        .logo {
+            width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
         .button-group {
             margin: 0 auto;
         }
-
         .accordion {
             background-color: #ffffff;
             color: #1043B8;
@@ -70,46 +61,38 @@
             margin-bottom: 10px;
             display: block;
         }
-
         .accordion:hover, .accordion.active {
             background-color: #f5f5f5;
             color: #1043B8;
             transform: translateY(-2px);
         }
-
         .accordion.att {
             background-color: #00A3E0;
             color: #ffffff;
         }
-
         .accordion.att:hover, .accordion.att.active {
             background-color: #0091D0;
             color: #ffffff;
             transform: translateY(-2px);
         }
-
         .accordion.tmobile {
             background-color: #E20074;
             color: #ffffff;
         }
-
         .accordion.tmobile:hover, .accordion.tmobile.active {
             background-color: #C8106F;
             color: #ffffff;
             transform: translateY(-2px);
         }
-
         .accordion.verizon {
             background-color: #E4002B;
             color: #ffffff;
         }
-
         .accordion.verizon:hover, .accordion.verizon.active {
             background-color: #C3001A;
             color: #ffffff;
             transform: translateY(-2px);
         }
-
         .panel {
             max-height: 0;
             overflow: hidden;
@@ -121,24 +104,54 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             opacity: 0;
         }
-
         .panel.open {
             max-height: 500px;
             padding: 15px;
             opacity: 1;
             overflow-y: auto;
         }
-
         .panel.closing {
             transition: max-height 0.1s ease, opacity 0.1s ease;
         }
-
-        .sub-buttons-container {
+        .dropdown-content {
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .dropdown-content p {
+            margin: 0 0 10px 0;
+        }
+        .dropdown-content ul {
+            padding-left: 20px;
+            margin: 0 0 10px 0;
+        }
+        .dropdown-content li {
+            margin-bottom: 5px;
+        }
+        .dropdown-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #1043B8;
+        }
+        .dropdown-content span {
+            font-weight: bold;
+        }
+        .dropdown-content.open {
+            display: block;
+        }
+        .dropdown-buttons-container {
             display: flex;
             justify-content: space-between;
             margin-top: 5px;
         }
-
         .sub-button {
             background-color: #f5f5f5;
             color: #333;
@@ -152,114 +165,25 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
         .sub-button:hover {
             background-color: #ddd;
             color: #333;
             transform: translateY(-1px);
         }
-
         .sub-button.android {
             background-color: #A4C639;
             color: #ffffff;
         }
-
         .sub-button.android:hover {
             background-color: #8CBA2F;
         }
-        
         .sub-button.ios {
             background-color: #8E8E8E;
             color: #ffffff;
         }
-
         .sub-button.ios:hover {
             background-color: #6E6E6E;
         }
-
-        .dropdown-content {
-            display: none;
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .dropdown-content p {
-            margin: 0 0 10px 0;
-        }
-
-        .dropdown-content ul {
-            padding-left: 20px;
-            margin: 0 0 10px 0;
-        }
-
-        .dropdown-content li {
-            margin-bottom: 5px;
-        }
-
-        .dropdown-content h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #1043B8;
-        }
-
-        .dropdown-content span {
-            font-weight: bold;
-        }
-
-        .dropdown-content.open {
-            display: block;
-        }
-
-        .dropdown-buttons-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 5px;
-        }
-
-        .dropdown-button {
-            background-color: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: calc(50% - 5px);
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .dropdown-button:hover {
-            background-color: #ddd;
-            color: #333;
-            transform: translateY(-1px);
-        }
-
-        .help-content {
-            display: none;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .help-content.open {
-            display: block;
-        }
-
         .install-button {
             background-color: #00D084;
             color: #ffffff;
@@ -275,7 +199,6 @@
             margin: 20px auto 15px;
             text-decoration: none;
         }
-
         .install-button:hover {
             background-color: #00b56a;
             transform: translateY(-1px);
