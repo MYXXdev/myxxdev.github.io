@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
     <title>The Saturday Sting</title>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -19,20 +19,22 @@
           position: fixed;
           top: 0;
           left: 0;
+          right: 0;
           width: 100%;
           background: linear-gradient(135deg, #3b5998 0%, #1d3557 100%); /* Gradient Facebook Blue */
           color: white;
           text-align: center;
-          padding: 18px 30px;
+          padding: 12px 20px;  /* Default padding */
           font-size: 18px;
           font-weight: 700;
           z-index: 9999;
           border-top: 5px solid black;
           border-bottom: 5px solid #FFD700;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          justify-content: center;  /* Ensures that the content is centered horizontally */
+          align-items: center;  /* Ensures the content is vertically centered */
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-sizing: border-box;  /* Ensures padding is included in width calculation */
       }
 
       /* Facebook logo style */
@@ -51,8 +53,10 @@
       /* Link styling */
       .facebook-banner a {
           color: white;
-          text-decoration: underline;
+          text-decoration: none;
           font-weight: 700;
+          display: flex;
+          align-items: center;
       }
 
       .facebook-banner a:hover {
@@ -62,26 +66,40 @@
       /* Move the iframe content up further */
       iframe {
           position: absolute;
-          top: -30px; /* Shift the iframe up by 30px */
+          top: -20px; /* Shift the iframe up by 30px */
           right: 0;
           bottom: 0;
           left: 0;
           border: 0;
           height: calc(105% + 30px); /* Adjust height to fill space after the shift */
       }
+
+      /* Media Query for mobile devices */
+      @media (max-width: 600px) {
+          .facebook-banner {
+              padding: 10px 15px;  /* Adjust padding for mobile */
+              font-size: 16px;  /* Reduce font size for mobile */
+          }
+
+          .facebook-logo {
+              width: 24px;  /* Resize logo for mobile */
+              height: 24px; 
+          }
+      }
+
     </style>
 </head>
 <body>
-    <!-- Facebook Banner -->
-    <div class="facebook-banner">
-        <!-- Facebook Logo -->
-        <img class="facebook-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
-        <a href="https://www.facebook.com/TheSaturdaySting" target="_blank">
-            <span><u>The Saturday Sting</u></span>
-        </a>
-        <span class="plain-text"> ‎ on Facebook...</span>
-    </div>
+    <!-- Make the entire banner clickable -->
+    <a href="https://www.facebook.com/TheSaturdaySting" target="_blank">
+        <div class="facebook-banner">
+            <!-- Facebook Logo -->
+            <img class="facebook-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+            <span>The Saturday Sting</span>
+            <span class="plain-text"> ‎ on Facebook</span>
+        </div>
+    </a>
 
-    <iframe data-tally-src="https://tally.so/r/mRz8pv" width="100%" height="105%" frameborder="0" marginheight="0" marginwidth="0" title="The Saturday Sting"></iframe>
+    <iframe data-tally-src="https://tally.so/r/mRz8pv" width="100%" height="107%" frameborder="0" marginheight="0" marginwidth="0" title="The Saturday Sting"></iframe>
 </body>
 </html>
