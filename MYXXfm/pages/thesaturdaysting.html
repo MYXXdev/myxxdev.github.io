@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Force a mobile width -->
+    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
     <title>The Saturday Sting</title>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -11,9 +11,54 @@
           margin: 0;
           height: 100%;
           overflow: hidden;
+          font-family: 'Kanit', sans-serif;
       }
 
-      /* Ensure the iframe occupies the full screen */
+      /* Facebook Banner Style */
+      .facebook-banner {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: linear-gradient(135deg, #3b5998 0%, #1d3557 100%); /* Gradient Facebook Blue */
+          color: white;
+          text-align: center;
+          padding: 18px 30px;
+          font-size: 18px;
+          font-weight: 700;
+          z-index: 9999;
+          border-top: 5px solid black;
+          border-bottom: 5px solid #FFD700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Facebook logo style */
+      .facebook-logo {
+          width: 28px;
+          height: 28px;
+          object-fit: contain;
+          margin-right: 10px; /* Space between logo and text */
+      }
+
+      /* Plain text styling */
+      .facebook-banner .plain-text {
+          color: white;
+      }
+
+      /* Link styling */
+      .facebook-banner a {
+          color: white;
+          text-decoration: underline;
+          font-weight: 700;
+      }
+
+      .facebook-banner a:hover {
+          color: #ffd700;
+      }
+
       iframe {
           position: absolute;
           top: 0;
@@ -22,88 +67,19 @@
           left: 0;
           border: 0;
       }
-
-      /* General overlay styles */
-      .fade-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: black;
-          opacity: 1;
-          transition: opacity 0.5s ease-out;
-          z-index: 9999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-
-      /* Spinner style */
-      .spinner {
-          border: 8px solid rgba(0, 0, 0, 0.1);
-          border-radius: 50%;
-          border-top: 8px solid #EFD500;
-          width: 10vw;
-          height: 10vw;
-          max-width: 100px;
-          max-height: 100px;
-          animation: spin 1s linear infinite;
-          margin-top: 40px;
-      }
-
-      @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-      }
-
-      /* Make adjustments for very small screens */
-      @media (max-width: 768px) {
-          .spinner {
-              width: 10vw;
-              height: 10vw;
-              max-width: 80px;
-              max-height: 80px;
-          }
-      }
-
-      /* Disable large-screen styles by default */
-      @media (min-width: 768px) {
-          body {
-              overflow: hidden;
-          }
-
-          iframe {
-              width: 100vw;
-              height: 100vh;
-          }
-
-          .spinner {
-              width: 10vw;
-              height: 10vw;
-              max-width: 80px;
-              max-height: 80px;
-          }
-      }
     </style>
 </head>
 <body>
-    <div class="fade-overlay">
-        <div class="spinner"></div>
+    <!-- Facebook Banner -->
+    <div class="facebook-banner">
+        <!-- Facebook Logo -->
+        <img class="facebook-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        <a href="https://www.facebook.com/TheSaturdaySting" target="_blank">
+            <span><u>The Saturday Sting</u></span>
+        </a>
+        <span class="plain-text"> ‎ on Facebook...</span>
     </div>
-    <iframe data-tally-src="https://tally.so/r/mRz8pv" width="100%" height="105%" frameborder="0" marginheight="0" marginwidth="0" title="The Saturday Sting"></iframe>
 
-    <script>
-        // Automatically fade out after a set time
-        setTimeout(() => {
-            const overlay = document.querySelector('.fade-overlay');
-            overlay.style.opacity = 0;
-            // Optional: Remove overlay after fade-out to clean up
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restore scrollbars
-            }, 500); // Adjust the total duration before fading out
-        }, 2000); // Adjust the time before starting fade-out (reduced to 2 seconds)
-    </script>
+    <iframe data-tally-src="https://tally.so/r/mRz8pv" width="100%" height="105%" frameborder="0" marginheight="0" marginwidth="0" title="The Saturday Sting"></iframe>
 </body>
 </html>
