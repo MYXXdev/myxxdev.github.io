@@ -24,17 +24,17 @@
           background: linear-gradient(135deg, #3b5998 0%, #1d3557 100%); /* Gradient Facebook Blue */
           color: white;
           text-align: center;
-          padding: 12px 20px;  /* Reduced vertical padding to make the black banner half the height */
+          padding: 12px 20px;  /* Consistent padding for both desktop and mobile */
           font-size: 18px;
           font-weight: 700;
           z-index: 9999;
-          border-top: 3px solid black; /* Reduced black border to 2px */
+          border-top: 3px solid black;
           border-bottom: 5px solid #FFD700;
           display: flex;
-          justify-content: center;  /* Ensures that the content is centered horizontally */
-          align-items: center;  /* Ensures the content is vertically centered */
+          justify-content: center;  
+          align-items: center;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          box-sizing: border-box;  /* Ensures padding is included in width calculation */
+          box-sizing: border-box;
       }
 
       /* Facebook logo style */
@@ -66,24 +66,25 @@
       /* Move the iframe content up further */
       iframe {
           position: absolute;
-          top: -20px; /* Shift the iframe up by 30px */
+          top: -20px;
           right: 0;
           bottom: 0;
           left: 0;
           border: 0;
-          height: calc(105% + 30px); /* Adjust height to fill space after the shift */
+          height: calc(105% + 30px);
       }
 
-      /* Media Query for mobile devices */
+      /* Media Query for mobile devices (optional if you want to tweak certain aspects for mobile) */
       @media (max-width: 600px) {
+          /* You can adjust font size or other styles here if needed, but keeping it consistent means no changes */
           .facebook-banner {
-              padding: 5px 15px;  /* Further adjust padding for mobile */
-              font-size: 16px;  /* Reduce font size for mobile */
+              font-size: 18px;  /* Keep font-size the same */
+              padding: 12px 20px;  /* Keep padding the same */
           }
 
           .facebook-logo {
-              width: 24px;  /* Resize logo for mobile */
-              height: 24px; 
+              width: 28px;  /* Keep logo size the same */
+              height: 28px;
           }
       }
 
