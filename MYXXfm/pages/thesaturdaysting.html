@@ -24,11 +24,11 @@
           background: linear-gradient(135deg, #3b5998 0%, #1d3557 100%); /* Gradient Facebook Blue */
           color: white;
           text-align: center;
-          padding: 12px 20px;  /* Default padding */
+          padding: 12px 20px;  /* Reduced vertical padding to make the black banner half the height */
           font-size: 18px;
           font-weight: 700;
           z-index: 9999;
-          border-top: 5px solid black;
+          border-top: 3px solid black; /* Reduced black border to 2px */
           border-bottom: 5px solid #FFD700;
           display: flex;
           justify-content: center;  /* Ensures that the content is centered horizontally */
@@ -77,7 +77,7 @@
       /* Media Query for mobile devices */
       @media (max-width: 600px) {
           .facebook-banner {
-              padding: 10px 15px;  /* Adjust padding for mobile */
+              padding: 5px 15px;  /* Further adjust padding for mobile */
               font-size: 16px;  /* Reduce font size for mobile */
           }
 
