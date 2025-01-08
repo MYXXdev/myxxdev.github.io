@@ -26,7 +26,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black background */
             opacity: 1; /* Initially visible */
-            transition: opacity 0.5s ease-out; /* Adjust timing and easing as needed */
+            transition: opacity 1s ease-out; /* Adjusted for smoother fade */
             z-index: 9999; /* Ensure it sits on top of other content */
             display: flex;
             align-items: center;
@@ -61,17 +61,18 @@
             }
         }
 
+        /* Modify iframe container to make it stand out */
         .iframe-container {
             position: absolute;
             top: 5%; /* Space from the top edge of the viewport */
             left: 5%; /* Space from the left edge of the viewport */
             right: 5%; /* Space from the right edge of the viewport */
             bottom: 5%; /* Space from the bottom edge of the viewport */
-            background-color: #2c2c2c; /* Slightly lighter background */
+            background-color: rgba(44, 44, 44, 0.85); /* Transparent dark background */
             border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Slightly darker shadow for contrast */
             overflow: hidden; /* Hide any overflow */
-            padding: 20px; /* Add padding inside the container */
+            padding: 10px; /* Reduced padding for a more compact container */
             z-index: 1; /* Ensure it is beneath the spinner */
         }
 
@@ -80,7 +81,9 @@
             height: 100%;
             border: none;
             box-sizing: border-box; /* Ensure padding is included in width/height calculations */
+            filter: brightness(1.1); /* Slightly brighten iframe content */
         }
+
     </style>
 </head>
 <body>
@@ -101,8 +104,8 @@
             setTimeout(() => {
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Restore scrollbars
-            }, 500); // Adjust the total duration before fading out
-        }, 2000); // Adjust the time before starting fade-out (2 seconds)
+            }, 1000); // Adjust the total duration before fading out
+        }, 3000); // Start fade-out after 3 seconds, giving time for the waveform to show up
     </script>
 </body>
 </html>
