@@ -59,13 +59,15 @@
           color: #ffd700;
       }
 
+      /* Move the iframe content up further */
       iframe {
           position: absolute;
-          top: 0;
+          top: -30px; /* Shift the iframe up by 30px */
           right: 0;
           bottom: 0;
           left: 0;
           border: 0;
+          height: calc(105% + 30px); /* Adjust height to fill space after the shift */
       }
     </style>
 </head>
