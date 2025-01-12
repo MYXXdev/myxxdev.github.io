@@ -12,6 +12,12 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    
+    /* Apply height calculation for mobile viewport */
+    html, body {
+      height: 100%;
+    }
+
     body { 
       overflow: hidden; 
       background: radial-gradient(circle, #1c3b69, #2a5579, #4a90e2, #5e8db6, #8abbd4); 
@@ -21,11 +27,12 @@
       display: flex; 
       justify-content: center; 
       align-items: center; 
-      min-height: 100vh; 
-      text-align: center; 
       flex-direction: column; 
-      padding: 0 10px; 
+      padding: 20px 0; /* Added padding on top and bottom */
+      height: 100%;
+      text-align: center; /* Center text */
     }
+
     @keyframes gradientBG { 
       0% { background-position: 0% 50%; } 
       50% { background-position: 100% 50%; } 
@@ -90,6 +97,7 @@
       align-items: center;
       opacity: 0;
       transition: opacity 1s ease-out;
+      margin: 0 auto;
     }
 
     @keyframes fadeIn { 
@@ -206,7 +214,7 @@
     @media (max-width: 768px) {
       body { 
         font-size: 16px;
-        padding: 0 30px; 
+        padding: 20px 10px; /* Adjusted for mobile devices */
       }
 
       .container { 
