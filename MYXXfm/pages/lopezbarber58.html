@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Contacto con Tu Barbería - Conéctate a través de Instagram o WhatsApp.">
   <title>Lopez Barber</title>
@@ -13,7 +13,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { 
-      overflow: hidden; /* Prevent scroll until content is loaded */
+      overflow: hidden; 
       background: radial-gradient(circle, #1c3b69, #2a5579, #4a90e2, #5e8db6, #8abbd4); 
       background-size: 400% 400%; 
       animation: gradientBG 120s ease infinite; 
@@ -21,7 +21,7 @@
       display: flex; 
       justify-content: center; 
       align-items: center; 
-      height: 100vh; 
+      min-height: 100vh; 
       text-align: center; 
       flex-direction: column; 
       padding: 0 10px; 
@@ -39,7 +39,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 1); /* Increased opacity to make it darker */
+      background: rgba(0, 0, 0, 1); 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -77,7 +77,7 @@
     .container { 
       width: 100%; 
       max-width: 800px; 
-      padding: 2rem 2rem 2rem; 
+      padding: 2rem 2rem 4rem; 
       background: rgba(0, 0, 0, 0.7); 
       border-radius: 20px; 
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
@@ -99,7 +99,7 @@
 
     /* Logo at the top of the page */
     .logo-container { 
-      margin-bottom: 1rem; /* Reduced space under the logo */
+      margin-bottom: 1rem; 
       opacity: 1; 
     }
 
@@ -182,7 +182,7 @@
 
     .taggbox { 
       margin-top: 2rem; 
-      display: none; /* Hide the widget initially */
+      display: none; 
     }
 
     @media (max-width: 768px) {
