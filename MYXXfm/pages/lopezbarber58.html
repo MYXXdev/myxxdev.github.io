@@ -16,6 +16,10 @@
     /* Apply height calculation for mobile viewport */
     html, body {
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0; /* Remove default padding for body */
     }
 
     body { 
@@ -24,12 +28,6 @@
       background-size: 400% 400%; 
       animation: gradientBG 120s ease infinite; 
       color: #fff; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      flex-direction: column; 
-      padding: 20px 0; /* Added padding on top and bottom */
-      height: 100%;
       text-align: center; /* Center text */
     }
 
@@ -214,12 +212,14 @@
     @media (max-width: 768px) {
       body { 
         font-size: 16px;
-        padding: 20px 10px; /* Adjusted for mobile devices */
+        padding: 40px 10px; /* Added vertical padding */
       }
 
       .container { 
         padding: 2rem; 
         max-width: 100%; 
+        margin-top: 20px; /* Space between gradient and container */
+        margin-bottom: 20px; /* Space at the bottom to allow for gradient view */
       }
 
       h1 { font-size: 2rem; }
@@ -241,7 +241,6 @@
 
   <!-- Main Content -->
   <div class="container">
-    <!-- Logo placed here -->
     <div class="logo-container">
       <img src="https://myxxdev.github.io/images/LopezBarber.png" alt="Logo de Tu Barbería" class="logo" />
     </div>
@@ -261,7 +260,6 @@
     <div class="taggbox" id="taggboxWidget" style="width:100%; height:100%" data-widget-id="2147120" data-tags="false"></div>
     <script src="https://widget.taggbox.com/embed-lite.min.js" type="text/javascript"></script>
 
-    <!-- Example Address -->
     <address data-lang-en="Gran Cardenal Street<br>29620 Torremolinos<br>Málaga, Spain" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España" style="margin-top: 20px; font-size: 0.9em;">
       Gran Cardenal Street<br>
       29620 Torremolinos<br>
