@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Contacto con Tu Barbería - Conéctate a través de Instagram o WhatsApp.">
+  <meta name="description" content="Contact your barber shop - Connect via Instagram or WhatsApp.">
   <title>Lopez Barber</title>
 
   <!-- FontAwesome for Icons -->
@@ -185,6 +185,24 @@
       display: none; 
     }
 
+    .language-switcher {
+      margin-top: 20px;
+    }
+
+    .language-switcher button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      background: transparent;
+      color: #FFD700;
+      border: 1px solid #FFD700;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .language-switcher button:hover {
+      background-color: rgba(255, 215, 0, 0.1);
+    }
+
     @media (max-width: 768px) {
       body { 
         font-size: 16px;
@@ -220,14 +238,14 @@
       <img src="https://myxxdev.github.io/images/LopezBarber.png" alt="Logo de Tu Barbería" class="logo" />
     </div>
     
-    <h1>¡Conéctate con Tu Barbería!</h1>
-    <p>Elige tu forma preferida de contactarnos:</p>
+    <h1 data-lang-en="Connect with Your Barber Shop!" data-lang-es="¡Conéctate con Tu Barbería!">Connect with Your Barber Shop!</h1>
+    <p data-lang-en="Choose your preferred method to contact us:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method to contact us:</p>
 
     <div class="social-links">
-      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Tu Barbería">
+      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Tu Barbería" data-lang-en="Instagram" data-lang-es="Instagram">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Tu Barbería">
+      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Tu Barbería" data-lang-en="WhatsApp" data-lang-es="WhatsApp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
@@ -236,14 +254,39 @@
     <script src="https://widget.taggbox.com/embed-lite.min.js" type="text/javascript"></script>
 
     <!-- Example Address -->
-    <address style="margin-top: 20px; font-size: 0.9em;">
-      Calle Gran Cardenal<br>
+    <address data-lang-en="Gran Cardenal Street<br>29620 Torremolinos<br>Málaga, Spain" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España" style="margin-top: 20px; font-size: 0.9em;">
+      Gran Cardenal Street<br>
       29620 Torremolinos<br>
-      Málaga, España
+      Málaga, Spain
     </address>
+
+    <div class="language-switcher">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('es')">Español</button>
+    </div>
   </div>
 
   <script>
+    // Function to change language
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-lang-en], [data-lang-es]').forEach(el => {
+        const translation = el.getAttribute(`data-lang-${lang}`);
+        if (translation) {
+          if (el.tagName.toLowerCase() === 'address') {
+            el.innerHTML = translation.replace(/\n/g, '<br>');
+          } else {
+            el.textContent = translation;
+          }
+        }
+      });
+    }
+
+    // Set default language on load (example: English)
+    window.onload = () => {
+      const userLang = navigator.language || navigator.userLanguage;
+      changeLanguage(userLang.startsWith('es') ? 'es' : 'en'); // Default to Spanish if user's language is Spanish, else English
+    };
+
     // Function to hide loading spinner after widget loads
     function hideLoadingSpinner() {
       document.getElementById('loadingOverlay').style.opacity = 0;
