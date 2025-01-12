@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Contacto con Tu Barbería - Conéctate a través de Instagram o WhatsApp.">
+  <title>Lopez Barber</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { 
+      overflow: hidden; 
+      background: radial-gradient(circle, #1c3b69, #2a5579, #4a90e2, #5e8db6, #8abbd4); 
+      background-size: 400% 400%; 
+      animation: gradientBG 120s ease infinite; 
+      color: #fff; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      text-align: center; 
+      flex-direction: column; 
+      padding: 0 10px; 
+    }
+    @keyframes gradientBG { 
+      0% { background-position: 0% 50%; } 
+      50% { background-position: 100% 50%; } 
+      100% { background-position: 0% 50%; } 
+    }
+
+    .container { 
+      width: 100%; 
+      max-width: 800px; 
+      padding: 2rem 2rem 2rem; 
+      background: rgba(0, 0, 0, 0.7); 
+      border-radius: 20px; 
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+      animation: fadeIn 2s ease-out; 
+      position: relative; 
+      margin-top: 0; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes fadeIn { 
+      0% { opacity: 0; transform: translateY(50px); } 
+      100% { opacity: 1; transform: translateY(0); } 
+    }
+
+    .logo-container { 
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      animation: moveLogoToPosition 3s ease-out forwards; 
+      z-index: 3; 
+    }
+    .logo { 
+      width: 180px; 
+      opacity: 0; 
+      animation: logoFadeIn 1.5s ease-out 0.5s forwards; 
+    }
+    @keyframes logoFadeIn { 
+      0% { opacity: 0; transform: scale(4); } 
+      100% { opacity: 1; transform: scale(1); } 
+    }
+    @keyframes moveLogoToPosition { 
+      0% { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(4); }
+      100% { top: 10px; left: 50%; transform: translateX(-50%) scale(1); }
+    }
+
+    h1 { 
+      font-size: 2.5rem; 
+      font-family: 'Roboto', sans-serif; 
+      font-weight: 700; 
+      margin-top: 1rem; 
+      letter-spacing: 2px; 
+      color: #FFD700; 
+      animation: slideInFromLeft 1.5s ease-out; 
+    }
+    @keyframes slideInFromLeft { 
+      0% { opacity: 0; transform: translateX(-100px); } 
+      100% { opacity: 1; transform: translateX(0); } 
+    }
+
+    h2 { 
+      font-size: 2rem; 
+      margin-top: 1.5rem; 
+      color: #FFD700; 
+      opacity: 0; 
+      animation: slideInFromRight 1.5s ease-out 0.5s forwards; 
+    }
+    @keyframes slideInFromRight { 
+      0% { opacity: 0; transform: translateX(100px); } 
+      100% { opacity: 1; transform: translateX(0); } 
+    }
+
+    p { 
+      font-size: 1.2rem; 
+      margin-top: 1.5rem; 
+      color: #ddd; 
+      opacity: 0; 
+      animation: fadeInText 2s ease-out 1s forwards; 
+    }
+    @keyframes fadeInText { 
+      0% { opacity: 0; } 
+      100% { opacity: 1; } 
+    }
+
+    .social-links { 
+      display: flex; 
+      justify-content: center; 
+      gap: 2rem; 
+      margin-top: 3rem; 
+      flex-wrap: wrap; 
+    }
+    .social-icon { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 1rem 2rem; 
+      border-radius: 50px; 
+      font-size: 1.5rem; 
+      color: #fff; 
+      text-decoration: none; 
+      transition: all 0.3s ease; 
+      background-color: #333; 
+    }
+    .social-icon i { margin-right: 0.5rem; }
+    .social-icon:hover { 
+      transform: scale(1.05); 
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+      background-color: #ff6a00; 
+    }
+    .social-icon:active { transform: scale(0.95); }
+    .instagram { background-color: #e1306c; }
+    .whatsapp { background-color: #25D366; }
+
+    .taggbox { margin-top: 2rem; }
+
+    @media (max-width: 768px) {
+      body { 
+        font-size: 16px;
+        padding: 0 30px; 
+      }
+      .container { 
+        padding: 2rem; 
+        max-width: 100%; 
+      }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      .social-links { flex-direction: column; gap: 1rem; }
+      .social-icon { width: 100%; font-size: 1.4rem; }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="https://myxxdev.github.io/images/LopezBarber.png" alt="Logo de Tu Barbería" class="logo" loading="lazy">
+  </div>
+
+  <div class="container">
+    <h1>¡Conéctate con Tu Barbería!</h1>
+    <p>Elige tu forma preferida de contactarnos:</p>
+
+    <div class="social-links">
+      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Tu Barbería">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Tu Barbería">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <div class="taggbox" style="width:100%;height:100%" data-widget-id="2147120" data-tags="false"></div>
+    <script src="https://widget.taggbox.com/embed-lite.min.js" type="text/javascript"></script>
+  </div>
+
+</body>
+</html>
