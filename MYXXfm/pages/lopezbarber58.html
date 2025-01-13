@@ -7,7 +7,7 @@
   <meta name="description" content="Contact your barber shop - Connect via Instagram or WhatsApp.">
   <meta name="theme-color" content="#14293F" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14293F" media="(prefers-color-scheme: dark)">
-  <title>LopezBarber58</title>
+  <title>LópezBarber58</title>
 
   <!-- Updated FontAwesome for Icons (Stable Version) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
@@ -288,18 +288,21 @@
     }
 
     /* Style for the circle share button */
-    .social-icon.circle-share {
-      background-color: #007bff; /* Nice blue color */
-      padding: 1rem; /* Increased padding to make it circular */
-      border-radius: 50%; /* Make the button circular */
-      font-size: 1.8rem; /* Larger icon */
-      color: #fff; /* White color for the icon */
-      text-decoration: none; /* Remove text */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
+.social-icon.circle-share {
+  background-color: #007bff; /* Nice blue color */
+  padding: 0.5rem; /* Decreased padding to match the size of the flags */
+  border-radius: 50%; /* Make the button circular */
+  font-size: 1.5rem; /* Adjust size to match the flags */
+  color: #fff; /* White color for the icon */
+  text-decoration: none; /* Remove text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Move the share button to the top-right corner */
+  transition: all 0.3s ease;
+}
 
     .social-icon.circle-share i {
       margin: 0; /* Remove any margin around the icon */
@@ -328,20 +331,20 @@
   <!-- Main Content -->
   <div class="container">
     <div class="logo-container">
-      <img src="https://myxxdev.github.io/images/LopezBarber58.png" alt="Logo de Lopez" class="logo" />
+      <img src="https://myxxdev.github.io/images/LopezBarber58.png" alt="Logo de López" class="logo" />
     </div>
     
-    <h1 data-lang-en="Connect with Lopez!" data-lang-es="Conéctate con Lopez!">Connect with Lopez!</h1>
+    <h1 data-lang-en="Connect with López!" data-lang-es="Agéndate con López!">Connect with López!</h1>
     <p data-lang-en="Choose your preferred method of contact:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method of contact:</p>
     <br>
     <div class="social-links">
       <!-- Instagram Button -->
-      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Lopez">
+      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de López">
         <i class="fab fa-instagram"></i> Instagram
       </a>
 
       <!-- WhatsApp Button -->
-      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Lopez">
+      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de López">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
 
