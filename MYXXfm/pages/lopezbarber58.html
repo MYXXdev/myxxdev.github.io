@@ -13,13 +13,13 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
-    /* Apply height calculation for mobile viewport */
+    /* Ensuring the body fills the screen with the gradient background */
     html, body {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0; /* Remove default padding for body */
+      padding: 0;
     }
 
     body { 
@@ -28,7 +28,7 @@
       background-size: 400% 400%; 
       animation: gradientBG 120s ease infinite; 
       color: #fff; 
-      text-align: center; /* Center text */
+      text-align: center;
     }
 
     @keyframes gradientBG { 
@@ -213,6 +213,8 @@
       body { 
         font-size: 16px;
         padding: 40px 10px; /* Added vertical padding */
+        padding-top: env(safe-area-inset-top, 20px); /* Top safe area for notch */
+        padding-bottom: env(safe-area-inset-bottom, 20px); /* Bottom safe area */
       }
 
       .container { 
