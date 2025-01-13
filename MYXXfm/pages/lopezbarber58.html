@@ -216,14 +216,14 @@
       border: none;
     }
 
-    .language-switcher {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-      display: flex;
-      gap: 5px;
-    }
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Move to the left corner */
+  z-index: 10;
+  display: flex;
+  gap: 5px;
+}
 
     .language-switcher img {
       width: 30px;
@@ -363,8 +363,8 @@
 
     <!-- Language Switcher -->
     <div class="language-switcher">
-      <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="changeLanguage('en')" />
       <img src="https://flagcdn.com/w320/es.png" alt="Español" onclick="changeLanguage('es')" />
+      <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="changeLanguage('en')" />
     </div>
 
     <!-- The Modal -->
