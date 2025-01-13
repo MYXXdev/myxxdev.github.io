@@ -66,7 +66,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      animation: spin 2s linear infinite, pulse 1.5s ease-in-out infinite;
+      animation: pulse 1.5s ease-in-out infinite;
     }
 
     .logo-spinner img {
@@ -74,10 +74,6 @@
       max-height: 100%;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
 
     @keyframes pulse {
       0% { transform: scale(1); }
