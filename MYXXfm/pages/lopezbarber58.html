@@ -125,6 +125,12 @@
       color: #FFD700; 
       animation: slideInFromLeft 1.5s ease-out; 
     }
+      
+      @media (max-width: 768px) {
+  h1 {
+    font-size: 4.7vw;  /* Make the text more responsive for mobile */
+  }
+}
 
     @keyframes slideInFromLeft { 
       0% { opacity: 0; transform: translateX(-100px); } 
@@ -330,7 +336,7 @@
       <img src="https://myxxdev.github.io/images/LopezBarber58.png" alt="Logo de López" class="logo" />
     </div>
     
-    <h1 data-lang-en="Book an appointment with López!" data-lang-es="Reserva una cita con López!">Book an appointment with López!</h1><br>
+    <h1 data-lang-en="Book an appointment with López!" data-lang-es="Reserva una cita con López!">Book an appointment with López!</h1>
     <p data-lang-en="Choose your preferred method of contact:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method of contact:</p>
     <br>
     <div class="social-links">
