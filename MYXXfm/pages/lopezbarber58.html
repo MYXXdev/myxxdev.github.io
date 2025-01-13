@@ -11,15 +11,20 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    
-    /* Ensuring the body fills the screen with the gradient background */
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: 'Poppins', sans-serif; 
+    }
+
     html, body {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     body { 
@@ -38,7 +43,6 @@
       100% { background-position: 0% 50%; } 
     }
 
-    /* Custom Logo Spinner */
     .loading-overlay {
       position: fixed;
       top: 0;
@@ -79,7 +83,6 @@
       100% { transform: scale(1); }
     }
 
-    /* Main Content Styles */
     .container { 
       width: 100%; 
       max-width: 600px; 
@@ -105,7 +108,6 @@
       100% { opacity: 1; transform: translateY(0); } 
     }
 
-    /* Logo at the top of the page */
     .logo-container { 
       margin-bottom: 1rem; 
       width: 100%;
@@ -160,7 +162,7 @@
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      padding: 0.5rem 1rem; 
+      padding: 1rem 1rem; 
       border-radius: 50px; 
       font-size: 1.2rem; 
       color: #fff; 
@@ -181,49 +183,36 @@
     .whatsapp { background-color: #25D366; }
 
     .taggbox { 
-      margin-top: 1rem; 
+      margin-top: 1rem;
       width: 100%;
-      max-height: 150px; /* Base height */
-      overflow: hidden; 
+      max-height: 80vh; /* Use 80% of viewport height to prevent scrolling */
+      overflow-y: hidden;
     }
 
     @media (max-width: 768px) {
-      body { 
-        font-size: 14px; 
+      /* Add horizontal padding for smaller screens */
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .container {
-        padding: 0.5rem; 
+        padding: 1rem; /* Add padding to the container */
         max-width: 100%; 
         margin: 10px 5px; 
         max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px) - 20px); 
       }
 
-      h1 { font-size: 1.6rem; }
-      p { font-size: 0.9rem; }
       .taggbox {
-        max-height: 100px; /* Reduced height for mobile */
-        overflow-y: auto; /* Allow scrolling within widget for content overflow */
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Visual cue for scrollable content */
+        max-height: 70vh; /* Limit height further on smaller screens */
+        overflow-y: auto; /* Enable scrolling inside the Taggbox if necessary */
       }
     }
 
-    /* Additional responsive scaling for Taggbox */
     .taggbox iframe {
       width: 100%;
       height: 100%;
       border: none;
-    }
-
-    @media (max-width: 768px) {
-      .taggbox iframe {
-        width: 150%; /* Overlap to account for scaling down */
-        height: 150%;
-        transform: scale(0.6667); /* Scale down to fit */
-        transform-origin: top left;
-        margin-left: -25%; /* Adjust for the scaling */
-        margin-top: -25%;
-      }
     }
 
     .language-switcher {
@@ -247,10 +236,11 @@
       transform: scale(1.1);
     }
 
-    address {
-      font-size: 0.8em;
-      margin-top: 10px;
-    }
+address {
+  font-size: 0.8em;
+  margin-top: 10px;
+  color: lightgrey;
+}
 
   </style>
 </head>
@@ -271,7 +261,7 @@
     
     <h1 data-lang-en="Connect with Your Barber!" data-lang-es="¡Conéctate con Tu Barbería!">Connect with Your Barber!</h1>
     <p data-lang-en="Choose your preferred method to contact me:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method to contact me:</p>
-
+      <br>
     <div class="social-links">
       <!-- Instagram Button -->
       <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Tu Barbería">
@@ -283,14 +273,16 @@
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
-
+      <br>
     <div class="taggbox" id="taggboxWidget" data-widget-id="2147120" data-tags="false"></div>
-
-    <address data-lang-en="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, Spain" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España">
-      Calle Gran Cardenal<br>
-      29620 Torremolinos<br>
-      Málaga, España
-    </address>
+      <br>
+    <a href="https://www.google.com/maps/search/?q=Calle+Gran+Cardenal+29620+Torremolinos+Málaga" target="_blank">
+      <address data-lang-en="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, Spain<br><br>" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España<br><br>">
+        Calle Gran Cardenal<br>
+        29620 Torremolinos<br>
+        Málaga, España
+      </address>
+    </a>
 
     <!-- Language Switcher -->
     <div class="language-switcher">
