@@ -185,27 +185,26 @@
     .taggbox { 
       margin-top: 1rem;
       width: 100%;
-      max-height: 80vh; /* Use 80% of viewport height to prevent scrolling */
+      max-height: 80vh; 
       overflow-y: hidden;
     }
 
     @media (max-width: 768px) {
-      /* Add horizontal padding for smaller screens */
       body {
         padding-left: 20px;
         padding-right: 20px;
       }
 
       .container {
-        padding: 1rem; /* Add padding to the container */
+        padding: 1rem; 
         max-width: 100%; 
         margin: 10px 5px; 
         max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px) - 20px); 
       }
 
       .taggbox {
-        max-height: 70vh; /* Limit height further on smaller screens */
-        overflow-y: auto; /* Enable scrolling inside the Taggbox if necessary */
+        max-height: 70vh; 
+        overflow-y: auto; 
       }
     }
 
@@ -236,12 +235,83 @@
       transform: scale(1.1);
     }
 
-address {
-  font-size: 0.8em;
-  margin-top: 10px;
-  color: lightgrey;
-}
+    address {
+      font-size: 0.8em;
+      margin-top: 10px;
+      color: lightgrey;
+    }
 
+    /* New CSS for the modern popup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Style for the circle share button */
+    .social-icon.circle-share {
+      background-color: #007bff; /* Nice blue color */
+      padding: 1rem; /* Increased padding to make it circular */
+      border-radius: 50%; /* Make the button circular */
+      font-size: 1.8rem; /* Larger icon */
+      color: #fff; /* White color for the icon */
+      text-decoration: none; /* Remove text */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon.circle-share i {
+      margin: 0; /* Remove any margin around the icon */
+    }
+
+    .social-icon.circle-share:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+      transform: scale(1.05); /* Slight scale on hover */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    }
+
+    .social-icon.circle-share:active {
+      transform: scale(0.95); /* Slightly shrink when clicked */
+    }
   </style>
 </head>
 <body>
@@ -259,23 +329,28 @@ address {
       <img src="https://myxxdev.github.io/images/LopezBarber.png" alt="Logo de Tu Barbería" class="logo" />
     </div>
     
-    <h1 data-lang-en="Connect with Your Barber!" data-lang-es="¡Conéctate con Tu Barbería!">Connect with Your Barber!</h1>
-    <p data-lang-en="Choose your preferred method to contact me:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method to contact me:</p>
-      <br>
+    <h1 data-lang-en="Connect with Lopez!" data-lang-es="Conéctate con Lopez!">Connect with Lopez!</h1>
+    <p data-lang-en="Choose your preferred method of contact:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method of contact:</p>
+    <br>
     <div class="social-links">
       <!-- Instagram Button -->
-      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Tu Barbería">
+      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de Lopez">
         <i class="fab fa-instagram"></i> Instagram
       </a>
 
       <!-- WhatsApp Button -->
-      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Tu Barbería">
+      <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de Lopez">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
+
+      <!-- New Circle Share Button -->
+      <a href="javascript:void(0);" class="social-icon circle-share" onclick="openPopupImage()" aria-label="Share Image">
+        <i class="fas fa-share"></i> <!-- Only the icon will show -->
+      </a>
     </div>
-      <br>
+    <br>
     <div class="taggbox" id="taggboxWidget" data-widget-id="2147120" data-tags="false"></div>
-      <br>
+    <br>
     <a href="https://www.google.com/maps/search/?q=Calle+Gran+Cardenal+29620+Torremolinos+Málaga" target="_blank">
       <address data-lang-en="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, Spain<br><br>" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España<br><br>">
         Calle Gran Cardenal<br>
@@ -288,6 +363,12 @@ address {
     <div class="language-switcher">
       <img src="https://flagcdn.com/w320/gb.png" alt="English" onclick="changeLanguage('en')" />
       <img src="https://flagcdn.com/w320/es.png" alt="Español" onclick="changeLanguage('es')" />
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">×</span>
+      <img class="modal-content" id="img01">
     </div>
   </div>
 
@@ -327,6 +408,31 @@ address {
     window.addEventListener('load', function() {
       setTimeout(hideLoadingSpinner, 3000); // Ensure spinner stays for 3 seconds
     });
+
+    // Function to open the modal with the image
+    function openPopupImage() {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
+      var imgSource = "https://myxxdev.github.io/images/LopezBarber58QRCode.png"; // Replace this with the actual image URL
+      modal.style.display = "block";
+      modalImg.src = imgSource;
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() { 
+        modal.style.display = "none";
+      }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 
 </body>
