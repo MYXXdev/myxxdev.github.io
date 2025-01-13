@@ -15,7 +15,7 @@
     
     /* Ensuring the body fills the screen with the gradient background */
     html, body {
-      height: 100vh;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,14 +23,13 @@
     }
 
     body { 
-      overflow: hidden; 
       background: radial-gradient(circle, #1c3b69, #2a5579, #4a90e2, #5e8db6, #8abbd4); 
       background-size: 400% 400%; 
       animation: gradientBG 120s ease infinite; 
       color: #fff; 
       text-align: center;
-      padding-top: env(safe-area-inset-top, 20px);  /* Top padding for safe area */
-      padding-bottom: env(safe-area-inset-bottom, 20px);  /* Bottom padding for safe area */
+      padding-top: env(safe-area-inset-top, 20px);  
+      padding-bottom: env(safe-area-inset-bottom, 20px);  
     }
 
     @keyframes gradientBG { 
@@ -83,8 +82,8 @@
     /* Main Content Styles */
     .container { 
       width: 100%; 
-      max-width: 800px; 
-      padding: 2rem; 
+      max-width: 600px; 
+      padding: 1rem; 
       background: rgba(0, 0, 0, 0.7); 
       border-radius: 20px; 
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
@@ -92,14 +91,13 @@
       position: relative; 
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      opacity: 0;
-      margin-top: 30px;
-      margin-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px); /* Additional bottom margin for safety */
+      opacity: 1; 
+      margin: 20px auto; 
       border: 4px solid rgba(255, 215, 0, 0.8); 
-      overflow-y: auto;
-      max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px));
+      overflow: hidden; 
+      max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px) - 40px); 
     }
 
     @keyframes fadeIn { 
@@ -110,19 +108,20 @@
     /* Logo at the top of the page */
     .logo-container { 
       margin-bottom: 1rem; 
-      opacity: 1; 
+      width: 100%;
     }
 
     .logo { 
-      width: 180px; 
+      width: 150px; 
+      max-width: 100%;
     }
 
     h1 { 
-      font-size: 2.5rem; 
+      font-size: 1.8rem; 
       font-family: 'Roboto', sans-serif; 
       font-weight: 700; 
-      margin-top: 1rem; 
-      letter-spacing: 2px; 
+      margin-top: 0.5rem; 
+      letter-spacing: 1px; 
       color: #FFD700; 
       animation: slideInFromLeft 1.5s ease-out; 
     }
@@ -133,21 +132,12 @@
     }
 
     h2 { 
-      font-size: 2rem; 
-      margin-top: 1.5rem; 
-      color: #FFD700; 
-      opacity: 0; 
-      animation: slideInFromRight 1.5s ease-out 0.5s forwards; 
-    }
-
-    @keyframes slideInFromRight { 
-      0% { opacity: 0; transform: translateX(100px); } 
-      100% { opacity: 1; transform: translateX(0); } 
+      display: none;
     }
 
     p { 
-      font-size: 1.2rem; 
-      margin-top: 1.5rem; 
+      font-size: 1rem; 
+      margin-top: 0.5rem; 
       color: #ddd; 
       opacity: 0; 
       animation: fadeInText 2s ease-out 1s forwards; 
@@ -161,8 +151,8 @@
     .social-links { 
       display: flex; 
       justify-content: center; 
-      gap: 2rem; 
-      margin-top: 3rem; 
+      gap: 1rem; 
+      margin-top: 1rem; 
       flex-wrap: wrap; 
     }
 
@@ -170,16 +160,16 @@
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      padding: 1rem 2rem; 
+      padding: 0.5rem 1rem; 
       border-radius: 50px; 
-      font-size: 1.5rem; 
+      font-size: 1.2rem; 
       color: #fff; 
       text-decoration: none; 
       transition: all 0.3s ease; 
       background-color: #333; 
     }
 
-    .social-icon i { margin-right: 0.5rem; }
+    .social-icon i { margin-right: 0.3rem; }
     .social-icon:hover { 
       transform: scale(1.05); 
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
@@ -191,22 +181,63 @@
     .whatsapp { background-color: #25D366; }
 
     .taggbox { 
-      margin-top: 2rem; 
-      display: none; 
+      margin-top: 1rem; 
+      width: 100%;
+      max-height: 150px; /* Base height */
+      overflow: hidden; 
+    }
+
+    @media (max-width: 768px) {
+      body { 
+        font-size: 14px; 
+      }
+
+      .container {
+        padding: 0.5rem; 
+        max-width: 100%; 
+        margin: 10px 5px; 
+        max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px) - 20px); 
+      }
+
+      h1 { font-size: 1.6rem; }
+      p { font-size: 0.9rem; }
+      .taggbox {
+        max-height: 100px; /* Reduced height for mobile */
+        overflow-y: auto; /* Allow scrolling within widget for content overflow */
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Visual cue for scrollable content */
+      }
+    }
+
+    /* Additional responsive scaling for Taggbox */
+    .taggbox iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .taggbox iframe {
+        width: 150%; /* Overlap to account for scaling down */
+        height: 150%;
+        transform: scale(0.6667); /* Scale down to fit */
+        transform-origin: top left;
+        margin-left: -25%; /* Adjust for the scaling */
+        margin-top: -25%;
+      }
     }
 
     .language-switcher {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
       z-index: 10;
       display: flex;
-      gap: 10px;
+      gap: 5px;
     }
 
     .language-switcher img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -216,24 +247,9 @@
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
-      body { 
-        font-size: 16px;
-        padding: 40px 10px; /* Added vertical padding for mobile */
-      }
-
-      .container { 
-        padding: 2rem; 
-        max-width: 100%; 
-        margin-top: 20px; 
-        margin-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px); /* Space at the bottom for gradient view */
-        border: 4px solid rgba(255, 215, 0, 0.8); /* Visible border */
-      }
-
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.6rem; }
-      p { font-size: 1rem; }
-      .social-icon { font-size: 1.2rem; }
+    address {
+      font-size: 0.8em;
+      margin-top: 10px;
     }
 
   </style>
@@ -268,10 +284,9 @@
       </a>
     </div>
 
-    <div class="taggbox" id="taggboxWidget" style="width:100%; height:100%" data-widget-id="2147120" data-tags="false"></div>
-    <script src="https://widget.taggbox.com/embed-lite.min.js" type="text/javascript"></script>
+    <div class="taggbox" id="taggboxWidget" data-widget-id="2147120" data-tags="false"></div>
 
-    <address data-lang-en="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, Spain" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España" style="margin-top: 20px; font-size: 0.9em;">
+    <address data-lang-en="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, Spain" data-lang-es="Calle Gran Cardenal<br>29620 Torremolinos<br>Málaga, España">
       Calle Gran Cardenal<br>
       29620 Torremolinos<br>
       Málaga, España
@@ -283,6 +298,8 @@
       <img src="https://flagcdn.com/w320/es.png" alt="Español" onclick="changeLanguage('es')" />
     </div>
   </div>
+
+  <script src="https://widget.taggbox.com/embed-lite.min.js" type="text/javascript"></script>
 
   <script>
     // Function to change language
@@ -308,7 +325,6 @@
     // Function to hide loading spinner after widget loads
     function hideLoadingSpinner() {
       document.getElementById('loadingOverlay').style.opacity = 0;
-      document.querySelector('.taggbox').style.display = 'block';
       document.querySelector('.container').style.opacity = 1; // Show the main content
       setTimeout(() => {
         document.getElementById('loadingOverlay').style.display = 'none';
@@ -319,15 +335,6 @@
     window.addEventListener('load', function() {
       setTimeout(hideLoadingSpinner, 3000); // Ensure spinner stays for 3 seconds
     });
-
-    // Check if widget is ready after script loads
-    const interval = setInterval(() => {
-      const taggbox = document.getElementById('taggboxWidget');
-      if (taggbox && taggbox.children.length > 0) {
-        hideLoadingSpinner();
-        clearInterval(interval);
-      }
-    }, 500); // Check every 500ms
   </script>
 
 </body>
