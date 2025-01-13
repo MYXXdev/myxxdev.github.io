@@ -15,7 +15,7 @@
     
     /* Ensuring the body fills the screen with the gradient background */
     html, body {
-      height: 100%;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -84,7 +84,7 @@
     .container { 
       width: 100%; 
       max-width: 800px; 
-      padding: 2rem; /* Padding inside the container */
+      padding: 2rem; 
       background: rgba(0, 0, 0, 0.7); 
       border-radius: 20px; 
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
@@ -96,8 +96,10 @@
       align-items: center;
       opacity: 0;
       margin-top: 30px;
-      margin-bottom: 30px;
-      border: 4px solid rgba(255, 215, 0, 0.8); /* Border around the box to show the gradient */
+      margin-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px); /* Additional bottom margin for safety */
+      border: 4px solid rgba(255, 215, 0, 0.8); 
+      overflow-y: auto;
+      max-height: calc(100vh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px));
     }
 
     @keyframes fadeIn { 
@@ -221,10 +223,10 @@
       }
 
       .container { 
-        padding: 2rem; /* Padding inside the container */
+        padding: 2rem; 
         max-width: 100%; 
-        margin-top: 20px; /* Space between gradient and container */
-        margin-bottom: 20px; /* Space at the bottom to allow for gradient view */
+        margin-top: 20px; 
+        margin-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px); /* Space at the bottom for gradient view */
         border: 4px solid rgba(255, 215, 0, 0.8); /* Visible border */
       }
 
@@ -315,7 +317,7 @@
 
     // Wait for the widget to load
     window.addEventListener('load', function() {
-      setTimeout(hideLoadingSpinner, 3000); // Ensure spinner stays for 5 seconds
+      setTimeout(hideLoadingSpinner, 3000); // Ensure spinner stays for 3 seconds
     });
 
     // Check if widget is ready after script loads
