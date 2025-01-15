@@ -74,7 +74,6 @@
       max-height: 100%;
     }
 
-
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -126,11 +125,11 @@
       animation: slideInFromLeft 1.5s ease-out; 
     }
       
-      @media (max-width: 768px) {
-  h1 {
-    font-size: 4.5vw;  /* Make the text more responsive for mobile */
-  }
-}
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 4.5vw;  
+      }
+    }
 
     @keyframes slideInFromLeft { 
       0% { opacity: 0; transform: translateX(-100px); } 
@@ -165,26 +164,43 @@
     .social-icon { 
       display: flex; 
       align-items: center; 
-      justify-content: center; 
-      padding: 1rem 1rem; 
-      border-radius: 50px; 
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 50%; /* Changed to make circular */
       font-size: 1.2rem; 
       color: #fff; 
       text-decoration: none; 
       transition: all 0.3s ease; 
-      background-color: #333; 
+      width: 50px; /* Adjusted for circular shape */
+      height: 50px; /* Adjusted for circular shape */
     }
 
-    .social-icon i { margin-right: 0.3rem; }
+    .social-icon i {
+      margin: 0; /* Adjusted to center the icon */
+    }
+
     .social-icon:hover { 
       transform: scale(1.05); 
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-      background-color: #ff6a00; 
     }
 
-    .social-icon:active { transform: scale(0.95); }
+    .social-icon:active { 
+      transform: scale(0.95); 
+    }
+
     .instagram { background-color: #e1306c; }
     .whatsapp { background-color: #25D366; }
+    .schedule { 
+      background-color: #ff5733; 
+      border-radius: 25px; /* Keep this button pill-shaped */
+      padding: 0.5rem 1rem; /* Reset padding for text */ 
+      width: auto; /* Reset width for this button */
+      height: auto; /* Reset height for this button */
+    }
+
+    .schedule i {
+      margin-right: 0.5rem; /* Add margin for icon separation */
+    }
 
     .taggbox { 
       margin-top: 1rem;
@@ -218,14 +234,14 @@
       border: none;
     }
 
-.language-switcher {
-  position: absolute;
-  top: 10px;
-  left: 10px; /* Move to the left corner */
-  z-index: 10;
-  display: flex;
-  gap: 5px;
-}
+    .language-switcher {
+      position: absolute;
+      top: 10px;
+      left: 10px; 
+      z-index: 10;
+      display: flex;
+      gap: 5px;
+    }
 
     .language-switcher img {
       width: 30px;
@@ -245,7 +261,6 @@
       color: lightgrey;
     }
 
-    /* New CSS for the modern popup */
     .modal {
       display: none;
       position: fixed;
@@ -289,35 +304,34 @@
       cursor: pointer;
     }
 
-    /* Style for the circle share button */
-.social-icon.circle-share {
-  background-color: #007bff; /* Nice blue color */
-  padding: 0.5rem; /* Decreased padding to match the size of the flags */
-  border-radius: 50%; /* Make the button circular */
-  font-size: 1.5rem; /* Adjust size to match the flags */
-  color: #fff; /* White color for the icon */
-  text-decoration: none; /* Remove text */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 10px;
-  right: 10px; /* Move the share button to the top-right corner */
-  transition: all 0.3s ease;
-}
+    .social-icon.circle-share {
+      background-color: #007bff; 
+      padding: 0.5rem; 
+      border-radius: 50%; 
+      font-size: 1.5rem; 
+      color: #fff; 
+      text-decoration: none; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 10px;
+      right: 10px; 
+      transition: all 0.3s ease;
+    }
 
     .social-icon.circle-share i {
-      margin: 0; /* Remove any margin around the icon */
+      margin: 0; 
     }
 
     .social-icon.circle-share:hover {
-      background-color: #0056b3; /* Darker blue on hover */
-      transform: scale(1.05); /* Slight scale on hover */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+      background-color: #0056b3; 
+      transform: scale(1.05); 
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
     }
 
     .social-icon.circle-share:active {
-      transform: scale(0.95); /* Slightly shrink when clicked */
+      transform: scale(0.95); 
     }
   </style>
 </head>
@@ -340,19 +354,25 @@
     <p data-lang-en="Choose your preferred method of contact:" data-lang-es="Elige tu forma preferida de contactarnos:">Choose your preferred method of contact:</p>
     <br>
     <div class="social-links">
-      <!-- Instagram Button -->
-      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de López">
-        <i class="fab fa-instagram"></i> Instagram
+      <!-- Schedule Appointment Button -->
+      <a href="https://lopezbarber58.setmore.com" target="_blank" class="social-icon schedule" aria-label="Schedule Appointment">
+        <i class="fas fa-calendar"></i>
+        <span data-lang-en="Book Appointment" data-lang-es="Reservar Cita">Book Appointment</span>
       </a>
 
       <!-- WhatsApp Button -->
       <a href="https://wa.me/+34602483067" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp de López">
-        <i class="fab fa-whatsapp"></i> WhatsApp
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <!-- Instagram Button -->
+      <a href="https://instagram.com/lopezbarber58" target="_blank" class="social-icon instagram" aria-label="Instagram de López">
+        <i class="fab fa-instagram"></i>
       </a>
 
       <!-- New Circle Share Button -->
       <a href="javascript:void(0);" class="social-icon circle-share" onclick="openPopupImage()" aria-label="Share Image">
-        <i class="fas fa-share"></i> <!-- Only the icon will show -->
+        <i class="fas fa-share"></i>
       </a>
     </div>
     <br>
