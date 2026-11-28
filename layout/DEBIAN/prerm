@@ -1,0 +1,43 @@
+#!/bin/sh
+set -eu
+case "${1:-}" in
+ deconfigure)
+  # Another package is temporarily taking this one's place (conflict handling). Nothing is deleted and no protection is
+  # detached here: the package is expected to be configured again. Upgrades never reach this script's cleanup either.
+ ;;
+ remove)
+  # Private Conversations hides alerts with Messages' own Hide Alerts, which only Messages can restore. Removing MYbloXX® does not change it.
+  echo "MYbloXX®: if you used Private Conversations, tap Restore Alerts Now in MYbloXX® Settings (Extra Privacy Protection) before removing, or those conversations stay muted." >&2
+  # Actual removal: stop writers and the App Control recovery loop, then detach MYbloXX's own configuration.
+  # Upgrades (argument "upgrade") never enter this branch: settings and activation are retained.
+  for label in net.myxxdev.mybloxx.appcontrol net.myxxdev.mybloxx.restore net.myxxdev.mybloxx.updates net.myxxdev.mybloxx.blockd net.myxxdev.mybloxx.pacd; do
+   launchctl bootout "system/$label" >/dev/null 2>&1 || :
+  done
+  MYB_HELPER=""
+  for candidate in / /var/jb; do
+   MYB_PREFIX="$candidate"
+   [ "$MYB_PREFIX" = / ] && MYB_PREFIX=""
+   if [ -x "$MYB_PREFIX/usr/sbin/MYXXdev/MYbloXX/MYXXdev" ]; then
+    MYB_HELPER="$MYB_PREFIX/usr/sbin/MYXXdev/MYbloXX/MYXXdev"
+    break
+   fi
+  done
+  if [ -z "$MYB_HELPER" ]; then
+   echo "MYbloXX®: removal could not finish. Please try again." >&2
+   exit 1
+  fi
+  MYB_ATTEMPT=0
+  while :; do
+   MYB_RESULT=0
+   "$MYB_HELPER" uninstall || MYB_RESULT=$?
+   [ "$MYB_RESULT" -eq 0 ] && break
+   MYB_ATTEMPT=$((MYB_ATTEMPT + 1))
+   if [ "$MYB_RESULT" -ne 75 ] || [ "$MYB_ATTEMPT" -ge 10 ]; then
+    echo "MYbloXX®: removal could not finish. Please try again." >&2
+    exit "$MYB_RESULT"
+   fi
+   sleep 1
+  done
+ ;;
+esac
+exit 0

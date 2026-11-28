@@ -1,0 +1,411 @@
+name: MYbloXX® (RootHide) release build
+on:
+  workflow_dispatch:
+  push:
+    branches: ['codex/inlinepac-production-rc','codex/shield-popup-redesign-rc2','codex/rc5-polish','codex/rh-15-111526','codex/in-app-ads','codex/rh-15-111626-final','codex/rh-15-111626-hybrid']
+concurrency:
+  group: mybloxx-rc-inline-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  roothide:
+    env:
+      MYB_SIM_BOOT_TIMEOUT: '900' # the Intel hosted simulator boots slowly
+    runs-on: macos-26-intel # macos-latest (arm64) was never allocated for hours; Intel is a separate pool and the DEB is cross-compiled the same
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify B47 foreground and packaging invariants
+        run: python3 tests/b47-source.py
+      - name: Verify native uninstall and package lifecycle
+        run: |
+          clang -fobjc-arc -framework Foundation tests/uninstall-native.m -o /tmp/mybloxx-uninstall-test
+          /tmp/mybloxx-uninstall-test
+          python3 tests/prerm-lifecycle.py
+          python3 tests/postrm-lifecycle.py
+      - name: Verify fixed App Control policy and web acceleration
+        run: |
+          python3 tools/embed-app-control-js.py
+          clang -fobjc-arc -framework Foundation tests/app-control-native.m -o /tmp/mybloxx-app-control-test
+          /tmp/mybloxx-app-control-test
+          node tests/acceleration.js
+      - name: Verify Advanced switches (default off, hotspot hold rule)
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_RULE_TESTING=1 tests/connectivity-native.m -o /tmp/mybloxx-connectivity-test
+          MYB_FIXTURE_ROOT=$(mktemp -d) /tmp/mybloxx-connectivity-test
+          python3 tests/connectivity-wiring.py
+      - name: Generate refined identity artwork
+        if: ${{ !cancelled() }}
+        run: |
+          brew install librsvg
+          python3 -m venv /tmp/mybloxx-artwork
+          /tmp/mybloxx-artwork/bin/pip install Pillow numpy
+          echo "/tmp/mybloxx-artwork/bin" >> "$GITHUB_PATH"
+          /tmp/mybloxx-artwork/bin/python tools/generate-icons.py
+          /tmp/mybloxx-artwork/bin/python tests/b50-source.py
+      - name: Verify real preference layouts and player acceptance in iOS Simulator
+        if: ${{ !cancelled() }}
+        run: python3 tests/preview-simulator.py
+        timeout-minutes: 25
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MYbloXX-B50-UIKit-Screens
+          path: packages/UI-Previews/*
+          if-no-files-found: warn
+      - name: Verify custom switch interaction in iOS Simulator
+        if: ${{ !cancelled() }}
+        run: python3 tests/switch-simulator.py
+        timeout-minutes: 25
+      - name: Verify Hide Supervision Message layout reclaim in iOS Simulator
+        if: ${{ !cancelled() }}
+        run: python3 tests/supervision-simulator.py
+        timeout-minutes: 25
+      - name: Verify inline PAC transaction, recovery and refusals
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_INLINE_TESTING=1 tests/inline-pac-native.m -o /tmp/mybloxx-inline-test
+          /tmp/mybloxx-inline-test
+      - name: Verify helper wiring (single apply path, no PAC URL transport)
+        if: ${{ !cancelled() }}
+        run: python3 tests/inline-wiring.py
+      - name: Verify rule persistence and factory reset
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_RULE_TESTING=1 tests/rule-store-native.m -o /tmp/mybloxx-rule-store-test
+          /tmp/mybloxx-rule-store-test layout/usr/share/mybloxx/pacs
+      - name: Verify full setup backup and restore
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_RULE_TESTING=1 tests/setup-backup-native.m -o /tmp/mybloxx-setup-test
+          /tmp/mybloxx-setup-test layout/usr/share/mybloxx/pacs
+      - name: Verify update storage, supervision and App Control
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation tests/b42-native.m -o /tmp/mybloxx-b42-test
+          /tmp/mybloxx-b42-test
+          python3 tools/generate-profiles.py
+          clang -fobjc-arc -framework Foundation -DMYB_RULE_TESTING=1 -DMYB_SERVER_TESTING=1 -DMYB_PAC_PORT=18787 PACServer/main.m -o /tmp/mybloxx-pacd-test
+          python3 tests/pac-service.py /tmp/mybloxx-pacd-test layout/usr/share/mybloxx/pacs layout/usr/share/mybloxx/profiles
+      - name: Validate PAC behavior
+        if: ${{ !cancelled() }}
+        run: node tests/pac-regression.js
+      - name: Validate bundled PAC sources, aliases and behaviour
+        if: ${{ !cancelled() }}
+        run: node tests/bundled-pacs.js
+      - name: Verify blocked response behavior
+        if: ${{ !cancelled() }}
+        run: |
+          python3 tools/generate-block-brand.py
+          clang -fobjc-arc -framework Foundation -framework Security -framework JavaScriptCore -DMYB_BLOCK_PORT=18021 -DMYB_PREVIEW_PORT=18788 -DMYB_BRIDGE_TESTING=1 -DMYB_RULE_TESTING=1 BlockedServer/main.m -o /tmp/mybloxx-blockd-test
+          clang -fobjc-arc -framework Foundation tests/loopback-native.m -o /tmp/mybloxx-loopback-test
+          MYB_DUMP_PAGES=/tmp/mybloxx-pages python3 tests/blocked-response.py /tmp/mybloxx-blockd-test /tmp/mybloxx-loopback-test
+      - name: Verify blocked page layout at iPhone widths, dark/light and 200% text
+        if: ${{ !cancelled() }}
+        run: python3 tests/blocked-visual.py /tmp/mybloxx-pages /tmp/mybloxx-visual
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MYbloXX-RC5-blocked-page-screenshots
+          path: /tmp/mybloxx-visual/*.png
+          if-no-files-found: warn
+      - name: Verify Shield policy, grants, expiry and activity
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_SHIELD_TESTING=1 tests/shield-policy-native.m -o /tmp/mybloxx-shield-test
+          /tmp/mybloxx-shield-test
+          clang -fobjc-arc -framework Foundation -DMYB_SHIELD_TESTING=1 tests/shield-pending-native.m -o /tmp/mybloxx-shield-pending-test
+          /tmp/mybloxx-shield-pending-test
+          clang -fobjc-arc -framework Foundation tests/redirect-policy-native.m -o /tmp/mybloxx-redirect-policy-test
+          /tmp/mybloxx-redirect-policy-test
+          clang -fobjc-arc -framework Foundation tests/clean-link-native.m -o /tmp/mybloxx-clean-link-test
+          /tmp/mybloxx-clean-link-test
+          clang -fobjc-arc -framework Foundation -framework ImageIO -framework CoreGraphics tests/image-clean-native.m -o /tmp/mybloxx-image-clean-test
+          /tmp/mybloxx-image-clean-test
+          clang -fobjc-arc -framework Foundation tests/diag-session-native.m -o /tmp/mybloxx-diag-session-test
+          /tmp/mybloxx-diag-session-test
+          clang -fobjc-arc -framework Foundation tests/cleanup-rules-native.m -o /tmp/mybloxx-cleanup-rules-test
+          /tmp/mybloxx-cleanup-rules-test
+      - name: Sheet flow rules (profile options are never covered or dismissed)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation tests/sheet-flow-native.m -o /tmp/mybloxx-sheetflow-test
+          /tmp/mybloxx-sheetflow-test
+          python3 tests/profile-presentation-source.py
+      - name: Loader filters (no com.apple.UIKit injection)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation tests/ads-filter-native.m -o /tmp/mybloxx-adsfilter-test
+          /tmp/mybloxx-adsfilter-test
+      - name: Verify design tokens match the Settings palette
+        if: ${{ !cancelled() }}
+        run: |
+          python3 tools/generate-design-tokens.py && git diff --exit-code BlockedServer/tokens.generated.css Shared/MYBShieldTheme.h
+          python3 tests/design-tokens.py
+          python3 tests/status-page.py
+          python3 tests/copy-style.py
+          python3 tests/dns-profiles.py
+          python3 tests/legacy-profiles.py
+          python3 tests/hybrid-report.py
+          python3 tests/test-links.py
+          python3 tests/status-noflash.py
+          python3 tests/profile-migration-source.py
+      - name: Verify website exception transactions
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -DMYB_RULE_TESTING=1 tests/website-rules-native.m -o /tmp/mybloxx-website-test
+          /tmp/mybloxx-website-test layout/usr/share/mybloxx/pacs /tmp/mybloxx-website-pacs
+          node tests/website-pac.js /tmp/mybloxx-website-pacs
+      - name: Option identifiers
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/options-native.m -o /tmp/mybloxx-options-test
+          /tmp/mybloxx-options-test
+      - name: Rules engine (generated PACs vs supplied PACs, all option combinations)
+        if: ${{ !cancelled() }}
+        run: python3 tests/rules-engine.py
+      - name: Verify noXXX PIN logic
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/pin-native.m -o /tmp/mybloxx-pin-test
+          /tmp/mybloxx-pin-test
+      - name: Generator parity (JavaScript twin is byte-identical; bad rules refused)
+        if: ${{ !cancelled() }}
+        run: node tests/gen-parity.js
+      - name: RAGGR - user Allow beats every new rule; updater compatibility with the r16 generator
+        if: ${{ !cancelled() }}
+        run: |
+          git cat-file -e 7e87ee4d8bd2610da18de31cc9ff595c65c7ab8f^{commit} 2>/dev/null || git fetch --no-tags --depth=1 origin 7e87ee4d8bd2610da18de31cc9ff595c65c7ab8f
+          node tests/raggr-allow.js
+          node tests/raggr-update.js
+      - name: Exception policy across all 40 PACs (graph.facebook.com, apex/www pairs) and the upstream rules tree
+        if: ${{ !cancelled() }}
+        run: |
+          node tests/policy-exceptions.js
+          python3 tests/upstream-prep.py
+      - name: On-device generator (JavaScriptCore) matches the bundled PACs
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -framework JavaScriptCore tests/rules-gen-native.m -o /tmp/mybloxx-gen-test
+          /tmp/mybloxx-gen-test layout/usr/share/mybloxx/generator layout/usr/share/mybloxx/pacs
+      - name: Verify banner ownership and one-decision-per-popup state
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/popup-state-native.m -o /tmp/mybloxx-popup-state-test
+          /tmp/mybloxx-popup-state-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/popup-gate-native.m -o /tmp/mybloxx-popup-gate-test
+          /tmp/mybloxx-popup-gate-test
+      - name: Verify recovery throttling (repeated successful recreations are bounded)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/recovery-throttle-native.m -o /tmp/mybloxx-recovery-throttle-test
+          /tmp/mybloxx-recovery-throttle-test
+      - name: Verify the real helper - website, update and restore apply failures; expiry/revoke leave the live PAC
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -fblocks -I tests/helper-stub -DMYB_INLINE_TESTING=1 -DMYB_HELPER_TESTING=1 -DMYB_RULE_TESTING=1 -framework Foundation -framework JavaScriptCore -framework CFNetwork -framework SystemConfiguration tests/helper-real-native.m -o /tmp/mybloxx-helper-real-test -Wno-deprecated-declarations
+          /tmp/mybloxx-helper-real-test layout/usr/share/mybloxx/pacs
+      - name: Verify website Allow end to end - real helper process, real argv, blocked page to live PAC
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -fblocks -I tests/helper-stub -DMYB_INLINE_TESTING=1 -DMYB_HELPER_TESTING=1 -DMYB_RULE_TESTING=1 -DMYB_SHIELD_TESTING=1 -framework Foundation -framework JavaScriptCore -framework CFNetwork -framework SystemConfiguration tests/helper-process-main.m -o /tmp/mybloxx-helper-process -Wno-deprecated-declarations
+          python3 tests/website-allow-e2e.py /tmp/mybloxx-blockd-test /tmp/mybloxx-helper-process layout/usr/share/mybloxx/pacs
+      - name: Check the Legacy Mode profile endpoints (reachability of every mapped PAC address)
+        if: ${{ !cancelled() }}
+        run: python3 tools/verify-profile-endpoints.py
+      - name: Upstream availability and comparison of the published PAC files (hosted by jsDelivr, outside this repository)
+        if: ${{ !cancelled() }}
+        run: |
+          # Rule correctness is tested locally by the PAC steps above and below. This step reads the live files. A host-side failure
+          # (exit 3) is printed in full with its classified cause and raised as a workflow warning, never hidden; a real
+          # behavioural difference or any other error still fails the step. Legacy URLs are not changed to make this pass.
+          set +e
+          python3 tools/compare-published-pacs.py
+          rc=$?
+          if [ "$rc" -eq 3 ]; then echo "::warning title=Published PAC host unavailable::see the classified cause printed above; the live files could not be compared"; exit 0; fi
+          exit $rc
+      - name: Verify bulk Custom Rules - preview, conflicts, limits and undo
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/bulk-rules-native.m -o /tmp/mybloxx-bulk-test
+          /tmp/mybloxx-bulk-test
+      - name: Verify legacy profile migration classifier
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/profile-migration-native.m -o /tmp/mybloxx-profile-migration-test
+          /tmp/mybloxx-profile-migration-test
+      - name: Verify noXXX PIN end to end - real helper process, real stdin, blocked page, throttling, approvals, bypass attempts
+        if: ${{ !cancelled() }}
+        run: python3 tests/pin-e2e.py /tmp/mybloxx-blockd-test /tmp/mybloxx-helper-process layout/usr/share/mybloxx/pacs
+      - name: Verify the WebKit Networking refresh engine (pid reuse, bounded wait, exact paths)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/process-refresh-native.m -o /tmp/mybloxx-process-refresh-test
+          /tmp/mybloxx-process-refresh-test
+      - name: Verify the WebKit refresh policy through the real helper (once per committed change, never for reads, no-ops or failures)
+        if: ${{ !cancelled() }}
+        run: python3 tests/webkit-refresh-e2e.py /tmp/mybloxx-helper-process layout/usr/share/mybloxx/pacs
+      - name: Verify automatic recovery after reboot / re-jailbreak (real helper process)
+        if: ${{ !cancelled() }}
+        run: python3 tests/startup-recovery-e2e.py /tmp/mybloxx-helper-process layout/usr/share/mybloxx/pacs
+      - name: Verify first-install defaults, upgrade preservation, Restore Default Settings and Proxy Override (real helper process)
+        if: ${{ !cancelled() }}
+        run: python3 tests/defaults-e2e.py /tmp/mybloxx-helper-process layout/usr/share/mybloxx/pacs
+      - name: Verify delegate forwarding (one decision per callback, partial hosts, async bridging)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -framework WebKit -Wall -Wextra tests/delegate-proxy-native.m -o /tmp/mybloxx-delegate-proxy-test
+          /tmp/mybloxx-delegate-proxy-test
+      - name: Verify Proxy Override validation and reachability
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/proxy-check-native.m -o /tmp/mybloxx-proxy-check-test
+          /tmp/mybloxx-proxy-check-test
+      - name: Verify reset and Proxy Override messages match what the transaction did
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/outcome-native.m -o /tmp/mybloxx-outcome-test
+          /tmp/mybloxx-outcome-test
+      - name: Verify the final release source checks
+        if: ${{ !cancelled() }}
+        run: python3 tests/final-release-source.py
+      - name: Verify the App Control preparation state logic
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/app-prep-native.m -o /tmp/mybloxx-app-prep-test
+          /tmp/mybloxx-app-prep-test
+      - name: Verify bridge failure and stale-settings handling
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/bridge-state-native.m -o /tmp/mybloxx-bridge-state-test
+          /tmp/mybloxx-bridge-state-test
+      - name: Verify helper invocations match the entry-point validator
+        if: ${{ !cancelled() }}
+        run: python3 tests/helper-invocations.py
+      - name: Verify browser inclusion and exclusion policy
+        if: ${{ !cancelled() }}
+        run: python3 tests/browser-policy.py
+      - name: Verify Shield source wiring
+        if: ${{ !cancelled() }}
+        run: python3 tests/shield-wiring.py
+      - name: Depiction check
+        if: ${{ !cancelled() }}
+        run: python3 tests/depiction.py
+      - name: Design restraint check
+        if: ${{ !cancelled() }}
+        run: python3 tests/design-restraint.py
+      - name: UI wiring (dashboard order, Legacy Mode, strictness, App Control, protection tests)
+        if: ${{ !cancelled() }}
+        run: python3 tests/ui-wiring.py
+      - name: Legacy names, compatibility identifiers and provenance notices
+        if: ${{ !cancelled() }}
+        run: python3 tests/branding.py
+      - name: Mode notices match the shipped PACs
+        if: ${{ !cancelled() }}
+        run: node tests/mode-notices.js
+      - name: Provenance and licence notices match the source
+        if: ${{ !cancelled() }}
+        run: python3 tests/provenance.py
+      - name: Help content and PAC viewer wiring
+        if: ${{ !cancelled() }}
+        run: python3 tests/help-pacview.py
+      - name: Installer banner and honest success reporting
+        if: ${{ !cancelled() }}
+        run: python3 tests/postinst-run.py
+      - name: Verify provenance, redirect policy and supervision
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -framework JavaScriptCore tests/b22-native.m -o /tmp/mybloxx-b22-test
+          /tmp/mybloxx-b22-test
+      - name: In-App Ad Blocking modules (behaviour on real runtime classes)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-native.m -o /tmp/mybloxx-inappads-test
+          /tmp/mybloxx-inappads-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-tiktok-native.m -o /tmp/mybloxx-inappads-tiktok-test
+          /tmp/mybloxx-inappads-tiktok-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-dispatch-native.m -o /tmp/mybloxx-inappads-dispatch-test
+          /tmp/mybloxx-inappads-dispatch-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-facebook-native.m -o /tmp/mybloxx-inappads-facebook-test
+          /tmp/mybloxx-inappads-facebook-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/profile-install-native.m -o /tmp/mybloxx-profile-install-test
+          /tmp/mybloxx-profile-install-test
+          python3 tests/profile-install-source.py
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/supervision-message-native.m -o /tmp/mybloxx-supervision-message-test
+          /tmp/mybloxx-supervision-message-test
+          clang -fobjc-arc -framework Foundation -framework JavaScriptCore -framework CoreGraphics -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-amazon-native.m -o /tmp/mybloxx-inappads-amazon-test
+          /tmp/mybloxx-inappads-amazon-test
+          python3 tests/inappads-source.py
+      - name: Verify YouTube Music, X and Messenger ad modules (real runtime classes, ads-only filtering)
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-more-native.m -o /tmp/mybloxx-inappads-more-test
+          /tmp/mybloxx-inappads-more-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-rules-native.m -o /tmp/mybloxx-inappads-rules-test
+          /tmp/mybloxx-inappads-rules-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-discovery-native.m -o /tmp/mybloxx-inappads-discovery-test
+          /tmp/mybloxx-inappads-discovery-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/adsdk-native.m -o /tmp/mybloxx-adsdk-test
+          /tmp/mybloxx-adsdk-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-bilibili-native.m -o /tmp/mybloxx-inappads-bilibili-test
+          /tmp/mybloxx-inappads-bilibili-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/inappads-tiktok-native.m -o /tmp/mybloxx-inappads-tiktok-test
+          /tmp/mybloxx-inappads-tiktok-test
+          python3 tests/inappads-source.py
+          python3 tests/inappads-evidence.py
+      - name: Verify local PAC transport
+        if: ${{ !cancelled() }}
+        run: |
+          clang -fobjc-arc -framework Foundation tests/transport-native.m -o /tmp/mybloxx-transport-test
+          /tmp/mybloxx-transport-test layout/usr/share/mybloxx/pacs /tmp/mybloxx-served-pacs
+          node tests/transport-regression.js /tmp/mybloxx-served-pacs
+      - name: Install RootHide Theos
+        if: ${{ !cancelled() }}
+        run: |
+          brew install ldid make
+          git clone --recursive --depth 1 https://github.com/roothide/theos.git "$HOME/roothide-theos"
+          rm -rf "$HOME/roothide-theos/sdks"
+          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/roothide-theos/sdks"
+          echo "THEOS=$HOME/roothide-theos" >> "$GITHUB_ENV"
+      - name: Prepare icons and permissions
+        if: ${{ !cancelled() }}
+        run: |
+          python3 tools/generate-icons.py
+          swift tools/generate-cc-icons.swift
+          chmod +x layout/usr/libexec/mybloxx-control layout/DEBIAN/postinst layout/DEBIAN/prerm layout/DEBIAN/postrm
+          sh -n layout/DEBIAN/postinst layout/DEBIAN/prerm layout/DEBIAN/postrm
+      - name: Compile full RootHide integration
+        if: ${{ !cancelled() }}
+        run: |
+          export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+          make clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide ARCHS="arm64 arm64e" TARGET=iphone:clang:latest:15.0
+      - name: Validate rebuilt preference bundle with Apple dyld tools
+        if: ${{ !cancelled() }}
+        run: |
+          BUNDLE=$(find .theos -type f -path '*/MYbloXXDiagnostics.bundle/MYbloXXDiagnostics' | head -1)
+          test -n "$BUNDLE"
+          xcrun dyld_info -validate_only "$BUNDLE"
+          xcrun dyld_info -imports "$BUNDLE" > /tmp/mybloxx-preferences-imports.txt
+          otool -L "$BUNDLE"
+          if otool -L "$BUNDLE" | grep -q 'MYBPrism'; then exit 1; fi
+      - name: Include full RC source
+        if: ${{ !cancelled() }}
+        run: |
+          python3 - <<'PYCODE'
+          import subprocess, zipfile
+          from pathlib import Path
+          files=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          with zipfile.ZipFile('packages/MYbloXX_RH-15-112526_Full_Source.zip','w',zipfile.ZIP_DEFLATED) as archive:
+              for name in files:
+                  if name and Path(name).is_file(): archive.write(name, 'MYbloXX-RH-15-112526/'+name)
+          PYCODE
+      - name: Verify package identity, slices, linkage, entitlements and scripts
+        if: ${{ !cancelled() }}
+        run: |
+          brew install dpkg
+          python3 tests/verify-package.py packages
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MYbloXX-RH-15-112526-ROOTHIDE
+          path: packages/*
+          if-no-files-found: error
+
