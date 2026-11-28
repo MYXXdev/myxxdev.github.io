@@ -1,0 +1,39 @@
+{
+ "stamp": "11/15/26 - 11:25 MST",
+ "modes": {
+  "allowY": {
+   "attachment": "dbb19dcd-allowY.pac",
+   "sha256": "9f1cb4d4c68a54555ac98b8574f7f6092eaa8bebc15504822cbbac04b139f201"
+  },
+  "blockAdSense": {
+   "attachment": "66503169-blockAdSense.pac",
+   "sha256": "3cb01e390f3f88b6f012aec76f8c3d45afcbfd3c6e0cf315ba57d6c37b8a93b3"
+  },
+  "blockApple": {
+   "attachment": "e129ded6-blockApple.pac",
+   "sha256": "c211be5f563a785784f736265c0c056c655e2f73b1d04a0d241dced43e5eaca7"
+  },
+  "blockSocials": {
+   "attachment": "5d995060-blockSocials.pac",
+   "sha256": "09325afefdd90807b2b1b0e4893368b73eee760a03a505989b64fd1503c56bc1"
+  },
+  "Default": {
+   "attachment": "9cf47104-Default.pac",
+   "sha256": "6d90c7762967284a400ecb61a0bd5eebb2c55cdc1f412591668f7ed814673677"
+  },
+  "blockXXX": {
+   "attachment": "bff0bbaa-blockXXX.pac",
+   "sha256": "3d6e1fd30d5a8199a55080e43ec7f15969620356192793bfc50463a0710cd695"
+  }
+ },
+ "aliases": {
+  "MYbloXX": "Default",
+  "MYbloXXTest": "Default",
+  "MYbloXXallowFB": "Default",
+  "MYbloXXnoFB": "Default",
+  "MYbloXXallowY": "allowY",
+  "MYbloXXnoApple": "blockApple",
+  "MYbloXXnoSocials": "blockSocials",
+  "MYbloXXnoXXX": "blockXXX"
+ }
+}

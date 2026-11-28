@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>net.myxxdev.mybloxx.dns.quad9</string>
+	<key>PayloadUUID</key>
+	<string>2A691E68-43A9-5DFA-9DA5-955928628697</string>
+	<key>PayloadDisplayName</key>
+	<string>MYbloXX® DNS - Quad9 (secured)</string>
+	<key>PayloadOrganization</key>
+	<string>MYXXdev™</string>
+	<key>PayloadDescription</key>
+	<string>Encrypted DNS (DNS over HTTPS) using Quad9 (secured). This profile only sets which DNS resolver iOS uses; it does not change MYbloXX® blocking. Remove it in Settings &gt; General &gt; VPN &amp; Device Management.</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>net.myxxdev.mybloxx.dns.quad9.settings</string>
+			<key>PayloadUUID</key>
+			<string>4E2DE41D-2A2F-58A3-B9C5-F2187C378706</string>
+			<key>PayloadDisplayName</key>
+			<string>Quad9 (secured) (encrypted DNS)</string>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://dns.quad9.net/dns-query</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>9.9.9.9</string>
+					<string>149.112.112.112</string>
+					<string>2620:fe::fe</string>
+					<string>2620:fe::9</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+Package: net.myxxdev.mybloxx15
+Name: MYbloXX® (RootHide)
+Version: 6.11252026-62-RH
+Architecture: iphoneos-arm64e
+Maintainer: MYXXdev™
+Author: MYXXdev™
+Section: Networking
+Depends: firmware (>= 15.0), preferenceloader, mobilesubstrate, com.opa334.ccsupport
+Conflicts: com.myxxdev.reserve, xyz.cypwn.sentinel, com.megadev.sentinel, ai.paisseon.reverie, net.myxxdev.mybloxxcc2.fix, net.myxxdev.mybloxx.speedycc, com.myxxdev.emptyrecentlydeleted
+Replaces: com.myxxdev.reserve, net.myxxdev.mybloxxcc2.fix, net.myxxdev.mybloxx.speedycc, com.myxxdev.emptyrecentlydeleted
+Provides: net.myxxdev.mybloxx, com.myxxdev.reserve
+RootHide: true
+Tag: role::tweak, roothide::compatible
+Description: System-wide ad, tracker and popup blocking for iOS
+ MYbloXX® by MYXXdev™ blocks ads and trackers across your iPhone with a local
+ proxy. Add your own rules, protect supported browsers from popups and redirects
+ with Shield, remove ads inside supported apps, and choose which apps run
+ without blocking with App Control. Everything runs on this iPhone, and the
+ built-in rules update automatically. For iOS 15 and later with RootHide.

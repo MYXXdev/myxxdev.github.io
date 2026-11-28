@@ -1,0 +1,134 @@
+name: MYbloXX® (RootHide) DEB build only (no test suite)
+# A cheap, manual way to get the package. It does the same build as the full workflow (same generated files, same Theos commands,
+# same package verification, same SHA-256) but runs none of the native, simulator or Python test suites. A DEB from here has been
+# built and package-verified on the runner; it is NOT backed by a green full test run. The full workflow (build-roothide.yml)
+# is unchanged and remains the complete check. Start it by pushing a commit to the branch codex/rh-15-111626-deb-only or codex/rh-15-111926-deb-only (a workflow
+# file that exists only off the default branch cannot be started from the Actions page).
+on:
+  workflow_dispatch:
+  push:
+    branches: ['codex/rh-15-111626-deb-only','codex/rh-15-111926-deb-only','codex/rh-15-112526-deb-only','codex/rh-15-112526-r3-deb-only','codex/rh-15-112526-r4-deb-only','codex/rh-15-112526-r5-deb-only','codex/rh-15-112526-r6-deb-only','codex/rh-15-112526-r7-deb-only','codex/rh-15-112526-r8-deb-only','codex/rh-15-112526-r9-deb-only','codex/rh-15-112526-r10-deb-only','codex/rh-15-112526-r11-deb-only','codex/rh-15-112526-r12-deb-only','codex/rh-15-112526-r13-deb-only','codex/rh-15-112526-r14-deb-only','codex/rh-15-112526-r15-deb-only','codex/rh-15-112526-r16-deb-only','codex/rh-15-112526-r62-deb-only'] # push the commit to this branch name to start a run; nothing is merged
+concurrency:
+  group: mybloxx-deb-only-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  deb:
+    runs-on: macos-26-intel
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Embed the App Control script
+        run: python3 tools/embed-app-control-js.py
+      - name: Generate identity artwork
+        run: |
+          brew install librsvg
+          python3 -m venv /tmp/mybloxx-artwork
+          /tmp/mybloxx-artwork/bin/pip install Pillow numpy
+          echo "/tmp/mybloxx-artwork/bin" >> "$GITHUB_PATH"
+          /tmp/mybloxx-artwork/bin/python tools/generate-icons.py
+          /tmp/mybloxx-artwork/bin/python tools/generate-browser-icon.py
+      - name: Generate PAC profiles and the blocked-page brand header
+        run: |
+          python3 tools/generate-profiles.py
+          python3 tools/generate-block-brand.py
+          python3 tools/generate-junk-callers.py
+      - name: Install RootHide Theos
+        run: |
+          brew install ldid make
+          git clone --recursive --depth 1 https://github.com/roothide/theos.git "$HOME/roothide-theos"
+          rm -rf "$HOME/roothide-theos/sdks"
+          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/roothide-theos/sdks"
+          echo "THEOS=$HOME/roothide-theos" >> "$GITHUB_ENV"
+      - name: Prepare icons and permissions
+        run: |
+          python3 tools/generate-icons.py
+          swift tools/generate-cc-icons.swift
+          chmod +x layout/usr/libexec/mybloxx-control layout/DEBIAN/postinst layout/DEBIAN/prerm layout/DEBIAN/postrm
+          sh -n layout/DEBIAN/postinst layout/DEBIAN/prerm layout/DEBIAN/postrm
+      - name: Focused profile checks (source and native)
+        run: |
+          python3 tests/profile-install-source.py
+          python3 tests/profile-migration-source.py
+          python3 tests/profile-presentation-source.py
+          python3 tests/ui-wiring.py
+          python3 tests/supervision-tap-source.py
+          python3 tests/bar-title-source.py
+          python3 tests/activity-source.py
+          python3 tests/shield-wiring.py
+          python3 tests/branding.py
+          python3 tests/provenance.py
+          python3 tests/connectivity-wiring.py
+          python3 tests/rh15-112526-source.py
+          python3 tests/popup-test-source.py
+          python3 tests/tiles-source.py
+          python3 tests/rh15-r3-source.py
+          python3 tests/private-calls-source.py
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/private-calls-core.m -o /tmp/mybloxx-private-calls-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/private-calls-store.m -o /tmp/mybloxx-private-calls-store-test
+          /tmp/mybloxx-private-calls-store-test
+          /tmp/mybloxx-private-calls-test
+          python3 tests/firewall-source.py
+          python3 tests/message-probe-source.py
+          python3 tests/message-firewall-source.py
+          python3 tests/browser-policy.py
+          python3 tests/private-browser-source.py
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/firewall-core.m -o /tmp/mybloxx-firewall-test
+          /tmp/mybloxx-firewall-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/junk-callers-core.m -o /tmp/mybloxx-junk-callers-test
+          /tmp/mybloxx-junk-callers-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/message-firewall-core.m -o /tmp/mybloxx-message-firewall-test
+          /tmp/mybloxx-message-firewall-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Werror tests/profile-migration-native.m -o /tmp/mybloxx-profile-migration-test
+          /tmp/mybloxx-profile-migration-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra -Wno-unused-parameter -Wno-unused-function tests/profile-install-native.m -o /tmp/mybloxx-profile-install-test
+          /tmp/mybloxx-profile-install-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/activity-native.m -o /tmp/mybloxx-activity-test
+          /tmp/mybloxx-activity-test
+          clang -fobjc-arc -framework Foundation -framework JavaScriptCore -Wall -Wextra tests/watch-native.m -o /tmp/mybloxx-watch-test
+          /tmp/mybloxx-watch-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/rh15-112526-native.m -o /tmp/mybloxx-rh15-112526-test
+          /tmp/mybloxx-rh15-112526-test
+          clang -fobjc-arc -framework Foundation -Wall -Wextra tests/supervision-message-native.m -o /tmp/mybloxx-supervision-message-test
+          /tmp/mybloxx-supervision-message-test
+      - name: Compile full RootHide integration
+        run: |
+          export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+          make clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide ARCHS="arm64 arm64e" TARGET=iphone:clang:latest:15.0
+      - name: Validate rebuilt preference bundle with Apple dyld tools
+        run: |
+          BUNDLE=$(find .theos -type f -path '*/MYbloXXDiagnostics.bundle/MYbloXXDiagnostics' | head -1)
+          test -n "$BUNDLE"
+          xcrun dyld_info -validate_only "$BUNDLE"
+          xcrun dyld_info -imports "$BUNDLE" > /tmp/mybloxx-preferences-imports.txt
+          otool -L "$BUNDLE"
+          if otool -L "$BUNDLE" | grep -q 'MYBPrism'; then exit 1; fi
+      - name: Include full RC source
+        run: |
+          python3 - <<'PYCODE'
+          import subprocess, zipfile
+          from pathlib import Path
+          files=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          with zipfile.ZipFile('packages/MYbloXX_RH-15-112526_Full_Source.zip','w',zipfile.ZIP_DEFLATED) as archive:
+              for name in files:
+                  if name and Path(name).is_file(): archive.write(name, 'MYbloXX-RH-15-112526/'+name)
+          PYCODE
+      - name: Verify package identity, slices, linkage, entitlements and scripts
+        run: |
+          brew install dpkg
+          python3 tests/verify-package.py packages
+          echo "COMMIT ${GITHUB_SHA}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MYbloXX-RH-15-112526-ROOTHIDE-BUILD-ONLY
+          path: packages/*
+          if-no-files-found: error
+      - name: Publish the built package to an output branch (the artifact download goes through a blob host this session's network policy can't reach)
+        run: |
+          mkdir -p /tmp/out-publish && cp packages/*.deb packages/*.zip /tmp/out-publish/ 2>/dev/null || true
+          git checkout --orphan ci-out-branch
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/out-publish/* .
+          git add -A
+          git -c user.email="ci@myxxdev.github.io" -c user.name="MYbloXX CI" commit -m "r49 deb output"
+          git push origin HEAD:refs/heads/${{ github.ref_name }}-out --force

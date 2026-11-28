@@ -1,0 +1,9 @@
+Package: net.myxxdev.mybloxx.safariguard
+Name: MYbloXX Shield (browser component)
+Version: 1.0.0
+Architecture: iphoneos-arm64e
+Depends: firmware (>= 15.0), mobilesubstrate
+Description: MYbloXX Shield navigation and popup controls for supported browsers
+Maintainer: MYXXdev
+Author: MYXXdev™
+Section: Tweaks

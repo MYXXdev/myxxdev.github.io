@@ -1,0 +1,33 @@
+{
+ "_comment": "Single source for MYbloXX Shield visual tokens. Values mirror Preferences/MYBDesign.m (checked by tests/design-tokens.py). dark is canonical (Settings is dark); light is the same hues re-weighted for a light system appearance.",
+ "dark": {
+  "background": [0.035, 0.043, 0.063],
+  "panel": [0.075, 0.084, 0.113],
+  "panelHighlight": [0.118, 0.128, 0.170],
+  "accent": [0.71, 0.62, 1.0],
+  "muted": [0.52, 0.57, 0.66],
+  "positive": [0.40, 0.88, 0.68],
+  "warning": [1.0, 0.76, 0.36],
+  "danger": [1.0, 0.48, 0.56],
+  "rose": [1.0, 0.52, 0.60],
+  "violetDeep": [0.50, 0.38, 0.90],
+  "hairlineAlpha": 0.07,
+  "text": [0.95, 0.96, 0.98]
+ },
+ "light": {
+  "background": [0.955, 0.955, 0.975],
+  "panel": [1.0, 1.0, 1.0],
+  "panelHighlight": [0.935, 0.935, 0.965],
+  "accent": [0.45, 0.31, 0.86],
+  "muted": [0.36, 0.40, 0.48],
+  "positive": [0.08, 0.50, 0.36],
+  "warning": [0.66, 0.40, 0.02],
+  "danger": [0.80, 0.18, 0.30],
+  "rose": [0.80, 0.18, 0.30],
+  "violetDeep": [0.50, 0.38, 0.90],
+  "hairlineAlpha": 0.10,
+  "text": [0.09, 0.10, 0.14]
+ },
+ "radius": {"card": 20, "sheet": 28, "button": 16, "tile": 16, "pill": 99},
+ "tile": 34
+}

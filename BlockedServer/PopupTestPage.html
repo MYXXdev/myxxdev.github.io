@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark light"><meta name="referrer" content="no-referrer"><title>Popup Test · MYbloXX®</title>
+<style>
+/*MYB_TOKENS*/
+/*MYB_GLASS*/
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:400 1rem/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.page{position:relative;max-width:640px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+header{display:flex;align-items:center;gap:.7rem;padding:.3rem .1rem .9rem}
+.brand{width:34px;height:34px;border-radius:22.37%;border:.75px solid rgba(255,255,255,.24)}
+.wordmark{font:700 1.06rem/1 -apple-system,sans-serif;letter-spacing:-.02em}.wordmark sup{font-size:.55em}
+.kicker{margin-left:auto;font:600 .66rem/1 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.hero{padding:1.4rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.9rem;background-image:radial-gradient(120% 90% at 0% 0%,color-mix(in srgb,var(--rose) 22%,transparent),transparent 62%)}
+.hero-top{display:flex;gap:1rem;align-items:center}
+.tile{flex:none;width:3.9rem;height:3.9rem;border-radius:22px;display:grid;place-items:center;color:var(--rose);background:color-mix(in srgb,currentColor 13%,transparent);border:.5px solid color-mix(in srgb,currentColor 34%,transparent);box-shadow:0 8px 28px color-mix(in srgb,currentColor 28%,transparent)}
+.tile svg{width:1.9rem;height:1.9rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h1{margin:0;font:750 1.65rem/1.12 -apple-system,sans-serif;letter-spacing:-.025em}
+.lede{margin:.2rem 0 0;color:var(--muted);font-size:.93rem}
+.score{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{font:600 .78rem/1 -apple-system,sans-serif;padding:.45rem .7rem;border-radius:999px;border:.5px solid var(--hair);background:color-mix(in srgb,var(--panel2) 70%,transparent)}
+.chip b{font-weight:700}.chip.ok b{color:var(--ok)}.chip.bad b{color:var(--warn)}
+.btn{appearance:none;-webkit-appearance:none;min-height:44px;padding:.55rem 1rem;border-radius:var(--r-btn);border:.5px solid var(--hair);background:var(--panel2);color:var(--text);font:600 .95rem/1.1 -apple-system,sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:transparent}
+.stack{display:flex;flex-direction:column;gap:.75rem;margin-top:.9rem}
+.case{padding:1rem 1.05rem;display:flex;flex-direction:column;gap:.7rem}
+.case-top{display:flex;align-items:flex-start;gap:.8rem}
+.num{flex:none;width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;font:700 .85rem/1 -apple-system,sans-serif;color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.case h2{margin:0;font:650 1rem/1.25 -apple-system,sans-serif}.case p{margin:.2rem 0 0;color:var(--muted);font-size:.86rem;line-height:1.45}
+.row{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.result{font:650 .8rem/1 -apple-system,sans-serif;padding:.4rem .65rem;border-radius:999px;border:.5px solid var(--hair);color:var(--muted)}
+.result[data-r="blocked"]{color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent);animation:pop .4s var(--ease) both}
+.result[data-r="opened"]{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent);animation:pop .4s var(--ease) both}
+.result[data-r="wait"]{color:var(--accent)}
+.help{margin:.9rem .2rem 0;color:var(--muted);font-size:.84rem;line-height:1.5}
+/* Light rendering: this page has ten cards, so it uses flat panels, no backdrop blur and no animated blurred background. Same look, a fraction of the compositing work. */
+.ambient{display:none}.glass{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--panel)}.rise{animation:none;opacity:1;transform:none}
+body{background:radial-gradient(120% 60% at 0% 0%,color-mix(in srgb,var(--accent-deep) 40%,transparent),transparent 60%),var(--bg)}
+.ready{display:flex;align-items:center;gap:.5rem;margin:.2rem .1rem .8rem;color:var(--muted);font:600 .8rem/1.3 -apple-system,sans-serif}.ready i{width:.55rem;height:.55rem;border-radius:50%;background:var(--ok);display:inline-block}
+.btn.wide{width:100%;justify-content:flex-start;text-align:left}
+footer{text-align:center;color:var(--muted);font:600 .64rem/1 -apple-system,sans-serif;letter-spacing:.18em;padding:1.4rem 0 .2rem}
+</style></head>
+<body><div class="page">
+<header><img class="brand" src="data:image/png;base64,{{MYB_BRAND}}" alt=""><span class="wordmark">MYbloXX<sup>®</sup></span><span class="kicker">Popup Test</span></header>
+<main>
+<section class="hero glass rise">
+ <div class="hero-top"><div class="tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2.5"/><path d="M7 9h6M21 9v8a3 3 0 0 1-3 3H8"/></svg></div>
+ <div><h1>Popup Test</h1><p class="lede">Try each test below. “Blocked” means MYbloXX® Shield stopped the new window. “Opened” means it got through.</p></div></div>
+ <div class="score" aria-live="polite"><span class="chip ok"><b id="nb">0</b> blocked</span><span class="chip bad"><b id="no">0</b> opened</span></div>
+ <div class="row"><button class="btn primary" id="all" type="button">Run Tests 1 to 7</button><button class="btn" id="reset" type="button">Clear Results</button></div>
+</section>
+<div class="ready" role="status"><i></i>Page ready. Nothing runs until you tap a button.</div>
+<div class="stack" id="cases"></div>
+<p class="help">With Block Popups on, Strict blocks all of these. Standard lets through a window you opened with a tap (tests 1, 3 and 4) and blocks the ones that open on their own. Test 8 sends this page somewhere else, so it only runs when you tap it, and the target page has a Back button.</p>
+</main><footer>MYXXdev™ · LOCAL AND OFFLINE</footer></div>
+<script>
+(function(){
+'use strict';
+var T='/mybloxx-window-target',other=location.protocol+'//localhost:'+location.port;
+var tests=[
+ {id:'click',b:'Run Test 1: Tap-Opened Window',t:'Window opened by a tap',d:'window.open() called straight from your tap, the normal way sites open a window.',run:function(){return window.open(T+'?t=click','_blank');}},
+ {id:'timer',b:'Run Test 2: Window After a Delay',t:'Opens on its own after a delay',d:'Waits two seconds after your tap, then calls window.open(). Nothing you touch opens it.',delay:2200,run:function(){return window.open(T+'?t=timer','_blank');}},
+ {id:'link',t:'Link that opens a new tab',d:'A normal link with target="_blank". Tap it.',link:true},
+ {id:'form',t:'Form that opens a new tab',d:'A form with target="_blank" submitted by your tap.',form:true},
+ {id:'under',b:'Run Test 5: Pop-Under',t:'Pop-under',d:'Opens a window, then pulls focus back to this page so you do not notice it.',run:function(){var w=window.open(T+'?t=under','_blank');if(w){try{window.focus();}catch(e){}}return w;}},
+ {id:'chain',b:'Run Test 6: Three Windows at Once',t:'Several at once',d:'Calls window.open() three times from one tap.',run:function(){var a=window.open(T+'?t=1','_blank'),b=window.open(T+'?t=2','_blank'),c=window.open(T+'?t=3','_blank');return a||b||c;}},
+ {id:'other',b:'Run Test 7: Window on Another Site Name',t:'Window on a different site name',d:'Opens a window on another site name (localhost), so it counts as a different website.',run:function(){return window.open(other+T+'?t=other','_blank');}},
+ {id:'redirect',b:'Run Test 8: Page Redirects Itself',t:'Page sends you somewhere else on its own',d:'After a short delay this page tries to navigate itself away. It comes back to this page.',delay:1800,run:function(){try{location.href=T+'?t=redirect&back=1';}catch(e){}return null;},nocheck:true}
+];
+var host=document.getElementById('cases'),blocked=0,opened=0,state={};
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+function tally(){document.getElementById('nb').textContent=blocked;document.getElementById('no').textContent=opened;}
+function mark(id,r){var prev=state[id];if(prev===r)return;if(prev==='blocked')blocked--;if(prev==='opened')opened--;state[id]=r;if(r==='blocked')blocked++;if(r==='opened')opened++;var n=document.getElementById('r-'+id);n.dataset.r=r;n.textContent=r==='blocked'?'Blocked':r==='opened'?'Opened':'Waiting...';tally();}
+function judge(id,w){var ok=false;try{ok=!!w&&!w.closed;}catch(e){ok=!!w;}mark(id,ok?'opened':'blocked');if(ok){try{w.close();}catch(e){}}}
+tests.forEach(function(c,i){
+ var card=el('section','glass sub case rise');card.style.setProperty('--i',String(i+1));
+ var top=el('div','case-top');top.appendChild(el('span','num',String(i+1)));var box=el('div');box.appendChild(el('h2',null,c.t));box.appendChild(el('p',null,c.d));top.appendChild(box);card.appendChild(top);
+ var row=el('div','row'),res=el('span','result','Not run');res.id='r-'+c.id;
+ if(c.link){var a=el('a','btn primary wide','Run Test 3: Open the Link in a New Tab');a.href=T+'?t=link';a.target='_blank';a.addEventListener('click',function(){mark(c.id,'wait');setTimeout(function(){mark(c.id,state[c.id]==='wait'?'opened':state[c.id]);},800);});row.appendChild(a);}
+ else if(c.form){var f=el('form');f.action=T;f.method='get';f.target='_blank';var h=el('input');h.type='hidden';h.name='t';h.value='form';f.appendChild(h);var b=el('button','btn primary wide','Run Test 4: Submit the Form to a New Tab');b.type='submit';f.appendChild(b);f.addEventListener('submit',function(){mark(c.id,'wait');setTimeout(function(){if(state[c.id]==='wait')mark(c.id,'opened');},800);});row.appendChild(f);}
+ else{var b2=el('button','btn primary wide',c.b);b2.setAttribute('aria-label',c.b);b2.type='button';b2.addEventListener('click',function(){c.go();});row.appendChild(b2);
+  c.go=function(){mark(c.id,'wait');var fire=function(){var w=null;try{w=c.run();}catch(e){}if(!c.nocheck)judge(c.id,w);else setTimeout(function(){mark(c.id,'blocked');},900);};if(c.delay)setTimeout(fire,c.delay);else fire();};}
+ row.appendChild(res);card.appendChild(row);host.appendChild(card);
+});
+document.getElementById('all').addEventListener('click',function(){var n=0;tests.forEach(function(c){if(c.go&&!c.nocheck){setTimeout(c.go,n*250);n++;}});});
+document.getElementById('reset').addEventListener('click',function(){blocked=0;opened=0;state={};tests.forEach(function(c){var n=document.getElementById('r-'+c.id);n.dataset.r='';n.textContent='Not run';});tally();});
+})();
+</script>
+</body></html>

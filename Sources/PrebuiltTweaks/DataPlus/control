@@ -1,0 +1,9 @@
+Package: net.myxxdev.mybloxxdataplus
+Name: MYbloXX®
+Author: MYXXdev™
+Description: MYbloXX®
+Depends: mobilesubstrate
+Maintainer: MYXXdev
+Architecture: iphoneos-arm
+Section: Networking
+Version: 1.0

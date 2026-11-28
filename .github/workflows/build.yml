@@ -1,0 +1,31 @@
+name: Build MYbloXX diagnostic rootless deb
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/build.yml"
+jobs:
+  build:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Theos and SDK
+        run: |
+          brew install ldid make
+          git clone --recursive --depth 1 https://github.com/theos/theos.git "$HOME/theos"
+          rm -rf "$HOME/theos/sdks"
+          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/theos/sdks"
+          echo "THEOS=$HOME/theos" >> "$GITHUB_ENV"
+      - name: Build isolated Settings diagnostics
+        run: |
+          export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
+          chmod +x layout/usr/libexec/mybloxx-control layout/DEBIAN/postinst
+          swift tools/generate-icons.swift
+          make clean package FINALPACKAGE=1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MYbloXX-settings-diagnostics-iphoneos-arm64
+          path: packages/*.deb
+          if-no-files-found: error

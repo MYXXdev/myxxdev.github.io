@@ -1,0 +1,45 @@
+#!/bin/sh
+set -eu
+# Runs after the files of an actual removal are gone. "upgrade", "failed-upgrade", "abort-*" and "disappear" never delete
+# anything. The native configuration was already detached by prerm (the helper), so only MYbloXX's own data is removed here.
+case "${1:-}" in
+ remove|purge)
+  # Owned services: unregister whatever is still loaded (prerm stopped them; this is for a removal that skipped prerm).
+  for label in net.myxxdev.mybloxx.appcontrol net.myxxdev.mybloxx.restore net.myxxdev.mybloxx.updates net.myxxdev.mybloxx.blockd net.myxxdev.mybloxx.pacd; do
+   launchctl bootout "system/$label" >/dev/null 2>&1 || :
+  done
+  for BASE in /var/mobile /rootfs/var/mobile; do
+   [ -d "$BASE/Library" ] || continue
+   # MYbloXX's private state, runtime configuration, caches and logs. The Files app folder (backups and exports) is
+   # elsewhere and is never touched. Exact owned names only.
+   # Backups/ holds the helper's own pre-removal safety copy of the supervision record; it is kept so a reinstall can recover.
+   if [ -d "$BASE/Library/MYbloXX" ]; then
+    for ITEM in "$BASE"/Library/MYbloXX/* "$BASE"/Library/MYbloXX/.[!.]*; do
+     [ -e "$ITEM" ] || [ -L "$ITEM" ] || continue
+     [ "$(basename "$ITEM")" = "Backups" ] && continue
+     rm -rf "$ITEM" 2>/dev/null || :
+    done
+    rmdir "$BASE/Library/MYbloXX" 2>/dev/null || :
+   fi
+   rm -rf "$BASE/Library/Caches/net.myxxdev.mybloxx" 2>/dev/null || :
+   for PREF in "$BASE"/Library/Preferences/net.myxxdev.mybloxx.*.plist; do
+    [ -e "$PREF" ] && rm -f "$PREF" 2>/dev/null || :
+   done
+   rm -f "$BASE/Media/MYbloXX/ActiveConfiguration.plist" 2>/dev/null || :
+   rmdir "$BASE/Media/MYbloXX" 2>/dev/null || :
+  done
+  # Retired component and anything it left behind.
+  for ROOT in "" /var/jb; do
+   rm -f "$ROOT/Library/MobileSubstrate/DynamicLibraries/YouTopia.dylib" "$ROOT/Library/MobileSubstrate/DynamicLibraries/YouTopia.plist" "$ROOT/Library/MobileSubstrate/DynamicLibraries/YouTopia.disabled" "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.dylib" "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.plist" "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.disabled" 2>/dev/null || :
+  done
+  # Retired per-app ad-blocking modules and the shared one, including a switched-off copy the package manager did not track.
+  for ROOT in "" /var/jb; do
+   for APP in YouTube Instagram TikTok SoundCloud Reddit YouTubeMusic X Messenger; do
+    rm -f "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYBAds$APP.dylib" "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYBAds$APP.plist" "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYBAds$APP.disabled" 2>/dev/null || :
+   done
+   rm -f "$ROOT/Library/MobileSubstrate/DynamicLibraries/MYBInAppAds.disabled" 2>/dev/null || :
+  done
+  echo "MYbloXX® removed."
+ ;;
+esac
+exit 0

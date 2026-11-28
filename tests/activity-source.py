@@ -1,0 +1,40 @@
+"""Source check: the Activity screen and the blocked-host log are wired, honest and always on."""
+import sys
+from pathlib import Path
+r=Path(__file__).resolve().parents[1];bad=[]
+def need(c,m):
+    if not c:bad.append(m)
+log=(r/'Shared/MYBActivityLog.h').read_text();srv=(r/'BlockedServer/main.m').read_text();ui=(r/'Preferences/MYBActivityController.m').read_text()
+mk=(r/'Preferences/Makefile').read_text();dash=(r/'Preferences/MYBModernController.m').read_text()
+need('MYBActivityNote(noted,' in srv and '!hostIsLocal&&!targetIsLocal' in srv and 'localPort==MYB_BLOCK_PORT' in srv,'the blocking service notes only foreign requests on the block port')
+need('[first[0] isEqual:@"CONNECT"]' in srv,'HTTPS (CONNECT) hosts are counted')
+need('MYBActivityEnabled(void){return YES;}' in log and 'ActivityListOff' not in log and 'MYBActivitySetEnabled' not in ui and 'Keep this list' not in ui,'always on, with no switch to turn it off')
+need('MYB_ACTIVITY_MAX_HOSTS 300' in log and 'MAX_AGE (24*3600' in log,'capped at 300 websites and cleared after 24 hours')
+need('MYBActivityClear(' in log,'Clear List Now can delete the list')
+need('MYBActivityController.m' in mk,'built into the preference bundle')
+need('MYBActivityController' in dash,'reachable from the main screen')
+need('@"localcustom"' in ui and 'MYBEffectiveRules' in ui,'Allow uses the same helper path and live lists as Custom Rules')
+need('applyRuleForHost' in ui and 'Clear List Now' in ui and 'MYBActivityClear(MYBActivityFile())' in ui,'allow, block and clear are real, working actions')
+need('never pages, searches or anything you type' in ui and 'clear themselves every 24 hours' in ui,'the footer says what is kept and that it clears itself')
+need('MYBActivityList(MYBActivityFile(),MYBShieldWall())' in ui,'the screen only lists the last 24 hours')
+import re
+need(not re.search(r'\\b(log|logging|record|recording|recorded|track|tracking|surveillance)\\b',ui.replace('MYBActivityLog.h',''),re.I),'no log/record/track wording on the screen')
+need('UISearchController' in ui and 'containsString:q' in ui and 'Find an app or domain' in ui,'the list can be searched by domain name')
+peer=(r/'BlockedServer/PeerApp.h').read_text()
+need('MYBPeerAppForClient(fd,localPort)' in srv and 'MYBActivityEnabledFast()' in srv,'the app is looked up only while the list is on, from the open connection')
+need('0.03' in peer and '>1)hit=nil' in peer and 'removeObjectForKey:port' in peer,'scans are rate-limited and entries are used once and expire, so a reused port is never mislabelled')
+need('extern int proc_pidfdinfo' in peer and 'MYBPeerCalibrate' in peer and '#import <libproc.h>' not in peer,'no SDK headers the iOS SDK lacks; the reply layout is found from the service\'s own connection')
+need('MYBPeerDiagnostics()' in (r/'BlockedServer/BrowserBridge.h').read_text(),'the status page reports how many requests were matched to an app')
+need('UISegmentedControl' in ui and '@[@"Apps",@"Domains"]' in ui and 'MYBActivityAppController' in ui and 'Websites' not in ui,'apps first, domains second, and a screen per app')
+need('MYBActivityDomainsController' in ui and 'tapTile' in ui and 'MYBStatHero' in ui,'Blocked and Allowed tiles open full lists and the Apps tile scrolls to the apps')
+need('usleep((useconds_t)(wait*1e6))' in peer and 'wait<=0.031' in peer,'a request inside the scan gap waits at most 31 ms and looks again')
+watch=(r/'Shared/MYBWatch.h').read_text();wp=(r/'BlockedServer/WatchProxy.h').read_text();hp=(r/'Helper/MYXXdev.m').read_text();bk=(r/'Shared/MYBSetupBackup.h').read_text()
+need('MYBWatchWrap(MYBTransportPACText(text),MYBWatchStoredMillis())' in bk,'the live PAC gets the watch overlay only from the stored end time')
+need('r===\\"DIRECT\\"&&Date.now()<' in watch and 'DIRECT\\";return r' in watch,'only plain DIRECT results are redirected, and only before the end time')
+need('MYB_WATCH_PORT' in srv and 'watchAccept(watch)' in srv and 'WatchProxy.h' in srv,'the watch service listens on its own port')
+need('MYBActivityNote(' in wp and 'YES)' in wp and 'loopback' in wp.lower(),'watched requests are counted as allowed and loopback is refused')
+need('[action isEqual:@"watch"]' in hp and 'return 69' in hp and 'MIN(3600,MAX(60' in hp and '@"watch",@"custom"' in hp,'the helper watch action needs protection, clamps the time and is a protection change')
+need('@[@"watch",@"on",@"600"]' in ui and 'Watching · ' in ui and 'MYBWatchSecondsLeft' in ui,'the screen has a real Watch everything switch with a countdown')
+if bad:
+    print('\n'.join('FAIL '+b for b in bad));sys.exit(1)
+print('Activity source checks passed.')

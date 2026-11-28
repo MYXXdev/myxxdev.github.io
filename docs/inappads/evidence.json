@@ -1,0 +1,1203 @@
+{
+ "modules": {
+  "amazon": {
+   "app": "Amazon Shopping",
+   "bundles": [
+    "com.amazon.Amazon"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "WKWebView initWithFrame:configuration:": {
+     "sources": [
+      {
+       "kind": "Apple public API (WebKit)",
+       "repo_commit": "n/a (public API)",
+       "repo_last_commit": "n/a",
+       "shows": "public initialiser; the content rule list is added to the configuration's user content controller before the web view exists",
+       "url": "https://developer.apple.com/documentation/webkit/wkwebview/init(frame:configuration:)"
+      }
+     ]
+    }
+   },
+   "note": "Hides only the two confirmed data-attribute markers with a bundled WebKit content rule list. The other markers (isSponsoredProduct, puis-sponsored-label-text, sponsored-products-detail-mobile) are counted by opt-in discovery, never hidden. The amznkiller list could not be read or pinned. Native cells are not covered. Bundle id com.amazon.Amazon is unverified on a device. Not run on a device."
+  },
+  "appstore": {
+   "app": "App Store",
+   "bundles": [
+    "com.apple.AppStore"
+   ],
+   "device_verified": "",
+   "hooks": {},
+   "note": "Discovery only: no hook is installed and nothing is blocked. No published tweak or class dump for the App Store sponsored placements on iOS 16 was found, so there is nothing established to hook. Opt-in collection of class, selector and view-type names (docs/inappads/DISCOVERY.md) is how the placements will be identified. Not run on a device."
+  },
+  "bilibili": {
+   "app": "Bilibili",
+   "bundles": [
+    "tv.danmaku.bilianime"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "BAPIPolymerAppSearchV1SearchAllResponse initWithData:extensionRegistry:error:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Bilibili)",
+       "repo_commit": "9062479",
+       "repo_last_commit": "2026-04-19",
+       "shows": "hooks BAPIPolymerAppSearchV1SearchAllResponse initWithData:extensionRegistry:error: and drops video_ad, picture_ad and brand_ad_giant items (MIT; names only)",
+       "url": "https://github.com/cxz/BiliBiliTweak/blob/9062479/BiliBiliTweak/src/Search/NJSearchResultAd.xm"
+      }
+     ]
+    },
+    "BFCRequest initWithRequest:taskType:priority:progressHandler:metricsHandler:completionHandler:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Bilibili)",
+       "repo_commit": "9062479",
+       "repo_last_commit": "2026-04-19",
+       "shows": "wraps the completion handler of BFCRequest initWithRequest:taskType:priority:progressHandler:metricsHandler:completionHandler: and edits the https://app.bilibili.com/x/v2/feed/index response; cm_v1, cm_v2, cm_double ad_info and banner is_ad entries are removed in its feed handlers (MIT; names only)",
+       "url": "https://github.com/cxz/BiliBiliTweak/blob/9062479/BiliBiliTweak/src/Network/NJNetworkService.xm"
+      }
+     ]
+    }
+   },
+   "note": "Two hooks, ad-only: the home feed response (commercial cm_v1/cm_v2 cards, cm_double cards carrying ad_info, banner items flagged is_ad) and the three search ad card types (video_ad, picture_ad, brand_ad_giant), from cxz/BiliBiliTweak at 9062479 and BiliBiliMApp at 37b8d31 (MIT; names and card types only, written independently). Not adopted, because they are not advertising decisions: its popup and rating-prompt removal, banner removal, live-room panels, appointment buttons, related-game and goods cards, special_s cards, search default-word blanking, playback and account changes. Not run on a device."
+  },
+  "douban": {
+   "app": "Douban",
+   "bundles": [
+    "com.douban.frodo"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "DOUCommercialViewController advertisement": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Douban)",
+       "repo_commit": "8c95091",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/doubanNoads/blob/8c95091/Tweak.x"
+      }
+     ]
+    },
+    "GDTSplashAd isAdValid": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Douban)",
+       "repo_commit": "8c95091",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/doubanNoads/blob/8c95091/Tweak.x"
+      }
+     ]
+    },
+    "MTGSplashADManager loadAndShow:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Douban)",
+       "repo_commit": "8c95091",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/doubanNoads/blob/8c95091/Tweak.x"
+      }
+     ]
+    },
+    "MTGSplashADManager show:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Douban)",
+       "repo_commit": "8c95091",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/doubanNoads/blob/8c95091/Tweak.x"
+      }
+     ]
+    },
+    "ReviewsListViewController frd_fetchReviewAD": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Douban)",
+       "repo_commit": "8c95091",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/doubanNoads/blob/8c95091/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Five rules for the launch ad and the commercial and review-list ad requests, from a 2024 tweak (names only, MIT). Not adopted: the launch-prompt hook that also hides the launch doodle (not ad-only), an initialiser answering nil, and the unrelated API-version change. Class names may have changed in current Douban; if none are found the module reports no hooks found. Not run on a device."
+  },
+  "facebook": {
+   "app": "Facebook",
+   "bundles": [
+    "com.facebook.Facebook"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "FBMemModelObject initWithFBPandoTree:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      },
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work",
+       "shows": "hooks -[FBMemModelObject initWithFBPandoTree:] and filters sponsored units",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Feed/FBPFeedHooks.xm"
+      }
+     ]
+    },
+    "FBSnacksAdsPaginatingFetcher fetchAdsForStoryWithRequestPayload:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      }
+     ]
+    },
+    "FBSnacksAdsPaginatingFetcher fetchAdsForStoryWithRequestPayloadAsync:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      }
+     ]
+    },
+    "FBSnacksAdsPaginatingFetcher startFetch:organicConsumption:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      }
+     ]
+    },
+    "FBVideoFeedAdsPool insertedItems": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      }
+     ]
+    },
+    "RCTNetworking handlerForRequest:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Facebook)",
+       "repo_commit": "1a3a98605e5d0073af32b681e4604f02fc609111",
+       "repo_last_commit": "pinned revision read for this work; its own README names Facebook 570/574/578",
+       "shows": "hooks the same class and selector for sponsored units, Watch and Stories ads",
+       "url": "https://github.com/shajon-dev/facebook-plus/blob/1a3a98605e5d0073af32b681e4604f02fc609111/src/Features/Ads/FBPAdsHooks.xm"
+      },
+      {
+       "kind": "open-source tweak (Facebook Marketplace)",
+       "repo_commit": "dd89884b8725343a5acc633652e2e6fb2b86cc19",
+       "repo_last_commit": "pinned revision read for this work; its README states testing on Facebook 584.0.0",
+       "shows": "hooks -[RCTNetworking handlerForRequest:] to fail ad queries and filter Marketplace responses",
+       "url": "https://github.com/adamsardo/marketplaceadblock/blob/dd89884b8725343a5acc633652e2e6fb2b86cc19/Tweak.m"
+      }
+     ]
+    }
+   },
+   "note": "Interfaces and decisions follow Facebook-Plus (GPL-3.0) and, for Marketplace, MarketplaceAdBlock (no licence file), both pinned above; upstream tested Facebook 570/574/578 and 584.0.0. The feed hook reads the sponsored classification at model init as upstream does; whether a given Facebook build classifies later is unchecked (opt-in discovery logs it). Not run on a device."
+  },
+  "gmail": {
+   "app": "Gmail",
+   "bundles": [
+    "com.google.Gmail"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "AdsCell heightForObject:width:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Gmail)",
+       "repo_commit": "a21127f",
+       "repo_last_commit": "2021-09-02",
+       "shows": "zero row height for AdsCell and GBTAdsCellImpl (old; names only)",
+       "url": "https://github.com/haoict/gmail-no-ads/blob/a21127f/Tweak.xm"
+      }
+     ]
+    },
+    "AdsCell heightForObject:width:expansionState:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Gmail)",
+       "repo_commit": "a21127f",
+       "repo_last_commit": "2021-09-02",
+       "shows": "zero row height for AdsCell and GBTAdsCellImpl (old; names only)",
+       "url": "https://github.com/haoict/gmail-no-ads/blob/a21127f/Tweak.xm"
+      }
+     ]
+    },
+    "GBTAdsCellImpl heightForObject:width:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Gmail)",
+       "repo_commit": "a21127f",
+       "repo_last_commit": "2021-09-02",
+       "shows": "zero row height for AdsCell and GBTAdsCellImpl (old; names only)",
+       "url": "https://github.com/haoict/gmail-no-ads/blob/a21127f/Tweak.xm"
+      }
+     ]
+    },
+    "GBTAdsCellImpl heightForObject:width:expansionState:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Gmail)",
+       "repo_commit": "a21127f",
+       "repo_last_commit": "2021-09-02",
+       "shows": "zero row height for AdsCell and GBTAdsCellImpl (old; names only)",
+       "url": "https://github.com/haoict/gmail-no-ads/blob/a21127f/Tweak.xm"
+      }
+     ]
+    }
+   },
+   "note": "Four rules giving inbox advertisement rows zero height, from the AdsCell and GBTAdsCellImpl names in a 2021 Gmail tweak. Those classes may no longer exist in current Gmail; if none are found the module reports no hooks found. Not run on a device."
+  },
+  "instagram": {
+   "app": "Instagram",
+   "bundles": [
+    "com.burbn.instagram"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "IGChainingFeedViewController objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGContextualFeedViewController objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGExploreListKitDataSource objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGMainFeedListAdapterDataSource objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGStoryAdPool initWithUserSession:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGStoryAdsFetcher initWithUserSession:delegate:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGStoryAdsManager initWithUserSession:storyViewerLoggingContext:storyFullscreenSectionLoggingContext:viewController:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGStoryAdsResponseParser parsedObjectFromResponse:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGSundialAdsResponseParser parsedObjectFromResponse:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGSundialFeedDataSource objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "IGVideoFeedViewController objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    },
+    "_TtC28IGExploreViewControllerSwift26IGExploreListKitDataSource objectsForListAdapter:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Instagram)",
+       "repo_commit": "7bb7180",
+       "repo_last_commit": "2026-07-26",
+       "shows": "hooks the same class and selector to drop ad items",
+       "url": "https://github.com/SoCuul/SCInsta/blob/7bb7180/src/Features/Feed/HideFeedItems.xm"
+      }
+     ]
+    }
+   },
+   "note": "Unchanged in this release: ad handling only. The Reel comment shopping carousel that the lead tweak removes with its ad switch is deliberately NOT removed, because nothing marks it as an advertisement. Hooks corroborated by a maintained Instagram tweak. Instagram app version on a device: not recorded."
+  },
+  "messenger": {
+   "app": "Messenger",
+   "bundles": [
+    "com.facebook.Messenger"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "LSStoryViewerContentController _updateStoriesWithBucketStoryModels:deletedIndexPaths:addedIndexPaths:newIndexPath:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Messenger)",
+       "repo_commit": "3917697",
+       "repo_last_commit": "2025-07-31",
+       "shows": "hooks LSStoryViewerContentController _updateStoriesWithBucketStoryModels:... and removes buckets whose bucketType is 1 (advertisement) (MIT)",
+       "url": "https://github.com/NguyenASang/SNMessenger/blob/3917697/SNMessenger.xm"
+      }
+     ]
+    },
+    "MSGThreadListDataSource inboxRows": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Messenger)",
+       "repo_commit": "83e062c",
+       "repo_last_commit": "2026-10-21",
+       "shows": "hooks MSGThreadListDataSource inboxRows and removes MSGInboxRowUnit rows whose inboxUnit.key is ads_renderer (same classes and selectors)",
+       "url": "https://github.com/Win98Plus/FlowReconstructed/blob/83e062c/Tweak.xm"
+      },
+      {
+       "kind": "open-source tweak (Messenger)",
+       "repo_commit": "3917697",
+       "repo_last_commit": "2025-07-31",
+       "shows": "hooks MSGThreadListDataSource inboxRows but locates the ad row through _unitsState unitKeyToUnit[ads_renderer] and positionInThreadList; README states Messenger v458.0.0 and later. A different mechanism from ours",
+       "url": "https://github.com/NguyenASang/SNMessenger/blob/3917697/SNMessenger.xm"
+      }
+     ]
+    }
+   },
+   "note": "Reviewed against FlowReconstructed at 83e062c (unchanged since the earlier review) and SNMessenger at 3917697 (2025-07-31, MIT). Adopted from SNMessenger, as interface evidence written independently: advertisement story buckets (bucketType 1) are dropped, with the added index paths of the update kept consistent. Not adopted: its inbox ad-unit fetcher returning nil (how its callers handle a nil answer is unverified, so a crash or a stuck chat list cannot be ruled out without a device) and its _unitsState row-position route (instance-variable based, version specific). Same classes, selector and ad key as one maintained tweak (Flow); a second tweak (SNMessenger, Messenger 458+) finds the ad row by a different route, so which representation a current Messenger uses is unknown. Not run on a device."
+  },
+  "qqmusic": {
+   "app": "QQ Music",
+   "bundles": [
+    "com.tencent.QQMusic"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "FlashWindow setSplashItem:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (QQ Music)",
+       "repo_commit": "3b3e8d8",
+       "repo_last_commit": "2024-11-02",
+       "shows": "hooks FlashWindow setSplashItem: (MIT; names only)",
+       "url": "https://github.com/iosrxwy/QQMusicNoAds/blob/3b3e8d8/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "One rule for the launch ad, from a 2024 tweak (names only, MIT). The high-quality-audio unlock hooks in the same project are not advertising and are not used. Not run on a device."
+  },
+  "reddit": {
+   "app": "Reddit",
+   "bundles": [
+    "com.reddit.Reddit"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "AdPost adPayload": {
+     "sources": [
+      {
+       "kind": "response-shape evidence (Reddit)",
+       "repo_commit": "387707d",
+       "repo_last_commit": "2026-11-16",
+       "shows": "a proxy-tool script that filters GraphQL feed entries whose __typename is AdPost or that carry adPayload: the same markers this module checks. Shape evidence only; it is not an app class",
+       "url": "https://github.com/fmz200/wool_scripts/blob/387707d/Scripts/reddit.js"
+      },
+      {
+       "kind": "open-source tweak (Reddit)",
+       "repo_commit": "e1b597f",
+       "repo_last_commit": "2026-11-13",
+       "shows": "RFClearAdKeys empties commentsPageAds, commentTreeAds and pdpCommentsAds, including the newer object-wrapped adPosts form; its RFDropAdLeakExperiments experiment override exists upstream but is not adopted (MIT)",
+       "url": "https://github.com/and101/RedditFilter/blob/e1b597f/JSONFilter.m"
+      }
+     ]
+    }
+   },
+   "note": "Scope note: the Home experiment override (removing ios_home_feed_defer_query) is NOT adopted. It changes how Home loads for every user, and it was not shown to be needed for ad removal or to leave existing feed behaviour unchanged. Known limit: ads in the streamed first Home page that the app requests without a completion handler may remain. Reviewed against and101/RedditFilter at e1b597f (2026-11-13, MIT). Newly adopted: comment-page ads in the object-wrapped adPosts form. Not adopted: the Home experiment override, keyword, NSFW, awards, scores, recommended-post and UI features, and its cached experiment file edit (it writes into the app group container). Reddit works on the GraphQL response shape, not on app classes: the module removes entries carrying an ad payload from the data-task response. Public Reddit ad-removal scripts for proxy tools filter the same AdPost/adPayload shape, which is shape evidence only. No class-level source."
+  },
+  "sogou": {
+   "app": "Sogou Input",
+   "bundles": [
+    "com.sogou.sogouinput"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "SGSAmsAdCell initAmsAdViewWithModel:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Sogou Input)",
+       "repo_commit": "035d4b1",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/sougouinputNoAds/blob/035d4b1/Tweak.x"
+      }
+     ]
+    },
+    "SGSGDTNativeAdMixedBannerView setupWithUnifiedNativeAdObject:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Sogou Input)",
+       "repo_commit": "035d4b1",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/sougouinputNoAds/blob/035d4b1/Tweak.x"
+      }
+     ]
+    },
+    "SGSGDTNativeAdMixedCommonView setupWithUnifiedNativeAdObject:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Sogou Input)",
+       "repo_commit": "035d4b1",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/sougouinputNoAds/blob/035d4b1/Tweak.x"
+      }
+     ]
+    },
+    "TGGDTSplashViewController isShowSplash": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Sogou Input)",
+       "repo_commit": "035d4b1",
+       "repo_last_commit": "2024-11-03",
+       "shows": "hooks the same class and selector (MIT; names only)",
+       "url": "https://github.com/iosrxwy/sougouinputNoAds/blob/035d4b1/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Four rules for the launch ad and native ad cells, from a 2024 tweak (names only, MIT). The jailbreak-detection and purchase-flag changes are not advertising and are not used; the ad-cell model rewrite edits an argument, which the rule table cannot express, so it is not adopted. Not run on a device."
+  },
+  "soundcloud": {
+   "app": "SoundCloud",
+   "bundles": [
+    "com.soundcloud.TouchApp"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "NSURLSessionConfiguration protocolClasses": {
+     "sources": [
+      {
+       "kind": "open-source tweak (SoundCloud)",
+       "repo_commit": "0174d45",
+       "repo_last_commit": "2026-10-10",
+       "shows": "hooks the same Swift-mangled class and selector",
+       "url": "https://github.com/pstepanovum/PSSoundcloud/blob/0174d45/src/Features/Ads.x"
+      }
+     ]
+    },
+    "_TtC10SoundCloud19AdsRequestPermitter shouldRequestAds": {
+     "sources": [
+      {
+       "kind": "open-source tweak (SoundCloud)",
+       "repo_commit": "0174d45",
+       "repo_last_commit": "2026-10-10",
+       "shows": "hooks the same Swift-mangled class and selector",
+       "url": "https://github.com/pstepanovum/PSSoundcloud/blob/0174d45/src/Features/Ads.x"
+      },
+      {
+       "kind": "class-dump header",
+       "repo_commit": "3053a6c",
+       "repo_last_commit": "dump of a 2020 SoundCloud release (old)",
+       "shows": "the AdsRequestPermitting protocol declares shouldRequestAds returning BOOL; independent of the GPL tweak, and it shows the interface (not the current Swift class name)",
+       "url": "https://github.com/Nosskirneh/ios-app-headers/blob/3053a6c/com.soundcloud.TouchApp/AdsRequestPermitting-Protocol.h"
+      }
+     ]
+    },
+    "_TtC3Ads30DisplayAdBannerFeatureProvider canRequestAdBanner": {
+     "sources": [
+      {
+       "kind": "open-source tweak (SoundCloud)",
+       "repo_commit": "0174d45",
+       "repo_last_commit": "2026-10-10",
+       "shows": "hooks the same Swift-mangled class and selector",
+       "url": "https://github.com/pstepanovum/PSSoundcloud/blob/0174d45/src/Features/Ads.x"
+      }
+     ]
+    }
+   },
+   "note": "Independent corroboration found this session: a 2020 SoundCloud class dump (not the GPL tweak) declares the AdsRequestPermitting protocol with shouldRequestAds, matching hook 1 in interface; the other two hooks have no independent evidence. Also refuses soundcloud.com/ads and promoted.soundcloud.com requests (path level, as the lead tweak does). Swift-mangled names are version specific; corroborated by a maintained SoundCloud tweak. App version on a device: not recorded."
+  },
+  "threads": {
+   "app": "Threads",
+   "bundles": [
+    "com.burbn.barcelona"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "IGAdFetcherManager adFetcher:didReturnAdsResponse:paginationInfo:requestMetadata:isFromCache:adRequestExtraInfo:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    },
+    "_TtC15IGBCNAdsManager15IGBCNAdsManager processSponsoredItems:projectedItems:analyticsModule:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    },
+    "_TtC15IGBCNAdsManager15IGBCNAdsManager startNewAdDeliveryWithSurfaceDelegate:sessionId:analyticsModule:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    },
+    "_TtC15IGBCNAdsManager37BCNMainFeedAdsInsertionSurfaceHandler adInsertionHandler:shouldTryToInsertSponsoredItem:atInsertionIndex:focusedIndex:insertionContext:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    },
+    "_TtC15IGBCNAdsManager37BCNMainFeedAdsInsertionSurfaceHandler adPlatformDidDeliverSponsoredItem:atAdRequestIndex:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    },
+    "_TtC15IGBCNAdsManager37BCNMainFeedAdsInsertionSurfaceHandler receivedSponsoredItems:intentAwareData:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (Threads)",
+       "repo_commit": "a0e4b19",
+       "repo_last_commit": "2026-11-16",
+       "shows": "hooks the same classes and selectors (its repository has no licence file; names only)",
+       "url": "https://github.com/mumuisdog/ThreadsPulse/blob/a0e4b19/ThreadsPulse/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Six rules from the class and selector names ThreadsPulse publishes, covering the ad request, sponsored items and their feed insertion. Names only; its licence is not stated, so no code is used. Threads is a Swift app, so every class is a mangled name and each rule stays off if the name changed. Not run on a device."
+  },
+  "tiktok": {
+   "app": "TikTok",
+   "bundles": [
+    "com.zhiliaoapp.musically",
+    "com.ss.iphone.ugc.Ame",
+    "com.ss.iphone.ugc.Aweme",
+    "com.ss.iphone.ugc.aweme.lite"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "AWEAwemeModel init": {
+     "sources": [
+      {
+       "kind": "open-source tweak (TikTok)",
+       "repo_commit": "0f898e0",
+       "repo_last_commit": "2026-07-04",
+       "shows": "TCAwemeIsAd tests isAds, isAdsOrPseudoAds, adInfo, adOrPseudoAdModel and adType on AWEAwemeModel; hooks -init and -initWithDictionary:error: and discards an ad model (MIT; its README names TikTok 45.7.0 and 45.8.0)",
+       "url": "https://github.com/Selandros/TikTokClean/blob/0f898e0/Tweak.xm"
+      },
+      {
+       "kind": "open-source tweak (TikTok)",
+       "repo_commit": "18b4477",
+       "repo_last_commit": "2023-07-25 (old)",
+       "shows": "hooks WEAwemeModel and drops models where isAds is true",
+       "url": "https://github.com/BandarHL/BHTikTok/blob/18b4477/Tweak.x"
+      }
+     ]
+    },
+    "AWEAwemeModel initWithDictionary:error:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (TikTok)",
+       "repo_commit": "0f898e0",
+       "repo_last_commit": "2026-07-04",
+       "shows": "TCAwemeIsAd tests isAds, isAdsOrPseudoAds, adInfo, adOrPseudoAdModel and adType on AWEAwemeModel; hooks -init and -initWithDictionary:error: and discards an ad model (MIT; its README names TikTok 45.7.0 and 45.8.0)",
+       "url": "https://github.com/Selandros/TikTokClean/blob/0f898e0/Tweak.xm"
+      },
+      {
+       "kind": "open-source tweak (TikTok)",
+       "repo_commit": "18b4477",
+       "repo_last_commit": "2023-07-25 (old)",
+       "shows": "hooks WEAwemeModel and drops models where isAds is true",
+       "url": "https://github.com/BandarHL/BHTikTok/blob/18b4477/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Douyin (com.ss.iphone.ugc.Aweme and the lite app) is now covered by this same module: DYYY (huami, MIT; names only) classifies an AWEAwemeModel as an ad through checkIsAd, isHardAdModel, isHardAd or isAds, so those three selectors were added to the classifier (each is consulted only if the model responds to it). The two initialiser hooks are unchanged and whether they act on Douyin models the same way is unconfirmed. Reviewed against Selandros/TikTokClean at 0f898e0 (2026-07-04, MIT): the module already uses its ad classification (isAds, isAdsOrPseudoAds, adInfo, adOrPseudoAdModel, adType) and both model initialisers; no ad-metadata gap was found. Not adopted: its LIVE removal (excluded), its auto-skip of an ad that is already on screen (scrolling the feed is not ad removal), downloads and auto-scroll. The older 2023 BHTikTok source is kept as a second reference. Upstream tested 45.7.0 and 45.8.0; our own device test: none."
+  },
+  "wechat": {
+   "app": "WeChat",
+   "bundles": [
+    "com.tencent.xin"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "WAAppTask mainThread_splashAD_handleSplashADContainerIsPreload:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WAAppTask splashAD_createSplashADWindow": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WAAppTaskSplashADConfig canShowSplashADWindow": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WAAppTaskSplashADConfig launchShow": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr pdateAdvertiseDataItemDetail::": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr requestForSnsADObjectOpRequest:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr tryToPreloadWeAppForAdCanvas:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr tryToPreloadWeAppForAdResource:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr updateAdvertiseDataList::": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseLogicMgr updateDataItemDetail:::": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    },
+    "WCAdvertiseStorage setOAdvertiseData:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (WeChat)",
+       "repo_commit": "394d916",
+       "repo_last_commit": "2023-12-18",
+       "shows": "hooks the same class and selector (MIT; names only; old, WeChat has changed since)",
+       "url": "https://github.com/pwnless/WechatNoAds/blob/394d916/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Eleven rules for the launch ad and Moments ad data and requests, from a 2023 tweak (names only, MIT; WeChat has changed since, and each rule stays off if its signature differs). Not adopted: jailbreak-detection changes, the article-ad request rewrite (a network rewrite), the Moments canvas-cell hooks and unrelated hooks. Not run on a device."
+  },
+  "x": {
+   "app": "X",
+   "bundles": [
+    "com.atebits.Tweetie2"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "TFNItemsDataViewController tableView:heightForRowAtIndexPath:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (X)",
+       "repo_commit": "eaa9e95",
+       "repo_last_commit": "2026-07-06",
+       "shows": "hooks the same selectors on TFNItemsDataViewController; hides items where isPromoted, trends where scribeItem has promoted_id; filtered to com.atebits.Tweetie2",
+       "url": "https://github.com/BandarHL/BHTwitter/blob/eaa9e95/Tweak.x"
+      }
+     ]
+    },
+    "TFNItemsDataViewController tableViewCellForItem:atIndexPath:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (X)",
+       "repo_commit": "eaa9e95",
+       "repo_last_commit": "2026-07-06",
+       "shows": "hooks the same selectors on TFNItemsDataViewController; hides items where isPromoted, trends where scribeItem has promoted_id; filtered to com.atebits.Tweetie2",
+       "url": "https://github.com/BandarHL/BHTwitter/blob/eaa9e95/Tweak.x"
+      },
+      {
+       "kind": "open-source tweak (X)",
+       "repo_commit": "d6b2bbf",
+       "repo_last_commit": "2026-11-16",
+       "shows": "detects promoted items by isPromoted and scribeItem promoted_id on TFNItemsDataViewController",
+       "url": "https://github.com/NeoFreeBird/app/blob/d6b2bbf/src/Hooks/Ads.x"
+      }
+     ]
+    },
+    "TFNTwitterAccount isVideoDynamicAdEnabled": {
+     "sources": [
+      {
+       "kind": "open-source tweak (X)",
+       "repo_commit": "eaa9e95",
+       "repo_last_commit": "2026-07-06",
+       "shows": "hooks the same selectors on TFNItemsDataViewController; hides items where isPromoted, trends where scribeItem has promoted_id; filtered to com.atebits.Tweetie2",
+       "url": "https://github.com/BandarHL/BHTwitter/blob/eaa9e95/Tweak.x"
+      }
+     ]
+    },
+    "TFNTwitterStatus isCardHidden": {
+     "sources": [
+      {
+       "kind": "open-source tweak (X)",
+       "repo_commit": "eaa9e95",
+       "repo_last_commit": "2026-07-06",
+       "shows": "hooks the same selectors on TFNItemsDataViewController; hides items where isPromoted, trends where scribeItem has promoted_id; filtered to com.atebits.Tweetie2",
+       "url": "https://github.com/BandarHL/BHTwitter/blob/eaa9e95/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "The same selectors and the same promoted tests a maintained X tweak (BHTwitter) uses, now four: promoted rows and trends, the promoted post card, and the dynamic-video-ad capability. The tweak does not state an X version. Not run on a device."
+  },
+  "youtube": {
+   "app": "YouTube",
+   "bundles": [
+    "com.google.ios.youtube"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "YTAdElementsCellExternallyManagedSlotAdapterImpl isValidSlotType:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTAdsInnerTubeContextDecorator decorateContext:": {
+     "sources": [
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of YouTube 15.45.2 (old)",
+       "shows": "declares decorateContext:",
+       "url": "https://github.com/iCrazeiOS/Class-Dumped-Apps/blob/HEAD/Headers/YouTube%2015.45.2/YTAdsInnerTubeContextDecorator.h"
+      },
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "809e1b3",
+       "repo_last_commit": "2026-11-16",
+       "shows": "installs hooks on the decorator classes and selectors",
+       "url": "https://github.com/itzzace/ytkace/blob/809e1b3/Tweak/Features/Ads/AdsHooks.mm"
+      }
+     ]
+    },
+    "YTAdsInnerTubeContextDecorator decorateContext:serviceType:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "809e1b3",
+       "repo_last_commit": "2026-11-16",
+       "shows": "installs hooks on the decorator classes and selectors",
+       "url": "https://github.com/itzzace/ytkace/blob/809e1b3/Tweak/Features/Ads/AdsHooks.mm"
+      }
+     ]
+    },
+    "YTAdsInnerTubeContextDecoratorImpl decorateContext:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "809e1b3",
+       "repo_last_commit": "2026-11-16",
+       "shows": "installs hooks on the decorator classes and selectors",
+       "url": "https://github.com/itzzace/ytkace/blob/809e1b3/Tweak/Features/Ads/AdsHooks.mm"
+      }
+     ]
+    },
+    "YTArraySectionViewModel initWithEntries:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTArraySectionViewModel initWithTransform:entries:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTArraySectionViewModel insertEntries:atIndex:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTArraySectionViewModel replaceEntry:withEntry:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTIPlayerResponse adSlotsArray": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTIPlayerResponse playerAdsArray": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTInnerTubeCollectionViewController addSectionsFromArray:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTLocalPlaybackController createAdsPlaybackCoordinator": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTReelContentModel makeContentModelForEntry:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTReelDataSource makeContentModelForEntry:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTReelInfinitePlaybackDataSource makeContentModelForEntry:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    },
+    "YTReelInfinitePlaybackDataSource setReels:": {
+     "sources": [
+      {
+       "kind": "open-source tweak (YouTube ads)",
+       "repo_commit": "9a8e60a",
+       "repo_last_commit": "2026-10-23",
+       "shows": "hooks the same class and selector; the tweak is filtered to com.google.ios.youtube only",
+       "url": "https://github.com/PoomSmart/YouTube-X/blob/9a8e60a/Tweak.x"
+      }
+     ]
+    }
+   },
+   "note": "Now also filters ad entries inserted, replaced or seeded through the section view model. Hooks corroborated by a maintained YouTube ad tweak. YouTube app version on a device: not recorded."
+  },
+  "youtubemusic": {
+   "app": "YouTube Music",
+   "bundles": [
+    "com.google.ios.youtubemusic"
+   ],
+   "device_verified": "",
+   "hooks": {
+    "YTAdsInnerTubeContextDecorator decorateContext:": {
+     "sources": [
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of YouTube Music 3.59 (old)",
+       "shows": "declares decorateContext:",
+       "url": "https://github.com/iCrazeiOS/Class-Dumped-Apps/blob/HEAD/Headers/YouTube%20Music%203.59/YTAdsInnerTubeContextDecorator.h"
+      },
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of a YouTube Music release (version not stated)",
+       "shows": "declares decorateContext:",
+       "url": "https://github.com/Nosskirneh/ios-app-headers/blob/HEAD/com.google.ios.youtubemusic/YTAdsInnerTubeContextDecorator.h"
+      }
+     ]
+    },
+    "YTIPlayerResponse adIntroRenderer": {
+     "sources": [
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of YouTube Music 3.59 (old)",
+       "shows": "declares adIntroRenderer",
+       "url": "https://github.com/iCrazeiOS/Class-Dumped-Apps/blob/HEAD/Headers/YouTube%20Music%203.59/YTIPlayerResponse.h"
+      },
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of a YouTube Music release (version not stated)",
+       "shows": "declares adIntroRenderer",
+       "url": "https://github.com/Nosskirneh/ios-app-headers/blob/HEAD/com.google.ios.youtubemusic/YTIPlayerResponse.h"
+      }
+     ]
+    },
+    "YTIPlayerResponse isMonetized": {
+     "sources": [
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of YouTube Music 3.59 (old)",
+       "shows": "declares isMonetized",
+       "url": "https://github.com/iCrazeiOS/Class-Dumped-Apps/blob/HEAD/Headers/YouTube%20Music%203.59/YTIPlayerResponse.h"
+      },
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of a YouTube Music release (version not stated)",
+       "shows": "declares isMonetized",
+       "url": "https://github.com/Nosskirneh/ios-app-headers/blob/HEAD/com.google.ios.youtubemusic/YTIPlayerResponse.h"
+      }
+     ]
+    },
+    "YTIPlayerResponse playerAdsArray": {
+     "sources": [
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of YouTube Music 3.59 (old)",
+       "shows": "declares the playerAdsArray property",
+       "url": "https://github.com/iCrazeiOS/Class-Dumped-Apps/blob/HEAD/Headers/YouTube%20Music%203.59/YTIPlayerResponse.h"
+      },
+      {
+       "kind": "class-dump header",
+       "repo_commit": "HEAD",
+       "repo_last_commit": "dump of a YouTube Music release (version not stated)",
+       "shows": "declares the playerAdsArray property",
+       "url": "https://github.com/Nosskirneh/ios-app-headers/blob/HEAD/com.google.ios.youtubemusic/YTIPlayerResponse.h"
+      }
+     ]
+    }
+   },
+   "note": "Reviewed against dayanch96/YTMusicUltimate Source/RemoveAds.x at e5530b1 (2026-08-19, GPL-3.0; read as a lead, no code copied): adopted isMonetized (also declared in both YouTube Music class dumps). Not adopted: isCuepointAdsEnabled and paidContentOverlay (not in the YouTube Music dumps; the overlay is a paid-promotion disclosure), isDAIEnabledPlayback (answer is flipped to YES, semantics unverified), and the spam-signal dictionaries (ad-request attestation, unverified effects). Playback, subscription and download changes are excluded. Only the four interfaces found in a published YouTube Music class dump (version 3.59, an old release) are hooked. Ad-slot and Impl-decorator hooks exist only in YouTube app sources and are deliberately NOT used. Whether these three remove audio ads in a current YouTube Music version is unproven."
+  }
+ },
+ "retrieved": "2026-11-16",
+ "schema": 1
+}

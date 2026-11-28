@@ -1,0 +1,8 @@
+Package: net.myxxdev.mybloxxcc2.fix
+Name: MYbloXX Control Center (iOS 15 to 16)
+Version: 0.2.0
+Architecture: iphoneos-arm64
+Depends: firmware (>= 15.0), com.opa334.ccsupport, net.myxxdev.mybloxx15
+Maintainer: MYXXdev
+Section: Tweaks
+Description: Correctly registered native MYbloXX toggle for CCSupport iOS 15 to 16, separate from core blocker.
