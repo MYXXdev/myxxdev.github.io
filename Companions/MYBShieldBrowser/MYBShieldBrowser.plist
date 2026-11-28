@@ -1,0 +1,1 @@
+{ Filter = { Bundles = ("com.apple.mobilesafari", "org.mozilla.ios.Firefox", "org.mozilla.ios.Focus", "com.google.chrome.ios", "com.microsoft.msedge", "com.brave.ios.browser", "com.opera.OperaTouch", "com.duckduckgo.mobile.ios", "net.myxxdev.mybloxxbrowser"); }; }

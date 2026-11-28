@@ -1,0 +1,76 @@
+{
+ "minVersion": "0.4",
+ "class": "DepictionTabView",
+ "headerImage": "",
+ "tintColor": "#B59EFF",
+ "tabs": [
+  {
+   "tabname": "Details",
+   "class": "DepictionStackView",
+   "views": [
+    {
+     "class": "DepictionHeaderView",
+     "title": "MYbloXX® by MYXXdev™"
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "System-wide ad, tracker and popup blocking for iOS 15 and later with RootHide. Add your own rules, protect supported browsers with Shield, remove ads inside supported apps, and choose which apps run without blocking with App Control. Everything runs on this iPhone.",
+     "useSpacing": true
+    },
+    {
+     "class": "DepictionHeaderView",
+     "title": "What it does"
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "- Blocking modes, custom rules and website exceptions\n- **Shield** popup and redirect protection in Safari, Firefox, Focus, Chrome, Edge, Brave, Opera and DuckDuckGo\n- In-app ad removal for supported apps, switched on per app\n- **App Control** to run chosen apps without blocking\n- DNS profiles, Proxy Override and backups\n- Automatic rule updates and an offline **Status & Diagnostics** page",
+     "useSpacing": true
+    },
+    {
+     "class": "DepictionHeaderView",
+     "title": "Requirements"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Package",
+     "text": "net.myxxdev.mybloxx15"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Version",
+     "text": "RH-15-112526"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Architecture",
+     "text": "iphoneos-arm64e (RootHide)"
+    },
+    {
+     "class": "DepictionTableTextView",
+     "title": "Needs",
+     "text": "preferenceloader, mobilesubstrate, CCSupport"
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "Browser protection covers the listed browsers only. It does not claim coverage of every browser or in-app web view.",
+     "useSpacing": true
+    }
+   ]
+  },
+  {
+   "tabname": "Changelog",
+   "class": "DepictionStackView",
+   "views": [
+    {
+     "class": "DepictionHeaderView",
+     "title": "RH-15-112526"
+    },
+    {
+     "class": "DepictionMarkdownView",
+     "markdown": "- Cleaner Settings screens, dashboard header and message sheets\n- In-App Ad Blocking is simpler, with details under Status & Diagnostics\n- YouTube ads are handled by MYbloXX®’s own module\n- Legacy Mode asks to enable supervision before offering a profile\n- Quieter installer and a complete, safe uninstall\n- App Control shows a Preparing App state while blocking is paused for an app",
+     "useSpacing": true
+    }
+   ]
+  }
+ ]
+}

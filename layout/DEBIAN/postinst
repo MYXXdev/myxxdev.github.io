@@ -1,0 +1,184 @@
+#!/bin/sh
+set -eu
+# Every step below that does not fully succeed is recorded here, and the closing message reports exactly that.
+# "Installed" is printed only when nothing needed attention.
+PROBLEMS=0
+NOTES=""
+# Problems are recorded for Status & Diagnostics inside the app and written to the install log; the installer screen never shows them.
+warn() {
+  PROBLEMS=$((PROBLEMS + 1))
+  { echo "WARN: $1"; } >> "${LOG:-/dev/null}" 2>/dev/null || :
+}
+VERSION=$(dpkg-query -W -f='${Version}' net.myxxdev.mybloxx15 2>/dev/null || true)
+RELEASE_LABEL="RH-15-112526"
+echo "
+
+ Installing...
+
+ ┏━┳━┳━┳┳┓╋╋╋╋┏┓┏┳┓┏┓®
+ ┃┃┃┃┣┓┃┃┗┳┓┏━╋┓┏┻┓┏┛
+ ┃┃┃┃┣┻┓┃╋┃┗┫╋┣┛┗┳┛┗┓
+ ┗┻━┻┻━━┻━┻━┻━┻┛┗┻┛┗┛
+ MYbloXX® (RootHide) by MYXXdev™
+
+ ‣ $RELEASE_LABEL
+ Please wait..."
+# RootHide's shell sees the randomized jailbreak as /; ordinary rootless
+# uses /var/jb. Probe / first, not the physical rootfs fallback last.
+ROOT=""
+for candidate in / /var/jb; do
+  if [ "$candidate" = / ]; then
+    testpath=/usr/sbin/MYXXdev/MYbloXX/MYXXdev
+  else
+    testpath="$candidate/usr/sbin/MYXXdev/MYbloXX/MYXXdev"
+  fi
+  if [ -f "$testpath" ]; then ROOT="$candidate";break;fi
+done
+if [ -z "$ROOT" ]; then
+  echo "MYbloXX®: installation could not finish. Please try installing again." >&2
+  exit 1
+fi
+PREFIX="$ROOT"
+[ "$PREFIX" = / ] && PREFIX=""
+HELPER="$PREFIX/usr/sbin/MYXXdev/MYbloXX/MYXXdev"
+PACD="$PREFIX/usr/libexec/mybloxx-pacd"
+SCRIPT="$PREFIX/usr/libexec/mybloxx-control"
+DAEMON="$PREFIX/Library/LaunchDaemons/net.myxxdev.mybloxx.restore.plist"
+PAC_DAEMON="$PREFIX/Library/LaunchDaemons/net.myxxdev.mybloxx.pacd.plist"
+PAC_ROOT="$PREFIX/usr/share/mybloxx/pacs"
+DATA_ROOT=/var/mobile/Library/MYbloXX/PAC
+[ -d /rootfs/var/mobile ] && DATA_ROOT=/rootfs/var/mobile/Library/MYbloXX/PAC
+chown 0:0 "$HELPER" 2>/dev/null || :
+chmod 4755 "$HELPER" || :
+chmod 0755 "$PREFIX/usr/sbin/MYXXdev/MYbloXX/MYbloXX" 2>/dev/null || :
+if [ -f "$SCRIPT" ]; then chmod 0755 "$SCRIPT" || :;fi
+if [ -f "$PACD" ]; then chmod 0755 "$PACD" || :;fi
+mkdir -p "$DATA_ROOT"
+for MODE in Default allowY blockAdSense blockApple blockSocials blockXXX MYbloXX MYbloXXTest MYbloXXallowFB MYbloXXallowY MYbloXXnoApple MYbloXXnoFB MYbloXXnoSocials MYbloXXnoXXX; do
+  if [ -s "$PAC_ROOT/$MODE.pac" ]; then
+    if [ ! -s "$DATA_ROOT/$MODE.pac" ]; then cp "$PAC_ROOT/$MODE.pac" "$DATA_ROOT/$MODE.pac";fi
+    chmod 0644 "$DATA_ROOT/$MODE.pac"
+  else
+    echo "MYbloXX®: installation could not finish. Please try installing again." >&2
+    exit 1
+  fi
+done
+chown -R 501:501 "$DATA_ROOT" 2>/dev/null || :
+# Routine helper output (process ids, privilege and apply/restart details) goes to a log; only warnings reach the screen.
+STATE_DIR=$(dirname "$DATA_ROOT")
+LOG="$STATE_DIR/install.log"
+{ echo "=== install ${VERSION:-unknown} $(date 2>/dev/null || true) ==="; } >> "$LOG" 2>/dev/null || LOG=/dev/null
+quiet() { "$@" >> "$LOG" 2>&1; }
+# Retired components: YouTopia (the YouTube module handles YouTube ads) and MYbloXX-WAO (Wi-Fi Always On) are no longer part of MYbloXX (the YouTube module handles YouTube ads). An upgrade removes
+# its files, including a copy the user had switched off, which the package manager does not track. Exact paths only.
+for RETIRED in "$PREFIX/Library/MobileSubstrate/DynamicLibraries/YouTopia.dylib" "$PREFIX/Library/MobileSubstrate/DynamicLibraries/YouTopia.plist" "$PREFIX/Library/MobileSubstrate/DynamicLibraries/YouTopia.disabled" "$PREFIX/usr/sbin/MYXXdev/MYbloXX/YouTopia.enabled" "$PREFIX/usr/sbin/MYXXdev/MYbloXX/YouTopia.disabled" "$STATE_DIR/YouTopia.enabled" "$STATE_DIR/YouTopia.disabled" "$PREFIX/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.dylib" "$PREFIX/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.plist" "$PREFIX/Library/MobileSubstrate/DynamicLibraries/MYbloXX-WAO.disabled"; do
+  if [ -e "$RETIRED" ] || [ -L "$RETIRED" ]; then
+    rm -f "$RETIRED" 2>>"$LOG" || warn "could not remove the retired YouTopia file $RETIRED" "A retired YouTopia file could not be removed."
+  fi
+done
+# Retired per-app In-App Ad Blocking dylibs: one shared MYBInAppAds.dylib replaces them. The package manager removes the files it tracked;
+# this also removes a copy it did not track (for example one switched off by renaming), so an old and the new module can never inject
+# into the same app. Exact MYbloXX names only.
+for APP in YouTube Instagram TikTok SoundCloud Reddit YouTubeMusic X Messenger; do
+  for EXT in dylib plist disabled; do
+    OLD="$PREFIX/Library/MobileSubstrate/DynamicLibraries/MYBAds$APP.$EXT"
+    if [ -e "$OLD" ] || [ -L "$OLD" ]; then rm -f "$OLD" 2>>"$LOG" || warn "could not remove the retired module file $OLD" "A retired ad-blocking module file could not be removed."; fi
+  done
+done
+# First installation only: apply the documented defaults. An upgrade records itself and changes nothing.
+DEFAULTS_RC=0; quiet "$HELPER" initdefaults || DEFAULTS_RC=$?
+case "$DEFAULTS_RC" in
+  0) ;;
+  90) warn "first-install defaults were applied with exceptions (see Status & Diagnostics in Settings). Nothing that belongs to another tool was changed." "First-install defaults were applied with exceptions." ;;
+  *) warn "first-install defaults were not applied (code $DEFAULTS_RC); Status & Diagnostics shows the result. Use Repair MYbloXX®, then Restore Default Settings if needed." "First-install defaults were not applied (code $DEFAULTS_RC)." ;;
+esac
+# In-App Ad Blocking loads only into the catalogue apps and the apps selected under Ad Network Blocking (no com.apple.UIKit): rebuild that list from the
+# saved selections, which an upgrade would otherwise reset to the catalogue alone.
+quiet "$HELPER" adsfilter || warn "the Ad Network Blocking app list could not be written (code $?); Repair MYbloXX® or switch the apps off and on." "Ad Network Blocking apps could not be applied; they were kept."
+# The welcome screen shows once on the next unlocked Home Screen after an install or upgrade; this marker is what asks for it.
+WELCOME_DIR=/var/mobile/Library/MYbloXX
+mkdir -p "$WELCOME_DIR" 2>/dev/null || :
+chown 501:501 "$WELCOME_DIR" 2>/dev/null || chmod 0777 "$WELCOME_DIR" 2>/dev/null || :
+printf '%s' "$RELEASE_LABEL-$(date +%s)" > "$WELCOME_DIR/WelcomePending" 2>/dev/null && { chown 501:501 "$WELCOME_DIR/WelcomePending" 2>/dev/null; chmod 0666 "$WELCOME_DIR/WelcomePending" 2>/dev/null; } || :
+# Upgrade: make the bundled rules the active generation once (keeps settings, mode, custom rules, exceptions
+# and Proxy Override; keeps a newer downloaded generation; the replaced one stays as the rollback target).
+REFRESH_RC=0; quiet "$HELPER" refreshbundled || REFRESH_RC=$?
+if [ "$REFRESH_RC" -ne 0 ]; then warn "built-in rules could not be activated (code $REFRESH_RC); the previous rules stay active. Status & Diagnostics shows the result." "Built-in rules were not activated; the previous rules stay active."; fi
+# The Files app MYbloXX folder (settings backups) is prepared at install time. This action
+# never writes the system configuration.
+if ! quiet "$HELPER" preparefiles; then
+  warn "Files app storage could not be initialized; see control.log (FILES_DISCOVERY / FILES_PREPARE). System proxy unchanged." "The Files app backup folder could not be prepared."
+fi
+# Upgrade from the localhost-PAC-URL transport (B50): rebuild the same protection as an inline
+# PAC from the saved preference and rules. A disabled setup stays disabled. An active inline-PAC
+# experiment or someone else's configuration is left untouched.
+if ! quiet "$HELPER" migrateinline; then
+ warn "the inline PAC could not be applied (an experiment may be active); use Repair MYbloXX®." "Protection could not be re-applied after the upgrade."
+fi
+if ! quiet "$HELPER" appcontrolmigrate; then
+ warn "App Control choice migration needs attention; settings were retained." "App Control choices could not be migrated; they were kept."
+fi
+# A first install applies the documented defaults (initdefaults above); an upgrade keeps the saved on/off choice.
+# launchd supervises the local server used by App Control settings, blocked-page attribution
+# and legacy profiles. It is not the PAC transport. A duplicate bootstrap is nonfatal.
+if [ -f "$PAC_DAEMON" ]; then
+  # Existing versions may already be running. Restart the installed
+  # launchd job instead of leaving an older PAC server process active.
+  if launchctl print system/net.myxxdev.mybloxx.pacd >/dev/null 2>&1; then
+    launchctl kickstart -k system/net.myxxdev.mybloxx.pacd >/dev/null 2>&1 || :
+  else
+    launchctl bootstrap system "$PAC_DAEMON" >/dev/null 2>&1 || :
+  fi
+fi
+# The restore job re-applies the saved preference after every re-jailbreak. A disabled
+# preference is never turned on by installing or restarting.
+if [ -f "$DAEMON" ]; then
+  launchctl bootout system/net.myxxdev.mybloxx.restore >/dev/null 2>&1 || :
+  launchctl bootstrap system "$DAEMON" >/dev/null 2>&1 || :
+fi
+UPDATE_DAEMON="$PREFIX/Library/LaunchDaemons/net.myxxdev.mybloxx.updates.plist"
+if [ -f "$UPDATE_DAEMON" ]; then
+  launchctl bootout system/net.myxxdev.mybloxx.updates >/dev/null 2>&1 || :
+  launchctl bootstrap system "$UPDATE_DAEMON" >/dev/null 2>&1 || :
+fi
+BLOCKD="$PREFIX/usr/libexec/mybloxx-blockd"
+BLOCK_JOB="$PREFIX/Library/LaunchDaemons/net.myxxdev.mybloxx.blockd.plist"
+if [ -f "$BLOCKD" ]; then
+ chmod 0755 "$BLOCKD" || :
+ if launchctl print system/net.myxxdev.mybloxx.blockd >/dev/null 2>&1; then
+  launchctl kickstart -k system/net.myxxdev.mybloxx.blockd >/dev/null 2>&1 || :
+ else
+  launchctl bootstrap system "$BLOCK_JOB" >/dev/null 2>&1 || :
+ fi
+fi
+
+
+
+APP_CONTROL_DAEMON="$PREFIX/Library/LaunchDaemons/net.myxxdev.mybloxx.appcontrol.plist"
+if [ -f "$APP_CONTROL_DAEMON" ]; then
+ launchctl bootout system/net.myxxdev.mybloxx.appcontrol >/dev/null 2>&1 || :
+ launchctl bootstrap system "$APP_CONTROL_DAEMON" >/dev/null 2>&1 || :
+fi
+# Background services: a job is reported only if launchd now lists it. A short retry covers a job that is still loading.
+service_loaded() {
+  for _try in 1 2 3; do
+    if launchctl print "system/$1" >/dev/null 2>&1; then return 0; fi
+    sleep 1
+  done
+  return 1
+}
+for ENTRY in "$PAC_DAEMON:net.myxxdev.mybloxx.pacd" "$DAEMON:net.myxxdev.mybloxx.restore" "$UPDATE_DAEMON:net.myxxdev.mybloxx.updates" "$BLOCK_JOB:net.myxxdev.mybloxx.blockd" "$APP_CONTROL_DAEMON:net.myxxdev.mybloxx.appcontrol"; do
+  JOB_FILE="${ENTRY%%:*}"; JOB_LABEL="${ENTRY##*:}"
+  if [ -f "$JOB_FILE" ] && ! service_loaded "$JOB_LABEL"; then
+    warn "background service $JOB_LABEL could not be confirmed as loaded." "Background service ${JOB_LABEL##*.} is not running; Repair MYbloXX® or re-jailbreak may start it."
+  fi
+done
+echo "
+
+ •••••••••••••••••••••••••
+ MYbloXX® Installed!
+ •••••••••••••••••••••••••
+
+ Open Settings > MYbloXX® to get started.
+"
+exit 0

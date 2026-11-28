@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark light"><meta name="referrer" content="no-referrer"><title>Status &amp; Diagnostics · MYbloXX®</title>
+<style>
+/*MYB_TOKENS*/
+/*MYB_GLASS*/
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;background:var(--bg);color:var(--text);font:400 1rem/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.page{position:relative;max-width:640px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+header{display:flex;align-items:center;gap:.7rem;padding:.3rem .1rem .9rem}
+.brand{width:34px;height:34px;border-radius:22.37%;border:.75px solid rgba(255,255,255,.24);flex:none}
+.wordmark{font:700 1.06rem/1 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.02em}.wordmark sup{font-size:.55em;margin-left:1px}
+.kicker{margin-left:auto;font:600 .66rem/1 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.hero{padding:1.4rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:1rem;background-image:radial-gradient(120% 90% at 0% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 62%)}
+.hero-top{display:flex;gap:1rem;align-items:center}
+.tile{flex:none;width:3.9rem;height:3.9rem;border-radius:22px;box-shadow:0 8px 28px color-mix(in srgb,currentColor 28%,transparent);display:grid;place-items:center;color:var(--muted);background:color-mix(in srgb,currentColor 13%,transparent);border:.5px solid color-mix(in srgb,currentColor 34%,transparent);transition:color .5s var(--ease),background-color .5s var(--ease),border-color .5s var(--ease)}
+.tile svg{width:1.7rem;height:1.7rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile[data-tone="ok"]{color:var(--ok)}.tile[data-tone="warn"]{color:var(--warn)}.tile[data-tone="bad"]{color:var(--bad)}.tile[data-tone="info"]{color:var(--accent)}
+h1{margin:0;font:750 1.65rem/1.12 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.025em;overflow-wrap:anywhere}
+.lede{margin:.15rem 0 0;color:var(--muted);font-size:.93rem;line-height:1.45;overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font:600 .78rem/1 -apple-system,sans-serif;padding:.45rem .65rem;border-radius:999px;border:.5px solid var(--hair);background:color-mix(in srgb,var(--panel2) 70%,transparent);color:var(--text)}
+.chip b{color:var(--muted);font-weight:600;margin-right:.3rem}
+.bar{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.btn{appearance:none;-webkit-appearance:none;min-height:44px;padding:.55rem 1rem;border-radius:var(--r-btn);border:.5px solid var(--hair);background:var(--panel2);color:var(--text);font:600 .95rem/1.1 -apple-system,sans-serif;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:transparent}.btn:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.stamp{margin-left:auto;color:var(--muted);font-size:.78rem}
+.err{margin:.6rem 0 0;padding:.7rem .9rem;border-radius:var(--r-card);border:.5px solid color-mix(in srgb,var(--bad) 40%,transparent);background:color-mix(in srgb,var(--bad) 12%,transparent);font-size:.9rem}
+.stack{display:flex;flex-direction:column;gap:.75rem;margin-top:.85rem}
+details.glass{padding:0;overflow:hidden}
+summary{list-style:none;display:flex;align-items:center;gap:.7rem;min-height:56px;padding:.7rem 1rem;cursor:pointer}summary::-webkit-details-marker{display:none}
+.dot{flex:none;width:.7rem;height:.7rem;border-radius:50%;background:var(--muted);transition:background-color .4s}
+.dot[data-tone="ok"]{background:var(--ok)}.dot[data-tone="warn"]{background:var(--warn)}.dot[data-tone="bad"]{background:var(--bad)}.dot[data-tone="info"]{background:var(--accent)}
+.st{font:650 1rem/1.2 -apple-system,sans-serif;flex:1;min-width:0}.st small{display:block;margin-top:.12rem;font:400 .8rem/1.3 -apple-system,sans-serif;color:var(--muted);overflow-wrap:anywhere}
+.chev{flex:none;width:.6rem;height:.6rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-45deg);transition:transform .25s var(--ease)}details[open] .chev{transform:rotate(45deg)}
+.body{padding:.1rem 1rem 1rem;border-top:.5px solid var(--hair)}
+dl{margin:.5rem 0 0}.row{display:flex;gap:.8rem;justify-content:space-between;align-items:baseline;padding:.5rem 0;font-size:.9rem}.row+.row{border-top:.5px solid var(--hair)}
+.row dt{color:var(--muted);flex:none}.row dd{margin:0;text-align:right;min-width:0;overflow-wrap:anywhere}
+.row dd[data-tone="ok"]{color:var(--ok)}.row dd[data-tone="warn"]{color:var(--warn)}.row dd[data-tone="bad"]{color:var(--bad)}
+.help{margin:.7rem 0 0;color:var(--muted);font-size:.84rem;line-height:1.5}
+.item{padding:.6rem 0}.item+.item{border-top:.5px solid var(--hair)}.item .t{font-weight:600;font-size:.92rem}.item .s{color:var(--muted);font-size:.82rem;margin-top:.15rem;overflow-wrap:anywhere}
+pre{margin:.6rem 0 0;max-height:22rem;overflow:auto;padding:.8rem;border-radius:var(--r-card);background:color-mix(in srgb,var(--panel2) 80%,transparent);font:.74rem/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+footer{text-align:center;color:var(--muted);font:600 .64rem/1 -apple-system,sans-serif;letter-spacing:.18em;padding:1.4rem 0 .2rem}
+@media(max-width:340px){h1{font-size:1.25rem}.row{flex-direction:column;gap:.1rem}.row dd{text-align:left}}
+</style></head>
+<body data-state="idle"><div class="ambient" aria-hidden="true"><i></i><i></i></div><div class="page">
+<header><img class="brand" src="data:image/png;base64,{{MYB_BRAND}}" alt=""><span class="wordmark">MYbloXX<sup>®</sup></span><span class="kicker">Status</span></header>
+<main>
+<section class="hero glass rise" aria-labelledby="overall-title">
+ <div class="hero-top"><div class="tile" id="tile" data-tone="info" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 2.9 7.4 7 9.5 4.1-2.1 7-5.1 7-9.5V6Z"/><path id="tile-mark" d="m8.8 12.2 2.4 2.4 4.2-4.6"/></svg></div>
+ <div><h1 id="overall-title" role="status" aria-live="polite">Checking...</h1><p class="lede" id="overall-detail">Reading what MYbloXX® has recorded on this iPhone.</p></div></div>
+ <div class="chips" id="chips"></div>
+ <div class="bar"><button class="btn primary" id="refresh" type="button">Refresh</button><span class="stamp" id="stamp" aria-live="off"></span></div>
+ <div class="err" id="error" role="alert" hidden></div>
+</section>
+<div class="stack" id="sections"></div>
+</main><footer>MYXXdev™ · LOCAL AND OFFLINE</footer></div>
+<script>
+var MYBStatus=(function(){
+'use strict';
+var BROWSER={'not-observed':['Not observed yet','Nothing has been reported since the last restart. This is not a confirmed problem.','info'],'loaded':['Loaded','The Shield component is in the browser, but no page or popup has been seen yet.','info'],'navigation-hook-observed':['Navigation seen','Page loads are reaching Shield.','ok'],'window-hook-observed':['Popup handling seen','New-window requests are reaching Shield.','ok'],'host-callback-unsupported':['Popup callbacks not available','This browser does not expose the new-window callbacks Shield needs. Network blocking still works.','warn'],'bridge-unavailable':['Shield can’t reach MYbloXX®','The component loaded but could not talk to MYbloXX®’s local service.','bad'],'shield-disabled':['Shield is off','Shield protection is turned off in Settings.','warn']};
+var RESULT={'token':'Allowed once (your permission used)','policy-allow':'Allowed by your rules','permission':'Allowed by a permission','block':'Blocked','shield-off':'Not checked (Shield off)'};
+var LAYER={'nav':'link/navigation','create':'new window','create-async':'new window (async)'};
+function parseTime(v){if(typeof v==='number')return v*1000;if(typeof v!=='string')return null;var m=v.match(/^(\d{4}-\d\d-\d\d) (\d\d:\d\d:\d\d) ([+-])(\d\d)(\d\d)$/);if(!m)return null;var t=Date.parse(m[1]+'T'+m[2]+m[3]+m[4]+':'+m[5]);return isNaN(t)?null:t;}
+function ago(ms,now){if(ms==null)return 'never';var s=Math.max(0,Math.round((now-ms)/1000));if(s<5)return 'just now';if(s<60)return s+' s ago';if(s<3600)return Math.round(s/60)+' min ago';if(s<86400)return Math.round(s/3600)+' h ago';return Math.round(s/86400)+' d ago';}
+function yn(v,y,n){return v?y:n;}
+function overall(s,nowMs){
+ var intent=s.intent||{},rt=s.runtime||{},pub=rt.publishedAt!=null?rt.publishedAt*1000:null,ver=rt.verifiedAt!=null?rt.verifiedAt*1000:null,age=pub==null?null:(nowMs-pub)/1000;
+ if(!intent.known)return {key:'not-configured',tone:'info',title:'Not set up yet',detail:'MYbloXX® has no saved setup on this iPhone yet.'};
+ if(s.appControlPaused)return {key:'paused',tone:'warn',title:'Paused by App Control',detail:'MYbloXX® is paused for the app in the foreground and returns when you leave it.'};
+ if(!intent.enabled)return {key:'disabled',tone:'info',title:'MYbloXX® is turned off',detail:'You turned protection off. Nothing is blocked and your internet is unchanged.'};
+ if(pub==null||!rt.state)return {key:'unavailable',tone:'warn',title:'Verification unavailable',detail:'Protection is saved as on, but the background helper has not published a result, so MYbloXX® can’t confirm it is working. Try Repair in Settings.'};
+ var st=rt.state,v=rt.verification;
+ if(st==='configured'){
+  if(age>180)return {key:'stale',tone:'warn',title:'Status is out of date',detail:'The last check was '+ago(pub,nowMs)+'. The helper may not be running; open Settings and use Repair if this stays.'};
+  if(v==='applied')return {key:'verified',tone:'ok',title:'Protection is active',detail:'iOS is using MYbloXX®’s current rules, verified '+ago(ver,nowMs)+'.'};
+  if(v==='identity-unavailable')return {key:'verified-unidentified',tone:'info',title:'Applied, but can’t be verified',detail:'MYbloXX®’s configuration is installed, but this iOS does not let MYbloXX® read back which rules are in use, so it cannot be confirmed as current. This is not a failure.'};
+  if(v==='stale')return {key:'stale',tone:'warn',title:'Verification is out of date',detail:'The last successful check was '+ago(ver,nowMs)+'.'};
+  if(v==='not-applied')return {key:'not-applied',tone:'bad',title:'Saved, but iOS is not using it',detail:'MYbloXX®’s configuration is in place, but iOS is not applying it yet. It usually fixes itself within a minute; if not, use Repair.'};
+  return {key:'awaiting',tone:'info',title:'Waiting for verification',detail:'The configuration is in place; MYbloXX® is confirming that iOS uses it.'};
+ }
+ if(st==='target-missing'||st==='target-invalid'||st==='disabled'){var su=s.startup||{};return {key:'missing',tone:'bad',title:'Protection is missing',detail:'It is saved as on but the runtime configuration is gone'+(su.result?(' (last startup recovery: '+su.result+')'):'')+'. Use Repair in Settings.'};}
+ if(st==='experiment'||st==='foreign'||st==='legacy-url')return {key:'foreign',tone:'warn',title:'Another proxy setup is in control',detail:'A different proxy configuration is installed, so MYbloXX® left it alone.'};
+ return {key:'error',tone:'bad',title:'Status unavailable',detail:'MYbloXX® reported “'+st+'”.'};
+}
+function model(d,nowMs){
+ d=d||{};var s=d.status||{},o=overall(s,nowMs),rt=s.runtime||{},intent=s.intent||{},su=s.startup||{},up=s.updates||{},sv=s.services||{},gs=d.guardSettings||{},df=s.defaults||{};
+ var pub=rt.publishedAt!=null?rt.publishedAt*1000:null,ver=rt.verifiedAt!=null?rt.verifiedAt*1000:null,sections=[];
+ sections.push({id:'protection',title:'Protection',tone:o.tone,summary:o.title,rows:[['Saved choice',intent.known?yn(intent.enabled,'On','Off'):'Not set up'],['noXXX PIN',yn((s.pin||{}).enabled,'On','Off')],['Blocking mode',intent.mode||'Not set'],['Runtime configuration',rt.state||'unknown'],['Verified by iOS',rt.verification?({'applied':'Yes, current rules','identity-unavailable':'Applied, rules not identifiable','stale':'Out of date','not-applied':'No'}[rt.verification]||rt.verification):'Not yet'],['Last check',ago(ver,nowMs)],['Published by helper',ago(pub,nowMs)]],help:'“Saved” is what you chose. “Verified” means iOS itself reported using the current rules. An enabled switch, an open port or a running process does not prove blocking works.'});
+ var suTone=!su.result?'info':(su.result==='restored'||su.result==='already-applied'||su.result==='applied-unverified'||su.result==='disabled'||su.result==='nothing-to-restore'||su.result==='deferred')?'ok':su.result==='gave-up'?'bad':'warn';
+ sections.push({id:'startup',title:'Startup & recovery',tone:suTone,summary:su.result?({'restored':'Restored after startup','already-applied':'Already active at startup','applied-unverified':'Applied, can’t be verified','disabled':'Stayed off, as saved','nothing-to-restore':'Nothing to restore','deferred':'Handled by App Control','gave-up':'Could not recover automatically','not-ours':'Left another proxy setup alone'}[su.result]||su.result):'No recovery recorded',rows:su.result?[['Result',su.result],['Attempts',String(su.attempts==null?'None':su.attempts)],['When',ago(su.at!=null?su.at*1000:null,nowMs)],['Detail',su.detail||'None'],['Code',su.code?String(su.code):'0']]:[['Recovery','Not observed since install']],help:'After a reboot and re-jailbreak MYbloXX® restores itself in the background, honouring your saved on/off choice. “Could not recover” means use Repair in Settings.'});
+ var pacd=sv.pacd||{};var pubFresh=pub!=null&&(nowMs-pub)/1000<=180;
+ sections.push({id:'services',title:'Local services',tone:(pacd.reachable&&pubFresh)?'ok':'warn',summary:(pacd.reachable&&pubFresh)?'Running':'Check needed',rows:[['Status & block page service','Running (this page)'],['Profile service (port 8787)',yn(pacd.reachable,'Responding','Not responding')],['Background helper',pub==null?'Not observed':(pubFresh?'Active, last seen '+ago(pub,nowMs):'Not seen for '+ago(pub,nowMs).replace(' ago',''))]],help:'These are the local services MYbloXX® uses for blocked pages, popup decisions and profiles. They are not the blocking transport.'});
+ sections.push({id:'shield',title:'Shield',tone:gs.enabled?'ok':'info',summary:gs.enabled?(gs.blockPopups?'On, popup blocking on':'On, popup blocking off'):'Off',rows:[['Shield protection',yn(gs.enabled,'On','Off')],['Block popups',yn(gs.blockPopups,'On','Off')],['Your blocked sites',String(gs.blockedCount==null?0:gs.blockedCount)],['Your allowed sites',String(gs.allowedCount==null?0:gs.allowedCount)],['Local service version',d.bridgeVersion||'unknown']],help:'Shield works inside supported browsers. Network blocking is separate and covers every app.'});
+ var items=[],bs=d.browserStates||{},keys=Object.keys(bs).sort(),worst='ok',seen=0;
+ keys.forEach(function(k){var b=bs[k]||{},m=BROWSER[b.state]||[b.state||'Unknown','','info'];if(b.state!=='not-observed')seen++;if(m[2]==='bad')worst='bad';else if(m[2]==='warn'&&worst!=='bad')worst='warn';items.push({t:(b.name||k)+': '+m[0],s:m[1]+' Last event '+ago(parseTime(b.lastEvent),nowMs)+' · popups blocked '+(b.popupsBlocked||0)+', allowed '+(b.popupsAllowed||0)});});
+ sections.push({id:'browsers',title:'Browsers',tone:seen?worst:'info',summary:seen+' of '+keys.length+' observed',items:items,help:'“Not observed” means the browser has not reported since it last started. It does not mean it is unprotected: network blocking applies to every browser regardless.'});
+ var trace=(d.popupTrace||[]).slice(-12).reverse(),pitems=trace.map(function(e){return {t:(RESULT[e.result]||e.result)+' · '+(LAYER[e.layer]||e.layer),s:ago(parseTime(e.time),nowMs)+' · '+(e.app||'')+(e.source?' · from '+e.source:'')+(e.destination?' → '+e.destination:'')};});
+ sections.push({id:'popups',title:'Recent popup decisions',tone:'info',summary:trace.length?(trace.length+' recent'):'None recorded',items:pitems,help:'Only hosts are shown, never full addresses. The list is kept in memory and clears when MYbloXX®’s local service restarts.'});
+ sections.push({id:'updates',title:'Updates',tone:up.known?(up.automatic?'ok':'info'):'info',summary:up.known?yn(up.automatic,'Daily updates on','Daily updates off'):'Not set up',rows:[['Automatic updates',up.known?yn(up.automatic,'On','Off'):'Not set up'],['Last attempt',ago(up.lastAttempt!=null?up.lastAttempt*1000:null,nowMs)],['Last result',up.lastResult||'None']],help:'Updates run once a day in the background while the iPhone is jailbroken.'});
+ sections.push({id:'components',title:'Versions',tone:'info',summary:d.release||'unknown',rows:[['Release',d.release||'unknown'],['Defaults',df.origin?(df.origin+(df.version?' (v'+df.version+')':'')+(df.outcome?': '+df.outcome:'')+((df.exceptions&&df.exceptions.length)?' ('+df.exceptions.join(', ')+')':'')):'Not recorded']].concat(keys.filter(function(k){return bs[k]&&bs[k].componentVersion&&bs[k].componentVersion!=='unknown';}).map(function(k){return [(bs[k].name||k)+' component',bs[k].componentVersion];}))});
+ return {overall:o,mode:intent.mode||'',sections:sections,generatedAt:s.generatedAt};
+}
+return {model:model,overall:overall,parseTime:parseTime,ago:ago};
+})();
+(function(){
+'use strict';
+if(typeof document==='undefined')return;
+var $=function(id){return document.getElementById(id);},open={},last=null,busy=false,timer=null;
+function el(tag,cls,text){var n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;}
+// Rendering patches the page in place: structure is built once per section, then only text/tone that actually changed is written, so
+// nothing is rebuilt, nothing re-animates, scroll and open sections stay exactly where they are.
+var secs={},chipKey='';
+function setText(n,t){if(n.textContent!==t)n.textContent=t;}
+function setData(n,k,v){if(n.dataset[k]!==v)n.dataset[k]=v;}
+function patchList(host,count,make){while(host.children.length>count)host.removeChild(host.lastChild);while(host.children.length<count)host.appendChild(make());}
+function buildSection(id,idx){
+ var det=el('details','glass rise');det.style.setProperty('--i',String(idx+1));det.dataset.id=id;det.open=!!open[id];det.addEventListener('toggle',function(){open[id]=det.open;});
+ var sum=el('summary'),dot=el('span','dot'),st=el('span','st'),title=el('span'),small=el('small');st.appendChild(title);st.appendChild(small);sum.appendChild(dot);sum.appendChild(st);sum.appendChild(el('span','chev'));det.appendChild(sum);
+ var body=el('div','body'),dl=el('dl'),items=el('div'),help=el('p','help');help.hidden=true;body.appendChild(dl);body.appendChild(items);body.appendChild(help);det.appendChild(body);
+ return {det:det,dot:dot,title:title,small:small,dl:dl,items:items,help:help};
+}
+function patchSection(n,sec){
+ setData(n.dot,'tone',sec.tone);setText(n.title,sec.title);setText(n.small,sec.summary);
+ var rows=sec.rows||[];patchList(n.dl,rows.length,function(){var r=el('div','row');r.appendChild(el('dt'));r.appendChild(el('dd'));return r;});
+ rows.forEach(function(r,k){var row=n.dl.children[k];setText(row.children[0],r[0]);setText(row.children[1],r[1]);});
+ var items=sec.items||[];var wantEmpty=sec.items&&!items.length;
+ patchList(n.items,items.length+(wantEmpty?1:0),function(){var x=el('div','item');x.appendChild(el('div','t'));x.appendChild(el('div','s'));return x;});
+ if(wantEmpty){var e0=n.items.children[0];e0.className='help';e0.textContent='Nothing to show.';}
+ else items.forEach(function(it,k){var x=n.items.children[k];x.className='item';if(x.children.length!==2){x.textContent='';x.appendChild(el('div','t'));x.appendChild(el('div','s'));}setText(x.children[0],it.t);setText(x.children[1],it.s);});
+ n.help.hidden=!sec.help;setText(n.help,sec.help||'');
+}
+function render(d){
+ var now=Date.now(),m=MYBStatus.model(d,now);last=d;
+ setText($('overall-title'),m.overall.title);setText($('overall-detail'),m.overall.detail);
+ var tile=$('tile');setData(tile,'tone',m.overall.tone);tile.classList.toggle('live',m.overall.key==='verified'||m.overall.key==='verified-unidentified');
+ var mark=m.overall.tone==='ok'?'m8.8 12.2 2.4 2.4 4.2-4.6':m.overall.tone==='bad'?'m9.2 9.2 5.6 5.6M14.8 9.2l-5.6 5.6':m.overall.tone==='warn'?'M12 8.5v4.2M12 15.6v.1':'M12 9v3.4M12 15.4v.1';if($('tile-mark').getAttribute('d')!==mark)$('tile-mark').setAttribute('d',mark);
+ var cs=[['Mode',m.mode||'Not set'],['Saved',(d.status&&d.status.intent&&d.status.intent.known)?(d.status.intent.enabled?'On':'Off'):'Not set']];
+ var key=JSON.stringify(cs);if(key!==chipKey){chipKey=key;var chips=$('chips');chips.textContent='';cs.forEach(function(c){var s2=el('span','chip');s2.appendChild(el('b',null,c[0]));s2.appendChild(document.createTextNode(c[1]));chips.appendChild(s2);});}
+ var host=$('sections'),ids={};
+ m.sections.forEach(function(sec,idx){
+  ids[sec.id]=1;if(!secs[sec.id]){secs[sec.id]=buildSection(sec.id,idx);}
+  patchSection(secs[sec.id],sec);var node=secs[sec.id].det;if(host.children[idx]!==node)host.insertBefore(node,host.children[idx]||null);
+ });
+ Object.keys(secs).forEach(function(id){if(!ids[id]){var n=secs[id].det;if(n.parentNode)n.parentNode.removeChild(n);delete secs[id];}});
+ setText($('stamp'),'Updated '+new Date(now).toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'}));
+ $('error').hidden=true;document.body.classList.remove('stale');
+}
+async function load(manual){
+ if(busy)return;busy=true;if(manual===true)$('refresh').disabled=true;
+ var ctl=typeof AbortController!=='undefined'?new AbortController():null,timeout=ctl?setTimeout(function(){ctl.abort();},8000):null;
+ try{var r=await fetch('/mybloxx-status',{cache:'no-store',signal:ctl?ctl.signal:undefined});if(!r.ok)throw new Error('HTTP '+r.status);render(await r.json());}
+ catch(e){
+  // Keep the last known values on screen and say they are stale; nothing is cleared or rebuilt.
+  var er=$('error');er.hidden=false;er.textContent='Can’t reach MYbloXX®’s local service on this iPhone ('+(e&&e.message?e.message:'no answer')+'). '+(last?'The values below are the last ones received and may be out of date. ':'')+'It may have stopped; use Repair in Settings.';
+  if(last){document.body.classList.add('stale');setText($('stamp'),'Out of date. Last updated '+$('stamp').textContent.replace(/^(Out of date\. Last updated|Updated)\s*/,''));}
+ }
+ finally{if(timeout)clearTimeout(timeout);busy=false;$('refresh').disabled=false;}
+}
+function schedule(){if(timer)clearInterval(timer);timer=setInterval(function(){if(!document.hidden)load();},10000);}
+$('refresh').addEventListener('click',function(){load(true);});
+document.addEventListener('visibilitychange',function(){document.body.classList.toggle('paused',document.hidden);if(!document.hidden)load();});
+load();schedule();
+})();</script></body></html>

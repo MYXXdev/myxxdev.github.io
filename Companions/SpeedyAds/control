@@ -1,0 +1,10 @@
+Package: net.myxxdev.mybloxx.speedyads
+Name: MYbloXX SpeedyAds
+Depends: ellekit | mobilesubstrate, preferenceloader
+Version: 2.2.1.3
+Architecture: iphoneos-arm64e
+Description: Block ads and speed up reward-ad videos, with a per-app Settings panel.
+Maintainer: MYXXdev
+Author: MYXXdev™
+Section: Tweaks
+
