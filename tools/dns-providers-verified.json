@@ -1,0 +1,47 @@
+{
+ "verified": "2026-11-15",
+ "method": "Fetched each official page on this date; values below are what the page states.",
+ "providers": {
+  "Cloudflare": {
+   "url": "https://cloudflare-dns.com/dns-query",
+   "addresses": [
+    "1.1.1.1",
+    "1.0.0.1",
+    "2606:4700:4700::1111",
+    "2606:4700:4700::1001"
+   ],
+   "sources": {
+    "addresses": "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+    "url": "https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/"
+   }
+  },
+  "Google": {
+   "url": "https://dns.google/dns-query",
+   "addresses": [
+    "8.8.8.8",
+    "8.8.4.4",
+    "2001:4860:4860::8888",
+    "2001:4860:4860::8844"
+   ],
+   "sources": {
+    "addresses": "https://developers.google.com/speed/public-dns/docs/using",
+    "url": "https://developers.google.com/speed/public-dns/docs/doh"
+   }
+  },
+  "Quad9": {
+   "url": "https://dns.quad9.net/dns-query",
+   "addresses": [
+    "9.9.9.9",
+    "149.112.112.112",
+    "2620:fe::fe",
+    "2620:fe::9"
+   ],
+   "sources": {
+    "addresses": "https://docs.quad9.net/services/",
+    "url": "https://docs.quad9.net/services/"
+   },
+   "service": "9.9.9.9 (Secure)"
+  }
+ },
+ "not_verified_from_official_source": "Apple's DNSSettings key table (developer.apple.com is not machine-readable here). The payload uses the documented keys DNSProtocol, ServerURL, ServerAddresses; installing each profile on an iPhone is a device check."
+}

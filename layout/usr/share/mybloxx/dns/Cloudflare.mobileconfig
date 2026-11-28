@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>net.myxxdev.mybloxx.dns.cloudflare</string>
+	<key>PayloadUUID</key>
+	<string>DE7C9F14-2DB5-554F-81FE-5FC3A2D962FE</string>
+	<key>PayloadDisplayName</key>
+	<string>MYbloXX® DNS - Cloudflare 1.1.1.1</string>
+	<key>PayloadOrganization</key>
+	<string>MYXXdev™</string>
+	<key>PayloadDescription</key>
+	<string>Encrypted DNS (DNS over HTTPS) using Cloudflare 1.1.1.1. This profile only sets which DNS resolver iOS uses; it does not change MYbloXX® blocking. Remove it in Settings &gt; General &gt; VPN &amp; Device Management.</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>net.myxxdev.mybloxx.dns.cloudflare.settings</string>
+			<key>PayloadUUID</key>
+			<string>52AD5BA1-A04B-599D-B0EE-3F4C6C07C2D2</string>
+			<key>PayloadDisplayName</key>
+			<string>Cloudflare 1.1.1.1 (encrypted DNS)</string>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://cloudflare-dns.com/dns-query</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>1.1.1.1</string>
+					<string>1.0.0.1</string>
+					<string>2606:4700:4700::1111</string>
+					<string>2606:4700:4700::1001</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

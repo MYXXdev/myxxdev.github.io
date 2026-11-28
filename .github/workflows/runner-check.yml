@@ -1,0 +1,17 @@
+name: Check available CI runner
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/runner-check.yml'
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runner environment
+        run: |
+          uname -a
+          clang --version
+          echo "Runner is available"
+
+# B38: verify Linux runner availability when macOS jobs fail before assignment.

@@ -1,0 +1,5 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const root=__dirname+'/../layout/usr/share/mybloxx/pacs',served=process.argv[2];let checks=0;
+function ctx(s){let c={dnsDomainIs:(h,d)=>h.endsWith(d),shExpMatch:(s,p)=>new RegExp('^'+p.split('*').map(x=>x.replace(/[.+?^${}()|[\]\\]/g,'\\$&')).join('.*')+'$').test(s)};vm.createContext(c);vm.runInContext(s,c,{timeout:1000});return c;}
+for(const file of fs.readdirSync(root).filter(n=>n.endsWith('.pac'))){let before=fs.readFileSync(root+'/'+file,'utf8'),after=fs.readFileSync(served+'/'+file,'utf8');assert(!after.includes('PROXY 127.0.0.1:8021'));assert.equal(after.includes('PROXY 8.8.8.8:53'),before.includes('PROXY 8.8.8.8:53'));let a=ctx(before),b=ctx(after);for(const h of ['100widgets.com','example.com','ads.example.com','youtube.com','apple.com','facebook.com','pornhub.com','127.0.0.1','localhost'])for(const p of ['/','/ads','/video?v=1']){let u='http://'+h+p;assert.equal(b.FindProxyForURL(u,h),a.FindProxyForURL(u,h).replace(/PROXY 127\.0\.0\.1:8021\b/g,'PROXY 127.0.0.1:8788'));checks++;}}
+console.log(checks+' PAC routing comparisons passed; only the historical blocked-sink port changed.');

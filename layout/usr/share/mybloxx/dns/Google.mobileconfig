@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>net.myxxdev.mybloxx.dns.google</string>
+	<key>PayloadUUID</key>
+	<string>918465F1-6811-518F-97E5-6FBEEBDB5FAE</string>
+	<key>PayloadDisplayName</key>
+	<string>MYbloXX® DNS - Google Public DNS</string>
+	<key>PayloadOrganization</key>
+	<string>MYXXdev™</string>
+	<key>PayloadDescription</key>
+	<string>Encrypted DNS (DNS over HTTPS) using Google Public DNS. This profile only sets which DNS resolver iOS uses; it does not change MYbloXX® blocking. Remove it in Settings &gt; General &gt; VPN &amp; Device Management.</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>net.myxxdev.mybloxx.dns.google.settings</string>
+			<key>PayloadUUID</key>
+			<string>754870D3-0294-5A0F-9C26-3F82D156DAD0</string>
+			<key>PayloadDisplayName</key>
+			<string>Google Public DNS (encrypted DNS)</string>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://dns.google/dns-query</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>8.8.8.8</string>
+					<string>8.8.4.4</string>
+					<string>2001:4860:4860::8888</string>
+					<string>2001:4860:4860::8844</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

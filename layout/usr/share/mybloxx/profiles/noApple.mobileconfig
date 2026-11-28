@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>net.myxxdev.mybloxx</string>
+	<key>PayloadUUID</key>
+	<string>9DB9ED54-D401-4CE1-880D-F669E6155EBA</string>
+	<key>PayloadDisplayName</key>
+	<string>MYbloXX® (noApple)</string>
+	<key>PayloadOrganization</key>
+	<string>MYXXdev™</string>
+	<key>PayloadDescription</key>
+	<string>Legacy Mode: points iOS at the published noApple PAC. It works without MYbloXX® running and is separate from native MYbloXX® protection. Remove it in Settings &gt; General &gt; VPN &amp; Device Management to return to native protection.</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.proxy.http.global</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.proxy.http.global.FDD30EB4-0D97-4301-824F-075331C66FEC</string>
+			<key>PayloadUUID</key>
+			<string>9950291A-8969-4A01-9106-ED4952BB90D3</string>
+			<key>PayloadDisplayName</key>
+			<string>Global HTTP Proxy</string>
+			<key>ProxyType</key>
+			<string>Auto</string>
+			<key>ProxyPACURL</key>
+			<string>https://cdn.jsdelivr.net/gh/MYXXdev/myxxdev.github.io@master/MYbloXX/blockApple.pac</string>
+			<key>ProxyCaptiveLoginAllowed</key>
+			<true/>
+			<key>ProxyPACFallbackAllowed</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

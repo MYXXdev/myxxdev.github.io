@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Same two entitlements the baseline SentinelRunner carries. -->
+	<key>platform-application</key>
+	<true/>
+	<key>com.apple.private.security.container-required</key>
+	<false/>
+	<!-- Added in 0.2.1: run outside any sandbox and allow the power-management
+	     user client explicitly. -->
+	<key>com.apple.private.security.no-sandbox</key>
+	<true/>
+	<key>com.apple.security.iokit-user-client-class</key>
+	<array>
+		<string>RootDomainUserClient</string>
+	</array>
+</dict>
+</plist>

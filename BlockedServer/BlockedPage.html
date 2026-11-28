@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark light"><meta name="referrer" content="no-referrer"><title>{{MYB_TITLE}} · MYbloXX®</title>
+<style>
+/*MYB_TOKENS*/
+/*MYB_GLASS*/
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;background:var(--bg);color:var(--text);font:400 1rem/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 55% at 50% -8%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.page{position:relative;min-height:100svh;max-width:520px;margin:0 auto;display:flex;flex-direction:column;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}
+header{display:flex;align-items:center;gap:.7rem;padding:.4rem .1rem 0}
+.brand{width:34px;height:34px;border-radius:22.37%;border:.75px solid rgba(255,255,255,.24);flex:none}
+.wordmark{font:700 1.06rem/1 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.02em}.wordmark sup{font-size:.55em;margin-left:1px}
+.kicker{margin-left:auto;font:600 .66rem/1 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:1.4rem 0}
+.card{padding:1.5rem 1.25rem 1.25rem}
+.tile{width:3.1rem;height:3.1rem;border-radius:var(--r-tile);display:grid;place-items:center;background:color-mix(in srgb,var(--rose) 13%,transparent);border:.5px solid color-mix(in srgb,var(--rose) 32%,transparent);color:var(--rose)}
+.tile svg{width:1.55rem;height:1.55rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile .ic-ok,.tile .ic-bad{display:none}
+body[data-state="success"] .tile{background:color-mix(in srgb,var(--ok) 13%,transparent);border-color:color-mix(in srgb,var(--ok) 32%,transparent);color:var(--ok)}
+body[data-state="failure"] .tile,body[data-state="expired"] .tile{background:color-mix(in srgb,var(--warn) 13%,transparent);border-color:color-mix(in srgb,var(--warn) 32%,transparent);color:var(--warn)}
+body[data-state="success"] .ic-shield,body[data-state="failure"] .ic-shield,body[data-state="expired"] .ic-shield,body[data-state="applying"] .ic-shield{display:none}
+body[data-state="success"] .ic-ok{display:block}body[data-state="failure"] .ic-bad,body[data-state="expired"] .ic-bad{display:block}
+.spin{display:none;width:1.45rem;height:1.45rem;border-radius:50%;border:2.5px solid color-mix(in srgb,var(--accent) 25%,transparent);border-top-color:var(--accent);animation:turn .9s linear infinite}
+body[data-state="applying"] .spin{display:block}body[data-state="applying"] .tile{color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent);border-color:color-mix(in srgb,var(--accent) 32%,transparent)}
+h1{font:700 1.75rem/1.12 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.025em;margin:1rem 0 .55rem;overflow-wrap:anywhere}
+.dest{display:inline-block;max-width:100%;font:600 .95rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);border:.5px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--r-btn);padding:.42rem .7rem;overflow-wrap:anywhere;word-break:break-word}
+.why{margin:.9rem 0 0;color:var(--muted);font-size:.95rem;line-height:1.5;overflow-wrap:anywhere}
+.facts{margin:1.1rem 0 0;border:.5px solid var(--hair);border-radius:var(--r-card);overflow:hidden;background:color-mix(in srgb,var(--panel2) 62%,transparent)}
+.fact{display:flex;gap:.8rem;justify-content:space-between;align-items:baseline;padding:.72rem .9rem;font-size:.9rem}
+.fact+.fact{border-top:.5px solid var(--hair)}.fact dt{color:var(--muted);flex:none}.fact dd{margin:0;text-align:right;overflow-wrap:anywhere;min-width:0}
+.actions{display:flex;flex-direction:column;gap:.65rem;margin-top:1.25rem}
+.btn{appearance:none;-webkit-appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.1rem;min-height:3.2rem;width:100%;padding:.7rem 1rem;border-radius:var(--r-btn);border:.5px solid var(--hair);background:var(--panel2);color:var(--text);font:600 1rem/1.2 -apple-system,BlinkMacSystemFont,sans-serif;text-decoration:none;text-align:center;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn small{font:400 .78rem/1.3 -apple-system,sans-serif;color:var(--muted)}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:transparent}.btn.primary small{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.btn:active{transform:scale(.98)}.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.btn:disabled{opacity:.5}
+.pinbox{display:flex;flex-direction:column;gap:.55rem;margin-top:1.2rem}.pinbox[hidden]{display:none}.pinbox input{appearance:none;-webkit-appearance:none;width:100%;min-height:3.2rem;border-radius:var(--r-btn);border:.5px solid var(--hair);background:var(--panel2);color:var(--text);font:600 1.3rem/1 ui-monospace,Menlo,monospace;letter-spacing:.5em;text-align:center}.pinbox .err{margin:0;text-align:center;color:var(--muted);font-size:.9rem}
+.choices{display:flex;flex-direction:column;gap:.55rem;margin-top:1.2rem}
+.note{margin:1rem 0 0;color:var(--muted);font-size:.8rem;line-height:1.5}
+details{margin-top:1rem;font-size:.85rem;color:var(--muted)}summary{cursor:pointer;padding:.5rem 0;min-height:44px;display:flex;align-items:center}
+details p{margin:.2rem 0 .5rem;overflow-wrap:anywhere}
+footer{text-align:center;color:var(--muted);font:600 .64rem/1 -apple-system,sans-serif;letter-spacing:.18em;padding-top:.4rem}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media(max-width:340px){h1{font-size:1.45rem}.card{padding:1.2rem 1rem 1rem}.fact{flex-direction:column;gap:.1rem}.fact dd{text-align:left}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.spin{border-top-color:var(--accent);border-right-color:var(--accent)}}
+@media(prefers-contrast:more){:root{--hair:rgba(128,128,128,.6);--muted:color-mix(in srgb,var(--text) 78%,var(--bg))}}
+</style></head>
+<body data-view="{{MYB_VIEW}}" data-state="idle" data-secret="{{MYB_SECRET}}" data-op="{{MYB_OP}}" data-replay="{{MYB_REPLAY}}"><div class="ambient" aria-hidden="true"><i></i><i></i></div><div class="page">
+<header><img class="brand" src="data:image/png;base64,{{MYB_BRAND}}" alt=""><span class="wordmark">MYbloXX<sup>®</sup></span><span class="kicker">Shield</span></header>
+<main><section class="card glass rise" aria-labelledby="heading">
+<div class="tile" aria-hidden="true"><svg class="ic-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 2.9 7.4 7 9.5 4.1-2.1 7-5.1 7-9.5V6Z"/><path d="m9.2 9.2 5.6 5.6M14.8 9.2l-5.6 5.6"/></svg><svg class="ic-ok" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 2.9 7.4 7 9.5 4.1-2.1 7-5.1 7-9.5V6Z"/><path d="m8.8 12.2 2.4 2.4 4.2-4.6"/></svg><svg class="ic-bad" viewBox="0 0 24 24"><path d="M12 4 3.5 19h17Z"/><path d="M12 10v4.2M12 16.9v.1"/></svg><span class="spin"></span></div>
+<h1 id="heading">{{MYB_TITLE}}</h1>
+<div class="dest">{{MYB_HOST}}</div>
+<p class="why" id="message" role="status" aria-live="polite">{{MYB_REASON}}</p>
+<dl class="facts" id="facts"><div class="fact" {{MYB_FROM_HIDDEN}}><dt>From</dt><dd>{{MYB_FROM}}</dd></div><div class="fact"><dt>Destination</dt><dd>{{MYB_HOST}}</dd></div><div class="fact" {{MYB_MODE_HIDDEN}}><dt>Rule</dt><dd>{{MYB_MODE}}</dd></div></dl>
+<div class="actions" id="main-actions" {{MYB_ACTIONS_HIDDEN}}><button class="btn primary" id="back" type="button">Go Back</button><a class="btn" id="allow-link" href="{{MYB_ALLOW_URL}}" {{MYB_LINK_HIDDEN}}>Allow this website...</a></div>
+<div class="choices" id="choices" {{MYB_CONFIRM_HIDDEN}}>
+<button class="btn primary" type="button" data-duration="once">Allow for 2 minutes<small>This website only. It ends by itself</small></button>
+<button class="btn" type="button" data-duration="temp">Allow for 15 minutes<small>Then it is blocked again automatically</small></button>
+<button class="btn" type="button" data-duration="always">Always allow<small>This website and its subdomains, until you remove it in Settings</small></button>
+<button class="btn" type="button" id="keep">Keep blocked</button>
+</div>
+<div class="pinbox" id="pinbox" hidden><input id="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="noXXX PIN"><p class="err" id="pinerr" role="status" aria-live="polite"></p><button class="btn primary" type="button" id="pin-go">Enter PIN to Allow</button><button class="btn" type="button" id="pin-cancel">Keep blocked</button></div>
+<p class="note" id="scope" {{MYB_CONFIRM_HIDDEN}}>This changes the network filter for this website only. Popup and App Store permissions are separate.</p>
+<details><summary>What does this mean?</summary><p>{{MYB_DETAIL}}</p></details>
+</section></main><footer>MYXXdev™</footer></div>
+<script>
+document.addEventListener("visibilitychange",function(){document.body.classList.toggle("paused",document.hidden);});
+function failureText(code){var why={64:'The request was refused as malformed, so nothing was changed.',69:'Protection could not be applied right now, so nothing was changed.',70:'The helper stopped unexpectedly, so nothing was changed.',71:'The helper could not be run, so nothing was changed.',73:'Storage could not be written, so nothing was changed.',75:'Protection changed or another operation is running.',77:'The helper had no permission to change protection, so nothing was changed.',78:'The rule files are missing, so nothing was changed.'}[code]||'The change could not be applied and your previous setup was kept.';return why+' (error '+(code===undefined?'unknown':code)+') Go back and try again.';}
+(function(){
+'use strict';
+var body=document.body,back=document.getElementById('back'),heading=document.getElementById('heading'),message=document.getElementById('message'),keep=document.getElementById('keep'),choices=document.getElementById('choices'),actions=document.getElementById('main-actions'),scope=document.getElementById('scope');
+function goBack(){if(history.length>1){history.back();}else{location.replace('about:blank');}}
+back.addEventListener('click',goBack);if(keep)keep.addEventListener('click',goBack);
+if(body.dataset.view!=='confirm')return;
+var secret=body.dataset.secret,op=body.dataset.op,replay=body.dataset.replay,busy=false,started=0;
+function state(name,title,text){body.dataset.state=name;if(title)heading.textContent=title;if(text)message.textContent=text;}
+function end(name,title,text){state(name,title,text);choices.hidden=true;scope.hidden=true;actions.hidden=false;document.getElementById('allow-link').hidden=true;back.hidden=false;}
+function delay(ms){return new Promise(function(resolve){setTimeout(resolve,ms);});}
+function clock(ms){try{return new Date(ms).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+async function poll(duration){
+while(Date.now()-started<90000){
+try{var response=await fetch('/mybloxx-allow-status',{cache:'no-store',headers:{'X-MYbloXX-Allow-Token':secret}});
+if(response.status===403){end('expired','Request expired','This request is no longer valid. Go back and try again.');return;}
+if(response.ok){var result=await response.json();
+if(result.phase==='success'){
+ var until=result.expires?clock(result.expires*1000):'';
+ var label=duration==='always'?'Allowed permanently.':duration==='once'?'Allowed for 2 minutes.':('Allowed until '+until+'.');
+ if(replay==='get'&&op){end('success','Website allowed',label+' Reopening the page...');await delay(900);location.href='mybloxx-retry://'+encodeURIComponent(op);
+  await delay(3000);end('failure','Couldn’t reopen automatically',label+' Go back and load the page again.');return;}
+ end('success','Website allowed',label+' Go back and load the page again.');return;}
+if(result.phase==='pin'){askPIN(result.message||'');return;}
+if(result.phase==='error'){end('failure','Couldn’t apply exception',failureText(result.code));return;}
+}}catch(e){}
+await delay(900);}
+end('failure','No result yet','The change has not reported a result. Check MYbloXX® before trying again.');
+}
+var chosen='once',pinbox=document.getElementById('pinbox'),pinField=document.getElementById('pin'),pinErr=document.getElementById('pinerr');
+async function submit(duration,pin){
+busy=true;started=Date.now();chosen=duration;
+Array.prototype.forEach.call(choices.querySelectorAll('button'),function(b){b.disabled=true;});
+pinbox.hidden=true;
+state('applying','Applying...','Updating protection for this website. Your previous setup stays in place if this fails.');
+var headers={'X-MYbloXX-Allow-Token':secret,'X-MYbloXX-Allow-Duration':duration};if(pin)headers['X-MYbloXX-Allow-Pin']=pin; // a header on this page's own origin: never a URL
+try{var response=await fetch('/mybloxx-allow-apply',{method:'POST',cache:'no-store',headers:headers});
+if(response.status!==202&&response.status!==409){end('failure','Couldn’t verify request','This request could not be verified. Go back and try again.');return;}}catch(e){}
+poll(duration);
+}
+function askPIN(text){
+busy=false;choices.hidden=true;scope.hidden=true;pinbox.hidden=false;pinField.value='';pinErr.textContent=text||'';
+state('idle','Restricted by noXXX','noXXX blocks this website. Enter your four-digit PIN to allow it.');
+try{pinField.focus();}catch(e){}
+}
+pinField.addEventListener('input',function(){pinField.value=pinField.value.replace(/[^0-9]/g,'').slice(0,4);});
+document.getElementById('pin-go').addEventListener('click',function(){var pin=pinField.value;if(busy)return;if(!/^[0-9]{4}$/.test(pin)){pinErr.textContent='A PIN is exactly four digits.';return;}pinField.value='';submit(chosen,pin);});
+document.getElementById('pin-cancel').addEventListener('click',function(){pinField.value='';goBack();});
+choices.addEventListener('click',function(event){
+var target=event.target.closest('button[data-duration]');if(!target||busy)return;submit(target.dataset.duration,'');
+});
+})();</script></body></html>

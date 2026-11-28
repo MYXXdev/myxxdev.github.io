@@ -1,0 +1,6 @@
+#!/bin/sh
+# Disabled historical dispatcher. Only the native MYbloXX helper is supported.
+# This dispatcher must not alter the stock-visible managed-preferences link.
+# Use MYXXdev's native helper for checked, owner-aware PAC toggling.
+echo "MYbloXX: obsolete shell dispatcher disabled; use the native helper" >&2
+exit 78
